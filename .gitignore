@@ -5,6 +5,12 @@ repo/
 node_modules/
 **/node_modules/
 
+# Credentials — never tracked, never pushed (this repo is public)
+secrets/
+
+# Local tooling state — never pushed
+.claude/
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db
