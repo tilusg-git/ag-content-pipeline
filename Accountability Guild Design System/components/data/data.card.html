@@ -1,0 +1,21 @@
+<!-- @dsCard group="Components" viewport="700x520" name="List Row, Empty State, Avatar, Tabs, Skeleton, Stepper, Pagination" subtitle="Data display primitives" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<div id="root" style="padding:20px;background:var(--bg)"></div>
+<script type="text/babel">
+const { List, ListRow, EmptyState, Avatar, AvatarStack, Tabs, Skeleton, SkeletonRow, Stepper, Pagination, Badge, Button } = window.AccountabilityGuildDesignSystem_da1450;
+function Demo(){return (<div style={{display:"grid",gap:18}}>
+<Tabs items={[{value:"active",label:"Active",count:4},{value:"past",label:"Past cycles"}]} defaultValue="active" />
+<List>
+  <ListRow num="01" title="Lift three times" meta="3 of 3 · this week" end={<Badge tone="success" dot>Kept</Badge>} />
+  <ListRow num="02" title="Write daily, 500 words" meta="5 of 7 · this week" end={<AvatarStack more={2}><Avatar initial="M" userId="u1"/><Avatar initial="L" userId="u2"/></AvatarStack>} />
+</List>
+<div style={{display:"flex",gap:16,alignItems:"center"}}><Stepper defaultValue={1} min={0} max={2} /><Pagination page={1} pageCount={4} onChange={()=>{}} summary="Cycles 1–14" /></div>
+<SkeletonRow />
+<EmptyState glyph="0" kicker="No cycles yet" title="Nothing to report yet" actions={<Button arrow>Start a cycle</Button>}>Set the standard once, then run your first cycle.</EmptyState>
+</div>);}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+</script>

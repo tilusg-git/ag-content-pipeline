@@ -1,0 +1,18 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Alerts, Toasts, Badges &amp; Chips" subtitle="Feedback primitives — tone-keyed, editorial voice" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<div id="root" style="padding:20px;background:var(--bg)"></div>
+<script type="text/babel">
+const { Alert, Toast, Badge, Chip, ChipAdd, FormSummary } = window.AccountabilityGuildDesignSystem_da1450;
+function Demo(){return (<div style={{display:"grid",gap:16}}>
+<Alert tone="warning" kicker="Cycle closing" action="Submit report">2 days left to submit your report.</Alert>
+<FormSummary>2 fields need attention before you can submit.</FormSummary>
+<div style={{display:"flex",gap:10,flexWrap:"wrap"}}><Badge tone="success" dot>Kept</Badge><Badge tone="error" dot>Forfeit</Badge><Badge ink>Owner</Badge></div>
+<div style={{display:"flex",gap:10,flexWrap:"wrap"}}><Chip>Mara K.</Chip><Chip onRemove={()=>{}}>Lee L.</Chip><ChipAdd>Add member</ChipAdd></div>
+<Toast tone="success" kicker="Report submitted">Brandon kept 4 of 5. Nice work.</Toast>
+</div>);}
+ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+</script>

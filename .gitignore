@@ -1,0 +1,10 @@
+# Site repo lives here as its own separate git checkout — never tracked by this repo
+repo/
+
+# Node deps in the card-generator assets
+node_modules/
+**/node_modules/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

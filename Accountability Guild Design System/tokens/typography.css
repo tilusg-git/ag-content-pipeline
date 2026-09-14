@@ -1,0 +1,18 @@
+:root{
+--serif:"Newsreader",Georgia,serif;/* @kind font */
+--sans:"Inter Tight",-apple-system,BlinkMacSystemFont,sans-serif;/* @kind font */
+--mono:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;/* @kind font */
+
+--text-display:clamp(40px,5vw,72px);
+--text-h1:clamp(42px,6.4vw,108px);
+--text-h2:36px;
+--text-lede:17px;
+--text-body:14px;
+--text-button:13px;
+--text-mono-label:11px;
+--text-help:13px;
+
+--tracking-guild:0.34em;
+--tracking-mono:0.18em;
+--tracking-button:0.14em;
+}

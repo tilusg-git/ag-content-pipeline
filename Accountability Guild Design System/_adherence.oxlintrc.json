@@ -1,0 +1,417 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/brand/**",
+              "components/buttons/**",
+              "components/choice/**",
+              "components/data/**",
+              "components/date/**",
+              "components/feedback/**",
+              "components/forms/**",
+              "components/money/**",
+              "components/overlays/**",
+              "ui_kits/marketing/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Newsreader|Inter Tight|JetBrains Mono))/i]",
+        "message": "Font not provided by the design system. Available: Newsreader, Inter Tight, JetBrains Mono."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Alert'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|kicker|children|action|actionHref|className|key|ref|className|style|children)$/]",
+        "message": "<Alert> doesn't accept that prop. Declared props: tone, kicker, children, action, actionHref, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Alert'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:info|success|warning|error)$/]",
+        "message": "<Alert> tone must be one of 'info' | 'success' | 'warning' | 'error'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Avatar'] > JSXAttribute > JSXIdentifier[name!=/^(?:initial|userId|size|className|key|ref|className|style|children)$/]",
+        "message": "<Avatar> doesn't accept that prop. Declared props: initial, userId, size, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Avatar'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:xs|sm|md|lg|xl)$/]",
+        "message": "<Avatar> size must be one of 'xs' | 'sm' | 'md' | 'lg' | 'xl'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|ink|outline|dot|children|className|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: tone, ink, outline, dot, children, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:info|success|warning|error)$/]",
+        "message": "<Badge> tone must be one of 'info' | 'success' | 'warning' | 'error'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|arrow|loading|disabled|className|children|onClick|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, arrow, loading, disabled, className, children, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary|ghost|destructive)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'secondary' | 'ghost' | 'destructive'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg|block)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg' | 'block'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Checkbox'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|help|error|disabled|checked|className|onChange|key|ref|className|style|children)$/]",
+        "message": "<Checkbox> doesn't accept that prop. Declared props: label, help, error, disabled, checked, className, onChange."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Chip'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|onRemove|className|key|ref|className|style|children)$/]",
+        "message": "<Chip> doesn't accept that prop. Declared props: children, onRemove, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DateInput'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|className|onChange|key|ref|className|style|children)$/]",
+        "message": "<DateInput> doesn't accept that prop. Declared props: value, className, onChange."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DropdownMenuItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|onClick|destructive|kbd|separator|key|ref|className|style|children)$/]",
+        "message": "<DropdownMenuItem> doesn't accept that prop. Declared props: label, onClick, destructive, kbd, separator."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='EmptyState'] > JSXAttribute > JSXIdentifier[name!=/^(?:glyph|kicker|title|children|actions|className|key|ref|className|style|children)$/]",
+        "message": "<EmptyState> doesn't accept that prop. Declared props: glyph, kicker, title, children, actions, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FormSummary'] > JSXAttribute > JSXIdentifier[name!=/^(?:kicker|children|className|key|ref|className|style|children)$/]",
+        "message": "<FormSummary> doesn't accept that prop. Declared props: kicker, children, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ListRow'] > JSXAttribute > JSXIdentifier[name!=/^(?:num|title|meta|end|onClick|className|key|ref|className|style|children)$/]",
+        "message": "<ListRow> doesn't accept that prop. Declared props: num, title, meta, end, onClick, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Modal'] > JSXAttribute > JSXIdentifier[name!=/^(?:open|kicker|title|children|actions|destructive|onClose|className|key|ref|className|style|children)$/]",
+        "message": "<Modal> doesn't accept that prop. Declared props: open, kicker, title, children, actions, destructive, onClose, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MoneyInput'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|defaultValue|currency|presets|className|onChange|key|ref|className|style|children)$/]",
+        "message": "<MoneyInput> doesn't accept that prop. Declared props: value, defaultValue, currency, presets, className, onChange."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pagination'] > JSXAttribute > JSXIdentifier[name!=/^(?:page|pageCount|onChange|summary|className|key|ref|className|style|children)$/]",
+        "message": "<Pagination> doesn't accept that prop. Declared props: page, pageCount, onChange, summary, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PasswordField'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|help|minLength|value|id|className|onChange|key|ref|className|style|children)$/]",
+        "message": "<PasswordField> doesn't accept that prop. Declared props: label, help, minLength, value, id, className, onChange."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Radio'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|help|name|disabled|checked|className|onChange|key|ref|className|style|children)$/]",
+        "message": "<Radio> doesn't accept that prop. Declared props: label, help, name, disabled, checked, className, onChange."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SegmentedControlOption'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|key|ref|className|style|children)$/]",
+        "message": "<SegmentedControlOption> doesn't accept that prop. Declared props: value, label."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SelectFieldOption'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|key|ref|className|style|children)$/]",
+        "message": "<SelectFieldOption> doesn't accept that prop. Declared props: value, label."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Skeleton'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|className|key|ref|className|style|children)$/]",
+        "message": "<Skeleton> doesn't accept that prop. Declared props: variant, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Skeleton'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:line|title|short|circle)$/]",
+        "message": "<Skeleton> variant must be one of 'line' | 'title' | 'short' | 'circle'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Stepper'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|defaultValue|min|max|className|onChange|key|ref|className|style|children)$/]",
+        "message": "<Stepper> doesn't accept that prop. Declared props: value, defaultValue, min, max, className, onChange."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TabItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|count|key|ref|className|style|children)$/]",
+        "message": "<TabItem> doesn't accept that prop. Declared props: value, label, count."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextareaField'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|optional|help|error|counter|maxLength|id|className|placeholder|value|onChange|key|ref|className|style|children)$/]",
+        "message": "<TextareaField> doesn't accept that prop. Declared props: label, optional, help, error, counter, maxLength, id, className, placeholder, value, onChange."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextField'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|optional|help|error|success|type|id|className|placeholder|value|disabled|onChange|key|ref|className|style|children)$/]",
+        "message": "<TextField> doesn't accept that prop. Declared props: label, optional, help, error, success, type, id, className, placeholder, value, disabled, onChange."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextField'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:text|email|tel|password)$/]",
+        "message": "<TextField> type must be one of 'text' | 'email' | 'tel' | 'password'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Toast'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|kicker|children|action|onAction|onClose|className|key|ref|className|style|children)$/]",
+        "message": "<Toast> doesn't accept that prop. Declared props: tone, kicker, children, action, onAction, onClose, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Toast'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:info|success|warning|error)$/]",
+        "message": "<Toast> tone must be one of 'info' | 'success' | 'warning' | 'error'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Toggle'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|help|checked|disabled|className|onChange|key|ref|className|style|children)$/]",
+        "message": "<Toggle> doesn't accept that prop. Declared props: label, help, checked, disabled, className, onChange."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tooltip'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|children|className|key|ref|className|style|children)$/]",
+        "message": "<Tooltip> doesn't accept that prop. Declared props: label, children, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Wordmark'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|kicker|scale|className|key|ref|className|style|children)$/]",
+        "message": "<Wordmark> doesn't accept that prop. Declared props: variant, kicker, scale, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Wordmark'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:inline|stacked|flag)$/]",
+        "message": "<Wordmark> variant must be one of 'inline' | 'stacked' | 'flag'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Alert": {
+        "replaces": []
+      },
+      "Avatar": {
+        "replaces": []
+      },
+      "Badge": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "Checkbox": {
+        "replaces": []
+      },
+      "Chip": {
+        "replaces": []
+      },
+      "DateInput": {
+        "replaces": []
+      },
+      "DropdownMenuItem": {
+        "replaces": []
+      },
+      "EmptyState": {
+        "replaces": []
+      },
+      "FormSummary": {
+        "replaces": []
+      },
+      "ListRow": {
+        "replaces": []
+      },
+      "Modal": {
+        "replaces": []
+      },
+      "MoneyInput": {
+        "replaces": []
+      },
+      "Pagination": {
+        "replaces": []
+      },
+      "PasswordField": {
+        "replaces": []
+      },
+      "Radio": {
+        "replaces": []
+      },
+      "SegmentedControlOption": {
+        "replaces": []
+      },
+      "SelectFieldOption": {
+        "replaces": []
+      },
+      "Skeleton": {
+        "replaces": []
+      },
+      "Stepper": {
+        "replaces": []
+      },
+      "TabItem": {
+        "replaces": []
+      },
+      "TextareaField": {
+        "replaces": []
+      },
+      "TextField": {
+        "replaces": []
+      },
+      "Toast": {
+        "replaces": []
+      },
+      "Toggle": {
+        "replaces": []
+      },
+      "Tooltip": {
+        "replaces": []
+      },
+      "Wordmark": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--accentInk",
+      "--accentSoft",
+      "--av-accent",
+      "--av-bone",
+      "--av-dust",
+      "--av-ink",
+      "--av-sage",
+      "--av-shadow",
+      "--bg",
+      "--bone",
+      "--content-max",
+      "--controlLine",
+      "--ember",
+      "--ember-soft",
+      "--error",
+      "--errorSoft",
+      "--field-h",
+      "--info",
+      "--infoSoft",
+      "--ink",
+      "--ink-soft",
+      "--inkSofter",
+      "--line",
+      "--lineSoft",
+      "--lineStrong",
+      "--mono",
+      "--motion-fast",
+      "--motion-medium",
+      "--panel",
+      "--panel-white",
+      "--panelSoft",
+      "--radius",
+      "--sans",
+      "--serif",
+      "--space-1",
+      "--space-10",
+      "--space-14",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-8",
+      "--success",
+      "--successSoft",
+      "--text-body",
+      "--text-button",
+      "--text-display",
+      "--text-h1",
+      "--text-h2",
+      "--text-help",
+      "--text-lede",
+      "--text-mono-label",
+      "--tracking-button",
+      "--tracking-guild",
+      "--tracking-mono",
+      "--warning",
+      "--warningSoft"
+    ],
+    "tokenKinds": {
+      "--bone": "color",
+      "--panel-white": "color",
+      "--ink": "color",
+      "--ink-soft": "color",
+      "--line": "color",
+      "--ember": "color",
+      "--ember-soft": "color",
+      "--bg": "color",
+      "--panel": "color",
+      "--panelSoft": "color",
+      "--inkSofter": "color",
+      "--lineSoft": "color",
+      "--lineStrong": "color",
+      "--controlLine": "color",
+      "--accent": "color",
+      "--accentSoft": "color",
+      "--accentInk": "color",
+      "--error": "color",
+      "--errorSoft": "color",
+      "--success": "color",
+      "--successSoft": "color",
+      "--warning": "color",
+      "--warningSoft": "color",
+      "--info": "color",
+      "--infoSoft": "color",
+      "--av-bone": "color",
+      "--av-ink": "color",
+      "--av-accent": "color",
+      "--av-dust": "color",
+      "--av-shadow": "shadow",
+      "--av-sage": "color",
+      "--serif": "font",
+      "--sans": "font",
+      "--mono": "font",
+      "--text-display": "font",
+      "--text-h1": "font",
+      "--text-h2": "font",
+      "--text-lede": "font",
+      "--text-body": "font",
+      "--text-button": "font",
+      "--text-mono-label": "font",
+      "--text-help": "font",
+      "--tracking-guild": "font",
+      "--tracking-mono": "font",
+      "--tracking-button": "font",
+      "--radius": "radius",
+      "--field-h": "spacing",
+      "--content-max": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-8": "spacing",
+      "--space-10": "spacing",
+      "--space-14": "spacing",
+      "--motion-fast": "other",
+      "--motion-medium": "other"
+    },
+    "fontFamilies": [
+      "Inter Tight",
+      "JetBrains Mono",
+      "Newsreader"
+    ]
+  }
+}

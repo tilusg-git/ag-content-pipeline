@@ -1,0 +1,36 @@
+:root{
+/* brand-surface seven (marketing, social, icons — never mix with state colors) */
+--bone:#FAFAF7;
+--panel-white:#FFFFFF;
+--ink:#0F0F0E;
+--ink-soft:#5C5C58;
+--line:#E5E2DA;
+--ember:#D8512A;
+--ember-soft:#F0A98A;
+
+/* app functional palette (extends the seven for product UI) */
+--bg:#FAFAF7;
+--panel:#FFFFFF;
+--panelSoft:#F4F1E9;
+--inkSofter:#8A867E;
+--lineSoft:#EFEDE5;
+--lineStrong:#C9C5B8;
+--controlLine:#8E8A80;
+--accent:#D8512A;
+--accentSoft:#F0A98A;
+--accentInk:#6E2810;
+
+/* state pairs (app UI only — never on brand surfaces) */
+--error:#B83A1F;--errorSoft:#F4DCD3;
+--success:#1F7A4D;--successSoft:#DCEAE0;
+--warning:#B07A1A;--warningSoft:#F1E5C8;
+--info:#2A5C8A;--infoSoft:#DAE5F0;
+
+/* avatar-only placeholder palette (deterministic by user id)
+   WARNING: --av-dust/--av-shadow/--av-sage hexes were INVENTED by Claude Design,
+   not sourced from the kit or repo. NOT APPROVED (2026-07-20) - do not ship.
+   Repo avatars use existing tokens only (lineSoft/ink/accentSoft). See
+   docs/brand/design-system-review-2026-07-20.md */
+--av-bone:#FAFAF7;--av-ink:#0F0F0E;--av-accent:#D8512A;
+--av-dust:#E4D9C5;--av-shadow:#242320;--av-sage:#7C8A76;
+}

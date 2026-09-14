@@ -1,0 +1,9 @@
+:root{
+--radius:0px;/* editorial = sharp corners everywhere except app icons, avatars, toggle/spinner circles */
+--field-h:44px;
+--content-max:1240px;
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-14:56px;
+
+--motion-fast:120ms ease;/* @kind other */
+--motion-medium:160ms ease;/* @kind other */
+}

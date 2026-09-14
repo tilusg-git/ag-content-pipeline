@@ -1,0 +1,8 @@
+{
+  "name": "ag-fb-card-tooling",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.8"
+  }
+}
