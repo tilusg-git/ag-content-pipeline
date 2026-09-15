@@ -32,6 +32,7 @@ Quotes already used in published content. **Do not reuse or re-import** — this
 | "It is not the mountain we conquer, but ourselves." | Sir Edmund Hillary | Facebook | 2026-07-22 | Pillar 4 |
 | "Success is never owned; it is rented. And the rent is due every day." | Rory Vaden, *Take the Stairs* | Facebook | 2026-08-07 | Top shelf |
 | "Accountability is the glue that ties commitment to results." | Will Craig | Facebook | 2026-08-17 | Top shelf |
+| "What you get by achieving your goals is not as important as what you become by achieving your goals." | Zig Ziglar | Facebook, Instagram | 2026-09-15 | Top shelf + Goal-setting pillar (⚠ duplicate) |
 
 ---
 
@@ -56,7 +57,6 @@ The 20 strongest quotes for AG's positioning, each with a suggested tie-in.
 | "Becoming is better than being." | Carol S. Dweck, *Mindset* | Misses aren't verdicts; the report is information. |
 | "The fixed mindset makes you concerned with how you'll be judged; the growth mindset makes you concerned with improving." | Carol S. Dweck, *Mindset* | Why AG shows activity signals, not shame. |
 | "Without effort, your talent is nothing more than your unmet potential." | Angela Duckworth, *Grit* | — |
-| "What you get by achieving your goals is not as important as what you become by achieving your goals." | Zig Ziglar | Kitty-to-charity / reinvest angle: the money was never the point. |
 | "Only the disciplined ones in life are free. If you are undisciplined, then you are a slave to your moods and your passions." | Eliud Kipchoge | — |
 
 ---
@@ -195,7 +195,6 @@ Core Dweck quotes are from *Mindset: The New Psychology of Success* unless noted
 | ⚠ | "Most 'impossible' goals can be met simply by breaking them down into bite-size chunks, writing them down, believing them, and then going full speed ahead as if they were routine." | Don Lancaster | |
 | ⚠ | "Set a goal so big that you can't achieve it until you grow into the kind of person who can." | Unknown | |
 | ⚠ | "When it is obvious that the goals cannot be reached, don't adjust the goals, adjust the action steps." | Misattributed to Confucius — keep as "proverb" only | Widely debunked as Confucius |
-| ⚠ | "What you get by achieving your goals is not as important as what you become by achieving your goals." | Zig Ziglar | Duplicate-safe: also in Top shelf |
 | ⚠ | "Every day you spend drifting away from your goals is a waste not only of that day, but also of the additional day it takes to regain lost ground." | Ralph Marston | Missed-cycle cost angle |
 | ⚠ | "To achieve happiness, we should make certain that we are never without an important goal." | Earl Nightingale | |
 | ⚠ | "The world makes way for the man who knows where he is going." | Attributed to Ralph Waldo Emerson | Likely apocryphal as Emerson |
