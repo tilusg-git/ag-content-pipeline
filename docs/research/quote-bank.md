@@ -33,6 +33,7 @@ Quotes already used in published content. **Do not reuse or re-import** — this
 | "Success is never owned; it is rented. And the rent is due every day." | Rory Vaden, *Take the Stairs* | Facebook | 2026-08-07 | Top shelf |
 | "Accountability is the glue that ties commitment to results." | Will Craig | Facebook | 2026-08-17 | Top shelf |
 | "What you get by achieving your goals is not as important as what you become by achieving your goals." | Zig Ziglar | Facebook, Instagram | 2026-09-15 | Top shelf + Goal-setting pillar (⚠ duplicate) |
+| "Leaders must own everything in their world. There is no one else to blame." | Jocko Willink, *Extreme Ownership* | Facebook, Instagram | 2026-09-22 | Top shelf |
 
 ---
 
@@ -51,7 +52,6 @@ The 20 strongest quotes for AG's positioning, each with a suggested tie-in.
 | "The price of greatness is responsibility." | Winston Churchill (Harvard, 1943) | — |
 | "Character — the willingness to accept responsibility for one's own life — is the source from which self-respect springs." | Joan Didion, "On Self-Respect" | Elevated, non-hustle voice — good for Field notes. |
 | "Without accountability, there can be no trust, and without trust, there can be no meaningful collaboration." | Patrick Lencioni | Peer-mode positioning. |
-| "Leaders must own everything in their world. There is no one else to blame." | Jocko Willink, *Extreme Ownership* | Owner-led mode positioning. |
 | "Discipline yourself, and others won't need to." | John Wooden | The endgame of an accountability group: it makes itself unnecessary. |
 | "If there is no struggle, there is no progress." | Frederick Douglass (1857) | — |
 | "Becoming is better than being." | Carol S. Dweck, *Mindset* | Misses aren't verdicts; the report is information. |
