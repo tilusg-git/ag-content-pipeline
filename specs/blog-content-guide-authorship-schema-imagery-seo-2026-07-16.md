@@ -180,7 +180,7 @@ Google's official guidance ([title links](https://developers.google.com/search/d
 This refers to the short summary block that should sit at the top of every long-form article, above the first H2 — separate from the meta description (which lives in `<head>` and is never seen by the reader on the page itself).
 
 - **Purpose:** answer "what will I learn / is this worth reading" in the first 2-3 sentences a reader (or an AI answer engine, or a featured-snippet crawler) sees. This is also the single best fix for the article's `read time` mismatch problem flagged in the 2026-07-13 audit — a tight Quick Summary makes thin content obvious immediately rather than after a misleading "14 min read" label.
-- **Length:** 2-4 sentences, roughly 40-80 words. Long enough to be genuinely useful, short enough to stay skimmable.
+- **Length:** hard cap of 170 characters including spaces (1-2 short sentences); the site field rejects longer text. Revised 2026-09-21 from "2-4 sentences, roughly 40-80 words."
 - **Content:** state the concrete takeaway or outcome, not a meta-description-style teaser. It should be able to stand alone as a correct, complete answer to the implied query — this is what makes it eligible for Google's featured snippet / AI Overview extraction, per Google's own snippet guidance that snippets are "designed to emphasize and preview the page content that best relates to a user's specific search."
 - **Must not duplicate the meta description verbatim** — they serve different readers (search results page vs. the article itself) and reusing the same string in both places wastes an opportunity to reinforce the same information two different ways.
 - **Placement:** immediately after the H1 and hero image, before the first H2. Visually distinct (e.g., a bordered callout or bold intro paragraph) so it reads as intentional, not just the first sentence of the article.
@@ -207,6 +207,7 @@ Rules, direct from Google's snippet guidance:
 - **Include concrete, specific information** where relevant — for articles, that might mean naming the actual method or framework covered rather than a generic teaser; for the author page, it might mean the author's role and what the reader will find in their articles.
 - **Summarize the whole page**, not just the opening paragraph — Google's own "bad" example is a description that only reflects the article's first few sentences rather than its overall content.
 - Practical target: **~150-160 characters**, enough to fully render on both desktop and mobile SERPs without truncation — again a practical convention (Google states no fixed limit, only that display truncates to fit device width).
+- **Where it lives (verified 2026-09-23):** for articles, the meta description is the `excerpt` field in `repo/src/lib/marketing-content.ts`. `src/app/[slug]/page.tsx` and `src/app/blog/[slug]/page.tsx` pass it to `generateMetadata` as `description`, and `/resources` and `/blog` show it as the article card text. So it is also visible on-site copy and must read as a finished sentence. The blog pipeline drafts it at the brief stage and finalizes it at Content Writing (`docs/marketing/content-brief-template.md` §2).
 - Meta descriptions are a **suggestion** to Google, not a guarantee — Google may still generate its own snippet from on-page content if it judges that more relevant to a specific query. Writing a good one increases the odds Google uses it, but isn't a hard override.
 
 ---
@@ -224,7 +225,7 @@ Use this to self-verify before calling any of the four areas done:
 - [ ] Every article has a hero image rendered via `next/image`, with alt text, in the schema `image` array and (ideally) reused as the OG/Twitter card image.
 - [ ] Long-form articles have at least one in-line visual element per ~300-500 words at natural section breaks, each with alt text and a caption where needed.
 - [ ] Every page: exactly one H1, visually dominant, aligned in topic with the `<title>`.
-- [ ] Every long-form article has a Quick Summary block (2-4 sentences, ~40-80 words) directly under the H1/hero, distinct from the meta description.
+- [ ] Every long-form article has a Quick Summary block (170 characters or fewer including spaces) directly under the H1/hero, distinct from the meta description.
 - [ ] Every page has a unique, non-boilerplate title tag, brand-suffixed once, ~50-60 characters.
 - [ ] Every page has a unique, specific, non-keyword-list meta description, ~150-160 characters.
 - [ ] All changed pages pass Google's [Rich Results Test](https://search.google.com/test/rich-results) with no critical errors.
