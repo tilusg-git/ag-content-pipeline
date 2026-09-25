@@ -34,6 +34,7 @@ Quotes already used in published content. **Do not reuse or re-import** — this
 | "Accountability is the glue that ties commitment to results." | Will Craig | Facebook | 2026-08-17 | Top shelf |
 | "What you get by achieving your goals is not as important as what you become by achieving your goals." | Zig Ziglar | Facebook, Instagram | 2026-09-15 | Top shelf + Goal-setting pillar (⚠ duplicate) |
 | "Leaders must own everything in their world. There is no one else to blame." | Jocko Willink, *Extreme Ownership* | Facebook, Instagram | 2026-09-22 | Top shelf |
+| "Every action you take is a vote for the type of person you wish to become." | James Clear, *Atomic Habits* | Facebook, Instagram | 2026-09-25 | Top shelf + Pillar 4 |
 
 ---
 
@@ -44,7 +45,6 @@ The 20 strongest quotes for AG's positioning, each with a suggested tie-in.
 | Quote | Author | AG tie-in |
 |---|---|---|
 | "Accountability breeds response-ability." | Stephen R. Covey, *The 7 Habits* | Naming a forfeit turns intention into obligation. |
-| "Every action you take is a vote for the type of person you wish to become." | James Clear, *Atomic Habits* | Proof logging = casting votes your group can see. |
 | "Your outcomes are a lagging measure of your habits." | James Clear, *Atomic Habits* | Cycle reports measure the inputs, not just the outcome. |
 | "The more disciplined your environment, the less disciplined you need to be." | James Clear | An AG group *is* environment design — pair with Hofmann 2012 (avoidance beats resistance). |
 | "We must all suffer from one of two pains: the pain of discipline or the pain of regret." | Jim Rohn | The forfeit makes the pain of discipline smaller and nearer than the pain of regret. |
@@ -212,7 +212,6 @@ James Clear quotes verified against *Atomic Habits* / jamesclear.com. The raw Ge
 | ✓ | "Habits are the compound interest of self-improvement." | James Clear, *Atomic Habits* | |
 | ✓ | "Your habits shape your identity, and your identity shapes your habits." | James Clear, *Atomic Habits* | |
 | ✓ | "Success is the product of daily habits — not once-in-a-lifetime transformations." | James Clear, *Atomic Habits* | |
-| ✓ | "Every action you take is a vote for the type of person you wish to become." | James Clear, *Atomic Habits* | Wording corrected from Gemini's paraphrase |
 | ✓ | "True behavior change is identity change. You might start a habit because of motivation, but the only reason you'll stick with one is that it becomes part of your identity." | James Clear, *Atomic Habits* | |
 | ✓ | "The ultimate form of intrinsic motivation is when a habit becomes part of your identity." | James Clear, *Atomic Habits* | |
 | ✓ | "A habit is a behavior that has been repeated enough times to become automatic." | James Clear, *Atomic Habits* | |
