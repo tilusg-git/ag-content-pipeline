@@ -75,7 +75,7 @@ On the day the article goes live, Claude:
 1. Converts the finished Doc to markdown and commits it to `content/field-notes/<slug>.md` in this repo (slug matching what it'll get in `repo/src/lib/marketing-content.ts`).
 2. Posts the commit link + Doc link as a comment on the task.
 3. Moves the card to Published.
-4. Creates the companion `[Field notes] <title>` social promo card in Ideas/Backlog, using the existing `▶ TEMPLATE · Social post` pattern with `ROTATION SLOT: fieldnotes-promo` — matching how the 13 existing promo cards for already-live articles work.
+4. Creates the companion `[Field notes] <title>` social promo card directly in **Drafting** (changed from Ideas/Backlog on 2026-09-30, so the weekday 6am `ag-content-drafting` run picks it up with no manual drag), using the existing `▶ TEMPLATE · Social post` pattern with `ROTATION SLOT: fieldnotes-promo` — matching how the 13 existing promo cards for already-live articles work.
 5. If the article used a quote-bank quote, retires it in the same task per `docs/research/quote-bank.md` rule 7.
 
 No auto-PR to the live accountabilityguild.com repo (`repo/`) — that repo stays off-limits to this workflow; Grant copies the final text in himself.
