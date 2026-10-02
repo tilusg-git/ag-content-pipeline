@@ -35,6 +35,7 @@ Quotes already used in published content. **Do not reuse or re-import** — this
 | "What you get by achieving your goals is not as important as what you become by achieving your goals." | Zig Ziglar | Facebook, Instagram | 2026-09-15 | Top shelf + Goal-setting pillar (⚠ duplicate) |
 | "Leaders must own everything in their world. There is no one else to blame." | Jocko Willink, *Extreme Ownership* | Facebook, Instagram | 2026-09-22 | Top shelf |
 | "Every action you take is a vote for the type of person you wish to become." | James Clear, *Atomic Habits* | Facebook, Instagram | 2026-09-25 | Top shelf + Pillar 4 |
+| "Motivation gets you going, but discipline keeps you growing." | John C. Maxwell | Facebook, Instagram | 2026-10-02 | Top shelf + Pillar 4 |
 
 ---
 
@@ -48,7 +49,6 @@ The 20 strongest quotes for AG's positioning, each with a suggested tie-in.
 | "Your outcomes are a lagging measure of your habits." | James Clear, *Atomic Habits* | Cycle reports measure the inputs, not just the outcome. |
 | "The more disciplined your environment, the less disciplined you need to be." | James Clear | An AG group *is* environment design — pair with Hofmann 2012 (avoidance beats resistance). |
 | "We must all suffer from one of two pains: the pain of discipline or the pain of regret." | Jim Rohn | The forfeit makes the pain of discipline smaller and nearer than the pain of regret. |
-| "Motivation gets you going, but discipline keeps you growing." | John C. Maxwell | Pair with Rebar 2014 — habit protects you on weak-intention days. |
 | "The price of greatness is responsibility." | Winston Churchill (Harvard, 1943) | — |
 | "Character — the willingness to accept responsibility for one's own life — is the source from which self-respect springs." | Joan Didion, "On Self-Respect" | Elevated, non-hustle voice — good for Field notes. |
 | "Without accountability, there can be no trust, and without trust, there can be no meaningful collaboration." | Patrick Lencioni | Peer-mode positioning. |
@@ -233,7 +233,6 @@ James Clear quotes verified against *Atomic Habits* / jamesclear.com. The raw Ge
 | ✓ | "For every disciplined effort, there are multiple rewards." | Jim Rohn | Kitty-redistribution angle |
 | ✓ | "Don't wish it were easier. Wish you were better." | Jim Rohn | |
 | ✓ | "Small disciplines repeated with consistency every day lead to great achievements gained slowly over time." | John C. Maxwell | |
-| ✓ | "Motivation gets you going, but discipline keeps you growing." | John C. Maxwell | |
 | ✓ | "Action isn't just the effect of motivation; it's also the cause of it." | Mark Manson, *The Subtle Art* | |
 | ✓ | "Discipline means taking the hard road — the uphill road." | Jocko Willink, *Discipline Equals Freedom* | |
 | ✓ | "Discipline equals freedom." | Jocko Willink | Replacement for the fake "Through discipline comes freedom — Aristotle" |
