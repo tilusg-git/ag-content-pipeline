@@ -36,6 +36,7 @@ Quotes already used in published content. **Do not reuse or re-import** — this
 | "Leaders must own everything in their world. There is no one else to blame." | Jocko Willink, *Extreme Ownership* | Facebook, Instagram | 2026-09-22 | Top shelf |
 | "Every action you take is a vote for the type of person you wish to become." | James Clear, *Atomic Habits* | Facebook, Instagram | 2026-09-25 | Top shelf + Pillar 4 |
 | "Motivation gets you going, but discipline keeps you growing." | John C. Maxwell | Facebook, Instagram | 2026-10-02 | Top shelf + Pillar 4 |
+| "Discipline yourself, and others won't need to." | John Wooden | Facebook, Instagram | 2026-10-06 | Top shelf |
 
 ---
 
@@ -52,7 +53,6 @@ The 20 strongest quotes for AG's positioning, each with a suggested tie-in.
 | "The price of greatness is responsibility." | Winston Churchill (Harvard, 1943) | — |
 | "Character — the willingness to accept responsibility for one's own life — is the source from which self-respect springs." | Joan Didion, "On Self-Respect" | Elevated, non-hustle voice — good for Field notes. |
 | "Without accountability, there can be no trust, and without trust, there can be no meaningful collaboration." | Patrick Lencioni | Peer-mode positioning. |
-| "Discipline yourself, and others won't need to." | John Wooden | The endgame of an accountability group: it makes itself unnecessary. |
 | "If there is no struggle, there is no progress." | Frederick Douglass (1857) | — |
 | "Becoming is better than being." | Carol S. Dweck, *Mindset* | Misses aren't verdicts; the report is information. |
 | "The fixed mindset makes you concerned with how you'll be judged; the growth mindset makes you concerned with improving." | Carol S. Dweck, *Mindset* | Why AG shows activity signals, not shame. |
