@@ -38,6 +38,7 @@ Quotes already used in published content. **Do not reuse or re-import** — this
 | "Motivation gets you going, but discipline keeps you growing." | John C. Maxwell | Facebook, Instagram | 2026-10-02 | Top shelf + Pillar 4 |
 | "Discipline yourself, and others won't need to." | John Wooden | Facebook, Instagram | 2026-10-06 | Top shelf |
 | "We must all suffer from one of two pains: the pain of discipline or the pain of regret." | Jim Rohn | Reddit (r/accountability_guild) | 2026-10-09 | Top shelf + Pillar 4 |
+| "Accountability breeds response-ability." | Stephen R. Covey, *The 7 Habits* | Facebook, Instagram | 2026-10-12 | Top shelf |
 
 ---
 
@@ -47,7 +48,6 @@ The 20 strongest quotes for AG's positioning, each with a suggested tie-in.
 
 | Quote | Author | AG tie-in |
 |---|---|---|
-| "Accountability breeds response-ability." | Stephen R. Covey, *The 7 Habits* | Naming a forfeit turns intention into obligation. |
 | "Your outcomes are a lagging measure of your habits." | James Clear, *Atomic Habits* | Cycle reports measure the inputs, not just the outcome. |
 | "The more disciplined your environment, the less disciplined you need to be." | James Clear | An AG group *is* environment design — pair with Hofmann 2012 (avoidance beats resistance). |
 | "The price of greatness is responsibility." | Winston Churchill (Harvard, 1943) | — |
