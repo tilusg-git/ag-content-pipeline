@@ -2,7 +2,7 @@
 
 Use for `TYPE: topical-pillar` and `TYPE: product-pillar` cards on the Content Pipeline board. Definitions, URL rule, and map: `docs/marketing/pillar-page-playbook.md`. Page anatomy: `.claude/skills/pillar-page-structure/SKILL.md`.
 
-This extends `docs/marketing/content-brief-template.md`; it does not replace it. Inherited unchanged: §3.5 link style (inline anchors, live URLs only, `rel="nofollow"` on competitors), the §2 SEO metadata rules (meta description 150 to 160 characters, script-counted, different from the Quick Summary), and its AG fill-from table (voice, glossary, research KB). Sections marked **(Topical)** or **(Product)** apply to that pillar type only; unmarked sections apply to both.
+This extends `docs/marketing/content-brief-template.md`; it does not replace it. Inherited unchanged: §3.5 link style (inline anchors, live URLs only, `rel="nofollow"` on competitors), the §2 SEO metadata rules (meta description 150 to 160 characters, script-counted, different from the dek on Topical Pillars), and its AG fill-from table (voice, glossary, research KB). **Not inherited for Topical Pillars (v2, 2026-10-27):** the Quick Summary, the intro plan, the personal-angle plan, and the paragraph outline. A Topical Pillar brief outlines modules, not sections (§7, skill Part B). Sections marked **(Topical)** or **(Product)** apply to that pillar type only; unmarked sections apply to both.
 
 Fill every section. Write "unverified" or "unknown" rather than leaving a blank or guessing.
 
@@ -24,7 +24,7 @@ For an upgrade, read the live page's current content in `repo/src/lib/marketing-
 | Title tag (≤ 60 chars, main term near the front) | | chars |
 | Meta description (150-160 chars) | | chars |
 | Slug (top level) | | |
-| Quick Summary (≤ 170 chars) **(Topical)** | | chars |
+| Dek (one sentence, ≤ 160 chars, differs from the meta description) **(Topical)** | | chars |
 
 ## 3. Search landscape
 - **Main term:** volume / KD / source + date (or "unverified"). Topical: an informational head term. Product: a commercial term, or "nav/signup path page" if it has none.
@@ -59,12 +59,20 @@ One blog article per subtopic, never two. Only `live` rows get links. Gaps go to
 
 ## 7. Outline
 
-**(Topical)** Explicit heading levels:
+**(Topical)** A module map, per skill Part B (bands B2, module anatomy B2, element library B3). One row per band and per subtopic module, in page order:
 
-| Level | Full heading (≤ 12 words, statement) | TOC label (2-5 words) | Subtopic covered | Go-deeper link (live only) | Target words |
-|---|---|---|---|---|---|
+| # | Band | H2 (topic name or search question, 2-8 words) | TOC label | Primary element (B3 library) | Lead sentence (≤ 30 words) | What the element holds | Go-deeper link (live only) |
+|---|---|---|---|---|---|---|---|
+| 1 | Hero | (H1) | n/a | Hero media | (dek) | | |
+| 2 | Answer | | | Definition card + key points | | 40-60 word definition; 3-5 key points | |
+| 3 | Topic map | | | Card grid | | one card per module below | |
+| 4.1 | Module | | | | | | |
+| 5 | Framework | | | Comparison table / diagram | | | |
+| 7 | In practice | | | (≤ 80 words) + soft CTA card | | | Core Product Pillar |
+| 8 | Where next | | | Path cards (2-4) | | | |
+| 9 | Cluster index | | | Links list | | | |
 
-Mark where the definition block, the comparison table or visual, the "in practice" section (max one), the soft CTA card (max one), and the takeaway conclusion sit.
+Sibling modules use the same primary element. State the element's real content (the examples, the table columns and rows, the steps), not just its type. No intro, Quick Summary, or conclusion rows: those do not exist on a Topical Pillar.
 
 **(Product)** Page bands, per skill Part A2:
 
@@ -94,17 +102,17 @@ Mark where the definition block, the comparison table or visual, the "in practic
 Minimums per playbook §5. Topical: every live blog article in the cluster, 1 to 3 Product pillars; every live cluster article links back. Product: 1 to 2 Topical pillars, sibling Product pillars, `/faq`.
 
 ## 11. Media plan and length
-**(Topical)** One row per slot, per playbook §3.3. Every H2 gets a row even if its slot stays empty.
+**(Topical)** One row per media slot, per playbook §3.3. Tables, lists, and cards belong in the §7 module map, not here. Add an image row for a module only when it shows something the module's element cannot.
 
-| Slot | Section | Type (image / diagram / video / embed / download / empty) | What it shows and why it helps | Source (own / AI, approve per page / licensed) | Alt text or caption | Transcript needed? |
+| Slot | Band or module | Type (image / diagram / video / embed / download) | What it shows and why it helps | Source (own / AI, approve per page / licensed) | Alt text or caption | Transcript needed? |
 |---|---|---|---|---|---|---|
-| Hero | under Quick Summary | | | | | |
+| Hero | hero band | | | | | |
 
 Minimums: hero filled, at least one original diagram, any video 1 to 3 minutes with captions + transcript, max one video and one downloadable.
 
 **(Product)** Visuals per band (product UI panels labeled illustrative, sample lines, worked-example visuals).
 
-- **Length target.** Topical: from the §3 median, with every section shorter than the blog article it links to. Product: about 800 to 1,800 words, short blocks. State the number and the reasoning; never pad.
+- **Length target.** Topical: no word target (skill B9); state the module count and confirm every module is shorter than the blog article it links to. Product: about 800 to 1,800 words, short blocks. State the number and the reasoning; never pad.
 
 ## 12. Open items
 - Product facts needing Brandon's confirmation (blocking for Product pillars).

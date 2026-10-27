@@ -1,6 +1,6 @@
 # Pillar page playbook: Core Product Pillars, Topical Pillars, and blog articles
 
-**Status:** Created 2026-09-30, revised twice the same day with Brandon's decisions (URL rule, two pillar types, blog-to-pillar linking; then no byline on Topical Pillars, media-ready structure, seven existing Topical Pillars, one legacy move, same Asana workflow). Asana cards for the existing pages are created (§7.4). The legacy URL move is handed off in `specs/url-separation-handoff-2026-09-30.md`. The topical map for new pillars still needs Grant's sign-off.
+**Status:** Created 2026-09-30, revised twice the same day with Brandon's decisions (URL rule, two pillar types, blog-to-pillar linking; then no byline on Topical Pillars, media-ready structure, seven existing Topical Pillars, one legacy move, same Asana workflow). Asana cards for the existing pages are created (§7.4). The legacy URL move is handed off in `specs/url-separation-handoff-2026-09-30.md`. The topical map for new pillars still needs Grant's sign-off. **Topical Pillar v2 (2026-10-27, awaiting Grant and Brandon's sign-off):** Grant's review of the `/types-of-personal-goals` draft found it read as a blog post. The v1 definition caused that (Quick Summary, intro, 2 to 4 paragraphs per section, article template), so Topical Pillars are redefined as module-built hub pages: rule 7, §3, §7.2, §9 item 9, and skill Part B.
 **Companions:** `docs/marketing/pillar-page-brief-template.md` (the brief), `.claude/skills/pillar-page-structure/SKILL.md` (page anatomy for both pillar types), `docs/marketing/core-pages-outline-2026-09-19.md` (outlines for the first three Core Product Pillars), `docs/marketing/blog-content-pipeline-workflow.md` (the blog article pipeline).
 
 ## 1. Ratified rules (Brandon, 2026-09-30)
@@ -11,6 +11,7 @@
 4. **Bylines are for blog articles only.** Pillars of both types carry no byline.
 5. **Topical Pillars are built for rich media** (images, video, diagrams, downloads), not text alone (§3.3).
 6. **Pillars run through the same Asana workflow as blog articles** (§7).
+7. **A Topical Pillar is not a long blog post** (v2, 2026-10-27, proposed). It is a hub page built from modules: a heading, a one-sentence answer, and one structured element (table, card grid, example list, steps, checklist, diagram). No Quick Summary, no intro section, no anecdotes, no paragraph-heavy sections, no conclusion paragraph. Prose limits are script-checked (skill B4).
 
 One older page broke rule 2: `startup-accountability-system` sits at the top level but is a blog article. The other seven top-level articles are Topical Pillars. §6 is the cleanup plan.
 
@@ -35,17 +36,19 @@ The research mostly treats "pillar" as an informational guide. SaaS sites also r
 
 | | **Core Product Pillar** | **Topical Pillar** | **Blog article** |
 |---|---|---|---|
-| **Job** | Convert: get an evaluating visitor to start a group | Be the best overview of a broad topic; earn trust; hand off to Core Product Pillars | Go deep on one subtopic |
+| **Job** | Convert: get an evaluating visitor to start a group | Be the reference map of a broad topic: the core answer, every subtopic at a glance, and where to go next; hand off to blog articles and Core Product Pillars | Go deep on one subtopic |
 | **URL** | `/<slug>` (top level) | `/<slug>` (top level) | `/blog/<slug>` |
 | **Examples** | `/how-it-works`, `/pricing`, `/for-groups`, `/for-coaches`, `/accountability-apps` (comparison) | Existing: `/goal-setting`, `/personal-accountability`, `/behavior-change`. New: `/accountability-groups`, `/commitment-contracts` | `/blog/how-to-find-an-accountability-partner` |
 | **Search intent** | Commercial, navigational, transactional | Informational, broad head term | Informational, long tail |
 | **Reader** | Knows the problem, is weighing AG | May never use AG | Has a specific question |
 | **Sell level** | **Hard.** The product is the subject | **Soft.** Product is a supporting example plus a few defined soft-sell elements | **Softest.** Optional closing tie-ins; one fixed site CTA |
-| **Layout** | Landing page: full-width bands, visual-led, short copy blocks, custom TSX route | Long-form guide: article template, sticky contents list, related-guides asides, cluster index | Article template |
-| **Byline / dates** | None | No byline; visible "Updated" date | Grant Tilus byline, published date |
-| **Media** | Product UI panels, sample lines, worked-example visuals | Media-ready by design: hero media, a media slot in every section, at least one diagram, optional explainer video and downloadable (§3.3) | Hero image plus inline visuals per the blog skill |
-| **Length** | About 800 to 1,800 words; scannable | Set from the SERP; usually 2,500 to 4,500 words | About 1,200 to 2,000 words |
-| **Language** | AG terms used freely, each defined in plain words on first use | Reader-first; no AG terms in headings or lead sentences | Reader-first (blog skill rules) |
+| **Layout** | Landing page: full-width bands, visual-led, short copy blocks, custom TSX route | Hub page: full-width bands (hero, answer, topic map, modules, framework, in practice, where next, cluster index), sticky contents rail, card grids; pillar template, not the article template | Article template, one reading column |
+| **Unit of writing** | Band: headline plus 1 to 3 sentences | Module: H2, one-sentence answer, one structured element, at most 100 words of prose | Paragraph |
+| **Opening** | Hero with CTA buttons | H1 plus a one-line dek, then the definition card and key points. No Quick Summary, no intro | Quick Summary, then an intro |
+| **Byline / dates** | None | No byline, no read time; visible "Updated" date | Grant Tilus byline, published date, read time |
+| **Media** | Product UI panels, sample lines, worked-example visuals | Hero media and at least one original diagram required; tables, cards, and lists carry the detail; images only where they add something; optional explainer video and downloadable (§3.3) | Hero image plus inline visuals per the blog skill |
+| **Length** | About 800 to 1,800 words; scannable | No target; usually 1,500 to 3,000 body words with tables and lists counted; paragraph prose at most 40% of them | About 1,200 to 2,000 words |
+| **Language** | AG terms used freely, each defined in plain words on first use | Reference voice (second person, present tense, declarative); no anecdotes; no AG terms in headings or lead sentences | Reader-first, personal angle allowed (blog skill rules) |
 | **CTAs** | Primary CTA in hero, mid-page, and close (2 to 4 placements) plus a secondary CTA | Fixed site CTA plus one in-body soft CTA card pointing to a Core Product Pillar (not to signup) | Fixed site CTA only |
 | **Links out** | Down to 1 to 2 Topical Pillars; across to sibling Core Product Pillars; `/faq` | Down to every live blog article in its cluster; up to 1 to 3 Core Product Pillars; across to neighbor Topical Pillars; 3 to 6 external sources | Up to its parent Topical Pillar and 1+ Core Product Pillar; 2 to 3 sibling blog articles; 1 to 3 external sources |
 | **Schema** | `WebPage` + `BreadcrumbList`; `Offer` on `/pricing`; consider `SoftwareApplication` | `Article` (author = Organization, as the page template already does) + `BreadcrumbList`; `ImageObject` / `VideoObject` for embedded media | `Article` + `BreadcrumbList` |
@@ -55,7 +58,7 @@ The research mostly treats "pillar" as an informational guide. SaaS sites also r
 
 | Element | Core Product Pillar | Topical Pillar |
 |---|---|---|
-| Hero with H1, subhead, primary + secondary CTA buttons | **Required** | Not used (H1 + Quick Summary + intro instead) |
+| Hero with H1, subhead, primary + secondary CTA buttons | **Required** | Not used. Hero band without CTA buttons instead: H1, one-line dek, Updated date, hero media, jump links |
 | Product UI visuals / illustrative panels | Required | Optional, only inside the "in practice" section |
 | Mechanic sample lines (`Cadence · Weekly. Forfeit · $20 per missed report.`) | Required | Optional, "in practice" section only |
 | Worked examples / money ledgers | Required on `/pricing`, encouraged elsewhere | Neutral examples only (no AG pricing) |
@@ -65,31 +68,34 @@ The research mostly treats "pillar" as an informational guide. SaaS sites also r
 | Trust and security notes (card handling, who sees what) | Required where money is mentioned | Not used |
 | Proof (real only, permitted) | Encouraged when it exists | Confirmed founder story only |
 | Condensed questions linking to `/faq` | Required (4 to 6) | Not used; real questions are ordinary headings |
-| Quick Summary, Updated date, contents list with TOC labels | Not used | **Required** |
-| Byline | Not used | Not used (blog articles only) |
+| Quick Summary | Not used | **Not used** (v2; the dek replaces it) |
+| Intro section, anecdotes, personal-story EDITOR NOTEs | Not used | **Not used** (v2) |
+| Dek (one line, at most 160 characters), Updated date, jump links / contents rail with TOC labels | Not used | **Required** |
+| Byline, read time | Not used | Not used |
 | Hero media (image, illustration, or short video) | Hero band visual | **Required** |
-| Media slot per subtopic section (image, diagram, video, or embed) | n/a | **Planned for every H2**, filled where it helps (§3.3) |
+| Definition card (40 to 60 words) + key points box (3 to 5 bullets) | Not used | **Required** (band 2) |
+| Topic map: card grid, one card per subtopic | Not used | **Required** (band 3) |
+| One module per subtopic: H2, one-sentence answer, one structured element (skill B3 library), go-deeper card to its blog article | Not used | **Required**; sibling modules parallel |
+| Image per subtopic section | n/a | Only where it shows something the module's table, list, or cards cannot (§3.3) |
 | Diagram / infographic | Optional | **Required (at least one)** |
 | Explainer video | Optional | Optional, max one to start (§3.3) |
-| Definition / direct answer (40 to 60 words) near the top | Not used | **Required** |
-| One H2 per subtopic, each with a go-deeper link to its blog article | Not used | **Required** |
 | Comparison table or structured visual | Optional | Required (at least one) |
 | "In practice" product section (one, near the end) | n/a | **Allowed, max one** (soft sell) |
 | Soft CTA card ("Running a group? See how a cycle works" → Core Product Pillar) | n/a | **Allowed, max one** (soft sell) |
 | Downloadable template / lead magnet | Optional | Optional (soft sell) |
 | Full cluster index at the end | Not used | **Required** |
-| Takeaway conclusion | Not used (close CTA band instead) | Required |
+| Takeaway conclusion paragraph | Not used (close CTA band instead) | **Not used** (v2); "Where to go next" path cards instead (2 to 4) |
 
 ### 3.3 Media structure for Topical Pillars
 
-Topical Pillars are long, and the SERPs they compete in are full of guides with images, diagrams, and video. Every Topical Pillar is planned as a media page from the brief onward, even before a production pipeline exists to make the media.
+Topical Pillars cover a whole topic, and the SERPs they compete in are full of guides with images, diagrams, and video. Every Topical Pillar is planned as a media page from the brief onward, even before a production pipeline exists to make the media.
 
 **Media slots (planned in every brief, §11 of the brief template):**
 
 | Slot | Where | What goes there | Rule |
 |---|---|---|---|
-| **Hero media** | Under the H1 / Quick Summary | Brand-standard image or illustration, or a short explainer video | Required. One per page |
-| **Section media** | One slot per subtopic H2, after the lead paragraph | Image, diagram, chart, short video clip, or embed (template preview, example sheet) | Plan every slot; fill at least one per 2 to 3 H2s; leave the rest empty rather than decorative |
+| **Hero media** | Hero band, beside or under the H1 and dek | Brand-standard image or illustration, or a short explainer video | Required. One per page |
+| **Section media** | Inside a subtopic module, after its primary element | Image, chart, short video clip, or embed (template preview, example sheet) | Only where it shows something the module's table, list, or cards cannot. Tables, lists, and cards are text and always present; no image slot is planned per module by default (v2) |
 | **Diagram / infographic** | Where a process, comparison, or system is explained | Original diagram (cycle, decision tree, partner vs. group vs. coach) | Required, at least one. Also the most link-worthy asset on the page |
 | **Explainer video** | Hero slot or the "in practice" section | 1 to 3 minute walkthrough of the topic (not a product ad) | Optional, max one to start. Captions and a transcript required |
 | **Downloadable** | Inside the soft CTA card | Template, checklist, or worksheet tied to the topic | Optional, max one; counts as the page's soft CTA |
@@ -219,7 +225,7 @@ No `AUTHOR:` line; pillars have no byline.
 | **→ Drafting** (idea approval) | Grant drags | `ag-content-drafting` fills `pillar-page-brief-template.md` (Topical variant) into the card, sets `STAGE: brief review`, moves to Needs review | Same, Product variant. Unsourced product claims are listed as blockers in brief §12, not guessed |
 | **Needs review** (brief) | Grant | Drag to **Content Writing** = brief approved; comment + drag to Changes requested = revise | Same; Brandon confirms product facts first |
 | **Changes requested** | `ag-changes-requested-rework` | Revises the brief or draft, back to Needs review | Same |
-| **Content Writing** | `ag-blog-content-writing` | Full draft as an HTML Google Doc per the `pillar-page-structure` skill Part B and the blog production rules (outline table with TOC labels, media beats for every slot, measured word count, LINK MAP, no em dashes, meta description, Quick Summary). `STAGE: draft review`, to Needs review | Copy doc laid out as page bands (copy + component note per band), to Needs review |
+| **Content Writing** | `ag-blog-content-writing` | A **module doc** (skill B8), not an article: module map table, then each band and module as its own block (element type, copy as it will render with real tables and lists, component, media, and link notes), then production notes with the measured word count, the four prose-limit measurements (skill B4), dek and meta description counts, LINK MAP, no em dashes. A draft that fails a prose limit is reworked before it moves. `STAGE: draft review`, to Needs review | Copy doc laid out as page bands (copy + component note per band), to Needs review |
 | **Needs review** (draft) | Grant | Drag to **Approved** = final approval, set due date | Same |
 | **Approved → Scheduled** | Grant | Unchanged | Unchanged |
 | **Published** | `ag-blog-publish` (Mon/Wed/Fri) | See 7.3 | See 7.3 |
@@ -227,7 +233,7 @@ No `AUTHOR:` line; pillars have no byline.
 ### 7.3 Publish step for pillars
 
 The live site repo is off-limits to the pipeline automations (Content Pipeline project notes), so publishing a pillar means producing a complete hand-off, not editing the site. On the due date, `ag-blog-publish`:
-1. Writes `content/pillars/<slug>.md`: the final page copy, followed by an **Implementation notes** section containing (a) every media slot spec, (b) the **back-link retrofit list**: each live blog article that must now link to this pillar, with section and anchor text, from brief §10, (c) sitemap/`/resources`/nav changes, and (d) for Product pillars, the band-by-band component notes.
+1. Writes `content/pillars/<slug>.md`: the final page copy (for Topical Pillars, in the same module structure as the module doc, one block per band and module with its element type), followed by an **Implementation notes** section containing (a) every media slot spec, (b) the **back-link retrofit list**: each live blog article that must now link to this pillar, with section and anchor text, from brief §10, (c) sitemap/`/resources`/nav changes, and (d) for Product pillars, the band-by-band component notes.
 2. Commits and pushes, comments the commit link on the card ("Hand this file to the implementing agent; it contains the retrofit links"), moves the card to Published.
 3. Creates the companion promo card in Drafting (`[Field notes] <title>` with `fieldnotes-promo` for Topical; `[Product] <page>` with `product-note` for Product).
 4. Retires any quote-bank quote used.
@@ -264,7 +270,7 @@ The site is not indexed yet, so rankings lag. Per pillar, track:
 
 ## 9. Engineering notes (small, for later)
 
-The current `ResourceArticle` model can carry a Topical Pillar's text: per-section `links` render as a "related guides" aside (`repo/src/components/marketing-article-page.tsx:172`), and the Article JSON-LD already uses an Organization author, which fits a pillar with no byline. Core Product Pillars are custom routes. Tickets, none blocking the URL move:
+~~The current `ResourceArticle` model can carry a Topical Pillar's text.~~ Corrected 2026-10-27: `ResourceArticle` sections are only `heading` + `paragraphs[]` (plus one optional CTA and a `links` aside; `repo/src/lib/marketing-content.ts:1`), so it can carry a blog-shaped page and nothing else. That is half of why the v1 pillar drafts read as blog posts. A v2 Topical Pillar needs item 9 before it can ship as designed. Its Article JSON-LD with an Organization author is still the right schema. Core Product Pillars are custom routes. Tickets, none blocking the URL move:
 1. `tocLabel` on sections (already pending from the blog pipeline).
 2. `updatedOn`: the page sets `dateModified: publishedAt` (`marketing-article-page.tsx:80`). Topical Pillars are refreshed as articles publish, so they need a real modified date and a visible "Updated" line.
 3. `quickSummary` (already pending).
@@ -273,9 +279,11 @@ The current `ResourceArticle` model can carry a Topical Pillar's text: per-secti
 6. Breadcrumbs on blog articles showing the parent Topical Pillar (`BreadcrumbList`).
 7. **Media fields:** `heroMedia` on the article and an optional `media` item per section and sub-section (`type: image | video | diagram | embed | download`, `src`, `alt`, `caption`, `transcript` / `transcriptUrl`, `poster`), rendered with lazy loading and a click-to-load video facade, plus `ImageObject` / `VideoObject` JSON-LD. Video hosting (YouTube embed vs. self-hosted) is an open decision.
 8. Hide the byline on `[slug]` (Topical Pillar) pages if the article template renders one.
+9. **Topical Pillar template (blocks publishing v2 pillars).** A `TopicalPillar` data type separate from `ResourceArticle`: `dek`, `updatedOn`, `heroMedia`, `definition`, `keyPoints[]`, and an ordered `modules[]` where each module has `heading`, `tocLabel`, `lead`, one typed `element` (a union over the skill B3 library: card grid, example list, before and after, comparison table, signal table, steps, checklist, stat callout, figure), optional `context[]` (max 2 paragraphs), optional `deeperLink`, optional `media`; then `inPractice`, `softCta`, `paths[]`, and the cluster index. Rendered by a pillar template at `[slug]` with full-width bands, a sticky contents rail, and no byline or read time; it replaces items 1 to 4 and 7 for Topical Pillars. Until it ships, v2 pillars can be drafted and approved, but publishing one onto the article template would bring back the blog look.
 
 ## 10. Open questions
 
 1. **Approve the map** (§4): the new pillars P1 to P3, their order, and P5 fold-in vs. standalone.
 2. **Video hosting:** YouTube embeds (reach, free hosting) or self-hosted (no third-party player)? Affects §9 item 7.
 3. **Semrush:** one cheap exact-term (`phrase_these`) batch for the unverified head terms (including P4, P6 to P11) and gap subtopics when units refresh (Brandon: yes, when credits are back).
+4. **Sign off Topical Pillar v2** (rule 7, skill Part B), and decide whether to prioritize the §9 item 9 pillar template. The four Topical Pillar cards drafted under v1 (Goal Setting, Types of Personal Goals, Personal Life Audit, Self Improvement) need re-outlining to modules once it is signed off.
