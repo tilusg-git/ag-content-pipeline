@@ -1,0 +1,849 @@
+<title>Beachhead Segment Scorer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Inter+Tight:wght@400;500;600&display=swap">
+<style>
+/* Layout: a ledger. Weights sit on top, segments are ranked rows, evidence opens beneath each row. */
+:root{
+  --bone:#FAFAF7; --panel:#FFFFFF; --ink:#0F0F0E; --ink-soft:#5C5C58; --line:#E5E2DA; --ember:#D8512A; --ember-soft:#F0A98A;
+  --bg:var(--bone); --surface:var(--panel); --fg:var(--ink); --muted:var(--ink-soft); --rule:var(--line); --accent:var(--ember); --accent-soft:var(--ember-soft);
+  --track:#EFECE4;
+  --display:"Newsreader", Georgia, "Times New Roman", serif;
+  --body:"Inter Tight", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0F0F0E; --surface:#181816; --fg:#FAFAF7; --muted:#A8A6A0; --rule:#2E2D2A; --accent:#E8673F; --accent-soft:#7A3A24; --track:#24231F; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --bg:#0F0F0E; --surface:#181816; --fg:#FAFAF7; --muted:#A8A6A0; --rule:#2E2D2A; --accent:#E8673F; --accent-soft:#7A3A24; --track:#24231F; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;margin:0;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:40px 64px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:2px}
+a:hover{color:var(--accent)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+header{display:flex;flex-direction:column;gap:12px;max-width:72ch}
+.lockup{font-size:13px;display:flex;align-items:baseline;gap:6px;color:var(--muted)}
+.lockup i{font-family:var(--display);font-size:16px;color:var(--fg)}
+.lockup b{font-weight:600;letter-spacing:.18em;font-size:11px;color:var(--fg)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(32px,5vw,48px);line-height:1.08;margin:0;text-wrap:balance}
+h1 em{color:var(--accent)}
+.lede{color:var(--muted);margin:0;font-size:16px}
+h2{font-family:var(--display);font-weight:500;font-size:22px;margin:0;text-wrap:balance}
+.label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600}
+
+/* Weights */
+.weights{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:16px}
+.weights-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.presets{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--rule);background:transparent;border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}
+.chip:hover{border-color:var(--fg)}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.wgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.w{display:flex;flex-direction:column;gap:6px;min-width:0}
+.w-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.w-name{font-weight:600;font-size:14px}
+.w-pct{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted)}
+.w-q{font-size:12.5px;color:var(--muted);line-height:1.4}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.w-val{font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted)}
+
+/* Ranking */
+.rank-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.list{display:flex;flex-direction:column;border-top:1px solid var(--fg)}
+.cols{display:grid;grid-template-columns:44px minmax(0,1.6fr) repeat(4,108px) 150px;gap:12px;align-items:center}
+.colhead{padding:10px 0;border-bottom:1px solid var(--rule)}
+.colhead .label{font-size:10.5px}
+.row{border-bottom:1px solid var(--rule)}
+.row-main{padding:16px 0}
+.rk{font-family:var(--display);font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+.rk small{display:block;font-family:var(--body);font-size:11px;color:var(--muted);margin-top:4px;font-variant-numeric:tabular-nums}
+.rk small.up{color:var(--fg)} .rk small.down{color:var(--accent)}
+.seg{min-width:0;display:flex;flex-direction:column;gap:3px}
+.seg-name{font-weight:600;font-size:15.5px}
+.seg-who{font-size:13px;color:var(--muted)}
+.toggle{align-self:flex-start;margin-top:4px;background:none;border:0;padding:0;font-size:12.5px;color:var(--fg);cursor:pointer;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.unv{font-size:11.5px;color:var(--accent)}
+
+.score{display:flex;flex-direction:column;gap:4px}
+.score .mlabel{display:none}
+.pips{display:flex;gap:3px}
+.pip{width:18px;height:26px;border:1px solid var(--rule);background:var(--surface);border-radius:3px;cursor:pointer;padding:0;font-size:10.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.pip.on{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.pip:hover{border-color:var(--fg)}
+.edited{font-size:11px;color:var(--accent);min-height:15px;font-variant-numeric:tabular-nums}
+.edited:empty::before{content:"\00a0"}
+
+.total{display:flex;flex-direction:column;gap:6px}
+.total-num{font-family:var(--display);font-size:26px;line-height:1;font-variant-numeric:tabular-nums}
+.total-num span{font-family:var(--body);font-size:12px;color:var(--muted)}
+.bar{height:6px;background:var(--track);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .25s ease}
+
+/* Evidence */
+.evidence{padding:4px 0 24px 56px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px}
+.ev{min-width:0;display:flex;flex-direction:column;gap:8px}
+.ev h3{margin:0;font-size:13px;font-weight:600;display:flex;gap:8px;align-items:baseline}
+.ev h3 .s{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:500}
+.ev ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.ev li{display:grid;grid-template-columns:12px minmax(0,1fr);gap:8px;font-size:13.5px;line-height:1.45}
+.ev li .src{color:var(--muted);font-size:12.5px}
+.risk{grid-column:1/-1;font-size:13.5px;border-left:2px solid var(--accent);padding-left:12px;color:var(--fg)}
+.risk b{font-weight:600}
+
+/* evidence status dots */
+.dot{width:9px;height:9px;border-radius:50%;margin-top:6px;display:inline-block;flex:none}
+.d-sourced{background:var(--fg)}
+.d-secondary{border:1.5px solid var(--fg);background:transparent}
+.d-internal{background:var(--muted);opacity:.55}
+.d-unverified{background:var(--accent)}
+.legend .dot{margin-top:0}
+
+.foot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;font-size:14px;color:var(--fg)}
+.foot p{margin:0}
+.foot .muted{color:var(--muted)}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--rule)}
+.tab{background:none;border:0;border-bottom:2px solid transparent;padding:10px 4px;margin-right:20px;font-size:15px;font-weight:600;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.view{display:flex;flex-direction:column;gap:32px}
+
+/* Proposed share */
+.prop{font-size:11px;color:var(--fg);font-variant-numeric:tabular-nums}
+.prop b{display:inline-block;border:1px solid var(--accent);color:var(--accent);border-radius:3px;padding:0 4px;font-weight:600;margin-left:2px}
+.preview{display:flex;align-items:center;gap:8px;font-size:13.5px;cursor:pointer}
+.preview input{accent-color:var(--accent);width:16px;height:16px}
+.propnote{grid-column:1/-1;display:flex;flex-direction:column;gap:8px;background:var(--track);border-radius:6px;padding:14px 16px}
+.propnote h3{margin:0;font-size:13px;font-weight:600}
+
+/* Competitors */
+.filters{display:flex;flex-wrap:wrap;gap:16px;align-items:end}
+.field{display:flex;flex-direction:column;gap:4px}
+select{font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--rule);border-radius:4px;background:var(--surface);color:var(--fg);min-width:200px;max-width:100%}
+.count{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto;border-top:1px solid var(--fg)}
+table.matrix{border-collapse:collapse;width:100%;min-width:860px;font-size:13.5px}
+.matrix th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;padding:10px 8px;border-bottom:1px solid var(--rule);vertical-align:bottom}
+.matrix td{padding:12px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
+.matrix th.act,.matrix td.act{text-align:center;width:92px}
+.cname{font-weight:600;font-size:14.5px}
+.cname a{text-decoration:none}
+.ccat{font-size:12px;color:var(--muted)}
+.deep{display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--fg);border-radius:3px;padding:0 4px;margin-left:6px;vertical-align:2px}
+.price{font-variant-numeric:tabular-nums;max-width:210px}
+.price .src{display:flex;gap:6px;align-items:flex-start;color:var(--muted);font-size:11.5px;margin-top:3px}
+.price .src .dot{margin-top:4px}
+.cov{display:inline-flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:var(--muted)}
+.g{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--fg);display:inline-block}
+.g.full{background:var(--fg)}
+.g.partial{background:linear-gradient(90deg,var(--fg) 50%,transparent 50%)}
+.g.none{border-color:var(--rule)}
+.segchips{display:flex;flex-wrap:wrap;gap:4px;max-width:200px}
+.sc{font-size:11px;border:1px solid var(--rule);border-radius:999px;padding:1px 7px;white-space:nowrap}
+.detail td{background:var(--track);padding:16px}
+.dgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px}
+.dgrid h4{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.dgrid ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.dgrid li{display:grid;grid-template-columns:12px minmax(0,1fr);gap:8px;line-height:1.45}
+.dgrid li .src{color:var(--muted);font-size:12px}
+.answers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.answers div{display:flex;flex-direction:column;gap:8px}
+.answers h3{margin:0;font-family:var(--display);font-weight:500;font-size:18px;text-wrap:balance}
+.answers p{margin:0;font-size:14px}
+.gapbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.gap{border:1px solid var(--rule);border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:6px;background:var(--surface)}
+.gap .n{font-family:var(--display);font-size:26px;line-height:1;font-variant-numeric:tabular-nums}
+.gap .n span{font-family:var(--body);font-size:12px;color:var(--muted)}
+.gap.thin{border-color:var(--accent)}
+.gap .lbl{font-size:12.5px;color:var(--muted)}
+
+@media (max-width: 900px){
+  .answers{grid-template-columns:minmax(0,1fr)}
+  .gapbar{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dgrid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width: 900px){
+  .wgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .colhead{display:none}
+  .cols{grid-template-columns:40px minmax(0,1fr);row-gap:14px}
+  .seg{grid-column:2}
+  .score,.total{grid-column:2}
+  .row-main{display:grid}
+  .score{flex-direction:row;align-items:center;gap:10px;flex-wrap:wrap}
+  .score .mlabel{display:block;width:120px;font-size:12.5px;color:var(--muted)}
+  .evidence{padding-left:0;grid-template-columns:minmax(0,1fr)}
+  .foot{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width: 480px){ .wgrid{grid-template-columns:minmax(0,1fr)} }
+@media (prefers-reduced-motion: reduce){ .bar i{transition:none} }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="lockup"><i>Accountability</i><b>GUILD</b><span>· market research · 1 Nov 2026</span></div>
+    <h1>Which group do we win <em>first?</em></h1>
+    <p class="lede">Seven candidate beachhead segments, scored 1 to 5 on Moore's four criteria, and the 23 tools those groups use instead of us. Every score and claim has its evidence. Change any score or weight and the ranking reorders. Your edits stay in this browser only.</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Views">
+    <button class="tab" role="tab" id="tab-segments" aria-controls="view-segments" aria-selected="true" type="button">Segments</button>
+    <button class="tab" role="tab" id="tab-competitors" aria-controls="view-competitors" aria-selected="false" type="button">Competitors</button>
+  </div>
+
+  <div class="view" id="view-segments" role="tabpanel" aria-labelledby="tab-segments">
+  <section class="weights" aria-labelledby="wh">
+    <div class="weights-head">
+      <h2 id="wh">Weights</h2>
+      <div class="presets" role="group" aria-label="Weight presets">
+        <button class="chip" data-preset="equal" type="button">Equal</button>
+        <button class="chip" data-preset="pain" type="button">Pain first (Moore)</button>
+        <button class="chip" data-preset="spread" type="button">Spread first</button>
+        <button class="chip" data-preset="money" type="button">Revenue first</button>
+      </div>
+    </div>
+    <div class="wgrid" id="wgrid"></div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px" aria-labelledby="rh">
+    <div class="rank-head">
+      <h2 id="rh">Ranking</h2>
+      <div class="legend" aria-label="Evidence key">
+        <span><i class="dot d-sourced"></i>Sourced (primary or published research)</span>
+        <span><i class="dot d-secondary"></i>Secondary (third-party, vendor, anecdote)</span>
+        <span><i class="dot d-internal"></i>Internal (our docs)</span>
+        <span><i class="dot d-unverified"></i>Unverified (inference, no source)</span>
+      </div>
+    </div>
+    <div class="list" id="list">
+      <div class="cols colhead" aria-hidden="true">
+        <span class="label">#</span><span class="label">Segment</span>
+        <span class="label">Burning pain</span><span class="label">Will pay</span><span class="label">Winnable share</span><span class="label">Referral</span>
+        <span class="label">Weighted</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="foot">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <h2>How to read this</h2>
+      <p><b>Burning pain:</b> the problem hurts now and the current workaround is bad. <b>Willingness to pay:</b> they already spend money or stake money on this. <b>Winnable share:</b> we can become the default for this segment against what they use today. <b>Referral potential:</b> members talk to each other, and the audience contains the next customers.</p>
+      <p class="muted">Weighted score = Σ(weight × score) ÷ Σ(weights), on the 1 to 5 scale. The small arrow under each rank compares it with the default (equal weights, original scores).</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <h2>What the evidence can't tell us</h2>
+      <p>No segment has interview data from a group owner outside Brandon's own group. Pain and willingness to pay are inferred from adjacent spending (dues, bets, subscriptions), not from asking. The business evaluation's gate still applies: 10 group-owner interviews, then 5 groups through 3 cycles.</p>
+      <div class="actions">
+        <button class="chip" id="resetScores" type="button">Reset scores</button>
+        <button class="chip" id="resetAll" type="button">Reset everything</button>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <div class="view" id="view-competitors" role="tabpanel" aria-labelledby="tab-competitors" hidden>
+    <section style="display:flex;flex-direction:column;gap:14px" aria-labelledby="gh">
+      <h2 id="gh">Which acts of the cycle do substitutes cover?</h2>
+      <p class="lede" style="font-size:14.5px;max-width:72ch">Count of the 23 substitutes that fully cover each act. A group running accountability today stitches several of these together. Full = does the act without manual work. Partial = possible, but by hand or only for one person.</p>
+      <div class="gapbar" id="gapbar"></div>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:14px" aria-labelledby="mh">
+      <div class="rank-head">
+        <h2 id="mh">Competitor matrix</h2>
+        <div class="legend" aria-label="Coverage key">
+          <span><i class="g full" style="width:12px;height:12px"></i>Full</span>
+          <span><i class="g partial" style="width:12px;height:12px"></i>Partial</span>
+          <span><i class="g none" style="width:12px;height:12px"></i>None</span>
+          <span><b class="deep" style="margin:0">Deep</b> one of the 10 most common across segments</span>
+        </div>
+      </div>
+      <div class="filters">
+        <div class="field"><label class="label" for="fSeg">Segment</label><select id="fSeg"></select></div>
+        <div class="field"><label class="label" for="fCat">Category</label><select id="fCat"></select></div>
+        <span class="count" id="fCount"></span>
+      </div>
+      <div class="tablewrap"><table class="matrix" id="matrix"></table></div>
+      <p class="count">Prices checked 1 Nov 2026. Where the vendor page would not load or did not show a price, the figure comes from a third-party listing and is tagged secondary. Semrush search-demand data was planned but the account had no API units left.</p>
+    </section>
+
+    <section class="answers" aria-label="Findings">
+      <div>
+        <h3>Which act does nobody cover well?</h3>
+        <p><b>Pooling the forfeits.</b> Only DietBet and StepBet pool money, and only for fitness games WayBetter runs, with the pot split among winners. Venmo Groups and Splitwise settle who owes whom, but nothing links a payment to a missed commitment. <b>Close with receipts</b> is a close second. The tools that close fully are individual stakes apps (stickK, Beeminder, Forfeit). Group closes everywhere else happen live, with a leader going through a sheet or question list. EO's forum update is the formal version.</p>
+      </div>
+      <div>
+        <h3>Which free substitute is hardest to displace?</h3>
+        <p><b>The group chat.</b> It is already installed, it is where the group talks, and it loosely covers three acts: people post goals, drop proof photos and report at the end of the week. We shouldn't try to replace it. The product should post into it (reminders, close summaries, kitty totals) so the chat becomes a way in. The shared Google Sheet comes second for owner-led groups, because the owner built it and controls it.</p>
+      </div>
+      <div>
+        <h3>Did any segment's ranking change?</h3>
+        <p>Yes. Two Winnable share scores were lowered on 1 Nov 2026. With equal weights, <b>church groups</b> fall from tied 3rd to tied 4th with fitness (3.50 → 3.25), because Planning Center already sits in 78,000+ churches. <b>Group coaches</b> fall to 7th on their own (2.75 → 2.50), because CoachAccountable is a dedicated accountability tool for coaches. The top two stay tied, and solo founders are now 3rd on their own.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+const CRIT = [
+  {k:"pain", name:"Burning pain", q:"Does it hurt now, and is today's workaround bad?"},
+  {k:"wtp", name:"Willingness to pay", q:"Do they already spend or stake money on this?"},
+  {k:"share", name:"Winnable share", q:"Can we become their default against what they use today?"},
+  {k:"ref", name:"Referral potential", q:"Do members talk, and does the audience hold future customers?"}
+];
+const PRESETS = {
+  equal:{pain:3,wtp:3,share:3,ref:3},
+  pain:{pain:5,wtp:3,share:3,ref:2},
+  spread:{pain:3,wtp:2,share:3,ref:5},
+  money:{pain:3,wtp:5,share:3,ref:2}
+};
+// status: sourced | secondary | internal | unverified
+const S = [
+ {id:"peer", name:"Existing peer accountability circles",
+  who:"Friends, founder pods and peer groups that already meet on a cycle and run stakes by hand (Brandon's group is one).",
+  scores:{pain:4,wtp:3,share:4,ref:4},
+  ev:{
+   pain:[
+    {s:"internal",t:"Brandon built the product for his own first-Thursday group, whose spreadsheet, text and Venmo routine is the reference workflow.",src:"CLAUDE.md; business evaluation (May 2026)"},
+    {s:"secondary",t:"People already run money stakes by hand: Venmo memos, group chats with forfeits, charity or anti-charity payouts.",src:"Experience Machines (Substack)",u:"https://experiencemachines.substack.com/p/how-to-use-money-for-writing-accountability"},
+    {s:"unverified",t:"How many groups like this exist, and whether the manual close hurts groups other than Brandon's. No outside interviews yet."}
+   ],
+   wtp:[
+    {s:"internal",t:"The ask is small: no subscription, a $1 platform fee plus card processing per charged forfeit.",src:"Live /pricing"},
+    {s:"secondary",t:"stickK's own data: 29% success with no referee or stakes, 71.5% with money at stake. Groups that know this already stake money.",src:"stickK analysis of 125k contracts (company-reported, 2012)"},
+    {s:"internal",t:"Business evaluation flags that small casual groups may resist paying a subscription.",src:"business-evaluation-2026-05-15.md"},
+    {s:"unverified",t:"Forfeit volume per member. The $10 to $40 a month figure is a planning assumption."}
+   ],
+   share:[
+    {s:"internal",t:"SEO audit found no direct competitor combining a group, money stakes and a pooled kitty.",src:"seo-audit-2026-07-13.md"},
+    {s:"internal",t:"Real substitutes are a group text and a spreadsheet plus Venmo: free, but no cycle state, ledger or close.",src:"business evaluation"},
+    {s:"secondary",t:"stickK sells group campaigns (free to $99/mo), but built around individual contracts, not a recurring group close.",src:"stickK plans page",u:"https://www.stickk.com/myCampaigns/plans"}
+   ],
+   ref:[
+    {s:"internal",t:"Every group brings 4 to 10 members through invites, each a possible owner of their next group.",src:"business evaluation selection criteria"},
+    {s:"unverified",t:"Friend groups don't talk to other friend groups, so spread depends on members starting new groups. No invite-to-new-group data yet."}
+   ]},
+  risk:"Hard to find. These groups are private and unlabeled, so reaching them depends on personal networks and content, not a channel you can buy."},
+
+ {id:"church", name:"Church men's groups and small groups",
+  who:"Men's ministries, Bible study and small-group leaders who want members to follow through between meetings.",
+  scores:{pain:3,wtp:2,share:3,ref:5},
+  ev:{
+   pain:[
+    {s:"sourced",t:"About 44% of weekend worship attendees are in a small group, down from 49% in 2010.",src:"Lifeway Research, State of Groups 2025",u:"https://research.lifeway.com/wp-content/uploads/2025/01/DIGITAL-State-of-Groups-Insights-Report.pdf"},
+    {s:"sourced",t:"Only 5% of churchgoers said their church does anything to hold them accountable. Old data (2010).",src:"Barna",u:"https://www.barna.com/research/national-study-describes-christian-accountability-provided-by-churches"},
+    {s:"unverified",t:"That leaders experience tracking commitments as a problem worth a tool, rather than a relational job."}
+   ],
+   wtp:[
+    {s:"secondary",t:"Money stakes can read as gambling to some congregations; denominations publish guidance against it.",src:"Georgia Baptist Mission Board",u:"https://gabaptist.org/resource/a-practical-guide-to-addressing-gambling-in-the-church/"},
+    {s:"internal",t:"Grant's homepage v2 direction already adds church groups as examples and frames money as optional.",src:"Homepage mockup notes, 2026-10-26"},
+    {s:"unverified",t:"That a kitty donated to a shared charity fits giving norms well enough to overcome the money concern. Untested."}
+   ],
+   share:[
+    {s:"secondary",t:"Christian accountability apps (Covenant Eyes, Accountable2You and similar) are screen monitoring for pornography, not commitment tracking.",src:"faith.tools directory",u:"https://faith.tools/accountability"},
+    {s:"unverified",t:"Church management software handles rosters and groups but, as far as we know, not commitments or cycle reports. Not checked."}
+   ],
+   ref:[
+    {s:"secondary",t:"Most male churchgoers say their church has an organized men's ministry; 83% attended at least one activity last year. Median ministry has 20 regulars.",src:"Lifeway via Baptist Press",u:"https://www.baptistpress.com/resource-library/news/mens-ministry-vital-to-churches-health/"},
+    {s:"unverified",t:"One ministry leader often oversees several groups, and leaders share tools across churches and denominations."}
+   ]},
+  risk:"The money mechanic is the product's core and the segment's main objection. Winning here likely means leading with commitments and reports and treating forfeits as opt-in."},
+
+ {id:"fitness", name:"Fitness challenge crews",
+  who:"Friends, gym groups and workout crews (F3 and similar) running weight-loss or workout challenges with a pot.",
+  scores:{pain:3,wtp:4,share:2,ref:4},
+  ev:{
+   pain:[
+    {s:"secondary",t:"DietBet's format (lose 4% in 4 weeks, split the pot) shows steady demand for stakes on fitness goals; the company cites 300,000+ players.",src:"DietBet rules; company figure via press",u:"https://waybetter.app/dietbet/rules"},
+    {s:"unverified",t:"Pain is moderate. Showing up is self-evident and challenges already exist, so the workaround is not bad."}
+   ],
+   wtp:[
+    {s:"secondary",t:"One DietBet game: 384 players, a $13,440 pot. Bets start at $10.",src:"My Money Blog",u:"https://www.mymoneyblog.com/dietbet-review.html"},
+    {s:"secondary",t:"25,808 players joined 1,356 DietBet games in five months (2012 to 2013).",src:"Healio, Brown study poster",u:"https://www.healio.com/endocrinology/obesity/news/online/%7be152a781-3b64-4974-a4b6-06e1569cead3%7d/social-gaming-website-facilitated-4-week-weight-loss"}
+   ],
+   share:[
+    {s:"secondary",t:"WayBetter (DietBet, StepBet) already owns money-stakes fitness, with weigh-in verification we don't have.",src:"DietBet FAQ",u:"https://waybetter.app/dietbet/faq"},
+    {s:"unverified",t:"Strava clubs, wearables and gym apps cover activity visibility for free."}
+   ],
+   ref:[
+    {s:"secondary",t:"F3 runs 6,595 free peer-led workouts in 544 regions, built to spread. Its free ethos weakens willingness to pay.",src:"F3 Nation on LinkedIn (2026)",u:"https://linkedin.com/company/f3"},
+    {s:"unverified",t:"Challenges spread by invitation, and gym members join several groups."}
+   ]},
+  risk:"Strong stakes appetite, but a funded incumbent and verification needs (weigh-ins, wearables) the product doesn't have."},
+
+ {id:"founders", name:"Solo founders and indie makers",
+  who:"Bootstrappers and indie hackers in small peer groups who set weekly shipping goals.",
+  scores:{pain:4,wtp:3,share:3,ref:4},
+  ev:{
+   pain:[
+    {s:"secondary",t:"A paid community (WIP) exists around posting shipped to-dos publicly, which shows demand for visible weekly progress.",src:"WIP listing",u:"https://geekchamp.com/products/wip/"},
+    {s:"unverified",t:"Isolation and missed shipping goals as an acute pain. Widely discussed, but no survey found."}
+   ],
+   wtp:[
+    {s:"secondary",t:"WIP charges $29/mo or $199/yr and ended free plans for new members.",src:"WIP listing; WIP post",u:"https://wip.co/posts/discontinuing-free-plans-for-new-wip-members-tbahrf"},
+    {s:"secondary",t:"Focusmate Plus costs $6.99 to $9.99 a month; peer masterminds for founders run $50 to $250 a month.",src:"Focusmate FAQ; Side Hustle Nation",u:"https://www.focusmate.com/?p=3082"}
+   ],
+   share:[
+    {s:"secondary",t:"Crowded next door: WIP, Focusmate, Indie Hackers groups, Cave Day's Cave Squad (which also uses money stakes).",src:"Cave Day",u:"https://www.caveday.org/cave-squad-info"},
+    {s:"secondary",t:"A 2024 member review said WIP lacks real community. Small groups with a shared kitty fill that gap.",src:"I Like Kill Nerds",u:"https://ilikekillnerds.com/2024/12/15/my-experience-with-wip-co-a-maker-community-thats-missing-the-community/"}
+   ],
+   ref:[
+    {s:"unverified",t:"Build-in-public culture means members post progress and tools publicly."},
+    {s:"internal",t:"Founder and group topics (articles 8 to 13) sit in keyword whitespace, so content can reach them.",src:"seo-audit-2026-07-13.md"}
+   ]},
+  risk:"They try every new productivity tool and churn fast. Retention past cycle 3 is the test."},
+
+ {id:"mastermind", name:"Mastermind facilitators",
+  who:"People who run paid peer groups (owner-led) and need members to follow through between sessions.",
+  scores:{pain:4,wtp:4,share:3,ref:4},
+  ev:{
+   pain:[
+    {s:"unverified",t:"The facilitator's product is member follow-through, so missed commitments threaten renewals. No churn data found."},
+    {s:"internal",t:"Owner-led groups match how the product works today: one person sets cadence and forfeit.",src:"Homepage messaging evaluation"}
+   ],
+   wtp:[
+    {s:"secondary",t:"Members pay about $50 to $100 a month for community groups, $250 to $400 for coached ones, $600 to $2,000 for premium ones.",src:"Side Hustle Nation; S.K. Murphy; Gumroad listings",u:"https://www.sidehustlenation.com/paid-mastermind-groups/"},
+    {s:"internal",t:"A $1 fee per forfeit is trivial against those prices, but facilitators may want branding and client management.",src:"business evaluation risk list"}
+   ],
+   share:[
+    {s:"secondary",t:"Groups run on Zoom plus community platforms like Circle (about $89/mo) or Kajabi ($89 to $199/mo).",src:"Schoolmaker comparison",u:"https://schoolmaker.com/blog/kajabi-vs-circle.md"},
+    {s:"unverified",t:"None of those tools specialise in commitments, reports or forfeits."}
+   ],
+   ref:[
+    {s:"unverified",t:"Facilitators often run several groups, and members are entrepreneurs who start their own groups."},
+    {s:"unverified",t:"Facilitators talk to each other through courses and communities about running masterminds."}
+   ]},
+  risk:"Two buyers. The facilitator chooses the tool, but members pay the forfeits. White-label requests could pull the roadmap."},
+
+ {id:"coaches", name:"Group coaches",
+  who:"Fitness, health and business coaches running cohort programs who want check-ins between calls.",
+  scores:{pain:3,wtp:3,share:1,ref:3},
+  ev:{
+   pain:[
+    {s:"sourced",t:"122,974 coach practitioners worldwide, $5.34B in revenue, up 17% since 2023.",src:"ICF Global Coaching Study 2025",u:"https://coachingfederation.org/blog/coaching-industry-continues-global-growth-with-5-34-billion-usd-revenue-new-research-reveals/"},
+    {s:"unverified",t:"That between-session check-ins are a pain worth a separate tool. No source on client drop-off found."}
+   ],
+   wtp:[
+    {s:"secondary",t:"Coaches already pay $89 to $199 a month for Circle or Kajabi.",src:"eLearning Industry; Schoolmaker",u:"https://elearningindustry.com/kajabi-pricing-plans-and-costs-is-it-worth-the-money"},
+    {s:"unverified",t:"Charging forfeits to paying clients may strain the coach-client relationship."}
+   ],
+   share:[
+    {s:"secondary",t:"All-in-one coaching platforms (Kajabi, Circle, upcoach) already bundle community and check-ins.",src:"MemberPress; upcoach",u:"https://memberpress.com/blog/top-9-kajabi-alternatives-for-coaches/"},
+    {s:"internal",t:"Coaches may want client management and white-label features the product doesn't have.",src:"business evaluation"}
+   ],
+   ref:[
+    {s:"unverified",t:"Coaches network through ICF and certification programs, but their clients are rarely future buyers."}
+   ]},
+  risk:"Large market, but we'd be one more tool next to a platform they already pay for."},
+
+ {id:"ceo", name:"CEO and owner peer forums",
+  who:"EO, YPO and Vistage forums: 8 to 12 business owners meeting monthly.",
+  scores:{pain:2,wtp:5,share:1,ref:3},
+  ev:{
+   pain:[
+    {s:"secondary",t:"Forums already run a fixed protocol with a trained moderator or chair; accountability is built into the meeting.",src:"EO membership pages",u:"https://eonetwork.org/why-join/apply-for-membership"}
+   ],
+   wtp:[
+    {s:"secondary",t:"EO global dues about $2,630 a year plus chapter dues; YPO about $10,000 to join plus $4,000 to $5,000 a year; Vistage roughly $15,000 to $25,000 a year.",src:"EO chapter page; Fortune; Long Angle (a competitor)",u:"https://www.longangle.com/blog/is-vistage-worth-it"}
+   ],
+   share:[
+    {s:"unverified",t:"Headquarters controls forum tooling and confidentiality rules, so a forum can't adopt a vendor on its own. Selling means enterprise deals."},
+    {s:"unverified",t:"Card-charged forfeits likely clash with forum culture at this income level."}
+   ],
+   ref:[
+    {s:"secondary",t:"Dense networks: EO has 17,000+ members in 213 chapters; YPO 25,000+ in 450 chapters.",src:"EO site; Fortune",u:"https://www.fortune.com/2023/01/08/best-executive-networking-groups-ceos-compare-ranking/"},
+    {s:"unverified",t:"Adoption runs through headquarters, not word of mouth."}
+   ]},
+  risk:"Plenty of money and little pain. A good later market for a premium owner-led tier, not a beachhead."}
+];
+
+// Winnable share review from the 1 Nov 2026 competitor research. Approved and applied 1 Nov 2026 (church 4 → 3, coaches 2 → 1).
+const SHARE_WAS = {church:4, coaches:2};
+const PROPOSED = {
+ peer:{v:4, why:"Holds. Every act is covered by some free tool, but no tool links them: groups stitch together a chat, a sheet and Venmo, and nothing ties a payment to a missed commitment.",
+  ev:[
+   {s:"secondary",t:"Venmo Groups (launched Nov 2023) settles shared costs for up to 30 members but has no link to commitments.",src:"TechCrunch",u:"https://techcrunch.com/2023/11/14/venmo-gets-a-new-way-to-split-expenses-among-groups-like-clubs-teams-trip-buddies-and-more"},
+   {s:"secondary",t:"Free sheet habit trackers are built for one person; none found with a group close or penalty column.",src:"Spreadsheet Daddy; ClickUp roundup",u:"https://clickup.com/blog/habit-tracker-templates-excel/"},
+   {s:"unverified",t:"The group chat is the real incumbent and costs nothing to keep. The product has to work alongside it."}]},
+ church:{v:3, why:"Down one. Planning Center Groups already runs groups, attendance and chat in 78,000+ churches, and YouVersion's Plans With Friends gives groups a free shared daily commitment. We'd be an add-on next to tools the church already standardised on.",
+  ev:[
+   {s:"sourced",t:"Planning Center: trusted by over 78,000 churches; Groups is free to 15 members, then $15 to $239 a month.",src:"Planning Center Groups page",u:"https://www.planningcenter.com/groups"},
+   {s:"secondary",t:"YouVersion had 798,000+ installs on the first Sunday of 2025; Plans With Friends lets a group read on the same schedule and discuss daily.",src:"ChurchLeaders",u:"https://churchleaders.com/news/503794-youversion-bible-app-breaks-download-record.html"},
+   {s:"secondary",t:"Churches publish free weekly accountability question sheets for men's groups.",src:"Harvest Bible Chapel PDF",u:"https://www.harvestbible.org/wp-content/uploads/2022/03/Small-Group-Accountability-Questions.pdf"}]},
+ fitness:{v:2, why:"Holds. Strava gives free, automatic proof, and DietBet covers all four acts for weight loss.",
+  ev:[
+   {s:"secondary",t:"Strava clubs and challenges are free; about 195 million registered users (third-party estimate).",src:"Sacra",u:"https://sacra.com/research/strava"},
+   {s:"sourced",t:"WayBetter claims 1.4M players and 21k playing now.",src:"WayBetter FAQ",u:"https://waybetter.app/dietbet/faq"}]},
+ founders:{v:3, why:"Holds. Strong individual stakes tools (Beeminder, Forfeit) and paid maker communities (WIP), but none runs a small group with a shared kitty.",
+  ev:[
+   {s:"sourced",t:"Forfeit: $10.99/mo US, claims 686k forfeits set and $8.7M staked; no group feature, and Forfeit keeps the money.",src:"forfeit.app",u:"https://forfeit.app/"},
+   {s:"sourced",t:"Beeminder: free core, $8 / $16 / $81 a month premium; individual goals only.",src:"Beeminder premium page",u:"https://www.beeminder.com/premium"}]},
+ mastermind:{v:3, why:"Holds. Facilitators already pay for Skool or Circle, so we'd be a second tool, but neither tracks commitments or closes a cycle.",
+  ev:[
+   {s:"sourced",t:"Skool: $9/mo plus 10% fee, or $99/mo plus 2.9%.",src:"Skool pricing",u:"https://www.skool.com/pricing"},
+   {s:"sourced",t:"Circle: $89 / $199 / $419 a month, billed annually.",src:"Circle pricing",u:"https://circle.so/pricing"}]},
+ coaches:{v:1, why:"Down one. CoachAccountable is a dedicated accountability tool for coaches, priced per client, and coaching platforms bundle check-ins.",
+  ev:[
+   {s:"sourced",t:"CoachAccountable: $20/mo for 2 clients up to $4,000/mo for 1,000; each group member counts as a client.",src:"CoachAccountable pricing",u:"https://coachaccountable.com/pricing"},
+   {s:"secondary",t:"Practice: Basic $5, Pro $60, Teams $99 a month.",src:"Capterra",u:"https://www.capterra.com/p/276189/Practice/pricing/"}]},
+ ceo:{v:1, why:"Holds. EO runs its own forum process and member apps; nothing found suggests forums pick their own tools.",
+  ev:[
+   {s:"secondary",t:"EO's member app (EO Infinite) carries forum information, attendance points and retreat agendas.",src:"App Store listing",u:"https://apps.apple.com/us/app/id1471634570"}]}
+};
+
+const ACTS = [
+  {k:"set", name:"Set the standard"},
+  {k:"run", name:"Run the cycle"},
+  {k:"close", name:"Close with receipts"},
+  {k:"pool", name:"Pool the forfeits"}
+];
+const SEGNAME = {peer:"Peer circles",church:"Church groups",fitness:"Fitness crews",founders:"Solo founders",mastermind:"Masterminds",coaches:"Group coaches",ceo:"CEO forums"};
+// acts: full | partial | none
+const COMP = [
+ {id:"chat",name:"Group chat (WhatsApp, GroupMe, iMessage)",url:"https://groupme.com/blog/2025-year-in-review",cat:"General tool",deep:true,segs:["peer","church","fitness","mastermind","ceo"],
+  price:"Free",p:{s:"sourced",t:"Free apps"},
+  acts:{set:"partial",run:"partial",close:"partial",pool:"none"},
+  better:"Already installed, already where the group talks, zero setup. Photos as proof are one tap.",
+  lacks:"No record of who committed to what, no cycle state, no tally of misses, no money.",
+  adoption:[{s:"secondary",t:"WhatsApp: 3 billion monthly users (Oct 2025).",src:"Statista",u:"https://www.statista.com/statistics/258749/whatsapp-global-monthly-active-users/"},{s:"sourced",t:"GroupMe groups now allow 10,000+ members.",src:"GroupMe 2025 review",u:"https://groupme.com/blog/2025-year-in-review"}],
+  switching:"Very high. Groups won't leave their chat. We should post into it rather than replace it."},
+ {id:"sheets",name:"Free sheet trackers (Google Sheets, Excel)",url:"https://clickup.com/blog/habit-tracker-templates-excel/",cat:"Free template",deep:true,segs:["peer","founders","mastermind","coaches","ceo"],
+  price:"Free",p:{s:"secondary",t:"Spreadsheet Daddy, ClickUp, Vertex42 listings"},
+  acts:{set:"full",run:"partial",close:"partial",pool:"partial"},
+  better:"Infinitely flexible; the owner controls the format and the penalty math.",
+  lacks:"Built for one person; group use means someone updates it by hand. No reminders, proof or charging.",
+  adoption:[{s:"unverified",t:"No download counts found. The Microsoft and Google template galleries weren't checked."}],
+  switching:"Medium. The owner built it and likes it; switching means giving up custom columns."},
+ {id:"notion",name:"Notion and Gumroad mastermind templates",url:"https://nataschabuck.gumroad.com/l/mastermindgroup",cat:"Paid template",deep:true,segs:["founders","mastermind"],
+  price:"Free to $12",p:{s:"sourced",t:"Gumroad listings: $4.99+, pay what you want, $12"},
+  acts:{set:"full",run:"partial",close:"partial",pool:"none"},
+  better:"Meeting calendar, member directory and accountability list in a workspace members already use.",
+  lacks:"Static pages. No reminders, no close, no money. The $12 partner tracker says it isn't meant for groups of 3+.",
+  adoption:[{s:"unverified",t:"Sales counts not shown on listings."},{s:"secondary",t:"Cohorty's tracker is built for two-person partnerships.",src:"Gumroad",u:"https://cohorty.gumroad.com/l/accountability-partner-tracker"}],
+  switching:"Low. A one-off template with little data in it."},
+ {id:"etsy",name:"Etsy printable trackers",url:"https://www.etsy.com/listing/1570439426/monthly-to-do-list-habit-tracker",cat:"Paid template",segs:["peer","fitness"],
+  price:"$1.99 to $5.59",p:{s:"secondary",t:"Etsy listing page"},
+  acts:{set:"partial",run:"partial",close:"none",pool:"none"},
+  better:"Cheap and tangible. Some people prefer paper.",
+  lacks:"Personal only; nothing the group can see.",
+  adoption:[{s:"unverified",t:"Sales counts not shown in search results."}],
+  switching:"None."},
+ {id:"churchsheets",name:"Church accountability question sheets",url:"https://www.harvestbible.org/wp-content/uploads/2022/03/Small-Group-Accountability-Questions.pdf",cat:"Free template",segs:["church"],
+  price:"Free",p:{s:"sourced",t:"Church-published PDFs"},
+  acts:{set:"partial",run:"none",close:"partial",pool:"none"},
+  better:"Speaks the group's language (confession, character, Scripture) and is pastor-approved.",
+  lacks:"Questions, not measurable commitments. Nothing is recorded between meetings.",
+  adoption:[{s:"secondary",t:"Published by Harvest Bible Chapel, Trinity Bible Chapel, United Methodist Men, Finish the Race (Forge Weekly Check-In).",src:"Church sites"}],
+  switching:"Low as a tool, but the question format is a tradition we should support, not fight."},
+ {id:"slack",name:"Slack and Discord",url:"https://slack.com/pricing",cat:"General tool",deep:true,segs:["founders","mastermind","coaches"],
+  price:"Free; Slack Pro $8.75/user/mo",p:{s:"sourced",t:"Slack pricing ($7.25 annual; free plan keeps 90 days of history)",u:"https://slack.com/pricing"},
+  acts:{set:"partial",run:"partial",close:"partial",pool:"none"},
+  better:"Channels, bots and integrations; weekly stand-up threads are easy.",
+  lacks:"No commitment record or tally; the 90-day history limit on free Slack erases past cycles.",
+  adoption:[{s:"unverified",t:"No count of accountability groups on Slack or Discord found."}],
+  switching:"High for the community, low for the accountability ritual inside it."},
+ {id:"habitica",name:"Habitica (parties and challenges)",url:"https://habitica.com",cat:"Habit app",deep:true,segs:["peer","founders","fitness"],
+  price:"Free; group plan $9/mo + $3/member",p:{s:"secondary",t:"TechRadar review (vendor page didn't load)",u:"https://www.techradar.com/reviews/habitica"},
+  acts:{set:"full",run:"full",close:"partial",pool:"none"},
+  better:"Gamified: a member's missed dailies damage the whole party, a social stake with no money.",
+  lacks:"Game framing many adults won't adopt; no report, no real money.",
+  adoption:[{s:"unverified",t:"No current user count from Habitica found."}],
+  switching:"Medium for engaged players, because of their game progress."},
+ {id:"habitshare",name:"HabitShare",url:"https://apps.apple.com/app/id1048191045",cat:"Habit app",segs:["peer","fitness"],
+  price:"Free (habit limit unconfirmed)",p:{s:"sourced",t:"App Store listing"},
+  acts:{set:"full",run:"full",close:"none",pool:"none"},
+  better:"Simple streaks shared with chosen friends, with chat.",
+  lacks:"No cycle, report or stakes; friends must install it too.",
+  adoption:[{s:"sourced",t:"4.6 out of 5 from 667 App Store ratings.",src:"App Store",u:"https://apps.apple.com/app/id1048191045"},{s:"secondary",t:"A review notes few people use it, so friends must be persuaded to join."}],
+  switching:"Low."},
+ {id:"skool",name:"Skool",url:"https://www.skool.com/pricing",cat:"Community platform",deep:true,segs:["mastermind","coaches","founders"],
+  price:"$9/mo + 10% fee, or $99/mo + 2.9%",p:{s:"sourced",t:"Skool pricing page",u:"https://www.skool.com/pricing"},
+  acts:{set:"partial",run:"partial",close:"none",pool:"none"},
+  better:"Community, courses, calendar and paid membership in one place, with leaderboards.",
+  lacks:"No commitments, no cycle close, no forfeits.",
+  adoption:[{s:"secondary",t:"About 42,100 communities tracked, 12,500 paid (third-party estimate).",src:"Profitable.app",u:"https://profitable.app/skool/stats"}],
+  switching:"High. It holds the facilitator's paying members and content."},
+ {id:"circle",name:"Circle",url:"https://circle.so/pricing",cat:"Community platform",deep:true,segs:["mastermind","coaches"],
+  price:"$89 / $199 / $419 per mo (annual)",p:{s:"sourced",t:"Circle pricing page",u:"https://circle.so/pricing"},
+  acts:{set:"partial",run:"partial",close:"none",pool:"none"},
+  better:"Polished community and events for paid programs.",
+  lacks:"Same as Skool: no commitment tracking or close.",
+  adoption:[{s:"sourced",t:"Circle's own customer community has 27,000+ members.",src:"Circle pricing FAQ",u:"https://circle.so/pricing"}],
+  switching:"High."},
+ {id:"coachacc",name:"CoachAccountable",url:"https://coachaccountable.com/pricing",cat:"Coaching platform",deep:true,segs:["coaches","mastermind"],
+  price:"$20/mo (2 clients) to $4,000/mo (1,000)",p:{s:"sourced",t:"CoachAccountable pricing page",u:"https://coachaccountable.com/pricing"},
+  acts:{set:"full",run:"partial",close:"partial",pool:"none"},
+  better:"Built for coaches tracking client commitments; the coach sees everything.",
+  lacks:"One-to-one model: each group member is billed as a client. No peer visibility, no kitty.",
+  adoption:[{s:"unverified",t:"No customer count on the pricing page. Feature details (action items, metrics) not confirmed on the page fetched."}],
+  switching:"High. It holds client history and billing."},
+ {id:"practice",name:"Practice",url:"https://www.capterra.com/p/276189/Practice/pricing/",cat:"Coaching platform",segs:["coaches"],
+  price:"$5 / $60 / $99 per mo",p:{s:"secondary",t:"Capterra (vendor page didn't load)",u:"https://www.capterra.com/p/276189/Practice/pricing/"},
+  acts:{set:"partial",run:"partial",close:"partial",pool:"none"},
+  better:"Client portal, scheduling, forms and billing in one tool.",
+  lacks:"Coach-to-client only; no group commitments or stakes.",
+  adoption:[{s:"unverified",t:"No customer count found."}],
+  switching:"High."},
+ {id:"pco",name:"Planning Center Groups",url:"https://www.planningcenter.com/groups",cat:"Church tool",segs:["church"],
+  price:"Free to 15 members; $15 to $239/mo",p:{s:"sourced",t:"Planning Center Groups page",u:"https://www.planningcenter.com/groups"},
+  acts:{set:"none",run:"partial",close:"none",pool:"none"},
+  better:"Rosters, attendance, events, chat and study resources, already paid for by the church.",
+  lacks:"Tracks attendance, not follow-through. No commitments or reports.",
+  adoption:[{s:"sourced",t:"Trusted by over 78,000 churches.",src:"Planning Center",u:"https://www.planningcenter.com/groups"}],
+  switching:"Very high. It's the church's system of record; we'd sit beside it."},
+ {id:"youversion",name:"YouVersion Plans With Friends",url:"https://churchleaders.com/news/503794-youversion-bible-app-breaks-download-record.html",cat:"Church tool",segs:["church"],
+  price:"Free",p:{s:"secondary",t:"Free app"},
+  acts:{set:"partial",run:"full",close:"partial",pool:"none"},
+  better:"A shared daily commitment (a reading plan) with visible completion and discussion, free.",
+  lacks:"Only covers Scripture reading, not the member's own goals.",
+  adoption:[{s:"secondary",t:"798,000+ installs and 18.2M users on the first Sunday of 2025.",src:"ChurchLeaders",u:"https://churchleaders.com/news/503794-youversion-bible-app-breaks-download-record.html"}],
+  switching:"N/A. It's complementary; a member's goals could include a plan."},
+ {id:"strava",name:"Strava clubs and challenges",url:"https://sacra.com/research/strava",cat:"Fitness",segs:["fitness"],
+  price:"Free; Premium $11.99/mo or $79.99/yr",p:{s:"secondary",t:"Subger, RunnersPicks (vendor page shows no price)"},
+  acts:{set:"partial",run:"full",close:"partial",pool:"none"},
+  better:"Automatic GPS proof; nobody has to self-report.",
+  lacks:"Activity only; no commitments, report or money.",
+  adoption:[{s:"secondary",t:"About 195M registered and 50M monthly users (third-party estimate).",src:"Sacra",u:"https://sacra.com/research/strava"}],
+  switching:"Very high, but complementary: proof could come from it."},
+ {id:"dietbet",name:"DietBet and StepBet (WayBetter)",url:"https://waybetter.app/dietbet/faq",cat:"Stakes tool",segs:["fitness"],
+  price:"Bets from $10; platform fee unconfirmed",p:{s:"secondary",t:"DietBet rules; fee not on FAQ page",u:"https://waybetter.app/dietbet/rules"},
+  acts:{set:"full",run:"full",close:"full",pool:"full"},
+  better:"All four acts for weight loss and steps, with verified weigh-ins.",
+  lacks:"Fitness only, game-run by the company, and the pot goes to winners, not the group.",
+  adoption:[{s:"sourced",t:"1.4M players, 21k playing now (company claim).",src:"WayBetter",u:"https://waybetter.app/dietbet/faq"}],
+  switching:"Medium. Players come per game, not per group."},
+ {id:"venmo",name:"Venmo Groups",url:"https://techcrunch.com/2023/11/14/venmo-gets-a-new-way-to-split-expenses-among-groups-like-clubs-teams-trip-buddies-and-more",cat:"Money tool",deep:true,segs:["peer","fitness"],
+  price:"Free",p:{s:"secondary",t:"TechCrunch launch coverage"},
+  acts:{set:"none",run:"none",close:"none",pool:"partial"},
+  better:"Everyone already has Venmo; settling up is native.",
+  lacks:"No link between a charge and a missed commitment; someone has to request each payment.",
+  adoption:[{s:"secondary",t:"Up to 30 members per group, 20 groups per user (single secondary source)."}],
+  switching:"Low for this use. It's the rail groups use today, and the product replaces the manual requests."},
+ {id:"splitwise",name:"Splitwise",url:"https://getfinny.app/blog/splitwise-pricing-2026",cat:"Money tool",segs:["peer","fitness"],
+  price:"Free (daily cap); Pro about $39.99 to $49.99/yr",p:{s:"secondary",t:"Finny, Locals Insider (vendor page shows no price)"},
+  acts:{set:"none",run:"none",close:"none",pool:"partial"},
+  better:"A clean ledger of who owes whom across many expenses.",
+  lacks:"Doesn't move money or know about commitments.",
+  adoption:[{s:"unverified",t:"No current user count found."}],
+  switching:"Low."},
+ {id:"stickk",name:"stickK",url:"https://www.stickk.com/myCampaigns/plans",cat:"Stakes tool",deep:true,segs:["peer","founders","coaches"],
+  price:"Free; group campaigns up to $99/mo",p:{s:"secondary",t:"Business evaluation (May 2026); vendor page blocked today"},
+  acts:{set:"full",run:"partial",close:"full",pool:"partial"},
+  better:"Referees confirm reports; money can go to a friend, charity or anti-charity.",
+  lacks:"Contracts are individual; no shared cycle or group kitty.",
+  adoption:[{s:"sourced",t:"Academic dataset of 742,923 users and 397,456 commitments.",src:"ICWSM 2024",u:"https://ojs.aaai.org/index.php/ICWSM/article/view/31440"}],
+  switching:"Low."},
+ {id:"beeminder",name:"Beeminder",url:"https://www.beeminder.com/premium",cat:"Stakes tool",segs:["founders"],
+  price:"Free; $8 / $16 / $81 per mo",p:{s:"sourced",t:"Beeminder premium page",u:"https://www.beeminder.com/premium"},
+  acts:{set:"full",run:"full",close:"full",pool:"none"},
+  better:"Data-driven goals with automatic integrations; charges as low as $5.",
+  lacks:"Individual only; Beeminder keeps derailment money.",
+  adoption:[{s:"unverified",t:"No user count found."}],
+  switching:"Medium for long-time users with years of graphs."},
+ {id:"forfeit",name:"Forfeit",url:"https://forfeit.app/",cat:"Stakes tool",segs:["founders","fitness"],
+  price:"$10.99/mo plus your own stakes",p:{s:"sourced",t:"forfeit.app",u:"https://forfeit.app/"},
+  acts:{set:"full",run:"full",close:"full",pool:"none"},
+  better:"Human and AI review of photo and video proof, plus Apple Health and GPS.",
+  lacks:"No groups; Forfeit keeps forfeited money (a send-to-friends option is in development).",
+  adoption:[{s:"sourced",t:"Claims 686k forfeits, $8.7M staked, 4.8 from 368 ratings.",src:"forfeit.app",u:"https://forfeit.app/"}],
+  switching:"Low."},
+ {id:"wip",name:"WIP",url:"https://geekchamp.com/products/wip/",cat:"Community platform",segs:["founders"],
+  price:"$29/mo or $199/yr",p:{s:"secondary",t:"Third-party listing (vendor pricing page 404)",u:"https://geekchamp.com/products/wip/"},
+  acts:{set:"partial",run:"full",close:"none",pool:"none"},
+  better:"Public to-do log and streaks among makers.",
+  lacks:"Public, not a small private group; no report or stakes.",
+  adoption:[{s:"secondary",t:"A 2024 member review says the community feel is missing.",src:"I Like Kill Nerds",u:"https://ilikekillnerds.com/2024/12/15/my-experience-with-wip-co-a-maker-community-thats-missing-the-community/"}],
+  switching:"Low."},
+ {id:"eo",name:"EO forum process and member apps",url:"https://apps.apple.com/us/app/id1471634570",cat:"Forum process",segs:["ceo"],
+  price:"Included in dues",p:{s:"secondary",t:"App Store listing"},
+  acts:{set:"partial",run:"none",close:"full",pool:"none"},
+  better:"A trained moderator and a fixed monthly update protocol, inside dues members already pay.",
+  lacks:"Nothing between meetings; no tracking of commitments.",
+  adoption:[{s:"secondary",t:"EO Infinite lists forum info, attendance points and retreat agendas; too few ratings to show."}],
+  switching:"Very high. The organisation sets the process."}
+];
+
+const DEFAULT_W = {...PRESETS.equal};
+const ORIG = Object.fromEntries(S.map(s=>[s.id,{...s.scores}]));
+let W = {...DEFAULT_W};
+let SC = JSON.parse(JSON.stringify(ORIG));
+let open = new Set();
+
+try{
+  const saved = JSON.parse(localStorage.getItem("ag-beachhead-v2")||"null");
+  if(saved){ if(saved.W) W = {...W,...saved.W}; if(saved.SC) for(const id in saved.SC) if(SC[id]) SC[id] = {...SC[id],...saved.SC[id]}; }
+}catch(e){}
+function save(){ try{ localStorage.setItem("ag-beachhead-v2", JSON.stringify({W,SC})); }catch(e){} }
+
+function weighted(sc, w){
+  const tw = CRIT.reduce((a,c)=>a+w[c.k],0);
+  if(!tw) return 0;
+  return CRIT.reduce((a,c)=>a+w[c.k]*sc[c.k],0)/tw;
+}
+function rankOrder(scores, w){
+  return [...S].sort((a,b)=>weighted(scores[b.id],w)-weighted(scores[a.id],w) || S.indexOf(a)-S.indexOf(b)).map(s=>s.id);
+}
+// Shared rank: ties get the same number.
+function rankOf(id, scores, w){
+  const v = weighted(scores[id],w);
+  return 1 + S.filter(x=>weighted(scores[x.id],w) > v + 1e-9).length;
+}
+const BASE = rankOrder(ORIG, PRESETS.equal);
+
+function renderWeights(){
+  const g = document.getElementById("wgrid");
+  const tw = CRIT.reduce((a,c)=>a+W[c.k],0);
+  g.innerHTML = CRIT.map(c=>`
+    <div class="w">
+      <div class="w-top"><label class="w-name" for="w-${c.k}">${c.name}</label><span class="w-pct">${tw?Math.round(W[c.k]/tw*100):0}%</span></div>
+      <input type="range" id="w-${c.k}" min="0" max="5" step="1" value="${W[c.k]}" aria-describedby="wq-${c.k}">
+      <div class="w-val">Weight ${W[c.k]} of 5</div>
+      <div class="w-q" id="wq-${c.k}">${c.q}</div>
+    </div>`).join("");
+  CRIT.forEach(c=>{
+    document.getElementById("w-"+c.k).addEventListener("input",e=>{ W[c.k]=+e.target.value; save(); renderWeights(); renderList(); document.getElementById("w-"+c.k).focus(); });
+  });
+  document.querySelectorAll("[data-preset]").forEach(b=>{
+    const p = PRESETS[b.dataset.preset];
+    b.setAttribute("aria-pressed", CRIT.every(c=>p[c.k]===W[c.k]) ? "true":"false");
+  });
+}
+
+function esc(s){ return s.replace(/[&<>"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch])); }
+
+function renderList(){
+  const list = document.getElementById("list");
+  list.querySelectorAll(".row").forEach(r=>r.remove());
+  const EFF = SC;
+  const order = rankOrder(EFF, W);
+  order.forEach((id,i)=>{
+    const s = S.find(x=>x.id===id), sc = EFF[id], v = weighted(sc,W);
+    const r = rankOf(id,EFF,W), delta = rankOf(id,ORIG,PRESETS.equal) - r;
+    const tied = S.some(x=>x.id!==id && rankOf(x.id,EFF,W)===r);
+    const pr = PROPOSED[id];
+    const unv = Object.values(s.ev).flat().filter(e=>e.s==="unverified").length;
+    const total = Object.values(s.ev).flat().length;
+    const row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML = `
+      <div class="cols row-main">
+        <div class="rk">${r}<small class="${delta>0?"up":delta<0?"down":""}">${delta>0?"▲"+delta:delta<0?"▼"+(-delta):"·"}${tied?" tie":""}</small></div>
+        <div class="seg">
+          <span class="seg-name">${esc(s.name)}</span>
+          <span class="seg-who">${esc(s.who)}</span>
+          <span class="unv">${unv} of ${total} evidence points unverified</span>
+          <button class="toggle" type="button" aria-expanded="${open.has(id)}" aria-controls="ev-${id}">${open.has(id)?"Hide evidence":"Show evidence"}</button>
+        </div>
+        ${CRIT.map(c=>`
+          <div class="score">
+            <span class="mlabel">${c.name}</span>
+            <div class="pips" role="radiogroup" aria-label="${c.name} for ${esc(s.name)}">
+              ${[1,2,3,4,5].map(n=>`<button type="button" class="pip ${n<=sc[c.k]?"on":""}" role="radio" aria-checked="${n===sc[c.k]}" data-id="${id}" data-k="${c.k}" data-n="${n}" aria-label="${n}">${n===sc[c.k]?n:""}</button>`).join("")}
+            </div>
+            <span class="edited">${sc[c.k]!==ORIG[id][c.k]?"edited, was "+ORIG[id][c.k]:c.k==="share"&&SHARE_WAS[id]?"revised from "+SHARE_WAS[id]:""}</span>
+          </div>`).join("")}
+        <div class="total">
+          <span class="total-num">${v.toFixed(2)} <span>/ 5</span></span>
+          <div class="bar" aria-hidden="true"><i style="width:${(v/5*100).toFixed(1)}%"></i></div>
+        </div>
+      </div>
+      <div class="evidence" id="ev-${id}" ${open.has(id)?"":"hidden"}>
+        ${CRIT.map(c=>`
+          <div class="ev">
+            <h3>${c.name} <span class="s">${sc[c.k]} / 5</span></h3>
+            <ul>${s.ev[c.k].map(e=>`
+              <li><i class="dot d-${e.s}" title="${e.s}"></i><div>${esc(e.t)}${e.src?` <span class="src">${e.u?`<a href="${e.u}" target="_blank" rel="noopener">${esc(e.src)}</a>`:esc(e.src)}</span>`:` <span class="src">Unverified</span>`}</div></li>`).join("")}
+            </ul>
+          </div>`).join("")}
+        <div class="propnote">
+          <h3>Winnable share after the competitor research: ${pr.v} / 5${SHARE_WAS[id]?` (was ${SHARE_WAS[id]}, changed 1 Nov 2026)`:" (unchanged)"}</h3>
+          <p style="margin:0;font-size:13.5px">${esc(pr.why)}</p>
+          <div class="ev"><ul>${pr.ev.map(e=>`
+            <li><i class="dot d-${e.s}" title="${e.s}"></i><div>${esc(e.t)}${e.src?` <span class="src">${e.u?`<a href="${e.u}" target="_blank" rel="noopener">${esc(e.src)}</a>`:esc(e.src)}</span>`:` <span class="src">Unverified</span>`}</div></li>`).join("")}</ul></div>
+        </div>
+        <p class="risk"><b>Main risk.</b> ${esc(s.risk)}</p>
+      </div>`;
+    list.appendChild(row);
+  });
+  list.querySelectorAll(".pip").forEach(b=>b.addEventListener("click",()=>{
+    SC[b.dataset.id][b.dataset.k] = +b.dataset.n; save(); renderList();
+    const again = list.querySelector(`.pip[data-id="${b.dataset.id}"][data-k="${b.dataset.k}"][data-n="${b.dataset.n}"]`);
+    if(again) again.focus();
+  }));
+  list.querySelectorAll(".toggle").forEach(b=>b.addEventListener("click",()=>{
+    const id = b.getAttribute("aria-controls").slice(3);
+    open.has(id)?open.delete(id):open.add(id); renderList();
+    const t = list.querySelector(`.toggle[aria-controls="ev-${id}"]`); if(t) t.focus();
+  }));
+}
+
+document.querySelectorAll("[data-preset]").forEach(b=>b.addEventListener("click",()=>{ W={...PRESETS[b.dataset.preset]}; save(); renderWeights(); renderList(); }));
+document.getElementById("resetScores").addEventListener("click",()=>{ SC=JSON.parse(JSON.stringify(ORIG)); save(); renderList(); });
+document.getElementById("resetAll").addEventListener("click",()=>{ SC=JSON.parse(JSON.stringify(ORIG)); W={...DEFAULT_W}; save(); renderWeights(); renderList(); });
+
+
+// Competitors view
+function evLi(e){
+  return `<li><i class="dot d-${e.s}" title="${e.s}"></i><div>${esc(e.t)}${e.src?` <span class="src">${e.u?`<a href="${e.u}" target="_blank" rel="noopener">${esc(e.src)}</a>`:esc(e.src)}</span>`:(e.s==="unverified"?` <span class="src">Unverified</span>`:"")}</div></li>`;
+}
+const CATS = [...new Set(COMP.map(c=>c.cat))];
+let fSeg = "all", fCat = "all", openC = new Set();
+function renderGap(){
+  document.getElementById("gapbar").innerHTML = ACTS.map(a=>{
+    const full = COMP.filter(c=>c.acts[a.k]==="full").length, part = COMP.filter(c=>c.acts[a.k]==="partial").length;
+    return `<div class="gap ${full<=1?"thin":""}"><span class="label">${a.name}</span><span class="n">${full} <span>full · ${part} partial</span></span><span class="lbl">${full<=1?"Barely covered":full<=5?"Mostly individual tools":"Well covered"}</span></div>`;
+  }).join("");
+}
+function renderMatrix(){
+  const rows = COMP.filter(c=>(fSeg==="all"||c.segs.includes(fSeg)) && (fCat==="all"||c.cat===fCat));
+  document.getElementById("fCount").textContent = `${rows.length} of ${COMP.length} substitutes`;
+  const covName = {full:"Full",partial:"Partial",none:"None"};
+  document.getElementById("matrix").innerHTML = `
+    <thead><tr><th>Substitute</th><th>Price</th>${ACTS.map(a=>`<th class="act">${a.name}</th>`).join("")}<th>Segments</th></tr></thead>
+    <tbody>${rows.map(c=>`
+      <tr>
+        <td><div class="cname"><a href="${c.url}" target="_blank" rel="noopener">${esc(c.name)}</a>${c.deep?`<span class="deep">Deep</span>`:""}</div>
+          <div class="ccat">${c.cat}</div>
+          <button class="toggle" type="button" data-c="${c.id}" aria-expanded="${openC.has(c.id)}">${openC.has(c.id)?"Hide detail":"Show detail"}</button></td>
+        <td class="price">${esc(c.price)}<span class="src"><i class="dot d-${c.p.s}"></i><span>${c.p.u?`<a href="${c.p.u}" target="_blank" rel="noopener">${esc(c.p.t)}</a>`:esc(c.p.t)}</span></span></td>
+        ${ACTS.map(a=>`<td class="act"><span class="cov"><i class="g ${c.acts[a.k]}" aria-hidden="true"></i>${covName[c.acts[a.k]]}</span></td>`).join("")}
+        <td><div class="segchips">${c.segs.map(s=>`<span class="sc">${SEGNAME[s]}</span>`).join("")}</div></td>
+      </tr>
+      ${openC.has(c.id)?`<tr class="detail"><td colspan="7"><div class="dgrid">
+        <div><h4>Does better than us</h4><p style="margin:0">${esc(c.better)}</p></div>
+        <div><h4>Lacks compared with us</h4><p style="margin:0">${esc(c.lacks)}</p></div>
+        <div><h4>Adoption signals</h4><ul>${c.adoption.map(evLi).join("")}</ul></div>
+        <div><h4>Switching cost</h4><p style="margin:0">${esc(c.switching)}</p></div>
+      </div></td></tr>`:""}`).join("")}
+    </tbody>`;
+  document.querySelectorAll("#matrix .toggle").forEach(b=>b.addEventListener("click",()=>{
+    const id=b.dataset.c; openC.has(id)?openC.delete(id):openC.add(id); renderMatrix();
+    const t=document.querySelector(`#matrix .toggle[data-c="${id}"]`); if(t) t.focus();
+  }));
+}
+const fs = document.getElementById("fSeg"), fc = document.getElementById("fCat");
+fs.innerHTML = `<option value="all">All segments</option>` + Object.entries(SEGNAME).map(([k,v])=>`<option value="${k}">${v}</option>`).join("");
+fc.innerHTML = `<option value="all">All categories</option>` + CATS.map(c=>`<option value="${c}">${c}</option>`).join("");
+fs.addEventListener("change",()=>{ fSeg=fs.value; renderMatrix(); });
+fc.addEventListener("change",()=>{ fCat=fc.value; renderMatrix(); });
+
+function showTab(name){
+  ["segments","competitors"].forEach(n=>{
+    document.getElementById("tab-"+n).setAttribute("aria-selected", n===name);
+    document.getElementById("view-"+n).hidden = n!==name;
+  });
+}
+document.getElementById("tab-segments").addEventListener("click",()=>showTab("segments"));
+document.getElementById("tab-competitors").addEventListener("click",()=>showTab("competitors"));
+if(location.hash==="#competitors") showTab("competitors");
+
+open.add(BASE[0]);
+renderWeights(); renderList(); renderGap(); renderMatrix();
+</script>
