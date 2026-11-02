@@ -12,11 +12,18 @@
  *     Posts the image + caption to the listed channels. Prints the live
  *     permalink(s) on success.
  *
+ *   node post_to_meta.js --caption "..." --channels facebook --first-comment "..."
+ *     Text-only post (long-form / one-liner slots). Facebook only: Instagram
+ *     can't publish without media, so it is skipped with a warning.
+ *
  * Flags:
- *   --image      required (unless --test): public URL of the PNG/JPEG to post
- *   --caption    required (unless --test): full post caption, hashtags included
- *   --channels   default "facebook,instagram"
- *   --test       GET the Page name to confirm the token works; no posting
+ *   --image          optional: public URL of the PNG/JPEG to post. Omit for a
+ *                    text-only Facebook post.
+ *   --caption        required (unless --test): full post caption, hashtags included
+ *   --channels       default "facebook,instagram"
+ *   --first-comment  optional: posted as the first comment on each published
+ *                    post (where long-form posts keep their link)
+ *   --test           GET the Page name to confirm the token works; no posting
  */
 const fs = require('fs');
 const path = require('path');
@@ -68,33 +75,42 @@ async function testAuth() {
   console.log(`OK — Instagram: @${ig.username} (${ig.followers_count ?? '?'} followers)`);
 }
 
-async function postFacebook(imageUrl, caption) {
-  const created = await graphPost(`${creds.facebook_page_id}/photos`, { url: imageUrl, caption });
-  const info = await graphGet(created.post_id || created.id, 'permalink_url');
+async function postFacebook(imageUrl, caption, firstComment) {
+  const created = imageUrl
+    ? await graphPost(`${creds.facebook_page_id}/photos`, { url: imageUrl, caption })
+    : await graphPost(`${creds.facebook_page_id}/feed`, { message: caption });
+  const postId = created.post_id || created.id;
+  if (firstComment) await graphPost(`${postId}/comments`, { message: firstComment });
+  const info = await graphGet(postId, 'permalink_url');
   return info.permalink_url;
 }
 
-async function postInstagram(imageUrl, caption) {
+async function postInstagram(imageUrl, caption, firstComment) {
   const container = await graphPost(`${creds.instagram_business_account_id}/media`, { image_url: imageUrl, caption });
   const published = await graphPost(`${creds.instagram_business_account_id}/media_publish`, { creation_id: container.id });
+  if (firstComment) await graphPost(`${published.id}/comments`, { message: firstComment });
   const info = await graphGet(published.id, 'permalink');
   return info.permalink;
 }
 
 async function main() {
   if (args.test) { await testAuth(); return; }
-  if (!args.image || !args.caption) {
-    console.error('Usage: node post_to_meta.js --image <url> --caption "..." [--channels facebook,instagram]');
+  if (typeof args.caption !== 'string') {
+    console.error('Usage: node post_to_meta.js [--image <url>] --caption "..." [--channels facebook,instagram] [--first-comment "..."]');
     process.exit(1);
   }
+  const image = typeof args.image === 'string' ? args.image : null;
+  const firstComment = typeof args['first-comment'] === 'string' ? args['first-comment'] : null;
   const channels = (args.channels || 'facebook,instagram').split(',').map((s) => s.trim());
   const results = {};
   if (channels.includes('facebook')) {
-    results.facebook = await postFacebook(args.image, args.caption);
+    results.facebook = await postFacebook(image, args.caption, firstComment);
     console.log('Facebook  ->', results.facebook);
   }
-  if (channels.includes('instagram')) {
-    results.instagram = await postInstagram(args.image, args.caption);
+  if (channels.includes('instagram') && !image) {
+    console.warn('Instagram skipped: it cannot publish a text-only post. Pass --image to include it.');
+  } else if (channels.includes('instagram')) {
+    results.instagram = await postInstagram(image, args.caption, firstComment);
     console.log('Instagram ->', results.instagram);
   }
 }
