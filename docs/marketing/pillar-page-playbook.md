@@ -11,7 +11,7 @@
 4. **Bylines are for blog articles only.** Pillars of both types carry no byline.
 5. **Topical Pillars are built for rich media** (images, video, diagrams, downloads), not text alone (§3.3).
 6. **Pillars run through the same Asana workflow as blog articles** (§7).
-7. **A Topical Pillar is not a long blog post** (v2, 2026-10-27, proposed). It is a hub page built from modules: a heading, a one-sentence answer, and one structured element (table, card grid, example list, steps, checklist, diagram). No Quick Summary, no intro section, no anecdotes, no paragraph-heavy sections, no conclusion paragraph. Prose limits are script-checked (skill B4).
+7. **A Topical Pillar is not a long blog post** (v2, 2026-10-27, proposed). It is a hub page built from modules: a heading, a one-sentence answer, and one structured element (table, card grid, example list, steps, checklist, diagram). No Quick Summary, no intro section, no anecdotes, no paragraph-heavy sections, no conclusion paragraph. Prose limits are script-checked (skill B4). **v2.1 (2026-10-30):** at most 3 table-type elements per page, never in adjacent modules, and a planned media beat on every second or third module (skill B3a, B7), after Grant found the first two v2 mockups table-heavy and without media.
 
 One older page broke rule 2: `startup-accountability-system` sits at the top level but is a blog article. The other seven top-level articles are Topical Pillars. §6 is the cleanup plan.
 
@@ -76,7 +76,8 @@ The research mostly treats "pillar" as an informational guide. SaaS sites also r
 | Definition card (40 to 60 words) + key points box (3 to 5 bullets) | Not used | **Required** (band 2) |
 | Topic map: card grid, one card per subtopic | Not used | **Required** (band 3) |
 | One module per subtopic: H2, one-sentence answer, one structured element (skill B3 library), go-deeper card to its blog article | Not used | **Required**; sibling modules parallel |
-| Image per subtopic section | n/a | Only where it shows something the module's table, list, or cards cannot (§3.3) |
+| Image per subtopic section | n/a | **Required on every second or third module** (v2.1, §3.3), in the media split layout |
+| Element mix | n/a | At most 3 table-type elements per page, never in adjacent modules; at least 4 element types (skill B3a) |
 | Diagram / infographic | Optional | **Required (at least one)** |
 | Explainer video | Optional | Optional, max one to start (§3.3) |
 | Comparison table or structured visual | Optional | Required (at least one) |
@@ -95,7 +96,7 @@ Topical Pillars cover a whole topic, and the SERPs they compete in are full of g
 | Slot | Where | What goes there | Rule |
 |---|---|---|---|
 | **Hero media** | Hero band, beside or under the H1 and dek | Brand-standard image or illustration, or a short explainer video | Required. One per page |
-| **Section media** | Inside a subtopic module, after its primary element | Image, chart, short video clip, or embed (template preview, example sheet) | Only where it shows something the module's table, list, or cards cannot. Tables, lists, and cards are text and always present; no image slot is planned per module by default (v2) |
+| **Section media** | Inside a subtopic module, beside its primary element (media split layout) | Image, annotated image, figure, image card grid, short video clip, or embed (template preview, example sheet) | Required on every second or third module (v2.1, 2026-10-30), so an 8 to 10 module page carries 3 to 5 beats; figures and the band 2 diagram count. Shows the thing the module talks about, made concrete; never decoration |
 | **Diagram / infographic** | Where a process, comparison, or system is explained | Original diagram (cycle, decision tree, partner vs. group vs. coach) | Required, at least one. Also the most link-worthy asset on the page |
 | **Explainer video** | Hero slot or the "in practice" section | 1 to 3 minute walkthrough of the topic (not a product ad) | Optional, max one to start. Captions and a transcript required |
 | **Downloadable** | Inside the soft CTA card | Template, checklist, or worksheet tied to the topic | Optional, max one; counts as the page's soft CTA |

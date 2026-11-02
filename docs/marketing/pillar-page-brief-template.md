@@ -102,13 +102,13 @@ Sibling modules use the same primary element. State the element's real content (
 Minimums per playbook §5. Topical: every live blog article in the cluster, 1 to 3 Product pillars; every live cluster article links back. Product: 1 to 2 Topical pillars, sibling Product pillars, `/faq`.
 
 ## 11. Media plan and length
-**(Topical)** One row per media slot, per playbook §3.3. Tables, lists, and cards belong in the §7 module map, not here. Add an image row for a module only when it shows something the module's element cannot.
+**(Topical)** One row per media slot, per playbook §3.3. Tables, lists, and cards belong in the §7 module map, not here. Plan a media beat on every second or third module (skill B7, v2.1): an image, annotated image, figure, image card grid, or the one video, shown in the media split layout. Also confirm the §7 element mix (skill B3a): at most 3 table-type elements, none in adjacent modules.
 
 | Slot | Band or module | Type (image / diagram / video / embed / download) | What it shows and why it helps | Source (own / AI, approve per page / licensed) | Alt text or caption | Transcript needed? |
 |---|---|---|---|---|---|---|
 | Hero | hero band | | | | | |
 
-Minimums: hero filled, at least one original diagram, any video 1 to 3 minutes with captions + transcript, max one video and one downloadable.
+Minimums: hero filled, at least one original diagram, a section media beat on every second or third module, any video 1 to 3 minutes with captions + transcript, max one video and one downloadable.
 
 **(Product)** Visuals per band (product UI panels labeled illustrative, sample lines, worked-example visuals).
 
