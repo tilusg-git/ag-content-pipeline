@@ -14,3 +14,6 @@ secrets/
 # OS / editor cruft
 .DS_Store
 Thumbs.db
+
+# Marketing site repo (accountabilityguild/www) — its own separate git checkout, never tracked by this repo
+www/
