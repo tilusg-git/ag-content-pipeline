@@ -1,0 +1,26 @@
+{
+  "scene": "mark-sheet",
+  "slug": "mark-sheet-checkin",
+  "kicker": "Logging proof",
+  "headline": "Kept, with a note *your group can read.*",
+  "data": {
+    "pillar": "fitness",
+    "cadence": "daily",
+    "title": "Work out 5 mornings a week.",
+    "date": "Mon, Nov 2",
+    "outcome": null,
+    "note": "",
+    "caret": false
+  },
+  "firstHold": 1000,
+  "steps": [
+    { "set": { "outcome": "done" }, "hold": 700 },
+    { "set": { "caret": true }, "hold": 300 },
+    { "set": { "note": "6 a.m. lift" }, "hold": 160 },
+    { "set": { "note": "6 a.m. lift with Marcus." }, "hold": 160 },
+    { "set": { "note": "6 a.m. lift with Marcus. Legs," }, "hold": 160 },
+    { "set": { "note": "6 a.m. lift with Marcus. Legs, then a mile" }, "hold": 160 },
+    { "set": { "note": "6 a.m. lift with Marcus. Legs, then a mile on the track." }, "hold": 700 },
+    { "set": { "caret": false, "saving": true }, "hold": 2400 }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "scene": "report-close",
+  "slug": "report-close-tally",
+  "kicker": "Cycle close",
+  "headline": "Score every goal. *The tally does the rest.*",
+  "data": {
+    "cycleTitle": "Cycle 3",
+    "dates": "Oct 1 – Oct 28",
+    "stake": "$100",
+    "kept": 0,
+    "forfeit": "$100",
+    "returned": "$0",
+    "noReport": 5,
+    "ready": false,
+    "rowsReady": 0,
+    "lede": false,
+    "mastTally": false,
+    "goals": [
+      { "pillar": "fitness", "title": "Work out 5 mornings a week", "pct": null },
+      { "pillar": "faith", "title": "Read the Bible before work", "pct": null },
+      { "pillar": "family", "title": "Call my parents twice a week", "pct": null },
+      { "pillar": "personal", "title": "No phone after 9 p.m.", "pct": null },
+      { "pillar": "professional", "title": "Send three client proposals", "pct": null }
+    ]
+  },
+  "firstHold": 1200,
+  "steps": [
+    { "set": { "goals.0.pct": 100, "kept": 1, "forfeit": "$80", "returned": "$20", "noReport": 4, "rowsReady": 1 }, "hold": 650 },
+    { "set": { "goals.1.pct": 50, "forfeit": "$70", "returned": "$30", "noReport": 3, "rowsReady": 2 }, "hold": 650 },
+    { "set": { "goals.2.pct": 100, "kept": 2, "forfeit": "$50", "returned": "$50", "noReport": 2, "rowsReady": 3 }, "hold": 650 },
+    { "set": { "goals.3.pct": 100, "kept": 3, "forfeit": "$30", "returned": "$70", "noReport": 1, "rowsReady": 4 }, "hold": 650 },
+    { "set": { "goals.4.pct": 100, "kept": 4, "forfeit": "$10", "returned": "$90", "noReport": 0, "rowsReady": 5, "ready": true }, "hold": 3000 }
+  ]
+}

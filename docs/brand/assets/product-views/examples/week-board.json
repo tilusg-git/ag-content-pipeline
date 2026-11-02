@@ -1,0 +1,39 @@
+{
+  "scene": "week-board",
+  "slug": "week-board",
+  "kicker": "Week 3 of 4 · Monday",
+  "headline": "Mark the day. *Your group sees it.*",
+  "data": {
+    "weekIndex": 3,
+    "weekCount": 4,
+    "thisWeek": true,
+    "weekLabel": "Oct 29–Nov 4",
+    "days": [
+      { "dow": "Th", "dom": 29 },
+      { "dow": "Fr", "dom": 30 },
+      { "dow": "Sa", "dom": 31 },
+      { "dow": "Su", "dom": 1 },
+      { "dow": "Mo", "dom": 2, "today": true },
+      { "dow": "Tu", "dom": 3 },
+      { "dow": "We", "dom": 4 }
+    ],
+    "goals": [
+      { "pillar": "fitness", "title": "Work out 5 mornings a week", "mode": "daily",
+        "cells": ["done", "done", "missed", "skip", "today", "future", "future"] },
+      { "pillar": "faith", "title": "Read the Bible before work", "mode": "daily",
+        "cells": ["done", "done+note", "done", "done", "today", "future", "future"] },
+      { "pillar": "family", "title": "Call my parents twice a week", "mode": "count",
+        "value": 1, "target": 2 },
+      { "pillar": "personal", "title": "No phone after 9 p.m.", "mode": "daily",
+        "cells": ["done", "missed", "done+photo", "done", "today", "future", "future"] },
+      { "pillar": "professional", "title": "Send three client proposals", "mode": "report" }
+    ]
+  },
+  "firstHold": 1100,
+  "steps": [
+    { "set": { "goals.0.cells.4": "done" }, "hold": 500 },
+    { "set": { "goals.1.cells.4": "done+note" }, "hold": 500 },
+    { "set": { "goals.2.value": 2 }, "hold": 500 },
+    { "set": { "goals.3.cells.4": "done" }, "hold": 2600 }
+  ]
+}

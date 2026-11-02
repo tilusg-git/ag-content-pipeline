@@ -1,0 +1,22 @@
+{
+  "scene": "goal-detail",
+  "slug": "goal-detail",
+  "kicker": "One goal · one cycle",
+  "headline": "Every day you kept it, *on the record.*",
+  "data": {
+    "title": "Read the Bible before work",
+    "pillar": "faith",
+    "cadence": "daily",
+    "streak": 9,
+    "hit": "16/28",
+    "position": "WK 03 · DAY 19",
+    "weeks": [
+      ["done", "done", "miss", "done", "done", "sick", "done"],
+      ["done", "miss", "done", "done", "done", "done", "miss"],
+      ["done", "done", "done", "done", "done", "today", "future"],
+      ["future", "future", "future", "future", "future", "future", "future"]
+    ],
+    "notesCount": 6,
+    "todayMarked": false
+  }
+}

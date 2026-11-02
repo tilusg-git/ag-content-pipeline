@@ -1,0 +1,30 @@
+{
+  "scene": "report-goal",
+  "slug": "report-goal-scoring",
+  "kicker": "Cycle close · one goal",
+  "headline": "Your marks are the evidence. *You write the verdict.*",
+  "data": {
+    "pillar": "faith",
+    "title": "Read the Bible before work",
+    "cadence": "Weekly",
+    "tracking": "count",
+    "target": 5,
+    "marks": [
+      { "date": "Oct 20", "status": "done", "note": "Psalms 23–25 before the commute." },
+      { "date": "Oct 22", "status": "missed", "note": "" },
+      { "date": "Oct 23", "status": "done", "note": "" }
+    ],
+    "pct": null,
+    "note": "",
+    "caret": false
+  },
+  "firstHold": 1200,
+  "steps": [
+    { "set": { "pct": 50 }, "hold": 800 },
+    { "set": { "caret": true }, "hold": 300 },
+    { "set": { "note": "Mornings slipped" }, "hold": 170 },
+    { "set": { "note": "Mornings slipped once work ramped up." }, "hold": 220 },
+    { "set": { "note": "Mornings slipped once work ramped up. Moving reading to the night before" }, "hold": 170 },
+    { "set": { "note": "Mornings slipped once work ramped up. Moving reading to the night before helped the last week.", "caret": false }, "hold": 2800 }
+  ]
+}

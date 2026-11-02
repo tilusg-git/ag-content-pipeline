@@ -1,0 +1,38 @@
+{
+  "scene": "report-page",
+  "layout": "mobile",
+  "data": {
+    "cycleTitle": "Cycle 3",
+    "dates": "Oct 1 – Oct 28",
+    "stake": "$100",
+    "kept": 4,
+    "forfeit": "$10",
+    "noReport": 0,
+    "ready": true,
+    "subject": "Building momentum.",
+    "goals": [
+      { "pillar": "fitness", "title": "Work out 5 mornings a week", "cadence": "Weekly", "tracking": "count", "target": 5, "pct": 100,
+        "note": "Hit five every week. The 6 a.m. lift with Marcus kept me honest." },
+      { "pillar": "faith", "title": "Read the Bible before work", "cadence": "Weekly", "tracking": "count", "target": 5, "pct": 50,
+        "marks": [
+          { "date": "Oct 20", "status": "done", "note": "Psalms 23–25 before the commute." },
+          { "date": "Oct 22", "status": "missed", "note": "" },
+          { "date": "Oct 23", "status": "done", "note": "" }
+        ],
+        "note": "Mornings slipped once work ramped up. Moving reading to the night before helped the last week." },
+      { "pillar": "family", "title": "Call my parents twice a week", "cadence": "Weekly", "tracking": "count", "target": 2, "pct": 100,
+        "note": "Sunday and Wednesday calls. Mom noticed." },
+      { "pillar": "personal", "title": "No phone after 9 p.m.", "cadence": "Daily", "tracking": "daily", "pct": 100,
+        "note": "Charger lives in the kitchen now." },
+      { "pillar": "professional", "title": "Send three client proposals", "cadence": "Monthly", "tracking": "percentage", "pct": 100,
+        "note": "Three sent, one signed." }
+    ],
+    "reflection": "Four of five. Mornings are still the weak spot. Next cycle the reading moves to the night before."
+  },
+  "slides": [
+    { "slug": "report-1-header", "crop": { "anchor": "top", "height": 700 } },
+    { "slug": "report-2-evidence", "crop": { "anchor": "#pv-goal-1", "height": 700 } },
+    { "slug": "report-3-score", "crop": { "anchor": "#pv-picker-1", "height": 700 } },
+    { "slug": "report-4-file", "crop": { "anchor": "#pv-reflection", "height": 700 } }
+  ]
+}

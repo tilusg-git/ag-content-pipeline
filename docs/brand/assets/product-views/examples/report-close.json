@@ -1,0 +1,25 @@
+{
+  "scene": "report-close",
+  "slug": "report-close",
+  "kicker": "Cycle close",
+  "headline": "Score every goal. *The tally does the rest.*",
+  "data": {
+    "cycleTitle": "Cycle 3",
+    "dates": "Oct 1 – Oct 28",
+    "stake": "$100",
+    "kept": 4,
+    "forfeit": "$10",
+    "returned": "$90",
+    "noReport": 0,
+    "ready": true,
+    "lede": false,
+    "mastTally": false,
+    "goals": [
+      { "pillar": "fitness", "title": "Work out 5 mornings a week", "pct": 100 },
+      { "pillar": "faith", "title": "Read the Bible before work", "pct": 50 },
+      { "pillar": "family", "title": "Call my parents twice a week", "pct": 100 },
+      { "pillar": "personal", "title": "No phone after 9 p.m.", "pct": 100 },
+      { "pillar": "professional", "title": "Send three client proposals", "pct": 100 }
+    ]
+  }
+}

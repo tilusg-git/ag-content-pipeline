@@ -1,0 +1,16 @@
+{
+  "scene": "mark-sheet",
+  "slug": "mark-sheet-kept",
+  "kicker": "Logging proof",
+  "headline": "Kept, with a note *your group can read.*",
+  "data": {
+    "pillar": "fitness",
+    "cadence": "daily",
+    "title": "Work out 5 mornings a week.",
+    "date": "Mon, Nov 2",
+    "outcome": "done",
+    "note": "6 a.m. lift with Marcus. Legs, then a mile on the track."
+  },
+  "firstHold": 900,
+  "steps": []
+}
