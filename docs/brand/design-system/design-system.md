@@ -43,3 +43,19 @@ Vector masters in `../assets/` — wordmark A lockup, monogram (4 variants), app
 ## Using with Claude Design
 
 Point onboarding/import at this folder plus `../assets/` and `../brand-standards.md`; the repo's `components.css` is the implementation reference for component behavior. When Claude Design generates work, hold it to: token colors only, radius 0, the three-voice type system, and ember-as-punctuation.
+
+## Design review check
+
+Run this before any design work (Claude Design, Figma, contractor handoff, or Claude-written UI) moves to review. Any "no" is a fix, not a judgment call.
+
+1. **Color:** every color is a token from `tokens.json`. Brand surfaces (marketing, social, icons) use only the seven brand tokens; state colors (error/success/warning/info) appear only in app UI. No gradients, no off-token hexes.
+2. **Ember:** used as punctuation (focus rings, accent rules, active markers, an italic span), not as a fill. Large ember fills only on the report social card and accent app icon.
+3. **Corners:** radius 0. Rounded shapes only on app icons, avatars, and toggle/spinner circles.
+4. **Type:** serif speaks, sans operates, mono annotates, sized per the scale above. Mono is small, tracked, uppercase.
+5. **Lines and depth:** 1px `line` borders, 2px ink top-rules for mastheads, no shadows outside modals/toasts.
+6. **Icons:** typographic glyphs only (✓, –, →, tally strokes). No icon library.
+7. **Components:** reuses an existing primitive from `components.css` (inventory above) instead of inventing a new one. If something new is genuinely needed, flag it for a decision before building.
+8. **Focus:** every interactive control shows the 2px ember outline at 2px offset.
+9. **Copy:** on-screen text follows `../voice-and-tone.md` and `../glossary.md` ("kitty," not "group fund"; no emoji, no humor).
+
+**Reference to check against:** this file, `tokens.json`, `../brand-standards.md`, and the implemented styles in `repo/public/ag-refresh/components.css`. A live rendered reference page (`/admin/design-system`) is proposed but not built yet; once it exists, compare designs side by side against it instead of reading the CSS.

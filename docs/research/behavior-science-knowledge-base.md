@@ -1,6 +1,6 @@
 # Behavior Science Knowledge Base
 
-Research foundation for Accountability Guild content, marketing claims, and product decisions. 30 studies (meta-analyses, systematic reviews, and key primary studies, 2011–2025) on accountability, goal-setting, habit formation, and self-regulation.
+Research foundation for Accountability Guild content, marketing claims, and product decisions. 30 studies (meta-analyses, systematic reviews, and key primary studies, 2011–2025) on accountability, goal-setting, habit formation, and self-regulation, plus population survey data (Part 4: Gallup 2026 on social media and wellbeing, added 2026-10-15).
 
 **Provenance:** Compiled via Gemini deep research (2026-07-17), then citation-verified and expanded by Claude against primary sources (PubMed, Semantic Scholar, publisher abstracts) on 2026-07-17. 15+ citation errors corrected — see [Corrections log](#corrections-log).
 
@@ -13,7 +13,7 @@ When writing Field notes articles, marketing copy, social posts, or product copy
 **Rules:**
 
 1. **Only cite ✓ entries in anything published.** ⚠ = plausible but unverified (verify first). ✗ = do not cite ever (citation broken or paper likely nonexistent).
-2. **Cite by author-year with a DOI link**, e.g. `[Harkin et al., 2016](https://doi.org/10.1037/bul0000025)`. Never link ResearchGate, SciSpace, Scilit, or Semantic Scholar in published content.
+2. **Cite with a DOI link.** For Field notes (blog), hyperlink the phrase in the sentence that states the finding and describe the study in plain, non-technical words, e.g. "in a [large review of 138 experiments](https://doi.org/10.1037/bul0000025), people who were prompted to track their progress..." Do NOT use jargon like "meta-analysis of 141 papers on randomized trials," do NOT put effect-size notation (d = 0.34) in blog body copy (translate it: "a small-to-medium effect," "a large effect," "backfired"), do NOT use a trailing parenthetical citation like "(Harkin et al., 2016)", and do not use em dashes (Grant's blog review feedback, 2026-09-19; the exact d values in this file remain the source of record and still must not be misstated). For other channels the author-year link form, `[Harkin et al., 2016](https://doi.org/10.1037/bul0000025)`, is still fine. Never link ResearchGate, SciSpace, Scilit, or Semantic Scholar in published content.
 3. **Use the exact stats given here** — don't round d=0.34 to "about a third" of anything, don't inflate "medium effect" to "dramatic." If a stat isn't in this file, don't invent it; check the paper.
 4. **Never use ego-depletion / "willpower is a muscle" framing** (contested science — see Caveats). "People who succeed avoid temptation rather than resist it" is the safe version.
 5. **Effect-size translation for lay audiences:** d≈0.2 "small", d≈0.5 "moderate", d≈0.8+ "large". A d=0.40 can honestly be called "a meaningful, causal boost"; it cannot be called "transformative."
@@ -22,7 +22,7 @@ When writing Field notes articles, marketing copy, social posts, or product copy
 
 **Format templates by channel:**
 
-- *Field notes (blog):* "A meta-analysis of 138 experiments (N≈20,000) found that prompting people to monitor progress increased goal attainment (d = 0.40) — with the biggest gains when progress was reported publicly and physically recorded ([Harkin et al., 2016](https://doi.org/10.1037/bul0000025))."
+- *Field notes (blog):* "In a [large review of 138 experiments](https://doi.org/10.1037/bul0000025), people who were prompted to track their progress tracked far more and reached their goals more often, with the biggest gains when progress was written down and shared with others." (Inline link on the plain-language phrase, no jargon, no effect-size notation, no trailing parenthetical, no em dash.)
 - *Marketing site:* short claim + link to a research/methodology page, not inline academic citations. "Public progress tracking measurably increases follow-through. It's the most-replicated finding in goal science."
 - *Social:* one stat, one hook, no hedging beyond accuracy. "The '21 days to form a habit' thing? A 2024 meta-analysis put the real median at 59–66 days. Your accountability group needs to outlast month one."
 
@@ -279,6 +279,55 @@ When writing Field notes articles, marketing copy, social posts, or product copy
 
 ---
 
+## Part 4: Population survey data (wellbeing, social connection)
+
+Large survey reports, not experiments. They describe how people are doing; they can't show that anything causes anything. Use them for context and timely hooks, never as evidence that a mechanic works.
+
+### 31. State of the World's Emotional Health 2026: How Social Media Connects to Emotional Wellbeing ✓
+**Gallup, 2026** (with the World Health Summit) — report PDF: [gallup.com/file/analytics/715250/State-of-the-Worlds-Emotional-Health-2026_Report.pdf](https://www.gallup.com/file/analytics/715250/State-of-the-Worlds-Emotional-Health-2026_Report.pdf) · news write-up: [Ray & Ron-Levey, "Social Media and Wellbeing: It's Complicated," Gallup News, Oct 10, 2026](https://news.gallup.com/poll/715433/social-media-wellbeing-complicated.aspx) · landing page: [gallup.com/analytics/349280](https://www.gallup.com/analytics/349280/state-of-worlds-emotional-health.aspx)
+
+**Verified 2026-10-15** against the full report text (28 pp.) and both Gallup web pages; the numbers agree across all three. No DOI. Link the PDF or the news article instead. **Gallup's copyright terms require any webpage that references the report to link back to the original document**, so a Field notes article or pillar that cites it must link the PDF (or the landing page).
+
+**Method:** Gallup World Poll, 2026. Adults aged 15 and older in 97 countries, about 1,000 per country, probability samples, phone or face to face, fielded March to August 2026 (it will grow to about 140 countries when 2026 fieldwork finishes). There are two new questions: did you use any social media in the past 7 days, and if so, how long per day? Answers are compared with Gallup's 10 daily-emotion items ("during a lot of the day yesterday") and the 0-to-10 life-evaluation ladder. Global figures are **medians across countries**, not population averages. Adjusted results control for country, age, gender, education, income, internet use, work status, health problems and social support. Usage groups: **low** = none or under 30 min/day, **moderate** = 30 min to under 2 h, **high** = 2 h or more.
+
+**How much people use it (descriptive, safe to quote as-is):**
+- A median of **81%** of adults used social media in the past 7 days, ranging from 98% (Bahrain, Lebanon) to 12% (Chad). By age: **95%** of 15 to 29, **91%** of 30 to 49, **60%** of 50+. Men and women are about equally likely to use it.
+- Among users, **65% spend under 2 hours a day and 35% spend 2 hours or more**. 2+ hours: 52% of users aged 15 to 29, 33% of 30 to 49, 23% of 50+.
+- **12%** of users report 5+ hours a day (**19%** of users aged 15 to 29, 11% of 30 to 49, 6% of 50+).
+- Share of all adults by group: **moderate 39%, low 31%, high 27%**. Moderate use is most common among 30 to 49 year olds (45%). High use: 47% of 15 to 29, 28% of 30 to 49, 12% of 50+.
+- US: 88% use social media (the highest of 10 countries considering restrictions; Indonesia lowest at 74%).
+
+**How use relates to wellbeing (adjusted, small effects):**
+- **Users vs. nonusers:** after adjustment, users are slightly more likely to report enjoyment (+2.6 points), learning something interesting (+3.2), smiling or laughing (+3.1) and being treated with respect (+1.9), and they rate their lives slightly higher (+0.1 on the 0 to 10 scale). **Stress is the only negative emotion that differs: users are slightly more likely to report it (+2.5 points).** Anger, sadness, worry, loneliness and pain don't differ significantly.
+- **High (2h+) vs. moderate:** high users are more likely to report **anger, loneliness and sadness (+2.2 points each), stress (+2.0) and worry (+1.7)**, and less likely to feel treated with respect (−1.2). They're also slightly more likely to feel well-rested (+1.4). **Life evaluation doesn't differ significantly** overall.
+- **Low (<30 min) vs. moderate:** low users have slightly lower life evaluations (−0.1) and are less likely to report enjoyment (−2.4), smiling or laughing (−2.9), respect (−1.6) and feeling well-rested (−1.4).
+- **Headline in Gallup's words:** "moderate use is associated with relatively higher wellbeing across many measures," and "more time on social media does not correspond with steadily worse wellbeing." Measured continuously, time spent is **not** significantly related to positive emotions or life evaluation.
+- **Income split:** in **high-income countries**, high use goes with lower life evaluation than moderate use. In other countries it doesn't. High use goes with more anger, loneliness and sadness in both groups.
+- **US:** high users rate their lives **about 0.3 points lower** (0 to 10) than moderate users, and the same holds for younger US adults. Germany and the UK show no significant difference. Among ages 15 to 29, 16 countries show a moderately large negative link between use and life evaluation (including the US, Canada, Israel, Australia and the Netherlands), 71 show a small one, and 10 show a moderately large positive one (including Mexico, Poland and Ireland).
+- Users are less likely than nonusers to express confidence in their national government (lower still among high users).
+
+**Raw (unadjusted) gaps are tempting, so handle them with care:** users report enjoyment 75% vs. 61% for nonusers, sadness 20% vs. 33%, and loneliness 17% vs. 29%. Gallup shows these mostly reflect *who* uses social media (younger, more educated, healthier, more likely to have support). **Never present the raw gaps as "social media users are less lonely."** After adjustment, the loneliness gap is not significant.
+
+**Social support (a useful AG-adjacent detail):** 81% of adults who have someone they can count on for help use social media, vs. 71% of those who don't. Gallup notes social connection "is closely tied to health and wellbeing, whether those connections take place in person or virtually."
+
+**Global emotions trend (2025 data, about 140 countries):** the share of people who felt each emotion during a lot of the previous day was **worry 38%, stress 36%**, physical pain 33%, sadness 26% and anger 23%, all flat versus 2024. Since 2006, physical pain is up 10 points, worry and sadness are up 8 each, stress is up 7 and anger is up 4. Enjoyment has declined since 2006. "Learned or did something interesting" is **up 10 points**, and feeling treated with respect is slightly higher. The 2025 margin of error is ±2.2 to ±5.5 points.
+
+**Limits Gallup states (repeat them, don't hide them):** the data are observational, so they show association, not cause, and not the direction of the relationship. They measure time spent, not problematic or compulsive use, and they don't capture platform, activity or content. Effects are small. Most adjusted gaps are 1 to 3 percentage points.
+
+**Copy rules for this entry:**
+- Say "linked to" or "associated with", never "causes", "leads to" or "makes you". It's fine to say "Gallup found people who used social media moderately reported the best mix of daily emotions." It's not fine to say "using social media under 2 hours makes you happier."
+- Translate the effects honestly: "slightly", "a couple of points", "modest". Gallup itself calls the overall relationship "modest and complex."
+- Don't frame this as anti-social-media. Gallup's finding is "moderate beats both none and heavy," which runs against the "quit social media" take.
+- Cite with year and source ("Gallup, 2026") and link the PDF or news article.
+- **Gallup cites these studies; they aren't verified here, so don't cite them from this entry:** the World Happiness Report 2026 chapters (Helliwell et al.; Haidt & Rauch), Vuorre & Przybylski 2023 (Facebook adoption across 72 countries), Du et al. 2024 (problematic use and anxiety), and Hancock et al. 2022 (meta-analysis). Verify each one before using it.
+
+**AG angle:** this is context, not proof of the product. Three honest bridges:
+1. **Time online is not the same as having someone to count on.** Gallup separates social media use from social support, and heavy use is the pattern linked to more loneliness. A recurring group with names, a date and commitments is a different kind of connection. Don't claim AG reduces loneliness.
+2. **"Less, not zero" is a measurable commitment.** The data favors a middle band (30 min to 2 h) over both quitting and heavy use. That makes "keep daily social media under 2 hours, phone screen-time report as proof" a well-grounded, easy-to-verify example commitment.
+3. **Stress is the most common daily experience after worry**, and it's up 7 points since 2006. That's a reason for realistic commitment sizing and hall passes, not more pressure.
+
+---
+
 ## Synthesis: what the literature converges on
 
 **1. Willpower doesn't scale; structure does.** Executive functions are effortful and degrade under stress, poor sleep, loneliness, and inactivity (Diamond 2013). People with strong self-control mostly avoid temptation rather than resist it (Hofmann 2012). Durable change comes from offloading behavior to context-cued habits, which act as a floor under motivation dips (Rebar 2014).
@@ -343,7 +392,7 @@ Errors found in Gemini's two drafts during the 2026-07-17 review (all corrected 
 | 30 | "Reducing Decision Fatigue" | DOI resolves to unrelated gender-studies paper; no matching paper found | Likely hallucinated — marked ✗ do not cite |
 | — | Source lists | Junk citations (music blog, industrial-heritage paper, unrelated medical pages) | Discarded |
 
-**Verification status: 27 ✓ · 1 ⚠ (#12) · 2 ✗ (#20, #30)**
+**Verification status: 28 ✓ · 1 ⚠ (#12) · 2 ✗ (#20, #30)** (#31 Gallup 2026 verified against the full report PDF and both Gallup pages, 2026-10-15)
 
 ---
-*Last updated: 2026-07-17. Verified against PubMed, Semantic Scholar, and publisher abstracts. When adding studies, follow the entry format above and verify the DOI resolves to the claimed paper before marking ✓.*
+*Last updated: 2026-10-15 (added #31). Studies #1–30 verified 2026-07-17. Verified against PubMed, Semantic Scholar, and publisher abstracts. When adding studies, follow the entry format above and verify the DOI resolves to the claimed paper before marking ✓.*

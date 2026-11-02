@@ -24,6 +24,22 @@
 | peer | lowercase | Group mode where members jointly set terms; synchronous close. | "peer group," not "peer-to-peer." |
 | platform fee | lowercase | The $1 AG charges per forfeit charged. | The only company revenue besides card processing. |
 
+## Using these terms in Field notes (added 2026-09-19)
+
+The canonical terms above are product vocabulary, and Field notes readers won't know them. In Field notes: keep them out of headings, table headers, the Quick Summary, and the first sentence of a paragraph; explain the general idea in everyday words first; and mention the canonical term only in an optional closing sentence ("Accountability Guild calls this a hall pass"). Plain-language equivalents to use in the main text:
+
+| Canonical term | Say this in headings and lead sentences |
+|---|---|
+| cycle | round, month (or week), reporting period |
+| proof | evidence, a record of your progress, what you tracked |
+| report / receipts | a short summary, a review of what you did |
+| forfeit | a cost for a miss, a small penalty you agree on |
+| kitty | a shared pot, money the group sets aside |
+| hall pass | an agreed excuse for a real emergency |
+| standard | the ground rules, what you agree at the start |
+| close | the end of the month (or week), your meeting day |
+| owner-led / peer | led by one person such as a coach / run together by the members |
+
 ## Product self-reference
 
 The product refers to itself as "Accountability Guild" or not at all. "We" is allowed sparingly in About/support/policy contexts only (see voice-and-tone.md). Never "the app" in marketing; "the app" is acceptable in support/help text.
