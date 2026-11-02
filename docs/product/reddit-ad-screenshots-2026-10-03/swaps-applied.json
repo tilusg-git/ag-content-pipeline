@@ -1,0 +1,150 @@
+[
+  {
+    "id": "05_GroupSettingsStandard",
+    "viewport": "mobile",
+    "unswappedFile": "AccountabilityGuild_Web_05_GroupSettingsStandard_unswapped_mobile.png",
+    "swappedFile": "AccountabilityGuild_Web_05_GroupSettingsStandard_swapped_mobile.png",
+    "appliedSwaps": [
+      "remove demo nav label",
+      "group name",
+      "member Josh",
+      "member Brandon",
+      "member Dan",
+      "demo user name",
+      "member Tim",
+      "group name input"
+    ]
+  },
+  {
+    "id": "06_SubmitReportClosedCycle",
+    "viewport": "mobile",
+    "unswappedFile": "AccountabilityGuild_Web_06_SubmitReportClosedCycle_unswapped_mobile.png",
+    "swappedFile": "AccountabilityGuild_Web_06_SubmitReportClosedCycle_swapped_mobile.png",
+    "appliedSwaps": [
+      "remove demo nav label",
+      "cycle number title"
+    ]
+  },
+  {
+    "id": "07_ReportsArchiveClosedCycle",
+    "viewport": "mobile",
+    "unswappedFile": "AccountabilityGuild_Web_07_ReportsArchiveClosedCycle_unswapped_mobile.png",
+    "swappedFile": "AccountabilityGuild_Web_07_ReportsArchiveClosedCycle_swapped_mobile.png",
+    "appliedSwaps": [
+      "remove demo nav label",
+      "group name",
+      "demo user name",
+      "member Tim",
+      "member Dan",
+      "member Brandon",
+      "member Josh",
+      "qa fixture phrase"
+    ]
+  },
+  {
+    "id": "09_LivePricingFreeCard",
+    "viewport": "mobile",
+    "unswappedFile": "AccountabilityGuild_Web_09_LivePricingFreeCard_unswapped_mobile.png",
+    "swappedFile": "AccountabilityGuild_Web_09_LivePricingFreeCard_swapped_mobile.png",
+    "appliedSwaps": []
+  },
+  {
+    "id": "09_LivePricingFreeCard",
+    "viewport": "desktop",
+    "unswappedFile": "AccountabilityGuild_Web_09_LivePricingFreeCard_unswapped_desktop.png",
+    "swappedFile": "AccountabilityGuild_Web_09_LivePricingFreeCard_swapped_desktop.png",
+    "appliedSwaps": []
+  },
+  {
+    "id": "01_DashboardMarkWeek",
+    "viewport": "mobile",
+    "unswappedFile": "AccountabilityGuild_Web_01_DashboardMarkWeek_unswapped_mobile.png",
+    "swappedFile": "AccountabilityGuild_Web_01_DashboardMarkWeek_swapped_mobile.png",
+    "appliedSwaps": [
+      "remove demo nav label",
+      "group name",
+      "cycle upper",
+      "health goal pre",
+      "work goal pre"
+    ]
+  },
+  {
+    "id": "02_DashboardMarkDetail",
+    "viewport": "mobile",
+    "unswappedFile": "AccountabilityGuild_Web_02_DashboardMarkDetail_unswapped_mobile.png",
+    "swappedFile": "AccountabilityGuild_Web_02_DashboardMarkDetail_swapped_mobile.png",
+    "appliedSwaps": [
+      "remove demo nav label",
+      "group name",
+      "cycle upper",
+      "health goal pre",
+      "work goal pre"
+    ]
+  },
+  {
+    "id": "03_GoalsListCoverage",
+    "viewport": "mobile",
+    "unswappedFile": "AccountabilityGuild_Web_03_GoalsListCoverage_unswapped_mobile.png",
+    "swappedFile": "AccountabilityGuild_Web_03_GoalsListCoverage_swapped_mobile.png",
+    "appliedSwaps": [
+      "remove demo nav label",
+      "group name",
+      "demo user name",
+      "health goal pre",
+      "work goal pre"
+    ]
+  },
+  {
+    "id": "01_DashboardMarkWeek",
+    "viewport": "desktop",
+    "unswappedFile": "AccountabilityGuild_Web_01_DashboardMarkWeek_unswapped_desktop.png",
+    "swappedFile": "AccountabilityGuild_Web_01_DashboardMarkWeek_swapped_desktop.png",
+    "appliedSwaps": [
+      "remove demo nav label",
+      "group name",
+      "cycle number upper",
+      "demo user name",
+      "health goal pre",
+      "work goal pre",
+      "qa fixture phrase"
+    ]
+  },
+  {
+    "id": "04_GroupOverviewTop",
+    "viewport": "mobile",
+    "unswappedFile": "AccountabilityGuild_Web_04_GroupOverviewTop_unswapped_mobile.png",
+    "swappedFile": "AccountabilityGuild_Web_04_GroupOverviewTop_swapped_mobile.png",
+    "appliedSwaps": [
+      "remove demo nav label",
+      "group name",
+      "cycle number upper",
+      "cycle card number",
+      "cycle number title",
+      "member Josh",
+      "member Brandon",
+      "member Dan",
+      "demo user name",
+      "member Tim",
+      "week count zero padded"
+    ]
+  },
+  {
+    "id": "04_GroupOverviewTop",
+    "viewport": "desktop",
+    "unswappedFile": "AccountabilityGuild_Web_04_GroupOverviewTop_unswapped_desktop.png",
+    "swappedFile": "AccountabilityGuild_Web_04_GroupOverviewTop_swapped_desktop.png",
+    "appliedSwaps": [
+      "remove demo nav label",
+      "group name",
+      "cycle number upper",
+      "cycle card number",
+      "cycle number title",
+      "member Josh",
+      "member Brandon",
+      "member Dan",
+      "demo user name",
+      "member Tim",
+      "week count zero padded"
+    ]
+  }
+]

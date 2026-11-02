@@ -1,0 +1,28 @@
+AccountabilityGuild_Web_Login_desktop.png — Unauthenticated login screen with credential and email-link entry points.
+AccountabilityGuild_Web_Dashboard_desktop.png — Member dashboard with current cycle status, goals, reporting CTA, member snapshot, and group fund summary.
+AccountabilityGuild_Web_GroupOverview_desktop.png — Group overview with reporting snapshot, member balances, cycle status, and owner action areas.
+AccountabilityGuild_Web_Goals_desktop.png — Goal setup and management interface for the active accountability cycle.
+AccountabilityGuild_Web_Reports_desktop.png — Cycle reports and accountability history for the selected group and period.
+AccountabilityGuild_Web_SubmitReport_desktop.png — Weekly report submission flow for goal outcomes and accountability evidence.
+AccountabilityGuild_Web_Members_desktop.png — Member roster with participation status, owner controls, and member activity indicators.
+AccountabilityGuild_Web_Actions_desktop.png — Owner/member group actions surface, including group fund and cycle operations.
+AccountabilityGuild_Web_Settings_desktop.png — Group settings interface for accountability rules, penalties, notification timing, and member policies.
+AccountabilityGuild_Web_ReportingPeriods_desktop.png — Reporting-period management interface for cycle scheduling and period adjustments.
+AccountabilityGuild_Web_Billing_desktop.png — Billing and payment-method surface for accountability charges and transaction history.
+AccountabilityGuild_Web_Account_desktop.png — Account profile and notification preference management interface.
+AccountabilityGuild_Web_AdminConsole_desktop.png — Super-admin console for user, group, membership, runtime, and operational controls.
+AccountabilityGuild_Web_AdminWorkflows_desktop.png — Administrative workflow monitor showing system workflow health and operational status.
+AccountabilityGuild_Web_Login_mobile.png — Unauthenticated login screen with credential and email-link entry points.
+AccountabilityGuild_Web_Dashboard_mobile.png — Member dashboard with current cycle status, goals, reporting CTA, member snapshot, and group fund summary.
+AccountabilityGuild_Web_GroupOverview_mobile.png — Group overview with reporting snapshot, member balances, cycle status, and owner action areas.
+AccountabilityGuild_Web_Goals_mobile.png — Goal setup and management interface for the active accountability cycle.
+AccountabilityGuild_Web_Reports_mobile.png — Cycle reports and accountability history for the selected group and period.
+AccountabilityGuild_Web_SubmitReport_mobile.png — Weekly report submission flow for goal outcomes and accountability evidence.
+AccountabilityGuild_Web_Members_mobile.png — Member roster with participation status, owner controls, and member activity indicators.
+AccountabilityGuild_Web_Actions_mobile.png — Owner/member group actions surface, including group fund and cycle operations.
+AccountabilityGuild_Web_Settings_mobile.png — Group settings interface for accountability rules, penalties, notification timing, and member policies.
+AccountabilityGuild_Web_ReportingPeriods_mobile.png — Reporting-period management interface for cycle scheduling and period adjustments.
+AccountabilityGuild_Web_Billing_mobile.png — Billing and payment-method surface for accountability charges and transaction history.
+AccountabilityGuild_Web_Account_mobile.png — Account profile and notification preference management interface.
+AccountabilityGuild_Web_AdminConsole_mobile.png — Super-admin console for user, group, membership, runtime, and operational controls.
+AccountabilityGuild_Web_AdminWorkflows_mobile.png — Administrative workflow monitor showing system workflow health and operational status.

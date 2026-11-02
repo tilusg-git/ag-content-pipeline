@@ -1,0 +1,312 @@
+{
+  "capturedAt": "2026-10-04T02:09:04.542Z",
+  "localBase": "http://127.0.0.1:3017",
+  "liveBase": "https://accountabilityguild.com",
+  "groupId": "seed-first-cohort-release-v1",
+  "outputDir": "/Users/systemadmin/.openclaw/workspace-accountability-guild/repo/docs/product/reddit-ad-screenshots-2026-10-03",
+  "results": [
+    {
+      "id": "01_DashboardMarkWeek",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:3017/groups/seed-first-cohort-release-v1/dashboard",
+      "unswappedFile": "AccountabilityGuild_Web_01_DashboardMarkWeek_unswapped_mobile.png",
+      "swappedFile": "AccountabilityGuild_Web_01_DashboardMarkWeek_swapped_mobile.png",
+      "unswappedBytes": 45598,
+      "swappedBytes": 47534,
+      "unswappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "swappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "unswappedText": "Accountability\nGUILD\n\nFIRST COHORT RELEASE GATE · CYCLE 7 · OCTOBER · OCT 1 – 31\n\nDay 3 of 31 — page through the week and mark what you did, whenever you sit down.\n\nREPORTING OPEN\n\nWrite this cycle’s report.\n\nThe report is the formal cycle-close declaration. Score each goal and write what happened; marks stay reference-only context.\n\nWRITE REPORT\n→\n\nOCTOBER 2026 (CYCLE 7) · YOUR GOALS\n\nMark the week\nEDIT GOALS\n‹\n\nWEEK 1 OF 5 · THIS WEEK\n\nOct 1–7\n›\nTH\n1\nFR\n2\nSA\n3\nSU\n4\nMO\n5\nTU\n6\nWE\n7\nFITNESS\nDemo User release-gate health proof\n✓\n✓\n✓\nPROFESSIONAL\nDemo User release-gate work proof\nTHIS WEEK\nWEEK OF Thu, Oct 1\n✓\nKept\nNOTE\nEDIT\nPERSONAL\nRead 20 pages a night, five nights a week.\n✓\n✓\nFAMILY\nPhone-free dinner with the kids four nights a week.\n✓\n✓\n✓\nFAITH\nRead scripture for 15 minutes before work, five days a week.\n✓\n✓\n\nEMBER CORNER = NOTE · EMBER DOT = PHOTO · TAP A CELL TO ADD DETAILS",
+      "swappedText": "Accountability\nGUILD\n\nTHURSDAY NIGHT GROUP · CYCLE 4 · OCTOBER · OCT 1 – 31\n\nDay 3 of 31 — page through the week and mark what you did, whenever you sit down.\n\nREPORTING OPEN\n\nWrite this cycle’s report.\n\nThe report is the formal cycle-close declaration. Score each goal and write what happened; marks stay reference-only context.\n\nWRITE REPORT\n→\n\nOCTOBER 2026 (CYCLE 4) · YOUR GOALS\n\nMark the week\nEDIT GOALS\n‹\n\nWEEK 1 OF 5 · THIS WEEK\n\nOct 1–7\n›\nTH\n1\nFR\n2\nSA\n3\nSU\n4\nMO\n5\nTU\n6\nWE\n7\nFITNESS\nLift four times a week, two strength and two zone-2.\n✓\n✓\n✓\nPROFESSIONAL\nShip two client proposals by the end of the month.\nTHIS WEEK\nWEEK OF Thu, Oct 1\n✓\nKept\nNOTE\nEDIT\nPERSONAL\nRead 20 pages a night, five nights a week.\n✓\n✓\nFAMILY\nPhone-free dinner with the kids four nights a week.\n✓\n✓\n✓\nFAITH\nRead scripture for 15 minutes before work, five days a week.\n✓\n✓\n\nEMBER CORNER = NOTE · EMBER DOT = PHOTO · TAP A CELL TO ADD DETAILS",
+      "appliedSwaps": [
+        "remove demo nav label",
+        "group name",
+        "cycle upper",
+        "health goal pre",
+        "work goal pre"
+      ]
+    },
+    {
+      "id": "02_DashboardMarkDetail",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:3017/groups/seed-first-cohort-release-v1/dashboard",
+      "unswappedFile": "AccountabilityGuild_Web_02_DashboardMarkDetail_unswapped_mobile.png",
+      "swappedFile": "AccountabilityGuild_Web_02_DashboardMarkDetail_swapped_mobile.png",
+      "unswappedBytes": 135067,
+      "swappedBytes": 135379,
+      "unswappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "swappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "unswappedText": "Accountability\nGUILD\n\nFIRST COHORT RELEASE GATE · CYCLE 7 · OCTOBER · OCT 1 – 31\n\nDay 3 of 31 — page through the week and mark what you did, whenever you sit down.\n\nREPORTING OPEN\n\nWrite this cycle’s report.\n\nThe report is the formal cycle-close declaration. Score each goal and write what happened; marks stay reference-only context.\n\nWRITE REPORT\n→\n\nOCTOBER 2026 (CYCLE 7) · YOUR GOALS\n\nMark the week\nEDIT GOALS\n‹\n\nWEEK 1 OF 5 · THIS WEEK\n\nOct 1–7\n›\nTH\n1\nFR\n2\nSA\n3\nSU\n4\nMO\n5\nTU\n6\nWE\n7\nFITNESS\nDemo User release-gate health proof\n✓\n✓\n✓\nPROFESSIONAL\nDemo User release-gate work proof\nTHIS WEEK\nWEEK OF Thu, Oct 1\n✓\nKept\nNOTE\nEDIT\nPERSONAL\nRead 20 pages a night, five nights a week.\n✓\n✓\nFAMILY\nPhone-free dinner with the kids four nights a week.\n✓\n✓\n✓\nFAITH\nRead scripture for 15 minutes before work, five days a week.\n✓\n✓\n\nEMBER CORNER = NOTE · EMBER DOT = PHOTO · TAP A CELL TO ADD DETAILS\n\nFITNESS · WEEKLY\n\nDemo User release-gate health proof\nTHU, OCT 1 · BACKFILL DAY\n×\nTHIS DAY\n✓\nKept\n-\nMissed\ns\nSkipped\nNOTE\n26 / 240\n\nPHOTO\n\ne65d79d7f77b9a2fa8f4bd0fbd251b51aefcf50568c89fd1030d06c2ac9eba69.jpg\nTap image to replace\nREMOVE PHOTO\nDONE",
+      "swappedText": "Accountability\nGUILD\n\nTHURSDAY NIGHT GROUP · CYCLE 4 · OCTOBER · OCT 1 – 31\n\nDay 3 of 31 — page through the week and mark what you did, whenever you sit down.\n\nREPORTING OPEN\n\nWrite this cycle’s report.\n\nThe report is the formal cycle-close declaration. Score each goal and write what happened; marks stay reference-only context.\n\nWRITE REPORT\n→\n\nOCTOBER 2026 (CYCLE 4) · YOUR GOALS\n\nMark the week\nEDIT GOALS\n‹\n\nWEEK 1 OF 5 · THIS WEEK\n\nOct 1–7\n›\nTH\n1\nFR\n2\nSA\n3\nSU\n4\nMO\n5\nTU\n6\nWE\n7\nFITNESS\nLift four times a week, two strength and two zone-2.\n✓\n✓\n✓\nPROFESSIONAL\nShip two client proposals by the end of the month.\nTHIS WEEK\nWEEK OF Thu, Oct 1\n✓\nKept\nNOTE\nEDIT\nPERSONAL\nRead 20 pages a night, five nights a week.\n✓\n✓\nFAMILY\nPhone-free dinner with the kids four nights a week.\n✓\n✓\n✓\nFAITH\nRead scripture for 15 minutes before work, five days a week.\n✓\n✓\n\nEMBER CORNER = NOTE · EMBER DOT = PHOTO · TAP A CELL TO ADD DETAILS\n\nFITNESS · WEEKLY\n\nLift four times a week, two strength and two zone-2.\nTHU, OCT 1 · BACKFILL DAY\n×\nTHIS DAY\n✓\nKept\n-\nMissed\ns\nSkipped\nNOTE\n26 / 240\n\nPHOTO\n\ne65d79d7f77b9a2fa8f4bd0fbd251b51aefcf50568c89fd1030d06c2ac9eba69.jpg\nTap image to replace\nREMOVE PHOTO\nDONE",
+      "appliedSwaps": [
+        "remove demo nav label",
+        "group name",
+        "cycle upper",
+        "health goal pre",
+        "work goal pre"
+      ]
+    },
+    {
+      "id": "03_GoalsListCoverage",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:3017/groups/seed-first-cohort-release-v1/goals",
+      "unswappedFile": "AccountabilityGuild_Web_03_GoalsListCoverage_unswapped_mobile.png",
+      "swappedFile": "AccountabilityGuild_Web_03_GoalsListCoverage_swapped_mobile.png",
+      "unswappedBytes": 39600,
+      "swappedBytes": 41657,
+      "unswappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "swappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "unswappedText": "Accountability\nGUILD\n\nFIRST COHORT RELEASE GATE · SETUP · STEP 02 OF 02 · CYCLE 01 OPENS OCT 1\n\nWrite your goals.\nOne sentence each.\n· DRAFT\n\nDrafts are visible to the group right away — let them sanity-check. Edit freely through Oct 16. After halfway, changes take effect next cycle and this cycle's goal and report stay unchanged.\n\n· WHAT TO AIM FOR\n\nShort, behavioural, scoreable.\n· ONE SENTENCE\nAim for under 120 characters. Long goals are usually two goals.\n· BEHAVIOUR\nScore the action, not the outcome. “Lift four times a week,” not “get stronger.”\n· SPECIFIC\nA bystander could mark it. If you would argue with yourself about whether it counted, sharpen it.\n\nCURRENT-CYCLE GOALS · 5\n\nCurrent this cycle\n01\n\nFitness\n\nDemo User release-gate health proof\nCHECK\nEDIT\n02\n\nProfessional\n\nDemo User release-gate work proof\nCHECK\nEDIT\n03\n\nPersonal\n\nRead 20 pages a night, five nights a week.\nCHECK\nEDIT\n04\n\nFamily\n\nPhone-free dinner with the kids four nights a week.\nCHECK\nEDIT\n05\n\nFaith\n\nRead scripture for 15 minutes before work, five days a week.\nCHECK\nEDIT\n\n· GOAL 06 · NEW\n\nOne sentence — what are you holding yourself to?\nYOUR GOAL\n0 / 120\n\nTAG IT — WHICH PILLAR?\n\nAny pillar, any number of times — stack two on Faith if that’s what the cycle needs.\n\nFitness\n·1\nFaith\n·1\nFamily\n·1\nPersonal\n·1\nProfessional\n·1\n\nREPORT IT AS\n\nDaily\nWeekly\nMonthly\n\nDaily, weekly, or once-this-cycle — how you’ll track it.\n\nMARK IT WITH\n\n✓\nCheck\n···\nCount\n\nPick a check (yes/no) or a count (toward a target).\n\nCLEAR DRAFT\nSAVE & WRITE ANOTHER\n\n· WHEN YOU'RE READY\n\nFinished writing goals? Lock them in for review.\nI'M DONE WRITING →\nCOVERAGE\n5 / 5\n\nGroup rule: a goal in every pillar before the cycle opens.\n\n✓\nFitness\n1 GOAL\n✓\nFaith\n1 GOAL\n✓\nFamily\n1 GOAL\n✓\nPersonal\n1 GOAL\n✓\nProfessional\n1 GOAL\n\n· THE THREE DEADLINES\n\n· CYCLE OPENS\nOct 1 · Thu\n\nDrafts commit as cycle goals — marks start counting.\n\n· CHANGES DEFER\nOct 16 · halfway\n\nAfter halfway, changes take effect next cycle; this cycle's goal and report stay unchanged.\n\n· CYCLE CLOSES\nOct 31 · 4 weeks in\n\nReport window opens — file within a week.\n\nRETURN TO THE GROUP →",
+      "swappedText": "Accountability\nGUILD\n\nTHURSDAY NIGHT GROUP · SETUP · STEP 02 OF 02 · CYCLE 01 OPENS OCT 1\n\nWrite your goals.\nOne sentence each.\n· DRAFT\n\nDrafts are visible to the group right away — let them sanity-check. Edit freely through Oct 16. After halfway, changes take effect next cycle and this cycle's goal and report stay unchanged.\n\n· WHAT TO AIM FOR\n\nShort, behavioural, scoreable.\n· ONE SENTENCE\nAim for under 120 characters. Long goals are usually two goals.\n· BEHAVIOUR\nScore the action, not the outcome. “Lift four times a week,” not “get stronger.”\n· SPECIFIC\nA bystander could mark it. If you would argue with yourself about whether it counted, sharpen it.\n\nCURRENT-CYCLE GOALS · 5\n\nCurrent this cycle\n01\n\nFitness\n\nLift four times a week, two strength and two zone-2.\nCHECK\nEDIT\n02\n\nProfessional\n\nShip two client proposals by the end of the month.\nCHECK\nEDIT\n03\n\nPersonal\n\nRead 20 pages a night, five nights a week.\nCHECK\nEDIT\n04\n\nFamily\n\nPhone-free dinner with the kids four nights a week.\nCHECK\nEDIT\n05\n\nFaith\n\nRead scripture for 15 minutes before work, five days a week.\nCHECK\nEDIT\n\n· GOAL 06 · NEW\n\nOne sentence — what are you holding yourself to?\nYOUR GOAL\n0 / 120\n\nTAG IT — WHICH PILLAR?\n\nAny pillar, any number of times — stack two on Faith if that’s what the cycle needs.\n\nFitness\n·1\nFaith\n·1\nFamily\n·1\nPersonal\n·1\nProfessional\n·1\n\nREPORT IT AS\n\nDaily\nWeekly\nMonthly\n\nDaily, weekly, or once-this-cycle — how you’ll track it.\n\nMARK IT WITH\n\n✓\nCheck\n···\nCount\n\nPick a check (yes/no) or a count (toward a target).\n\nCLEAR DRAFT\nSAVE & WRITE ANOTHER\n\n· WHEN YOU'RE READY\n\nFinished writing goals? Lock them in for review.\nI'M DONE WRITING →\nCOVERAGE\n5 / 5\n\nGroup rule: a goal in every pillar before the cycle opens.\n\n✓\nFitness\n1 GOAL\n✓\nFaith\n1 GOAL\n✓\nFamily\n1 GOAL\n✓\nPersonal\n1 GOAL\n✓\nProfessional\n1 GOAL\n\n· THE THREE DEADLINES\n\n· CYCLE OPENS\nOct 1 · Thu\n\nDrafts commit as cycle goals — marks start counting.\n\n· CHANGES DEFER\nOct 16 · halfway\n\nAfter halfway, changes take effect next cycle; this cycle's goal and report stay unchanged.\n\n· CYCLE CLOSES\nOct 31 · 4 weeks in\n\nReport window opens — file within a week.\n\nRETURN TO THE GROUP →",
+      "appliedSwaps": [
+        "remove demo nav label",
+        "group name",
+        "demo user name",
+        "health goal pre",
+        "work goal pre"
+      ]
+    },
+    {
+      "id": "05_GroupSettingsStandard",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:3017/groups/seed-first-cohort-release-v1/settings",
+      "unswappedFile": "AccountabilityGuild_Web_05_GroupSettingsStandard_unswapped_mobile.png",
+      "swappedFile": "AccountabilityGuild_Web_05_GroupSettingsStandard_swapped_mobile.png",
+      "unswappedBytes": 35114,
+      "swappedBytes": 35114,
+      "unswappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "swappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "unswappedText": "Accountability\nGUILD\n\nFIRST COHORT RELEASE GATE · SETTINGS\n\nThe terms you all agreed to.\n\nAs leader, you set the policy. Changes apply to the next cycle, never the one in progress.\n\nIDENTITY\n\nWhat you call yourselves\n\nGROUP NAME\n\nPOLICY\n\nThe terms\n\nAT-STAKE PER CYCLE\nCYCLE LENGTH\n1 week\n2 weeks\n4 weeks\nMonthly\nQuarterly\n⌄\nWEEK STARTS ON\nSunday\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\n⌄\nMONTHLY PERIODS USE WHOLE WEEKS ASSIGNED TO THE MONTH CONTAINING THE WEEK START DATE.\nALLOWED GOAL PILLARS\nFitness\nFaith\nFamily\nPersonal\nProfessional\n\nREPORT SCORING\n\nCompletion rules\n\nREPORT COMPLETION MODE\nPercentage\nMembers choose from the group bucket set.\nPass / fail\nEach goal is either passed or failed.\nALLOWED PERCENTAGES\nUSE SORTED WHOLE NUMBERS FROM 0 TO 100. THE SET MUST INCLUDE 0 AND 100.\n\nCYCLE CLOSE\n\nReporting windows\n\nOpen cycles to change current or future dates, or change cadence from a selected cycle forward.\n\nCYCLES\nREPORTS OPEN\n2 days before\n3 days before\n5 days before\n7 days before\nAt close\n⌄\nGRACE AFTER CLOSE\nNo grace period\n1 day after close\n2 days after close\n3 days after close\n5 days after close\n⌄\nCHARGE PROCESSING\nAfter grace closes\nNext-day batch\n⌄\nSILENCE NUDGE THRESHOLD (DAYS)\nNUDGES SEND WHEN NO CONVERSATION ACTIVITY IS DETECTED FOR THIS MANY DAYS.\nSAVE SETTINGS\n\nMEMBERS\n\nWho is in\n\nJ\n\nJosh\n\nMEMBER\nMANAGE\nB\n\nBrandon\n\nMEMBER\nMANAGE\nD\n\nDan\n\nMEMBER\nMANAGE\nYOU\n\nDemo User\n\nOWNER\nMANAGE\nT\n\nTim\n\nMEMBER\nMANAGE\n\nDANGER ZONE\n\nThe exits\n\nLeave the group\n\nSelf-service group exit is not available yet.\nLEAVE GROUP\n\nDissolve the group\n\nGroup dissolution is not available yet.\nDISSOLVE GROUP",
+      "swappedText": "Accountability\nGUILD\n\nTHURSDAY NIGHT GROUP · SETTINGS\n\nThe terms you all agreed to.\n\nAs leader, you set the policy. Changes apply to the next cycle, never the one in progress.\n\nIDENTITY\n\nWhat you call yourselves\n\nGROUP NAME\n\nPOLICY\n\nThe terms\n\nAT-STAKE PER CYCLE\nCYCLE LENGTH\n1 week\n2 weeks\n4 weeks\nMonthly\nQuarterly\n⌄\nWEEK STARTS ON\nSunday\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\n⌄\nMONTHLY PERIODS USE WHOLE WEEKS ASSIGNED TO THE MONTH CONTAINING THE WEEK START DATE.\nALLOWED GOAL PILLARS\nFitness\nFaith\nFamily\nPersonal\nProfessional\n\nREPORT SCORING\n\nCompletion rules\n\nREPORT COMPLETION MODE\nPercentage\nMembers choose from the group bucket set.\nPass / fail\nEach goal is either passed or failed.\nALLOWED PERCENTAGES\nUSE SORTED WHOLE NUMBERS FROM 0 TO 100. THE SET MUST INCLUDE 0 AND 100.\n\nCYCLE CLOSE\n\nReporting windows\n\nOpen cycles to change current or future dates, or change cadence from a selected cycle forward.\n\nCYCLES\nREPORTS OPEN\n2 days before\n3 days before\n5 days before\n7 days before\nAt close\n⌄\nGRACE AFTER CLOSE\nNo grace period\n1 day after close\n2 days after close\n3 days after close\n5 days after close\n⌄\nCHARGE PROCESSING\nAfter grace closes\nNext-day batch\n⌄\nSILENCE NUDGE THRESHOLD (DAYS)\nNUDGES SEND WHEN NO CONVERSATION ACTIVITY IS DETECTED FOR THIS MANY DAYS.\nSAVE SETTINGS\n\nMEMBERS\n\nWho is in\n\nJ\n\nPriya\n\nMEMBER\nMANAGE\nB\n\nDave\n\nMEMBER\nMANAGE\nD\n\nElena\n\nMEMBER\nMANAGE\nYOU\n\nMarcus\n\nOWNER\nMANAGE\nT\n\nSam\n\nMEMBER\nMANAGE\n\nDANGER ZONE\n\nThe exits\n\nLeave the group\n\nSelf-service group exit is not available yet.\nLEAVE GROUP\n\nDissolve the group\n\nGroup dissolution is not available yet.\nDISSOLVE GROUP",
+      "appliedSwaps": [
+        "remove demo nav label",
+        "group name",
+        "member Josh",
+        "member Brandon",
+        "member Dan",
+        "demo user name",
+        "member Tim",
+        "group name input"
+      ]
+    },
+    {
+      "id": "06_SubmitReportClosedCycle",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:3017/groups/seed-first-cohort-release-v1/reports/submit?cycleId=seed-first-cohort-source-cycle-v1",
+      "unswappedFile": "AccountabilityGuild_Web_06_SubmitReportClosedCycle_unswapped_mobile.png",
+      "swappedFile": "AccountabilityGuild_Web_06_SubmitReportClosedCycle_swapped_mobile.png",
+      "unswappedBytes": 57352,
+      "swappedBytes": 57374,
+      "unswappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "swappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "unswappedText": "Accountability\nGUILD\n\nCYCLE 1 · CLOSED · MAY 4 – MAY 31 · $20 STAKE\n\nWrite the report.\n\nScore each goal and write what happened. This is the formal cycle-close declaration, separate from mid-cycle marks.\n\nKEPT\n0/0\nFORFEIT\n$0\nNO REPORT\n0\n\nTHE SUBJECT\n\nSet the frame\n\nIn one sentence, what was this cycle about? This becomes the headline on your filed report.\n\nREPORT SUBJECT\n\nKeep it short. You can rewrite it before you file.\n\nAll current goals are archived. Permanently delete them below or create a new goal.\n\nTHE REFLECTION\n\nWhat happened\n\n0 / 4,000 characters",
+      "swappedText": "Accountability\nGUILD\n\nCYCLE 4 · CLOSED · MAY 4 – MAY 31 · $20 STAKE\n\nWrite the report.\n\nScore each goal and write what happened. This is the formal cycle-close declaration, separate from mid-cycle marks.\n\nKEPT\n0/0\nFORFEIT\n$0\nNO REPORT\n0\n\nTHE SUBJECT\n\nSet the frame\n\nIn one sentence, what was this cycle about? This becomes the headline on your filed report.\n\nREPORT SUBJECT\n\nKeep it short. You can rewrite it before you file.\n\nAll current goals are archived. Permanently delete them below or create a new goal.\n\nTHE REFLECTION\n\nWhat happened\n\n0 / 4,000 characters",
+      "appliedSwaps": [
+        "remove demo nav label",
+        "cycle number title"
+      ]
+    },
+    {
+      "id": "07_ReportsArchiveClosedCycle",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:3017/groups/seed-first-cohort-release-v1/reports?cycleId=seed-first-cohort-source-cycle-v1",
+      "unswappedFile": "AccountabilityGuild_Web_07_ReportsArchiveClosedCycle_unswapped_mobile.png",
+      "swappedFile": "AccountabilityGuild_Web_07_ReportsArchiveClosedCycle_swapped_mobile.png",
+      "unswappedBytes": 48056,
+      "swappedBytes": 47856,
+      "unswappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "swappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "unswappedText": "Accountability\nGUILD\nGROUP ARCHIVE\nAccountability Guild\nThe record of the group.\n\nLoaded 3 of 3 cycles.\n\nBACK TO ARCHIVE\nEXPORT JSON\nGROUP REPORT · FIRST COHORT RELEASE GATE\nAccountability Guild\nMay 2026\n\nMAY 4, 2026 - MAY 31, 2026\n\nFILED\n1/5\nKEPT\n0\nNO REPORT\n4\nKITTY\n$100\n\nOWNER\n\nDemo User\nYOU\nNO REPORT\nOPEN REPORT\n\nNo active goals were recorded for this member in this cycle.\n\nMEMBER\n\nTim\nNO REPORT\nOPEN REPORT\n\nNo active goals were recorded for this member in this cycle.\n\nMEMBER\n\nDan\nNO REPORT\nOPEN REPORT\n\nNo active goals were recorded for this member in this cycle.\n\nMEMBER\n\nBrandon\nNO REPORT\nOPEN REPORT\n\nNo active goals were recorded for this member in this cycle.\n\nMEMBER\n\nJosh\nSUBMITTED · 0% KEPT\nOPEN REPORT\n\nREPORT TITLE\n\nJosh late report after close\n\nSUBMITTED JUN 29, 2026\n\nNo active goals were recorded for this member in this cycle.\n\nCLOSING SUMMARY\n\nQA fixture: source late report mints future credit.",
+      "swappedText": "Accountability\nGUILD\nGROUP ARCHIVE\nAccountability Guild\nThe record of the group.\n\nLoaded 3 of 3 cycles.\n\nBACK TO ARCHIVE\nEXPORT JSON\nGROUP REPORT · THURSDAY NIGHT GROUP\nAccountability Guild\nMay 2026\n\nMAY 4, 2026 - MAY 31, 2026\n\nFILED\n1/5\nKEPT\n0\nNO REPORT\n4\nKITTY\n$100\n\nOWNER\n\nMarcus\nYOU\nNO REPORT\nOPEN REPORT\n\nNo active goals were recorded for this member in this cycle.\n\nMEMBER\n\nSam\nNO REPORT\nOPEN REPORT\n\nNo active goals were recorded for this member in this cycle.\n\nMEMBER\n\nElena\nNO REPORT\nOPEN REPORT\n\nNo active goals were recorded for this member in this cycle.\n\nMEMBER\n\nDave\nNO REPORT\nOPEN REPORT\n\nNo active goals were recorded for this member in this cycle.\n\nMEMBER\n\nPriya\nSUBMITTED · 0% KEPT\nOPEN REPORT\n\nREPORT TITLE\n\nPriya late report after close\n\nSUBMITTED JUN 29, 2026\n\nNo active goals were recorded for this member in this cycle.\n\nCLOSING SUMMARY\n\nBoth proposals out by the 28th.",
+      "appliedSwaps": [
+        "remove demo nav label",
+        "group name",
+        "demo user name",
+        "member Tim",
+        "member Dan",
+        "member Brandon",
+        "member Josh",
+        "qa fixture phrase"
+      ]
+    },
+    {
+      "id": "09_LivePricingFreeCard",
+      "viewport": "desktop",
+      "url": "https://accountabilityguild.com/pricing",
+      "unswappedFile": "AccountabilityGuild_Web_09_LivePricingFreeCard_unswapped_desktop.png",
+      "swappedFile": "AccountabilityGuild_Web_09_LivePricingFreeCard_swapped_desktop.png",
+      "unswappedBytes": 93445,
+      "swappedBytes": 93445,
+      "unswappedDimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "swappedDimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "unswappedText": "SKIP TO CONTENT\nAccountability\nGUILD\nHome\nHow It Works\nPricing\nResources\nBlog\nLog in\nCreate account\n\nPRICING & ACCESS\n\nOne plan. No monthly fee.\n\nGroups do not pay a subscription. Forfeits belong to the group; Accountability Guild takes a $1 platform fee plus standard card processing when a forfeit is charged.\n\nSTANDARD GROUP\n\nThe whole instrument.\n\nFor groups running real accountability cycles with visible commitments and receipts.\n\nPLATFORM FEE · $1 PER FORFEIT · PLUS STANDARD CARD PROCESSING · EVERYTHING ELSE STAYS IN THE GROUP\n\nSTANDARD GROUP\n\nThe whole instrument\n\n$0\nMONTHLY FEE\n\nMember management for active groups\nAll cadences: weekly, bi-weekly, monthly\nGroup kitty: forfeits stay with the group\nPer-member commitments\nGroup activity feed\nCycle-close PDF receipts\nOwner-led or peer mode\nHall-pass settings, optional\n\nSTART NOW · PUBLIC BETA ACCESS\n\nCreate account →\n\nSign up to create a group, set the forfeit rules, and invite members into the room.\n\nFORFEITS STAY WITH THE GROUP\n\nThe kitty is not our revenue model.\n\nMisses can fund a retreat, reimburse a member, pay out top performers, or go to a charity. The group decides the policy.\n\nPLATFORM FEE · $1 PER FORFEIT\nPLUS STANDARD CARD PROCESSING\nEVERYTHING ELSE STAYS IN THE GROUP",
+      "swappedText": "SKIP TO CONTENT\nAccountability\nGUILD\nHome\nHow It Works\nPricing\nResources\nBlog\nLog in\nCreate account\n\nPRICING & ACCESS\n\nOne plan. No monthly fee.\n\nGroups do not pay a subscription. Forfeits belong to the group; Accountability Guild takes a $1 platform fee plus standard card processing when a forfeit is charged.\n\nSTANDARD GROUP\n\nThe whole instrument.\n\nFor groups running real accountability cycles with visible commitments and receipts.\n\nPLATFORM FEE · $1 PER FORFEIT · PLUS STANDARD CARD PROCESSING · EVERYTHING ELSE STAYS IN THE GROUP\n\nSTANDARD GROUP\n\nThe whole instrument\n\n$0\nMONTHLY FEE\n\nMember management for active groups\nAll cadences: weekly, bi-weekly, monthly\nGroup kitty: forfeits stay with the group\nPer-member commitments\nGroup activity feed\nCycle-close PDF receipts\nOwner-led or peer mode\nHall-pass settings, optional\n\nSTART NOW · PUBLIC BETA ACCESS\n\nCreate account →\n\nSign up to create a group, set the forfeit rules, and invite members into the room.\n\nFORFEITS STAY WITH THE GROUP\n\nThe kitty is not our revenue model.\n\nMisses can fund a retreat, reimburse a member, pay out top performers, or go to a charity. The group decides the policy.\n\nPLATFORM FEE · $1 PER FORFEIT\nPLUS STANDARD CARD PROCESSING\nEVERYTHING ELSE STAYS IN THE GROUP",
+      "appliedSwaps": []
+    },
+    {
+      "id": "09_LivePricingFreeCard",
+      "viewport": "mobile",
+      "url": "https://accountabilityguild.com/pricing",
+      "unswappedFile": "AccountabilityGuild_Web_09_LivePricingFreeCard_unswapped_mobile.png",
+      "swappedFile": "AccountabilityGuild_Web_09_LivePricingFreeCard_swapped_mobile.png",
+      "unswappedBytes": 48917,
+      "swappedBytes": 48917,
+      "unswappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "swappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "unswappedText": "SKIP TO CONTENT\nAccountability\nGUILD\nCreate account\n\nPRICING & ACCESS\n\nOne plan. No monthly fee.\n\nGroups do not pay a subscription. Forfeits belong to the group; Accountability Guild takes a $1 platform fee plus standard card processing when a forfeit is charged.\n\nSTANDARD GROUP\n\nThe whole instrument.\n\nFor groups running real accountability cycles with visible commitments and receipts.\n\nPLATFORM FEE · $1 PER FORFEIT · PLUS STANDARD CARD PROCESSING · EVERYTHING ELSE STAYS IN THE GROUP\n\nSTANDARD GROUP\n\nThe whole instrument\n\n$0\nMONTHLY FEE\n\nMember management for active groups\nAll cadences: weekly, bi-weekly, monthly\nGroup kitty: forfeits stay with the group\nPer-member commitments\nGroup activity feed\nCycle-close PDF receipts\nOwner-led or peer mode\nHall-pass settings, optional\n\nSTART NOW · PUBLIC BETA ACCESS\n\nCreate account →\n\nSign up to create a group, set the forfeit rules, and invite members into the room.\n\nFORFEITS STAY WITH THE GROUP\n\nThe kitty is not our revenue model.\n\nMisses can fund a retreat, reimburse a member, pay out top performers, or go to a charity. The group decides the policy.\n\nPLATFORM FEE · $1 PER FORFEIT\nPLUS STANDARD CARD PROCESSING\nEVERYTHING ELSE STAYS IN THE GROUP",
+      "swappedText": "SKIP TO CONTENT\nAccountability\nGUILD\nCreate account\n\nPRICING & ACCESS\n\nOne plan. No monthly fee.\n\nGroups do not pay a subscription. Forfeits belong to the group; Accountability Guild takes a $1 platform fee plus standard card processing when a forfeit is charged.\n\nSTANDARD GROUP\n\nThe whole instrument.\n\nFor groups running real accountability cycles with visible commitments and receipts.\n\nPLATFORM FEE · $1 PER FORFEIT · PLUS STANDARD CARD PROCESSING · EVERYTHING ELSE STAYS IN THE GROUP\n\nSTANDARD GROUP\n\nThe whole instrument\n\n$0\nMONTHLY FEE\n\nMember management for active groups\nAll cadences: weekly, bi-weekly, monthly\nGroup kitty: forfeits stay with the group\nPer-member commitments\nGroup activity feed\nCycle-close PDF receipts\nOwner-led or peer mode\nHall-pass settings, optional\n\nSTART NOW · PUBLIC BETA ACCESS\n\nCreate account →\n\nSign up to create a group, set the forfeit rules, and invite members into the room.\n\nFORFEITS STAY WITH THE GROUP\n\nThe kitty is not our revenue model.\n\nMisses can fund a retreat, reimburse a member, pay out top performers, or go to a charity. The group decides the policy.\n\nPLATFORM FEE · $1 PER FORFEIT\nPLUS STANDARD CARD PROCESSING\nEVERYTHING ELSE STAYS IN THE GROUP",
+      "appliedSwaps": []
+    },
+    {
+      "id": "01_DashboardMarkWeek",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:3017/groups/seed-first-cohort-release-v1/dashboard",
+      "unswappedFile": "AccountabilityGuild_Web_01_DashboardMarkWeek_unswapped_desktop.png",
+      "swappedFile": "AccountabilityGuild_Web_01_DashboardMarkWeek_swapped_desktop.png",
+      "unswappedBytes": 98304,
+      "swappedBytes": 98821,
+      "unswappedDimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "swappedDimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "unswappedText": "Accountability\nGUILD\nDashboard\nGroup\nReports\n\nDEMO · FIRST COHORT RELEASE GATE\n\nFIRST COHORT RELEASE GATE · CYCLE 7 · OCTOBER · OCT 1 – 31\n\nDay 3 of 31 — page through the week and mark what you did, whenever you sit down.\n\nDAYS LEFT\n\n28\n\nAT STAKE\n\n$20\n\nREPORTING OPEN\n\nWrite this cycle’s report.\n\nThe report is the formal cycle-close declaration. Score each goal and write what happened; marks stay reference-only context.\n\nWRITE REPORT\n→\n\nOCTOBER 2026 (CYCLE 7) · YOUR GOALS\n\nMark the week\nEDIT GOALS\n‹\n\nWEEK 1 OF 5 · THIS WEEK\n\nOct 1–7\n›\nTH\n1\nFR\n2\nSA\n3\nSU\n4\nMO\n5\nTU\n6\nWE\n7\nFITNESS\nDemo User release-gate health proof\n✓\n✓\n✓\nPROFESSIONAL\nDemo User release-gate work proof\nTHIS WEEK\nWEEK OF Thu, Oct 1\n✓\nKept\nNOTE\nEDIT\nPERSONAL\nRead 20 pages a night, five nights a week.\n✓\n✓\nFAMILY\nPhone-free dinner with the kids four nights a week.\n✓\n✓\n✓\nFAITH\nRead scripture for 15 minutes before work, five days a week.\n✓\n✓\n\nEMBER CORNER = NOTE · EMBER DOT = PHOTO · TAP A CELL TO ADD DETAILS",
+      "swappedText": "Accountability\nGUILD\nDashboard\nGroup\nReports\n\nTHURSDAY NIGHT GROUP · CYCLE 4 · OCTOBER · OCT 1 – 31\n\nDay 3 of 31 — page through the week and mark what you did, whenever you sit down.\n\nDAYS LEFT\n\n28\n\nAT STAKE\n\n$20\n\nREPORTING OPEN\n\nWrite this cycle’s report.\n\nThe report is the formal cycle-close declaration. Score each goal and write what happened; marks stay reference-only context.\n\nWRITE REPORT\n→\n\nOCTOBER 2026 (CYCLE 4) · YOUR GOALS\n\nMark the week\nEDIT GOALS\n‹\n\nWEEK 1 OF 5 · THIS WEEK\n\nOct 1–7\n›\nTH\n1\nFR\n2\nSA\n3\nSU\n4\nMO\n5\nTU\n6\nWE\n7\nFITNESS\nLift four times a week, two strength and two zone-2.\n✓\n✓\n✓\nPROFESSIONAL\nShip two client proposals by the end of the month.\nTHIS WEEK\nWEEK OF Thu, Oct 1\n✓\nKept\nNOTE\nEDIT\nPERSONAL\nRead 20 pages a night, five nights a week.\n✓\n✓\nFAMILY\nPhone-free dinner with the kids four nights a week.\n✓\n✓\n✓\nFAITH\nRead scripture for 15 minutes before work, five days a week.\n✓\n✓\n\nEMBER CORNER = NOTE · EMBER DOT = PHOTO · TAP A CELL TO ADD DETAILS",
+      "appliedSwaps": [
+        "remove demo nav label",
+        "group name",
+        "cycle number upper",
+        "demo user name",
+        "health goal pre",
+        "work goal pre",
+        "qa fixture phrase"
+      ]
+    },
+    {
+      "id": "04_GroupOverviewTop",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:3017/groups/seed-first-cohort-release-v1",
+      "unswappedFile": "AccountabilityGuild_Web_04_GroupOverviewTop_unswapped_mobile.png",
+      "swappedFile": "AccountabilityGuild_Web_04_GroupOverviewTop_swapped_mobile.png",
+      "unswappedBytes": 58496,
+      "swappedBytes": 58718,
+      "unswappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "swappedDimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "unswappedText": "Accountability\nGUILD\n\nFIRST COHORT RELEASE GATE · CYCLE 7 · OCTOBER · OCT 1 – 31\n\nThe October cycle closes in 28 days.\nAT STAKE\n$20\nDAYS LEFT\n28\nCYCLE\n07\nADJUST\n07\n\nCYCLE · OCTOBER 2026\n\nOCT 1 – 31\nWEEK 01 OF 04\nREPORTS OPEN OCT 26\n\nReports open in 22 days. Cycle closes in 28 days.\n\nTHE LEDGER\n\nPer-member contributions\n\nMember forfeits paid into the group kitty, with the most recently completed cycle first.\n\nOPEN REPORT ARCHIVE\n\nCURRENT KITTY\n\nSettling\nWaiting for Stripe fees on 3 settled charges.\n\nINTO KITTY · CYCLE 3\n\n$0\n\nYTD · 2026\n\nSettling\n\nALL TIME\n\nSettling\n\n0 of 5 members paid into the kitty in Cycle 3.\n\nJ\nJosh\n01 · member · Active · 2 contributions\n$0\n›\nB\nBrandon\n02 · member · Active · 1 contribution\n$0\n›\nD\nDan\n03 · member · Active · 0 contributions\n$0\n›\nD\nDemo User\n04 · owner · Active · 0 contributions\n$0\n›\nT\nTim\n05 · member · Active · 0 contributions\n$0\n›\n\nOWNER CONTROLS\n\nGroup settings\n\nGroup configuration lives in settings. Operational payment work belongs in actions.\n\nOPEN GROUP SETTINGS\nOPEN GROUP ACTIONS",
+      "swappedText": "Accountability\nGUILD\n\nTHURSDAY NIGHT GROUP · CYCLE 4 · OCTOBER · OCT 1 – 31\n\nThe October cycle closes in 28 days.\nAT STAKE\n$20\nDAYS LEFT\n28\nCYCLE\n04\nADJUST\n04\n\nCYCLE · OCTOBER 2026\n\nOCT 1 – 31\nWEEK 01 OF 05\nREPORTS OPEN OCT 26\n\nReports open in 22 days. Cycle closes in 28 days.\n\nTHE LEDGER\n\nPer-member contributions\n\nMember forfeits paid into the group kitty, with the most recently completed cycle first.\n\nOPEN REPORT ARCHIVE\n\nCURRENT KITTY\n\nSettling\nWaiting for Stripe fees on 3 settled charges.\n\nINTO KITTY · CYCLE 4\n\n$0\n\nYTD · 2026\n\nSettling\n\nALL TIME\n\nSettling\n\n0 of 5 members paid into the kitty in Cycle 4.\n\nJ\nPriya\n01 · member · Active · 2 contributions\n$0\n›\nB\nDave\n02 · member · Active · 1 contribution\n$0\n›\nD\nElena\n03 · member · Active · 0 contributions\n$0\n›\nD\nMarcus\n04 · owner · Active · 0 contributions\n$0\n›\nT\nSam\n05 · member · Active · 0 contributions\n$0\n›\n\nOWNER CONTROLS\n\nGroup settings\n\nGroup configuration lives in settings. Operational payment work belongs in actions.\n\nOPEN GROUP SETTINGS\nOPEN GROUP ACTIONS",
+      "appliedSwaps": [
+        "remove demo nav label",
+        "group name",
+        "cycle number upper",
+        "cycle card number",
+        "cycle number title",
+        "member Josh",
+        "member Brandon",
+        "member Dan",
+        "demo user name",
+        "member Tim",
+        "week count zero padded"
+      ]
+    },
+    {
+      "id": "04_GroupOverviewTop",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:3017/groups/seed-first-cohort-release-v1",
+      "unswappedFile": "AccountabilityGuild_Web_04_GroupOverviewTop_unswapped_desktop.png",
+      "swappedFile": "AccountabilityGuild_Web_04_GroupOverviewTop_swapped_desktop.png",
+      "unswappedBytes": 88227,
+      "swappedBytes": 86808,
+      "unswappedDimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "swappedDimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "unswappedText": "Accountability\nGUILD\nDashboard\nGroup\nReports\n\nDEMO · FIRST COHORT RELEASE GATE\n\nFIRST COHORT RELEASE GATE · CYCLE 7 · OCTOBER · OCT 1 – 31\n\nThe October cycle closes in 28 days.\nAT STAKE\n$20\nDAYS LEFT\n28\nCYCLE\n07\nADJUST\n07\n\nCYCLE · OCTOBER 2026\n\nOCT 1 – 31\nWEEK 01 OF 04\nREPORTS OPEN OCT 26\n\nReports open in 22 days. Cycle closes in 28 days.\n\nTHE LEDGER\n\nPer-member contributions\n\nMember forfeits paid into the group kitty, with the most recently completed cycle first.\n\nOPEN REPORT ARCHIVE\n\nCURRENT KITTY\n\nSettling\nWaiting for Stripe fees on 3 settled charges.\n\nINTO KITTY · CYCLE 3\n\n$0\n\nYTD · 2026\n\nSettling\n\nALL TIME\n\nSettling\n\n0 of 5 members paid into the kitty in Cycle 3.\n\nCYCLE 3\nYTD\nALL TIME\nJ\nJosh\n01 · member · Active · 2 contributions\n$0\nSettling\nSettling\n›\nB\nBrandon\n02 · member · Active · 1 contribution\n$0\nSettling\nSettling\n›\nD\nDan\n03 · member · Active · 0 contributions\n$0\n$0\n$0\n›\nD\nDemo User\n04 · owner · Active · 0 contributions\n$0\n$0\n$0\n›\nT\nTim\n05 · member · Active · 0 contributions\n$0\n$0\n$0\n›\n\nOWNER CONTROLS\n\nGroup settings\n\nGroup configuration lives in settings. Operational payment work belongs in actions.\n\nOPEN GROUP SETTINGS\nOPEN GROUP ACTIONS",
+      "swappedText": "Accountability\nGUILD\nDashboard\nGroup\nReports\n\nTHURSDAY NIGHT GROUP · CYCLE 4 · OCTOBER · OCT 1 – 31\n\nThe October cycle closes in 28 days.\nAT STAKE\n$20\nDAYS LEFT\n28\nCYCLE\n04\nADJUST\n04\n\nCYCLE · OCTOBER 2026\n\nOCT 1 – 31\nWEEK 01 OF 05\nREPORTS OPEN OCT 26\n\nReports open in 22 days. Cycle closes in 28 days.\n\nTHE LEDGER\n\nPer-member contributions\n\nMember forfeits paid into the group kitty, with the most recently completed cycle first.\n\nOPEN REPORT ARCHIVE\n\nCURRENT KITTY\n\nSettling\nWaiting for Stripe fees on 3 settled charges.\n\nINTO KITTY · CYCLE 4\n\n$0\n\nYTD · 2026\n\nSettling\n\nALL TIME\n\nSettling\n\n0 of 5 members paid into the kitty in Cycle 4.\n\nCYCLE 4\nYTD\nALL TIME\nJ\nPriya\n01 · member · Active · 2 contributions\n$0\nSettling\nSettling\n›\nB\nDave\n02 · member · Active · 1 contribution\n$0\nSettling\nSettling\n›\nD\nElena\n03 · member · Active · 0 contributions\n$0\n$0\n$0\n›\nD\nMarcus\n04 · owner · Active · 0 contributions\n$0\n$0\n$0\n›\nT\nSam\n05 · member · Active · 0 contributions\n$0\n$0\n$0\n›\n\nOWNER CONTROLS\n\nGroup settings\n\nGroup configuration lives in settings. Operational payment work belongs in actions.\n\nOPEN GROUP SETTINGS\nOPEN GROUP ACTIONS",
+      "appliedSwaps": [
+        "remove demo nav label",
+        "group name",
+        "cycle number upper",
+        "cycle card number",
+        "cycle number title",
+        "member Josh",
+        "member Brandon",
+        "member Dan",
+        "demo user name",
+        "member Tim",
+        "week count zero padded"
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "id": "08_GroupKittyLedger",
+      "viewport": "mobile",
+      "reason": "Kitty ledger did not show a real nonzero balance; request said to skip rather than invent money."
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Shot 03 mobile shows the goal rows; the pillar coverage panel sits below the new-goal form in the mobile layout and could not fit in the same viewport without hiding product UI.",
+    "Shot 05 settings page did not expose hall-pass controls in this seed; captured the visible standard policy controls ($20 at stake, cadence/cycle length, week start, report completion)."
+  ]
+}
