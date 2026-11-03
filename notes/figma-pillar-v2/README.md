@@ -7,11 +7,28 @@ Status 2026-11-01: `00-components-and-log.js` ran (component `30:138`, change lo
 ## Running scripts without the MCP cap (Scripter)
 The Starter plan's MCP cap can run out after a single call, so run builds and canvas reads through the **Scripter** plugin in the Figma web tab (Claude in Chrome), not `use_figma`:
 1. Assemble the script. The `.manual.js` output wraps it and replaces `figma.createAutoLayout`, which exists only in the MCP's version of the Plugin API (in Scripter it fails with `TypeError: not a function`).
-2. Put it on the clipboard: `Get-Content <file> -Raw | Set-Clipboard` (PowerShell). Typing 40 KB into Scripter's editor breaks because of its auto-closing brackets.
+2. Put it on the clipboard with `Get-Content <file> -Raw -Encoding UTF8 | Set-Clipboard` (Windows PowerShell). **`-Encoding UTF8` is required**: without it every ·, “ and → arrives garbled (v2.3's first build had to be deleted). Typing 40 KB into Scripter's editor breaks because of its auto-closing brackets. Don't edit data files with `node -e "..."` inside bash double quotes: bash expands `$1`, `$0` and `$100` in the copy.
 3. In Figma, press Ctrl+/, type "Scripter" and press Enter. In the editor, press Ctrl+A then Ctrl+V, and click ▶ (top-right of the editor) to run.
 4. Results and errors go to the browser console. Read them with `read_console_messages`, and have scripts `console.log(JSON.stringify(...))` so the output is readable.
 5. Comments: `fetch('/api/file/<fileKey>/comments')` in the Figma tab. Mapping pins to nodes is a read script in Scripter: compare `client_meta.node_offset` against `absoluteBoundingBox`.
 6. Screenshot checks: Chrome screenshots of the Figma canvas break often (`Cannot access a chrome-extension:// URL`). Save the MCP calls for `get_screenshot`.
+
+## v2.3 (P4, 2026-11-03): last layout pass before imagery
+Built from Grant's 9 comments on v2.2 (comments stay pinned on the v2.2 frame): `build-v2.3.js` + `p4-goal-setting-v2.3.js`, assembled with `node assemble-v2.2.js 2.3`. Frame `48:292` at x 12675, with 19 mobile frames and 18 notes beside it. Run through Scripter; the run returned no errors. Chrome then lost access to the Figma tab (`Cannot access a chrome-extension:// URL`) and the MCP was still capped, so v2.3 has had **no visual or text check**.
+
+| Comment on v2.2 | v2.3 change |
+|---|---|
+| Style the topic term (“Goal setting:”) to hold attention | Words before the colon in the H1 set in ember italic (desktop + mobile) |
+| Mobile hero button should go sticky after scrolling past | New mobile frame: compact sticky bar with “Start a group →” |
+| Mobile page length: make stacked cards horizontal scrolls with a peek | 4.2 and 4.4 table cards and the path cards are swipe rows (image cards already were) |
+| Mobile path cards: horizontal scroll | Swipe row |
+| Remove the Brandon paragraph | Removed on both devices |
+| 4.7 blank space: focus the product UI | Media split with a “Product UI” slot (real app report screen). Media beats now 6, one over the 3–5 rule |
+| CTA headline unclear; make it motivational and tied to the pillar | “Start hitting your goals with a group that checks in.” (`cta.h`, per pillar) |
+| CTA step boxes look like buttons | Plain numbered steps with arrows, no boxes (both devices) |
+| Money stakes aren't optional? | Fine print now “No monthly fee · $1 platform fee per forfeit charged”. Code allows `penaltyAmountCents` 0, onboarding defaults to $100: confirm with Brandon |
+
+**v2.3.1 (same day):** three small comments were applied in place on `48:292`, desktop and mobile, and synced into `p4-goal-setting-v2.3.js`. The 4.6 go-deeper card is removed (rule: at most one per page). Band 9 "Neighbor guides" became "Guides", listing one guide. The band 7B note's "$1" was restored. A Scripter text check found no garbled characters, the H1 accent split correctly, the new CTA headline is in place, and the Brandon paragraph is gone. Grant: "looking good". The layout is signed off; next is the media pass. The approved template rules are now in the pillar skill (Part B) and the playbook (§3.2).
 
 ## v2.2 (P4 only, 2026-11-03): built through Scripter
 Grant left 20 comments on the v2.1 P4 frame `31:138` (kept for history; comments stay pinned to it). v2.2 applies them and adds a 375 mobile view of every band in a column beside the desktop frame. Files: `build-v2.2.js` (new page build plus mobile variants; reuses the lib.js helpers), `p4-goal-setting-v2.2.js` (data), `assemble-v2.2.js` → `out/p4-goal-setting-v2.2.js` (for `use_figma`) and `out/p4-goal-setting-v2.2.manual.js` (to paste into the Scripter plugin by hand). It lands at x 10000 or further right if that space is taken, with notes to the right of the mobile column.

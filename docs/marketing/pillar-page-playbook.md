@@ -58,7 +58,7 @@ The research mostly treats "pillar" as an informational guide. SaaS sites also r
 
 | Element | Core Product Pillar | Topical Pillar |
 |---|---|---|
-| Hero with H1, subhead, primary + secondary CTA buttons | **Required** | Not used. Hero band without CTA buttons instead: H1, one-line dek, Updated date, hero media, jump links |
+| Hero with H1, subhead, primary + secondary CTA buttons | **Required** | H1 ("Topic: promise", topic term accented), one-line dek, one primary CTA ("Start a group →") plus a text link, hero media, jump links; no updated date (v2.3, 2026-11-03) |
 | Product UI visuals / illustrative panels | Required | Optional, only inside the "in practice" section |
 | Mechanic sample lines (`Cadence · Weekly. Forfeit · $20 per missed report.`) | Required | Optional, "in practice" section only |
 | Worked examples / money ledgers | Required on `/pricing`, encouraged elsewhere | Neutral examples only (no AG pricing) |
@@ -70,12 +70,12 @@ The research mostly treats "pillar" as an informational guide. SaaS sites also r
 | Condensed questions linking to `/faq` | Required (4 to 6) | Not used; real questions are ordinary headings |
 | Quick Summary | Not used | **Not used** (v2; the dek replaces it) |
 | Intro section, anecdotes, personal-story EDITOR NOTEs | Not used | **Not used** (v2) |
-| Dek (one line, at most 160 characters), Updated date, jump links / contents rail with TOC labels | Not used | **Required** |
+| Dek (one line, at most 160 characters), jump links / contents rail with TOC labels | Not used | **Required** (no updated date since v2.3) |
 | Byline, read time | Not used | Not used |
 | Hero media (image, illustration, or short video) | Hero band visual | **Required** |
 | Definition card (40 to 60 words) + key points box (3 to 5 bullets) | Not used | **Required** (band 2) |
-| Topic map: card grid, one card per subtopic | Not used | **Required** (band 3) |
-| One module per subtopic: H2, one-sentence answer, one structured element (skill B3 library), go-deeper card to its blog article | Not used | **Required**; sibling modules parallel |
+| Topic map: compact numbered index, one row per subtopic | Not used | **Required** (band 3; was a card grid until v2.2) |
+| One module per subtopic: H2, one-sentence answer, one structured element (skill B3 library); at most one go-deeper card on the whole page (v2.3) | Not used | **Required**; sibling modules parallel |
 | Image per subtopic section | n/a | **Required on every second or third module** (v2.1, §3.3), in the media split layout |
 | Element mix | n/a | At most 3 table-type elements per page, never in adjacent modules; at least 4 element types (skill B3a) |
 | Diagram / infographic | Optional | **Required (at least one)** |
