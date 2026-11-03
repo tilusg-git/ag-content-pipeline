@@ -96,7 +96,7 @@ Topical Pillars cover a whole topic, and the SERPs they compete in are full of g
 | Slot | Where | What goes there | Rule |
 |---|---|---|---|
 | **Hero media** | Hero band, beside or under the H1 and dek | Brand-standard image or illustration, or a short explainer video | Required. One per page |
-| **Section media** | Inside a subtopic module, beside its primary element (media split layout) | Image, annotated image, figure, image card grid, short video clip, or embed (template preview, example sheet) | Required on every second or third module (v2.1, 2026-10-30), so an 8 to 10 module page carries 3 to 5 beats; figures and the band 2 diagram count. Shows the thing the module talks about, made concrete; never decoration |
+| **Section media** | Inside a subtopic module, beside its primary element (media split layout) | Image, annotated image, figure, image card grid, short video clip, or embed (template preview, example sheet) | Required on every second or third module (v2.1, 2026-10-30), so a page carries 3 to 6 beats (a soft target set by page length, Grant 2026-11-03); figures and the band 2 diagram count. Shows the thing the module talks about, made concrete; never decoration |
 | **Diagram / infographic** | Where a process, comparison, or system is explained | Original diagram (cycle, decision tree, partner vs. group vs. coach) | Required, at least one. Also the most link-worthy asset on the page |
 | **Explainer video** | Hero slot or the "in practice" section | 1 to 3 minute walkthrough of the topic (not a product ad) | Optional, max one to start. Captions and a transcript required |
 | **Downloadable** | Inside the soft CTA card | Template, checklist, or worksheet tied to the topic | Optional, max one; counts as the page's soft CTA |

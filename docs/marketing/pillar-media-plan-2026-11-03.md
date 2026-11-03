@@ -41,7 +41,13 @@ That makes **3 native, 1 product UI, 4 to 5 brand illustrations, and 2 to 3 phot
 
 After P4, P7 /types-of-personal-goals reuses the same styles. Only its subjects change.
 
-## 5. Decisions needed from Grant (before step 4)
+## 5. Decisions (Grant, 2026-11-03)
+- **Photos and people:** no photos of Brandon's group. Use Grant's own photos where one fits (individual goals: workouts, hiking, reading); otherwise AI-generated, approved per image. A website imagery rule for brand standards is being drafted (`docs/brand/website-imagery-guidelines-proposal-2026-11-03.md`).
+- **Media count:** 3 to 6 beats, a soft target set by page length.
+- **4.7:** the `week-board` scene.
+- **Money stakes:** don't mention $0 or "optional" stakes; the CTA fine print states pricing only.
+
+### Original questions
 1. **Photos on site pages.** Brand §14 allows photos only as social quote-card backgrounds today. Extend that to Topical Pillar section media, under the same per-image approval and checklist?
 2. **People in photos (4.6, 4.8).** Pick one:
    - (a) Brandon's group photographed for real, with consent. This is the most credible option, and it can also fill the band 7 photo slot.
