@@ -1,12 +1,42 @@
-# Topical Pillar v2.1 Figma build (P7 pending)
+# Topical Pillar v2.1 / v2.2 Figma build (P7 pending)
 
 Rebuilds the /goal-setting and /types-of-personal-goals mockups to the v2.1 spec (skill B3a element mix, B7 media beats) on page `25:2` of the homepage Figma file (`l27WIk0vje0syTYWN2iZee`), next to the v1 frames. Copy matches the v2.1 module docs in Drive (P4 `1MoB4eE3J-arMEzZAaPdoT0uobOeUAJRpQfDn0vPYvX8`, P7 `1QnORvxjkE8DisWWOcB-QBM8u6PgFuAOoJFz9xsUn6xE`).
 
 Status 2026-11-01: `00-components-and-log.js` ran (component `30:138`, change log `30:141`) and `p4-goal-setting.js` ran (frame `31:138`). `p7-types-of-personal-goals.js` hit the Starter-plan call limit and has not run. Neither page has had the screenshot pass.
+
+## Running scripts without the MCP cap (Scripter)
+The Starter plan's MCP cap can run out after a single call, so run builds and canvas reads through the **Scripter** plugin in the Figma web tab (Claude in Chrome), not `use_figma`:
+1. Assemble the script. The `.manual.js` output wraps it and replaces `figma.createAutoLayout`, which exists only in the MCP's version of the Plugin API (in Scripter it fails with `TypeError: not a function`).
+2. Put it on the clipboard: `Get-Content <file> -Raw | Set-Clipboard` (PowerShell). Typing 40 KB into Scripter's editor breaks because of its auto-closing brackets.
+3. In Figma, press Ctrl+/, type "Scripter" and press Enter. In the editor, press Ctrl+A then Ctrl+V, and click ▶ (top-right of the editor) to run.
+4. Results and errors go to the browser console. Read them with `read_console_messages`, and have scripts `console.log(JSON.stringify(...))` so the output is readable.
+5. Comments: `fetch('/api/file/<fileKey>/comments')` in the Figma tab. Mapping pins to nodes is a read script in Scripter: compare `client_meta.node_offset` against `absoluteBoundingBox`.
+6. Screenshot checks: Chrome screenshots of the Figma canvas break often (`Cannot access a chrome-extension:// URL`). Save the MCP calls for `get_screenshot`.
+
+## v2.2 (P4 only, 2026-11-03): built through Scripter
+Grant left 20 comments on the v2.1 P4 frame `31:138` (kept for history; comments stay pinned to it). v2.2 applies them and adds a 375 mobile view of every band in a column beside the desktop frame. Files: `build-v2.2.js` (new page build plus mobile variants; reuses the lib.js helpers), `p4-goal-setting-v2.2.js` (data), `assemble-v2.2.js` → `out/p4-goal-setting-v2.2.js` (for `use_figma`) and `out/p4-goal-setting-v2.2.manual.js` (to paste into the Scripter plugin by hand). It lands at x 10000 or further right if that space is taken, with notes to the right of the mobile column.
+
+The `use_figma` run failed on 2026-11-03 because the Starter cap was hit after one read call. The same day it was built through Scripter (see above) at the far right of page `25:2`. Only the desktop hero has been eyeballed; the bands below it and the mobile frames still need Grant's review.
+
+| Comment on v2.1 | v2.2 change |
+|---|---|
+| Hero: no dates, it isn't a blog post | Updated date removed |
+| Hero: add a primary CTA | “Start a group →” ink button + “See how it works” link |
+| Topic map too large | Ten cards became a numbered two-column index |
+| Remove “Full guide” everywhere | Removed |
+| H2s too vague / “plan” not “planning” / read as if only headlines are read | Every module H2, plus band 7 and band 8, rewritten as a standalone instruction with the why (4.2 uses Grant's wording) |
+| 4.5: “not sure what this is” (go-deeper card) | Card labeled “Go deeper · Field notes article” with “Read the article →” |
+| 4.6 media slots | Kept |
+| 4.9 cards not needed | If-then cards became a plain text list |
+| Band 7 CTA out of place → make it a more dynamic CTA | Soft CTA card replaced with an ink product CTA band (three-step strip, two buttons) |
+| Band 8: 4×1 instead of 2×2 | Four path cards in one row, equal height |
+| Band 9: odd spacing | Fixed column widths, a rule under each label, an even 12 px link gap |
+
+Spec follow-ups if Grant approves: drop the updated date from the Topical Pillar hero (skill Part B, playbook), make the product CTA band the pillar standard, and copy the new H2s into the P4 module doc.
 
 ## Run
 1. `node notes/figma-pillar-v2/assemble.js` writes paste-ready scripts to `out/` and syntax-checks them.
 2. `create_session` on the file, then one `use_figma` call per script, in order: `out/00-components-and-log.js` (media placeholder component plus the v2.1 change log at x 4800; it skips itself if already built), then `out/p4-goal-setting.js` (x 5500) and `out/p7-types-of-personal-goals.js` (x 7500). The two page scripts can run in parallel.
 3. Screenshot the bands with one `use_figma` call per page (at most 5 screenshots per call), fix, then comment the frame links on both Asana cards.
 
-Budget: about 6 calls. The Starter plan allows about 20 a month.
+Budget: about 6 calls. The Starter plan allows about 20 a month, but on 2026-11-03 it allowed only one call before the cap hit. Don't count on more than a couple per session.
