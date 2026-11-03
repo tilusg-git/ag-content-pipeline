@@ -21,10 +21,16 @@ Today's brand standards make typography and brand motifs the default and allow p
 |---|---|---|---|---|
 | Homepage | **Lead** | Supporting | Supporting | Product screens carry the story. Persona images set who it's for (organizers and groups) |
 | Core Product Pillars (`/how-it-works`, `/pricing`, `/for-groups`, `/for-coaches`) | **Lead** | Diagrams | 1 to 2 | Each mechanic shown in the real UI |
-| Topical Pillars (`/goal-setting` etc.) | **Max 1** (near the CTA or a review/tracking module) | **Lead** (hero + objects) | 1 to 3 (section beats) | Topic first: the page must pass the deletion test without its product image |
+| Topical Pillars (`/goal-setting` etc.) | **Sparing**: only where the module ties to the product (e.g. a weekly review), always with a product-context line (§3a) | Diagrams and figures | **Lead**: the hero is a persona photo with a goal tag; most section beats are persona or real-object photos | Imagery is chosen per module by its content (§3b); the page must pass the deletion test without its product image |
 | Field notes (blog) | Rare | Hero cards | Hero option | Follow the blog image rules once they exist |
 | Product CTA band | Optional small screen | — | — | Ink ground. Never a person |
 | OG/social share images | Optional | **Default** | Optional | Must read at thumbnail size |
+
+### 3a. Product placements carry one line of product context (Grant, 2026-11-03)
+Wherever a page shows the product lightly (a product UI image, or an app mention in a list), add one or two plain sentences beside it. Say what Accountability Guild does at that step and why it's easier than the usual alternative: a notebook, a spreadsheet, or a group chat. Keep it factual and within shipped features, with no superlatives. Example (P4 4.7): *"Accountability Guild keeps this board for you. Each member marks the day in a tap, adds a note or photo when it matters, and the group sees it. When the review comes, the week is already filled in: no spreadsheet to rebuild, no notebook to find."*
+
+### 3b. Choose imagery per module, by content (Grant, 2026-11-03)
+Templates set *where* media sits, not *what* it is. For each module, ask what a prospective member would recognize from their own life: a handwritten goal on a sticky note, a paper tracker on the fridge, two friends comparing notes. Use that before reaching for an illustration or a product screen. Product UI goes only where the module is about something the app does better.
 
 ## 4. Persona imagery: what we show and what it should communicate
 **Who:** the people in our real segments (`docs/marketing/` value proposition): friends' accountability groups, founder groups, workout and running groups, church and small groups, coaches with their clients, and individuals with a goal. Adults roughly 25 to 60, varied, in ordinary settings: a kitchen table, a gym, a trail, a coffee shop, a home office.

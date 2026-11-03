@@ -14,7 +14,7 @@
 | **C. Brand illustration** | Flat, token-only drawings of written objects (cards, calendars, trackers) with hand-set type | Figma via Scripter, exported as SVG/WebP | Low | Objects whose content is text |
 | **D. Photo** | A real scene: people, places, hands on objects | Own photos (Brandon's group, with permission), AI-generated per page, or CC/licensed | Medium, needs approval per image | Moments only a photo can show |
 
-## 3. P4 slot by slot
+## 3. P4 slot by slot (superseded by §9 for the hero, 4.1, 4.3, 4.6, 4.8)
 
 | # | Slot | What it shows (from the module doc) | Route | Notes |
 |---|---|---|---|---|
@@ -79,7 +79,7 @@ After P4, P7 /types-of-personal-goals reuses the same styles. Only its subjects 
 
 Scripts: `notes/figma-pillar-v2/media-p4-paper.js` (illustrations). The README covers running it through Scripter.
 
-## 8. Gemini prompts for persona photos
+## 8. Gemini prompts for persona photos (superseded by §9)
 Apply to every prompt: *natural daylight, warm-neutral color, slightly muted saturation, candid documentary style, shallow depth of field, ordinary real-world setting, no visible faces (shown from behind, cropped below the eyes, or hands only), no text, no logos, no app interfaces on screens, no celebration poses.* Generate at 4:3 and crop to the slot. Run the `image-backgrounds-spec.md` checklist on each image and log it in `docs/brand/assets/site-imagery/manifest.md`.
 
 **4.6 Tracking (360×300).** A paper weekly habit tracker taped to a white kitchen fridge door, four of seven boxes ticked in pen. A hand reaches in holding a pen, about to tick today's box. A phone lies face-up on the counter below showing a plain message bubble. Morning light, close-up, kitchen softly out of focus.
@@ -90,3 +90,40 @@ Apply to every prompt: *natural daylight, warm-neutral color, slightly muted sat
 **4.8 card 2, A small group (286×180).** Top-down view of a kitchen table on a weeknight: four people's hands and forearms around it, with open notebooks, pens, two phones face-down and mugs. One notebook shows a hand-drawn weekly grid with ticks. Warm overhead light. No faces in frame.
 
 **Goal tag on these photos:** add it in Figma, not in the AI image. A bone label with `GOAL · 12 WEEKS` / *Run four times a week.* pinned in a corner, at most one per photo.
+
+## 9. Revision 2 (Grant, 2026-11-03 evening): persona-led, product used sparingly
+Direction (now in the website imagery guideline §3a–3b and brand §16):
+- The **hero is a persona photo** with a goal tag.
+- **Product UI only where the module ties to the product**, always with one or two lines of product context: why it's easier than a notebook or spreadsheet.
+- Section imagery is **chosen per module**: the familiar real thing (a sticky note, a paper tracker, two friends comparing notes) before an illustration or a screen.
+
+| Slot | Was | Now |
+|---|---|---|
+| Hero | Paper goal-card illustration | **Persona photo** (runner heading out) + goal tag "Run four times a week." |
+| 4.1 Pick one goal | Goal card + 12-week calendar illustration | **Photo:** the goal handwritten on a sticky note on a notebook |
+| 4.3 Checkable goals | Annotated goal card | **Persona photo:** two friends checking a written goal together + goal tag "Walk 30 minutes three times a week." The numbered callout list under the image is dropped (the rewrite list carries the point) |
+| 4.6 Tracking | Paper tracker on a fridge | Same direction, **Gemini** (or Grant's own). Checklist item 1 now reads "…or Accountability Guild if you track with a group." |
+| 4.7 Weekly review | `week-board` product UI | **Kept**, plus a product-context paragraph: "Accountability Guild keeps this board for you…" |
+| 4.8 cards 1–3 | Two photos + one illustration | **Three photos** (Gemini) |
+
+The Paper illustrations stay in Figma as the fallback until the photos land. The Paper style remains the house illustration style for diagrams, figures and OG cards.
+
+### Gemini prompts
+Add this **style line** to the end of every prompt:
+> Photorealistic candid documentary photo, natural daylight, warm-neutral colors with slightly muted saturation, shallow depth of field, ordinary real-life setting. No visible faces: people are seen from behind, cropped at the shoulders, or as hands only. No logos, brand names, app screens, celebration poses, or posed stock-photo smiles.
+
+Generate 3 to 4 variations of each, pick the best, and drop the originals in a folder. I'll crop them, check color against the tokens, add the goal tags in Figma, and log each one in `docs/brand/assets/site-imagery/manifest.md`. If handwritten text comes out garbled, regenerate. If it still garbles, ask for a blank note and we'll carry the words in the goal tag instead.
+
+| # | Slot (crop) | Ask Gemini for | Prompt |
+|---|---|---|---|
+| 1 | **Hero** (460×400; mobile 335×230) | 4:3, subject left of center, calm space top-right for the goal tag | A person in running clothes seen from behind, stepping off the front porch of a house onto a quiet residential sidewalk at sunrise, about to start a run. Mid-distance, full body, soft early light, a little dew on the grass. |
+| 2 | **4.1 Pick one goal** (360×340) | 1:1 | Close-up of a single yellow sticky note stuck to the page of an open paper notebook on a wooden desk. Handwritten on the note in black pen: "ONE GOAL (12 weeks): Finish my certification". A pen lies beside the notebook, and the edge of a coffee mug is visible. Overhead, slightly angled. |
+| 3 | **4.3 Checkable goals** (360×300) | 4:3, space bottom-left for the goal tag | Two friends sitting side by side at a kitchen table, shot over one person's shoulder. One holds an open notebook toward the other and points at a handwritten line. The other leans in, hands around a mug. Faces out of frame; focus on the notebook and hands. |
+| 4 | **4.6 Tracking** (360×300) | 4:3 | A one-page paper weekly habit tracker taped to a white kitchen fridge door, with a row of seven boxes, four ticked in pen. A hand holding a pen reaches in to tick today's box. Morning light, close-up, kitchen softly out of focus. |
+| 5 | **4.8 card 1 · One person** (286×180) | 16:9 | Over-the-shoulder view of a person sitting on a park bench after a walk, holding a phone in both hands and typing a short message. The phone screen is a soft, unreadable blur. Trees and a path in the background. |
+| 6 | **4.8 card 2 · A small group** (286×180) | 16:9 | Top-down view of a wooden kitchen table on a weeknight: four people's hands and forearms around it, with open notebooks, pens, two phones face-down, and mugs. One notebook shows a hand-drawn weekly grid with ticks. Warm overhead light. |
+| 7 | **4.8 card 3 · A contribution, not a contest** (286×180) | 16:9 | A printed group tracker sheet pinned to a cork board, with rows labelled by first-name initials and columns for the days. Ticks are made in different colored pens. One hand is adding a tick in a row. Close-up, natural light. |
+
+**Goal tags** (added in Figma, never generated): hero "GOAL · 12 WEEKS / *Run four times a week.*", 4.3 "GOAL / *Walk 30 minutes three times a week.*". The other photos carry no tag; the guideline allows at most one per photo.
+
+**4.6 shortcut:** a real photo of a printed tracker on your own fridge beats AI here, and takes two minutes.
