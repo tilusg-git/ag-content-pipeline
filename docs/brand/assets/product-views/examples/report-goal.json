@@ -10,9 +10,9 @@
     "tracking": "count",
     "target": 5,
     "marks": [
-      { "date": "Oct 20", "status": "done", "note": "Psalms 23–25 before the commute." },
-      { "date": "Oct 22", "status": "missed", "note": "" },
-      { "date": "Oct 23", "status": "done", "note": "" }
+      { "date": "{{d:-8}}", "status": "done", "note": "Psalms 23–25 before the commute." },
+      { "date": "{{d:-6}}", "status": "missed", "note": "" },
+      { "date": "{{d:-5}}", "status": "done", "note": "" }
     ],
     "pct": 50,
     "note": "Mornings slipped once work ramped up. Moving reading to the night before helped the last week."

@@ -7,7 +7,7 @@
     "pillar": "fitness",
     "cadence": "daily",
     "title": "Work out 5 mornings a week.",
-    "date": "Mon, Nov 2",
+    "date": "{{d:0|dowmd}}",
     "outcome": "done",
     "note": "6 a.m. lift with Marcus. Legs, then a mile on the track."
   },

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="clock-pending">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accountability Guild · Homepage v5 (HTML mockup)</title>
+<!--
+  Homepage v5 as responsive HTML (desktop 1440 and mobile 375), built from the
+  Figma v5 frame 77:2 in file l27WIk0vje0syTYWN2iZee. Copy is word for word from
+  Figma. Every date comes from the shared demo clock
+  (docs/brand/assets/product-views/demo-clock.js), so the product screens always
+  show the current week. Add ?today=YYYY-MM-DD to the URL to preview another day.
+
+  The demo group meets on the first Thursday of each month (Brandon's group),
+  so the cycle numbers follow the real calendar.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#FAFAF7; --panel:#FFFFFF; --ink:#0F0F0E; --ink-soft:#5C5C58; --line:#E5E2DA;
+  --ember:#D8512A; --ember-soft:#F0A98A;
+  --serif:"Newsreader",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  --wrap:1200px; --gutter:120px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html.clock-pending body{visibility:hidden}
+body{background:var(--bone);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+em,.em{font-style:italic;color:var(--ember)}
+.wrap{max-width:calc(var(--wrap) + 2*var(--gutter));margin:0 auto;padding:0 var(--gutter)}
+.mono{font-family:var(--mono);font-weight:500;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.lockup{display:inline-flex;align-items:baseline;gap:8px;white-space:nowrap}
+.lockup i{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink)}
+.lockup b{font-family:var(--sans);font-weight:600;font-size:12.8px;letter-spacing:.34em}
+.lockup.sm i{font-size:15px}.lockup.sm b{font-size:8.7px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:15px 24px;border:1.5px solid var(--ink);white-space:nowrap}
+.btn-ink{background:var(--ink);color:var(--bone)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-sm{padding:10px 18px}
+.on-ink .btn-ink{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+.on-ink .btn-line{color:var(--bone);border-color:var(--bone)}
+
+/* Type */
+h1,h2,h3{font-weight:400;letter-spacing:-.02em}
+.h1{font-size:60px;line-height:1.02}
+.h2{font-size:44px;line-height:1.08}
+.h3{font-size:32px;line-height:1.15}
+.lede{font-size:19px;line-height:1.55;color:var(--ink-soft)}
+.body{font-size:17px;line-height:1.6;color:var(--ink-soft)}
+
+/* Nav */
+.nav{border-bottom:1px solid var(--line);background:var(--bone)}
+.nav .wrap{display:flex;align-items:center;height:83px;gap:40px}
+.nav-links{display:flex;gap:40px;font-family:var(--sans);font-weight:500;font-size:14px;color:var(--ink-soft);flex:1}
+.nav-login{font-family:var(--sans);font-weight:500;font-size:14px}
+
+/* Hero */
+.hero .wrap{display:grid;grid-template-columns:560px 1fr;gap:80px;align-items:center;padding-top:110px;padding-bottom:120px}
+.hero-ctas{display:flex;gap:12px;margin-top:42px;flex-wrap:wrap}
+.hero-note{margin-top:28px;font-family:var(--sans);font-size:14px;color:var(--ink-soft)}
+.hero-note strong{color:var(--ink);font-weight:600}
+.hero-note i{font-family:var(--serif);font-size:16px}
+
+/* App window (hero mock) */
+.app{background:var(--panel);border:1.5px solid var(--ink);box-shadow:0 30px 60px -30px rgba(15,15,14,.25)}
+.app-bar{height:24px;background:#F3F1EA;border-bottom:1px solid var(--line);display:flex;gap:5px;align-items:center;padding-left:12px}
+.app-bar span{width:6px;height:6px;border-radius:50%;background:var(--line)}
+.app-nav{display:flex;align-items:baseline;gap:22px;padding:14px 22px;border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;color:var(--ink-soft)}
+.app-nav .on{color:var(--ink);font-weight:500}
+.app-body{padding:20px 22px 8px}
+.app-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.app-head h4{font-weight:400;font-size:20px;line-height:1.2;margin-top:6px;max-width:300px}
+.stats{display:flex;gap:18px}
+.stat .mono{font-size:8px;letter-spacing:.12em}
+.stat b{display:block;font-weight:400;font-size:17px;margin-top:2px}
+.week-head{display:grid;grid-template-columns:1fr repeat(7,26px);gap:3px;align-items:end;padding:12px 0 10px;border-bottom:1px solid var(--line)}
+.week-head .label .mono{font-size:8px}
+.week-head .label div:last-child{font-size:15px;margin-top:2px}
+.dh{text-align:center;font-family:var(--mono);font-size:7px;letter-spacing:.08em;color:var(--ink-soft)}
+.dh b{display:block;font-family:var(--serif);font-weight:400;font-size:12px;letter-spacing:0;color:var(--ink);margin-top:2px}
+.dh.today,.dh.today b{color:var(--ember)}
+.goal-row{display:grid;grid-template-columns:1fr repeat(7,26px);gap:3px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.goal-row .t .mono{font-size:7.5px}
+.goal-row .t div:last-child{font-size:13px;line-height:1.3;margin-top:2px;padding-right:12px}
+.cell{width:26px;height:26px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:12px}
+.cell.done{background:var(--ink);border-color:var(--ink);color:var(--bone)}
+.cell.skip{background:#F1EEE6;border-color:#F1EEE6;color:var(--ink-soft)}
+.cell.now{background:var(--ember);border-color:var(--ember);color:var(--bone)}
+.cell.open-now{border:1.5px solid var(--ember)}
+.count-row{grid-column:2 / span 7;display:flex;justify-content:flex-end;align-items:center;gap:10px}
+.count-row .pill{border:1.5px solid var(--ink);padding:5px 9px;font-family:var(--mono);font-size:10px}
+
+/* Section shells */
+.sec{padding:112px 0}
+.sec-white{background:var(--panel)}
+.sec-head{max-width:900px}
+.sec-head .lede{margin-top:24px;max-width:720px}
+
+/* 02 Replaces */
+.replaces{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-top:1px solid var(--line)}
+.replaces > div{padding:24px 28px 0 0;margin-right:28px;border-right:1px solid var(--line)}
+.replaces > div:last-child{border-right:0;margin-right:0}
+.replaces s{font-style:italic;color:var(--ink-soft);font-size:15px}
+.replaces p{font-size:17px;line-height:1.45;margin-top:14px}
+
+/* 03 How it works */
+.how-head{max-width:900px}
+.how-head .lede{margin-top:24px}
+.how-head .btn{margin-top:32px}
+.overview{margin-top:48px;background:var(--panel);border:1px solid var(--line);padding:32px 40px}
+.overview-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.overview-top h3{font-size:30px;margin-top:8px}
+.overview .stats{gap:32px}.overview .stat b{font-size:22px}
+.progress-meta{display:flex;justify-content:space-between;margin:22px 0 8px}
+.progress{display:grid;gap:4px}
+.progress span{height:6px;background:var(--line);position:relative;overflow:hidden}
+.progress span i{position:absolute;inset:0 auto 0 0;background:var(--ink)}
+.members{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.member{border:1px solid var(--line);background:#FCFBF8;padding:12px 14px;display:flex;gap:12px;align-items:center}
+.av{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-style:italic;font-size:14px;flex:none;background:var(--bone)}
+.av.ink{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.member b{font-family:var(--sans);font-weight:500;font-size:13px;display:block}
+.member small{font-style:italic;color:var(--ink-soft);font-size:12px}
+.step{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;margin-top:120px}
+.step.flip .step-copy{order:2}
+.step-copy h3{font-size:34px}
+.step-copy .body{margin-top:22px}
+.card{background:var(--panel);border:1px solid var(--line);padding:28px 30px}
+.card h4{font-weight:400;font-size:26px;margin:6px 0 16px}
+.kv{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--line)}
+.kv > *{padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+.kv .mono{font-size:8px;display:flex;align-items:center}
+.who{margin-top:22px}
+.who-row{display:flex;align-items:center;gap:12px;padding:6px 0}
+.who-row b{font-family:var(--sans);font-weight:500;font-size:13px;flex:1}
+.who-row .mono{font-size:8px}.who-row .mono.ember{color:var(--ember)}
+.phone{width:250px;margin:0 auto;border:6px solid var(--ink);border-radius:30px;background:var(--panel);padding:22px 18px 18px}
+.phone h5{font-weight:400;font-size:15px;line-height:1.3;margin:8px 0 12px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0 14px}
+.seg span{border:1px solid var(--line);font-family:var(--sans);font-size:10.5px;text-align:center;padding:8px 0}
+.seg .on{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.phone .note{border:1px solid var(--line);padding:10px;font-size:12.5px;margin:6px 0 14px;min-height:46px}
+.phone .row{display:flex;justify-content:space-between}
+.phone img{width:100%;aspect-ratio:2/1;object-fit:cover;margin-top:6px}
+.phone .done{background:var(--ink);color:var(--bone);text-align:center;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.14em;padding:11px;margin-top:12px}
+.report .tally{display:flex;gap:36px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.report .tally b{display:block;font-weight:400;font-size:19px;margin-top:2px}
+.report .tally .em{font-style:normal}
+.score{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.score span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:4px 7px}
+.score span.part{border:1.5px solid var(--ink)}
+.reflect{background:#F6F4EE;border:1px solid var(--line);padding:12px;font-size:13px;line-height:1.5;margin-top:8px}
+.ledger-sum{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin:16px 0 8px}
+.ledger-sum > div{padding:10px 12px;border-right:1px solid var(--line)}
+.ledger-sum > div:last-child{border-right:0}
+.ledger-sum .mono{font-size:7.5px;letter-spacing:.1em}
+.ledger-sum b{display:block;font-weight:400;font-size:18px;margin-top:2px}
+.entry{display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line)}
+.entry .mono{font-size:8px}
+.entry div b{font-family:var(--sans);font-weight:500;font-size:12.5px;display:block}
+.entry div i{font-size:12px;color:var(--ink-soft)}
+.entry .amt{font-size:14px}
+.sub-i{font-style:italic;color:var(--ink-soft);font-size:13px}
+
+/* 04 Money */
+.money{display:grid;grid-template-columns:560px 1fr;gap:64px;margin-top:48px;align-items:start}
+.receipt{border:1px solid var(--ink);padding:28px 32px;background:var(--panel)}
+.receipt-top{display:flex;justify-content:space-between}
+.rtable{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+.rtable th{font-family:var(--mono);font-weight:500;font-size:8.5px;letter-spacing:.14em;color:var(--ink-soft);text-align:right;padding:10px 0;border-bottom:1px solid var(--ink)}
+.rtable th:first-child,.rtable td:first-child{text-align:left}
+.rtable td{text-align:right;padding:9px 0;border-bottom:1px solid var(--line)}
+.rsum{margin-top:6px;font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
+.rsum div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line)}
+.rsum .total{border-top:2px solid var(--ink);border-bottom:0;color:var(--ink);font-weight:600;padding-top:10px}
+.rsum .total span:last-child{font-family:var(--serif);font-style:italic;font-weight:400;font-size:20px;color:var(--ember)}
+.rfoot{font-style:italic;font-size:12px;color:var(--ink-soft);margin-top:10px}
+.faq > div{padding:20px 0;border-bottom:1px solid var(--line)}
+.faq > div:first-child{padding-top:0}
+.faq h4{font-weight:400;font-size:20px}
+.faq p{font-size:15px;line-height:1.55;color:var(--ink-soft);margin-top:8px}
+
+/* 05 Who */
+.who-head{display:flex;flex-direction:column;align-items:flex-start;max-width:820px}
+.who-head .btn{margin-top:28px}
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.types > div{background:var(--panel);border:1px solid var(--line);padding:24px}
+.types h4{font-weight:400;font-size:20px}
+.types p{font-size:15px;line-height:1.5;color:var(--ink-soft);margin-top:10px}
+
+/* 06 Founder */
+.founder .wrap > div{display:grid;grid-template-columns:420px 1fr;gap:80px;border-top:1px solid var(--ink);padding-top:64px}
+.founder h3{font-size:30px}
+.founder .note{border-left:1.5px solid var(--ember);padding-left:26px}
+.founder .note p{font-size:18px;line-height:1.6;color:var(--ink-soft);margin-bottom:16px}
+.founder .note .mono{margin-top:8px}
+.founder{padding:16px 0 112px}
+
+/* 07 CTA */
+.cta{background:var(--ink);color:var(--bone);padding:112px 0}
+.cta .h2{color:var(--bone)}
+.cta-steps{display:grid;grid-template-columns:repeat(3,1fr);margin:44px 0 48px}
+.cta-steps > div{padding-right:28px;margin-right:28px;border-right:1px solid #3a3a37}
+.cta-steps > div:last-child{border-right:0}
+.cta-steps .mono{color:var(--ember-soft);font-size:11px}
+.cta-steps p{font-size:18px;line-height:1.4;margin-top:12px}
+.cta .ctas{display:flex;gap:12px;flex-wrap:wrap}
+
+/* 08 Field notes */
+.notes-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px}
+.notes-head a{font-family:var(--mono);font-size:11px;letter-spacing:.18em;font-weight:500}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.notes a{display:block;background:var(--panel);border:1px solid var(--line);padding:24px}
+.notes h4{font-weight:400;font-size:18px;line-height:1.35}
+.notes i{display:block;margin-top:14px;font-size:13px;color:var(--ink-soft)}
+
+/* Footer */
+.foot{border-top:1px solid var(--line);padding:36px 0}
+.foot .wrap{display:flex;align-items:center;gap:36px}
+.foot nav{display:flex;gap:28px;flex:1;font-family:var(--sans);font-size:13px;color:var(--ink-soft)}
+.foot .mono{font-size:10px}
+
+/* Grid children may shrink below their content width (stops mock UI widening the page) */
+.hero .wrap > *,.step > *,.money > *,.founder .wrap > div > *{min-width:0}
+.app{overflow:hidden}
+.nw{white-space:nowrap}
+
+/* Sticky mobile CTA (approved pattern from the pillar template v2.3) */
+.sticky{display:none}
+
+/* ---------- Tablet ---------- */
+@media (max-width:1200px){
+  :root{--gutter:48px}
+  .hero .wrap{grid-template-columns:1fr;gap:56px}
+  .money{grid-template-columns:1fr}
+  .step{gap:56px}
+}
+
+/* ---------- Mobile (375 target) ---------- */
+@media (max-width:760px){
+  :root{--gutter:20px}
+  .nav .wrap{height:64px;gap:12px}
+  .nav-links,.nav-login{display:none}
+  .nav .lockup{flex:1}
+  .nav .lockup i{font-size:19px}.nav .lockup b{font-size:11px}
+  .nav .btn{padding:9px 12px;font-size:11px}
+  .h1{font-size:40px}
+  .h2{font-size:31px}
+  .lede{font-size:17px}
+  .hero .wrap{padding-top:44px;padding-bottom:64px;gap:40px}
+  .hero-ctas{margin-top:28px;flex-direction:column}
+  .hero-ctas .btn{width:100%}
+  .app-body{padding:16px 14px 4px}
+  .app-nav{padding:12px 14px;gap:14px;font-size:11px}
+  .app-nav .lockup.sm i{font-size:13px}.app-nav .lockup.sm b{font-size:7.5px;letter-spacing:.28em}
+  .app-head{flex-direction:column;align-items:flex-start}
+  .app-head h4{font-size:17px}
+  .app-head .mono{letter-spacing:.1em}
+  .week-head,.goal-row{grid-template-columns:repeat(7,1fr)}
+  .week-head .label,.goal-row .t{grid-column:1 / -1}
+  .goal-row .t{margin-bottom:8px}
+  .cell{width:100%;height:30px}
+  .count-row{grid-column:1 / -1;justify-content:flex-start}
+  .sec{padding:72px 0}
+  /* Swipe rows with a peek, as on the pillar template */
+  .swipe{display:grid;grid-auto-flow:column;grid-auto-columns:78%;grid-template-columns:none;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:calc(-1 * var(--gutter));padding-right:var(--gutter);scrollbar-width:none}
+  .swipe::-webkit-scrollbar{display:none}
+  .swipe > *{scroll-snap-align:start}
+  .replaces{border-top:0;margin-top:32px}
+  .replaces > div{border:1px solid var(--line);margin:0;padding:20px;background:var(--bone)}
+  .replaces > div:last-child{border-right:1px solid var(--line)}
+  .overview{padding:20px 16px;margin-top:36px}
+  .overview-top{flex-direction:column;align-items:flex-start}
+  .overview-top h3{font-size:24px}
+  .members{grid-template-columns:1fr 1fr;gap:8px}
+  .step,.step.flip{grid-template-columns:1fr;gap:32px;margin-top:72px}
+  .step.flip .step-copy{order:0}
+  .step-copy h3{font-size:27px}
+  .card{padding:20px 16px}
+  .kv{grid-template-columns:96px 1fr}
+  .report .tally{gap:22px}
+  .money{gap:36px;margin-top:32px}
+  .receipt{padding:20px 16px}
+  .rtable{font-size:13px}
+  .receipt-top{flex-direction:column;gap:4px}
+  .rtable th,.rtable td{padding-left:8px}.rtable th:first-child,.rtable td:first-child{padding-left:0}
+  .who-head .btn{width:100%}
+  .types{margin-top:32px}
+  .founder .wrap > div{grid-template-columns:1fr;gap:24px;padding-top:40px}
+  .founder h3{font-size:25px}
+  .founder .note p{font-size:16.5px}
+  .founder{padding:8px 0 72px}
+  .cta{padding:72px 0 96px}
+  .cta-steps{grid-template-columns:1fr;margin:32px 0}
+  .cta-steps > div{border-right:0;margin:0;padding:16px 0;border-bottom:1px solid #3a3a37}
+  .cta .ctas{flex-direction:column}.cta .ctas .btn{width:100%}
+  .notes-head{flex-direction:column}
+  .notes{margin-top:24px}
+  .foot .wrap{flex-direction:column;align-items:flex-start;gap:18px}
+  .foot nav{flex-wrap:wrap;gap:16px 22px}
+  .foot{padding-bottom:96px}
+  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px calc(12px + env(safe-area-inset-bottom));background:var(--bone);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s ease}
+  .sticky.show{transform:none}
+  .sticky span{font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
+  .sticky span strong{color:var(--ink)}
+  .sticky .btn{padding:11px 14px;font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#" class="lockup"><i>Accountability</i><b>GUILD</b></a>
+    <nav class="nav-links"><a href="#how">How it works</a><a href="#money">Pricing</a><a href="#notes">Field notes</a></nav>
+    <a href="#" class="nav-login">Log in</a>
+    <a href="#" class="btn btn-ink btn-sm">Start a group</a>
+  </div>
+</header>
+
+<!-- 01 Hero -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div>
+      <h1 class="h1">One place for your accountability group’s <em>goals, <span class="nw">check-ins</span> and reports.</em></h1>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-ink">Start a group&nbsp; →</a>
+        <a href="#how" class="btn btn-line">How it works</a>
+      </div>
+      <p class="hero-note"><strong>No monthly fee.</strong> <i>Free to start, and set up in five minutes.</i></p>
+    </div>
+    <div class="app" aria-label="Dashboard: this week's marks">
+      <div class="app-bar"><span></span><span></span><span></span></div>
+      <div class="app-nav"><span class="lockup sm"><i>Accountability</i><b>GUILD</b></span><span class="on">Dashboard</span><span>Group</span><span>Reports</span></div>
+      <div class="app-body">
+        <div class="app-head">
+          <div>
+            <div class="mono">Thursday night group · Cycle {{n:cycleNo}} · {{range:start:end}}</div>
+            <h4>Day {{n:day}} of {{n:length}}. Page through the week and mark what you did.</h4>
+          </div>
+          <div class="stats">
+            <div class="stat"><div class="mono">Days left</div><b>{{n:daysLeft}}</b></div>
+            <div class="stat"><div class="mono">At-stake</div><b>$100</b></div>
+          </div>
+        </div>
+        <div class="week-head" id="week-head">
+          <div class="label"><div class="mono">Week {{n:week}} of {{n:weeks}} · This week</div><div>Mark the week · <span id="week-range"></span></div></div>
+        </div>
+        <div id="week-goals"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 What it replaces -->
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2">Replace the shared spreadsheet your group <em>forgets to update.</em></h2>
+      <p class="lede">Set up your group in five minutes. From then on, everyone’s goals, progress and reports live in one place, so each meeting starts with what actually happened.</p>
+    </div>
+    <div class="replaces swipe">
+      <div><s>The shared spreadsheet</s><p>Everyone writes goals the whole group can see, support, and report against.</p></div>
+      <div><s>The group chat</s><p>Log progress in a few taps from your phone, whenever you sit down.</p></div>
+      <div><s>Chasing updates</s><p>Automatic notifications remind everyone when reports are due, on your group’s own schedule.</p></div>
+      <div><s>The honor system</s><p>Every goal and report is visible to the group, and missed goals cost real money, paid into the group’s shared pot.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 How it works -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="how-head">
+      <h2 class="h2">Each cycle follows your group’s <em>meeting schedule.</em></h2>
+      <p class="lede">A cycle is the stretch between check-ins: a week or a month, whatever your group already does. It works the same whether you meet in person or online. Every cycle has four steps.</p>
+      <a href="/how-it-works" class="btn btn-line">See how it works&nbsp; →</a>
+    </div>
+
+    <div class="overview">
+      <div class="overview-top">
+        <div>
+          <div class="mono">Thursday night group · Cycle {{n:cycleNo}} · {{n:month}} · Meets in person</div>
+          <h3>The {{n:month}} cycle <em>{{n:closesIn}}.</em></h3>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="mono">At-stake</div><b>$100</b></div>
+          <div class="stat"><div class="mono">Members</div><b>4</b></div>
+          <div class="stat"><div class="mono">Next meeting</div><b>{{d:close|dowmd}}</b></div>
+        </div>
+      </div>
+      <div class="progress-meta"><span class="mono">Week {{n:week2}} of {{n:weeks2}}</span><span class="mono">Reports due {{d:end|md}}</span></div>
+      <div class="progress" id="progress"></div>
+      <div class="members">
+        <div class="member"><span class="av ink">B</span><div><b>Brandon</b><small>Organizer · 4 goals</small></div></div>
+        <div class="member"><span class="av">M</span><div><b>Marcus</b><small>5 goals</small></div></div>
+        <div class="member"><span class="av">D</span><div><b>Dan</b><small>3 goals</small></div></div>
+        <div class="member"><span class="av">J</span><div><b>Josh</b><small>4 goals</small></div></div>
+      </div>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step">
+      <div class="step-copy">
+        <h3 class="h3">1. Everyone <em>sets their goals</em> for the cycle.</h3>
+        <p class="body">The group’s organizer sets the schedule and the stakes, then invites the group. Everyone else joins from an email invite, writes their own measurable goals (called commitments), and agrees to the group’s schedule and stakes before the first cycle starts.</p>
+      </div>
+      <div class="card">
+        <div class="mono">Step 5 of 5 · Review and sign</div>
+        <h4>The commitment, on paper.</h4>
+        <div class="kv">
+          <span class="mono">Group</span><span>Thursday Night Group</span>
+          <span class="mono">Meets</span><span>Monthly, first Thursday · in person</span>
+          <span class="mono">First cycle</span><span>{{d:close|dowmd}} to {{d:nextEnd|dowmd}}</span>
+          <span class="mono">At-stake</span><span>$100 per cycle, split across your goals</span>
+          <span class="mono">Reports due</span><span>Before the group meets</span>
+        </div>
+        <div class="who">
+          <div class="mono">Members · 3 of 4 joined</div>
+          <div class="who-row"><span class="av ink">B</span><b>Brandon</b><span class="mono">Organizer</span></div>
+          <div class="who-row"><span class="av">M</span><b>Marcus</b><span class="mono">Joined</span></div>
+          <div class="who-row"><span class="av">D</span><b>Dan</b><span class="mono">Joined</span></div>
+          <div class="who-row"><span class="av">J</span><b>Josh</b><span class="mono ember">Invited</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step flip">
+      <div class="step-copy">
+        <h3 class="h3">2. Track progress toward each goal <em>as you go.</em></h3>
+        <p class="body">Log progress in a few taps, each day or whenever it fits during the cycle: kept, missed, skipped, or a count toward your target. Add a note or a photo as proof. No more spreadsheets: when report day comes, your progress is already there.</p>
+      </div>
+      <div class="phone" aria-label="Phone: marking today's goal">
+        <div class="mono">Fitness · Weekly</div>
+        <h5>Lift four times a week, two strength and two zone-2.</h5>
+        <div class="mono">{{d:0|DOWMD}} · Today</div>
+        <div class="seg"><span class="on">✓ Kept</span><span>Missed</span><span>Skipped</span></div>
+        <div class="row"><span class="mono">Note</span><span class="mono">26 / 240</span></div>
+        <div class="note">Zone-2 on the bike, 40 min.</div>
+        <div class="mono">Photo</div>
+        <img src="../../brand/assets/site-imagery/out/home-proof-photo-440x220.jpg" alt="A spin bike's handlebars and ride screen showing a 42:38 workout.">
+        <div class="done">DONE</div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <div class="step-copy">
+        <h3 class="h3">3. Report back to the group <em>before you meet.</em></h3>
+        <p class="body">A report is a short check-in at the end of each cycle: score each goal and write a few lines on what happened. Your whole group reads it, so they know where you’re stuck, can push you when you slip, and back you when you’re close.</p>
+      </div>
+      <div class="card report">
+        <div class="mono">Cycle {{n:prevNo}} · Marcus · Filed {{d:filed|md}} · $100 at-stake</div>
+        <h4>Report <em>filed.</em></h4>
+        <div class="tally">
+          <div><div class="mono">Kept</div><b>3 / 5</b></div>
+          <div><div class="mono">Forfeit</div><b class="em">$15</b></div>
+          <div><div class="mono">Filed</div><b>{{d:filed|md}}</b></div>
+        </div>
+        <div class="score">Lift four times a week<span>100%</span></div>
+        <div class="score">Read 20 pages a night<span>100%</span></div>
+        <div class="score">Ship two client proposals<span>100%</span></div>
+        <div class="score">Phone away at dinner<span class="part">75%</span></div>
+        <div class="score">Journal six mornings a week<span class="part">50%</span></div>
+        <div class="mono" style="margin-top:16px">The reflection · What happened</div>
+        <div class="reflect">Training and reading held all month, and both proposals went out. Dinner rule slipped the week we traveled. Journaled three mornings out of six; moving it to the evening next cycle.</div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step flip">
+      <div class="step-copy">
+        <h3 class="h3">4. Missed goals add money to the <em>group’s shared pot.</em></h3>
+        <p class="body">Each member puts money on the line for the cycle, which adds one more layer of accountability. At the end, you’re charged for the goals you missed, and the money collects in the group’s kitty. The organizer pays it out for whatever the group agreed, and everyone sees every withdrawal.</p>
+      </div>
+      <div class="card">
+        <div class="mono">The ledger · Thursday night group</div>
+        <h4 style="margin-bottom:4px">Per-member contributions</h4>
+        <div class="sub-i">Member forfeits paid into the group kitty, most recent cycle first.</div>
+        <div class="ledger-sum">
+          <div><div class="mono">Current kitty</div><b>$412.40</b></div>
+          <div><div class="mono">Into kitty · Cycle {{n:prevNo}}</div><b>$60.51</b></div>
+          <div><div class="mono">Paid out · {{d:paidOut|year}}</div><b>$180.00</b></div>
+        </div>
+        <div class="entry"><span class="mono">{{d:start|md}}</span><div><b>Cycle {{n:prevNo}} close · Marcus</b><i>Forfeit $15.00, after fees</i></div><span class="amt">+$13.26</span></div>
+        <div class="entry"><span class="mono">{{d:start|md}}</span><div><b>Cycle {{n:prevNo}} close · Dan</b><i>Forfeit $50.00, after fees</i></div><span class="amt">+$47.25</span></div>
+        <div class="entry"><span class="mono">{{d:paidOut|md}}</span><div><b>Paid out by Brandon</b><i>Reason: cabin deposit for the January retreat</i></div><span class="amt">−$180.00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 The money -->
+<section class="sec sec-white" id="money">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2">Put money on your goals. Misses <em>pay your group, not Accountability Guild.</em></h2>
+      <p class="lede">Every member puts the same amount at stake each cycle, say $100, divided evenly across their own goals. At the end of the cycle, you pay only for the goals you missed, or the part of a goal you didn’t finish. Miss nothing, pay nothing.</p>
+    </div>
+    <div class="money">
+      <div class="receipt">
+        <div class="receipt-top"><span class="mono">One member’s cycle · Example</span><span class="mono">$100 at-stake · 5 goals</span></div>
+        <table class="rtable">
+          <thead><tr><th>Goal</th><th>At stake</th><th>Done</th><th>Owed</th></tr></thead>
+          <tbody>
+            <tr><td>Lift four times a week</td><td>$20</td><td>100%</td><td>$0</td></tr>
+            <tr><td>Read 20 pages a night</td><td>$20</td><td>100%</td><td>$0</td></tr>
+            <tr><td>Ship two client proposals</td><td>$20</td><td>100%</td><td>$0</td></tr>
+            <tr><td>Phone away at dinner</td><td>$20</td><td>75%</td><td>$5</td></tr>
+            <tr><td>Journal six mornings a week</td><td>$20</td><td>50%</td><td>$10</td></tr>
+          </tbody>
+        </table>
+        <div class="rsum">
+          <div><span>Charged at the end of the cycle</span><span>$15.00</span></div>
+          <div><span>Platform fee</span><span>−$1.00</span></div>
+          <div><span>Card processing (est.)</span><span>−$0.74</span></div>
+          <div class="total"><span>To your group’s kitty</span><span>$13.26</span></div>
+        </div>
+        <p class="rfoot">Each member’s amounts come from their own goals. No report means the full $100.</p>
+      </div>
+      <div class="faq">
+        <div><h4>When is my card charged?</h4><p>Each member saves a card when they join the group. It’s charged automatically at the end of the cycle, and only for the goals, or parts of goals, you missed. Hit all your goals and you pay nothing.</p></div>
+        <div><h4>Where does the money go?</h4><p>Into your group’s kitty, for whatever the group agrees on: a retreat or a group dinner, a payout to whoever kept the most goals, a shared subscription, or a charity. Accountability Guild keeps $1 per charge, and card processing comes out of the same amount.</p></div>
+        <div><h4>How is the kitty spent?</h4><p>The organizer pays it out once the group agrees on a use. Every withdrawal shows the amount and the reason to the whole group.</p></div>
+        <div><h4>Why don’t you charge a monthly fee?</h4><p>The point is for you and your group to hit your goals, so there’s nothing to pay up front. Accountability Guild makes money only when a forfeit is collected: a $1 platform fee plus card processing, both taken out of the forfeit, not added on top.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 Who it's for -->
+<section class="sec">
+  <div class="wrap">
+    <div class="who-head">
+      <h2 class="h2">For groups that have met for years, and groups <em>just getting started.</em></h2>
+      <p class="lede" style="margin-top:24px">One organizer sets up the group and invites everyone. Everyone else joins from an email invite, writes their goals, and reports on the same schedule.</p>
+      <a href="#" class="btn btn-ink">Start a group&nbsp; →</a>
+    </div>
+    <div class="types swipe">
+      <div><h4>Church small groups</h4><p>Members keep each other on track with prayer, Bible reading, and serving goals between weekly meetings.</p></div>
+      <div><h4>Founder groups</h4><p>Founders who meet monthly to hit revenue, shipping, and hiring targets, with the numbers in front of the group.</p></div>
+      <div><h4>Workout crews</h4><p>Training partners committing to sessions, mileage, or nutrition targets, with every workout logged.</p></div>
+      <div><h4>Friends</h4><p>Friends chasing personal goals, like saving, reading, or health, who want a reason to follow through.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 Founder note -->
+<section class="founder">
+  <div class="wrap">
+    <div>
+      <h3 class="h3">Built for a first-Thursday group that still runs on it.</h3>
+      <div class="note">
+        <p>I built this because I’m part of a small group that meets on the first Thursday of each month, and the reporting rhythm should not depend on one person chasing everyone. The app I wanted didn’t exist: every habit tracker is built for one person, alone.</p>
+        <p>Accountability Guild is a different shape. It assumes the room. It assumes you’ve already done the hard part: finding three or five or ten people who agreed to hold each other to something.</p>
+        <p>One cycle, then the next. Receipts at the close. That’s it.</p>
+        <div class="mono">Brandon Tilus · Founder</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 Final CTA -->
+<section class="cta on-ink">
+  <div class="wrap">
+    <h2 class="h2">Set up your group in <em>five minutes.</em></h2>
+    <div class="cta-steps">
+      <div><div class="mono">01</div><p>Create your account. No monthly fee.</p></div>
+      <div><div class="mono">02</div><p>Set your group’s schedule in five short steps.</p></div>
+      <div><div class="mono">03</div><p>Invite your group. Nothing is charged until a cycle closes.</p></div>
+    </div>
+    <div class="ctas"><a href="#" class="btn btn-ink">Start a group&nbsp; →</a><a href="#how" class="btn btn-line">How it works</a></div>
+  </div>
+</section>
+
+<!-- 08 Field notes -->
+<section class="sec" id="notes">
+  <div class="wrap">
+    <div class="notes-head">
+      <h2 class="h3" style="font-size:34px">Guides for running an accountability group.</h2>
+      <a href="https://accountabilityguild.com/resources">ALL FIELD NOTES&nbsp; →</a>
+    </div>
+    <div class="notes swipe">
+      <a href="https://accountabilityguild.com/blog/personal-accountability"><h4>Personal Accountability: How to Follow Through on Your Commitments</h4><i>14 min read</i></a>
+      <a href="https://accountabilityguild.com/blog/goal-setting"><h4>Goal Setting That Actually Sticks: A Practical Step-by-Step Guide</h4><i>14 min read</i></a>
+      <a href="https://accountabilityguild.com/blog/behavior-change"><h4>Behavior Change 101: Build Better Habits and Break Bad Ones</h4><i>7 min read</i></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="lockup sm"><i>Accountability</i><b>GUILD</b></span>
+    <nav><a href="#how">How it works</a><a href="#money">Pricing</a><a href="#notes">Field notes</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+    <span class="mono">© {{d:0|year}}</span>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><span><strong>No monthly fee.</strong> Set up in five minutes.</span><a href="#" class="btn btn-ink">Start a group&nbsp; →</a></div>
+
+<script src="../../brand/assets/product-views/demo-clock.js"></script>
+<script>
+(function () {
+  // ?today=YYYY-MM-DD previews any day; otherwise the visitor's own date.
+  var q = new URLSearchParams(location.search).get("today");
+  var clock = AGDemoClock.createClock({ today: q || undefined, cycle: { meets: "Thu", rule: "first" } });
+  var C = clock.cycle, V = C.values, DAY = 86400000;
+
+  // Page-level values the clock doesn't know: cycle numbers, the report filing
+  // date, and the last payout. The current cycle is always Cycle 5, so the
+  // filed report and ledger entries belong to Cycle 4, which closed at this
+  // cycle's opening meeting.
+  var extra = {
+    cycleNo: 5, prevNo: 4,
+    week2: String(V.week).padStart(2, "0"), weeks2: String(V.weeks).padStart(2, "0")
+  };
+  var named = {
+    filed: new Date(C.dates.start.getTime() - 2 * DAY),   // two days before the meeting
+    paidOut: new Date(C.dates.start.getTime() - 50 * DAY) // an earlier payout
+  };
+  function fmt(date, f) {
+    if (f === "year") return String(date.getUTCFullYear());
+    return AGDemoClock.format(date, f);
+  }
+  function resolveDate(ref, f) {
+    if (named[ref]) return fmt(named[ref], f);
+    if (f === "year") return String((/^[+-]?\d+$/.test(ref) ? clock.day(+ref) : C.dates[ref]).getUTCFullYear());
+    return clock.fmt(/^[+-]?\d+$/.test(ref) ? +ref : ref, f);
+  }
+  function fill(s) {
+    return s.replace(/\{\{\s*(d|n|range)\s*:\s*([^}|]+?)\s*(?:\|\s*([A-Za-z0-9]+)\s*)?\}\}/g, function (_, k, a, f) {
+      if (k === "d") return resolveDate(a, f);
+      if (k === "range") { var p = a.split(":"); return clock.range(p[0], p[1]); }
+      return a in extra ? extra[a] : clock.value(a);
+    });
+  }
+  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  for (var n; (n = walker.nextNode());) if (n.nodeValue.indexOf("{{") > -1) n.nodeValue = fill(n.nodeValue);
+
+  // Hero week board: the cycle week that contains today. Past days show the
+  // goal's pattern, today is marked in ember, later days are empty.
+  var ws = C.dates.weekStart, todayIdx = Math.round((clock.today - ws) / DAY);
+  var head = document.getElementById("week-head");
+  for (var i = 0; i < 7; i++) {
+    var d = new Date(ws.getTime() + i * DAY), el = document.createElement("div");
+    el.className = "dh" + (i === todayIdx ? " today" : "");
+    el.innerHTML = AGDemoClock.format(d, "dow2").toUpperCase() + "<b>" + d.getUTCDate() + "</b>";
+    head.appendChild(el);
+  }
+  document.getElementById("week-range").textContent = clock.range(
+    String(Math.round((ws - clock.today) / DAY)), String(Math.round((ws - clock.today) / DAY) + 6));
+
+  var goals = [
+    { p: "Fitness", t: "Lift four times a week, two strength and two zone-2.", past: ["done", "skip", "done", "", "done", "skip", "done"], today: "now" },
+    { p: "Professional", t: "Ship two client proposals by the end of the month.", count: "1 / 2" },
+    { p: "Personal", t: "Read 20 pages a night, five nights a week.", past: ["done", "done", "", "done", "done", "", "done"], today: "now" },
+    { p: "Family", t: "Phone away at dinner, every weeknight.", past: ["done", "skip", "done", "done", "", "done", "skip"], today: "open-now" }
+  ];
+  var GLYPH = { done: "✓", now: "✓", skip: "–" };
+  var rows = document.getElementById("week-goals");
+  goals.forEach(function (g) {
+    var row = document.createElement("div");
+    row.className = "goal-row";
+    var html = '<div class="t"><div class="mono">' + g.p + "</div><div>" + g.t + "</div></div>";
+    if (g.count) {
+      html += '<div class="count-row"><span class="mono">This week</span><span class="pill">' + g.count + "</span></div>";
+    } else {
+      for (var i = 0; i < 7; i++) {
+        var s = i < todayIdx ? g.past[i] : i === todayIdx ? g.today : "";
+        html += '<div class="cell ' + s + '">' + (GLYPH[s] || "") + "</div>";
+      }
+    }
+    row.innerHTML = html;
+    rows.appendChild(row);
+  });
+
+  // Overview progress: one bar per cycle week, filled up to today.
+  var prog = document.getElementById("progress");
+  prog.style.gridTemplateColumns = "repeat(" + V.weeks + ", 1fr)";
+  for (var w = 0; w < V.weeks; w++) {
+    var done = Math.max(0, Math.min(1, (V.day - w * 7) / 7));
+    prog.insertAdjacentHTML("beforeend", '<span><i style="width:' + (done * 100).toFixed(1) + '%"></i></span>');
+  }
+
+  // Mobile sticky CTA appears once the hero buttons scroll out of view.
+  var heroCtas = document.querySelector(".hero-ctas"), sticky = document.getElementById("sticky");
+  new IntersectionObserver(function (e) { sticky.classList.toggle("show", !e[0].isIntersecting && e[0].boundingClientRect.top < 0); }).observe(heroCtas);
+
+  document.documentElement.classList.remove("clock-pending");
+})();
+</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
   "layout": "mobile",
   "data": {
     "cycleTitle": "Cycle 3",
-    "dates": "Oct 1 – Oct 28",
+    "dates": "{{d:-27}} – {{d:0}}",
     "stake": "$100",
     "kept": 4,
     "forfeit": "$10",
@@ -15,9 +15,9 @@
         "note": "Hit five every week. The 6 a.m. lift with Marcus kept me honest." },
       { "pillar": "faith", "title": "Read the Bible before work", "cadence": "Weekly", "tracking": "count", "target": 5, "pct": 50,
         "marks": [
-          { "date": "Oct 20", "status": "done", "note": "Psalms 23–25 before the commute." },
-          { "date": "Oct 22", "status": "missed", "note": "" },
-          { "date": "Oct 23", "status": "done", "note": "" }
+          { "date": "{{d:-8}}", "status": "done", "note": "Psalms 23–25 before the commute." },
+          { "date": "{{d:-6}}", "status": "missed", "note": "" },
+          { "date": "{{d:-5}}", "status": "done", "note": "" }
         ],
         "note": "Mornings slipped once work ramped up. Moving reading to the night before helped the last week." },
       { "pillar": "family", "title": "Call my parents twice a week", "cadence": "Weekly", "tracking": "count", "target": 2, "pct": 100,

@@ -26,7 +26,10 @@
  *              The first frame is data as-is, held for `firstHold` ms.
  *   firstHold  ms (default 900)
  *
- * Flags override the spec: --size, --theme, --frame, --zoom, --gif,
+ *   clock      optional { today, tz, cycle }: see demo-clock.js. Sample dates are
+ *              written relative to today ({{d:-2}}, {{range:-4:2}}, $days).
+ *
+ * Flags override the spec: --size, --theme, --frame, --zoom, --gif, --today,
  * --gif-width (default 720), --out DIR (default ./out).
  *
  * Needs: Microsoft Edge (Playwright drives it via channel "msedge", so no
@@ -41,6 +44,7 @@ const ROOT = path.resolve(__dirname, "..", "..", "..", "..");
 const REPO = path.join(ROOT, "repo");
 const { chromium } = require(path.join(REPO, "node_modules", "playwright"));
 const scenes = require("./scenes");
+const { applyToSpec } = require("./demo-clock");
 
 function parseArgs(argv) {
   const out = { _: [] };
@@ -161,7 +165,10 @@ async function main() {
     process.exit(1);
   }
   const specDir = path.dirname(path.resolve(specPath));
-  const spec = JSON.parse(fs.readFileSync(specPath, "utf8"));
+  // Dates in the spec are relative ({{d:-2}}, $days, ...) and resolve to the current
+  // week here. --today YYYY-MM-DD reproduces an image exactly (see demo-clock.js).
+  const spec = applyToSpec(JSON.parse(fs.readFileSync(specPath, "utf8")), args.today ? { today: args.today } : null);
+  console.log(`demo clock: today = ${spec.clock.resolvedToday}`);
   spec.size = args.size || spec.size || "1080x1350";
   spec.theme = args.theme || spec.theme || "light";
   spec.frame = args.frame || spec.frame || "social";

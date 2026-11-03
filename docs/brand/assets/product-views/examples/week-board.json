@@ -1,22 +1,14 @@
 {
   "scene": "week-board",
   "slug": "week-board",
-  "kicker": "Week 3 of 4 · Monday",
+  "kicker": "Week 3 of 4 · {{d:0|day}}",
   "headline": "Mark the day. *Your group sees it.*",
   "data": {
     "weekIndex": 3,
     "weekCount": 4,
     "thisWeek": true,
-    "weekLabel": "Oct 29–Nov 4",
-    "days": [
-      { "dow": "Th", "dom": 29 },
-      { "dow": "Fr", "dom": 30 },
-      { "dow": "Sa", "dom": 31 },
-      { "dow": "Su", "dom": 1 },
-      { "dow": "Mo", "dom": 2, "today": true },
-      { "dow": "Tu", "dom": 3 },
-      { "dow": "We", "dom": 4 }
-    ],
+    "weekLabel": "{{range:-4:2}}",
+    "days": { "$days": { "from": -4, "count": 7 } },
     "goals": [
       { "pillar": "fitness", "title": "Work out 5 mornings a week", "mode": "daily",
         "cells": ["done", "done", "missed", "skip", "today", "future", "future"] },

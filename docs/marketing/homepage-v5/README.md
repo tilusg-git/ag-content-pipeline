@@ -1,0 +1,28 @@
+# Homepage v5: HTML mockup (desktop + mobile)
+
+`index.html` is the Figma v5 homepage (frame `77:2` in file `l27WIk0vje0syTYWN2iZee`) as one responsive page. The copy matches Figma word for word. The desktop layout follows the 1440 frame. Mobile (375) is new, since Figma has no mobile homepage yet, and it reuses the patterns Grant approved on the Topical Pillar template v2.3: stacked full-width buttons, swipe rows with a peek, and a sticky "Start a group" bar once the hero buttons scroll away.
+
+## Live dates
+
+Every date in the product screens comes from the shared demo clock (`docs/brand/assets/product-views/demo-clock.js`, the same module the product-view renderer uses), so the page always shows the current week.
+
+- The demo group meets on the **first Thursday of each month**, like Brandon's group, so the cycle follows the real calendar. On Nov 3, 2026 it shows the October cycle (Oct 1 to Nov 4), day 34 of 35, closing Thu, Nov 5. On a meeting Thursday the next cycle starts.
+- The hero week board shows the cycle week that contains today. Past days follow each goal's pattern, today is marked in ember, and later days are empty. Early in a cycle week the board is mostly empty; that's what the real app shows too.
+- The current cycle is always "Cycle 5". The filed report and the ledger belong to Cycle 4, which closed at this cycle's opening meeting (filed two days before it).
+- Preview any day with `?today=YYYY-MM-DD`.
+
+## View it
+
+The page loads the clock with a relative path, so open it through a local server, not as a file:
+
+```bash
+node .claude/tools/static-server.js 4173
+```
+
+Then open http://localhost:4173/docs/marketing/homepage-v5/index.html. In the Claude desktop app, the `docs-static` preview config starts the same server.
+
+## Open questions for Grant
+
+- **Onboarding card vs. hero (carried over from Figma):** the Step 1 card says the group's *first* cycle starts at the next meeting, while the hero shows the same group already in Cycle 5. It reads as "here's what setup looks like", but you may want the card's group name changed so it's clearly a different group.
+- **Mobile** is a first proposal: there's no Figma mobile homepage to match yet.
+- Field notes card links point at the live `/blog/<slug>` URLs.

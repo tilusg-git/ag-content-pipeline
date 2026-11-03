@@ -5,7 +5,7 @@
   "headline": "Score every goal. *The tally does the rest.*",
   "data": {
     "cycleTitle": "Cycle 3",
-    "dates": "Oct 1 – Oct 28",
+    "dates": "{{d:-27}} – {{d:0}}",
     "stake": "$100",
     "kept": 4,
     "forfeit": "$10",

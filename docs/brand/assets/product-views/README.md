@@ -54,12 +54,24 @@ node render.js examples/report-carousel.json            # 4 slides, one PNG each
 
 The desktop, headline-framed report renders (`report-close`, `report-goal`) are parked as Reddit ad creative options for the 2026-11-09 Reddit Ads review.
 
+## Dates: the demo clock (`demo-clock.js`)
+
+Sample dates are written relative to today, so every render shows the current week. The module is shared with the homepage mockup (`docs/marketing/homepage-v5/`), which loads it in the browser.
+
+- `{{d:-8}}` → "Oct 26" (8 days ago). Formats: `{{d:0|dowmd}}` "Tue, Nov 3", `|DOWMD` "TUE, NOV 3", `|day` "Tuesday", `|dow2` "Tu", `|dom`, `|month`, `|mdy`, `|iso`.
+- `{{range:-4:2}}` → "Oct 30–Nov 5" (or "Nov 2–8" within a month).
+- `"days": { "$days": { "from": -4, "count": 7 } }` builds the week-board day list with today in the 5th column. Cell patterns are by position, so they keep lining up whatever weekday it is.
+- Optional `"clock": { "cycle": { "meets": "Thu", "weeks": 4, "minDaysLeft": 5 } }` adds a cycle that is always 5 to 11 days from closing: `{{d:close|dowmd}}`, `{{d:start}}`, `{{n:daysLeft}}`, `{{n:week}}`, `{{n:month}}`.
+- The renderer prints the date it used. `--today 2026-11-02` (or `"clock": { "today": "2026-11-02" }` in the spec) reproduces an image exactly. Pin the date in the spec for anything already posted, so a re-render matches the post.
+- Self-check: pinned to their original dates, all the example specs resolve to exactly their old fixed-date content (checked 2026-11-03).
+
 ## Spec file
 
 - `scene`, `slug`, `size` (`1080x1350` default, `1080x1080`), `theme` (`light`, `ink`), `frame` (`social`, `bare`)
 - `kicker`: the mono line above the headline. `headline`: wrap words in `*asterisks*` for the ember italic.
 - `zoom`: maximum magnification. The panel shrinks automatically to fit between the headline and the footer.
-- `data`: the scene's data.
+- `clock`: optional `{ today, tz, cycle }` (see the demo clock section).
+- `data`: the scene's data. Write dates as tokens, not fixed strings.
 - `steps` (GIF only): `[{ "set": { "goals.0.cells.4": "done" }, "hold": 500 }]`. Each step changes the data cumulatively and is held as one frame. `firstHold` sets how long the opening frame is held.
 
 ## Rules for the sample data

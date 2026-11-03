@@ -7,38 +7,8 @@
     "weekIndex": 3,
     "weekCount": 12,
     "thisWeek": true,
-    "weekLabel": "Nov 2–8",
-    "days": [
-      {
-        "dow": "Mo",
-        "dom": 2
-      },
-      {
-        "dow": "Tu",
-        "dom": 3
-      },
-      {
-        "dow": "We",
-        "dom": 4
-      },
-      {
-        "dow": "Th",
-        "dom": 5
-      },
-      {
-        "dow": "Fr",
-        "dom": 6
-      },
-      {
-        "dow": "Sa",
-        "dom": 7
-      },
-      {
-        "dow": "Su",
-        "dom": 8,
-        "today": true
-      }
-    ],
+    "weekLabel": "{{range:-6:0}}",
+    "days": { "$days": { "from": -6, "count": 7 } },
     "goals": [
       {
         "pillar": "fitness",
