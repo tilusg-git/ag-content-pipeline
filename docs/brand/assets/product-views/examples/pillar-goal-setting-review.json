@@ -1,0 +1,30 @@
+{
+  "scene": "week-board",
+  "slug": "pillar-goal-setting-review",
+  "frame": "bare",
+  "size": "1080x1140",
+  "data": {
+    "weekIndex": 3,
+    "weekCount": 12,
+    "thisWeek": true,
+    "weekLabel": "Nov 2–8",
+    "days": [
+      { "dow": "Mo", "dom": 2 },
+      { "dow": "Tu", "dom": 3 },
+      { "dow": "We", "dom": 4 },
+      { "dow": "Th", "dom": 5 },
+      { "dow": "Fr", "dom": 6 },
+      { "dow": "Sa", "dom": 7 },
+      { "dow": "Su", "dom": 8, "today": true }
+    ],
+    "goals": [
+      { "pillar": "fitness", "title": "Run four times a week", "mode": "daily",
+        "cells": ["done", "skip", "done+note", "missed", "done", "skip", "today"] },
+      { "pillar": "professional", "title": "Study 45 minutes on weekdays", "mode": "daily",
+        "cells": ["done", "done", "missed", "done", "done+photo", "skip", "skip"] },
+      { "pillar": "personal", "title": "Read 20 pages before bed", "mode": "count",
+        "value": 4, "target": 5 },
+      { "pillar": "personal", "title": "Move $100 to savings every Friday", "mode": "report" }
+    ]
+  }
+}

@@ -175,6 +175,8 @@ Measured WCAG 2.1 ratios against bone `#FAFAF7`:
 - **Scope limit:** this exception covers backgrounds on social quote cards. It does **not** touch §5 — user avatars still get no auto-AI portraits — and does not sanction AI or stock portraits of real, identifiable people anywhere.
 - If no suitable image is chosen, fall back to the plain bone quote card or the paper-texture treatment; an image is never required.
 
+**Website imagery** (product, brand illustration, persona photos, including AI scenes without identifiable faces) is governed by §16 (added 2026-11-03).
+
 ## 15. Motion identity (added 2026-07-20)
 
 Restraint is the brand; motion is functional, never decorative.
@@ -186,7 +188,19 @@ Restraint is the brand; motion is functional, never decorative.
 
 ---
 
+## 16. Website imagery (added 2026-11-03, Grant)
+
+Full rules: [`website-imagery-guidelines.md`](./website-imagery-guidelines.md). In short:
+- **Three families, one job each.** **Product** (real app screens from `assets/product-views/render.js`, shipped features only, captioned "Illustrative") answers *what is it?* **Brand illustration** (flat token-only drawings of written things: goal cards, week grids, trackers, calendars) answers *how does this work?* **Persona** (natural-light photos of people doing the work, recording it, and being seen) answers *is this for me?*
+- **Placement:** product leads on the homepage and Core Product Pillars. Illustration leads on Topical Pillars, which carry at most one product image. Persona photos are supporting beats.
+- **Sources for persona photos:** Grant's own photos first, then AI-generated (Gemini), then CC/licensed. Each is approved per image and logged in `assets/site-imagery/manifest.md`.
+- **AI rules:** no identifiable faces, never presented as members or customers, never an AI rendering of the app. The `image-backgrounds-spec.md` checklist applies.
+- **Look:** full-color natural photos with a warm-neutral grade. No filters, gradients, vignettes or duotones. Square corners, no shadows. Illustration grounds use the **Paper** style (line ground, panel card), chosen 2026-11-03 for the Topical Pillar hero.
+- **Goal tag (signature):** a small bone label pinned to a persona photo, carrying the goal (`GOAL · 12 WEEKS` / *Run four times a week.*). At most one per photo, never on product screens.
+- This extends §14's photo exception from social quote cards to the website, under these rules. §5 (no AI avatars) is unchanged.
+
 *Update log:*
 - *2026-07-20 — initial compilation from Identity Kit Vol. 01; A · Inline Lockup ratified as logo; accent-ground app icon adopted as default.*
 - *2026-07-20 — added §12 logo mechanics, §13 accessibility contrast, §14 imagery direction, §15 motion identity. Companion: voice-and-tone.md, glossary.md, brand-gaps-2026-07-20.md.*
 - *2026-07-22 — amended §14: sanctioned image-backed social quote cards (full-color photo + flat ink scrim; source approved per post). New companion: image-backgrounds-spec.md.*
+- *2026-11-03 — added §16 website imagery (Grant): three image families, AI persona rules (Gemini, no identifiable faces), Paper illustration ground, goal tag. New companion: website-imagery-guidelines.md.*

@@ -42,7 +42,7 @@ That makes **3 native, 1 product UI, 4 to 5 brand illustrations, and 2 to 3 phot
 After P4, P7 /types-of-personal-goals reuses the same styles. Only its subjects change.
 
 ## 5. Decisions (Grant, 2026-11-03)
-- **Photos and people:** no photos of Brandon's group. Use Grant's own photos where one fits (individual goals: workouts, hiking, reading); otherwise AI-generated, approved per image. A website imagery rule for brand standards is being drafted (`docs/brand/website-imagery-guidelines-proposal-2026-11-03.md`).
+- **Photos and people:** no photos of Brandon's group. Use Grant's own photos where one fits (individual goals: workouts, hiking, reading); otherwise AI-generated, approved per image. Website imagery is now brand standards §16 (`docs/brand/website-imagery-guidelines.md`). AI images come from Gemini; illustrations use the Paper ground; persona photos can carry the goal tag.
 - **Media count:** 3 to 6 beats, a soft target set by page length.
 - **4.7:** the `week-board` scene.
 - **Money stakes:** don't mention $0 or "optional" stakes; the CTA fine print states pricing only.
@@ -63,3 +63,30 @@ After P4, P7 /types-of-personal-goals reuses the same styles. Only its subjects 
 - None of the five legacy painterly homepage illustrations (off-brand, §14).
 - No product UI for anything that isn't shipped (`docs/product/capability-ui-inventory.md`).
 - No media that carries a point the text skips: the page must read complete without it.
+
+## 7. Status (2026-11-03, end of day)
+
+| Slot | Status |
+|---|---|
+| Hero | **Placed** in `48:292` and the mobile hero: Paper style, goal card + week grid |
+| 4.1 | **Placed**: goal card clipped above a 12-week calendar with W12 circled. On mobile the calendar labels are small (about 6 px): check legibility |
+| 4.3 | **Placed**: goal card with ember markers 1–3 on "Walk", "30 minutes", "three times a week." |
+| 4.7 | **Placed**: `week-board` render (desktop panel 360×228; mobile phone capture cropped to the two daily goals), captioned "Illustrative". Specs: `docs/brand/assets/product-views/examples/pillar-goal-setting-review*.json` |
+| 4.6 | Persona photo: Grant's own, or Gemini (prompt below) |
+| 4.8 cards 1–2 | Persona photos: Gemini (prompts below) |
+| 4.8 card 3 | Brand illustration (shared sheet with each member's row of ticks): not built yet |
+| Goal tag | Approved. Needs a style frame on the first persona photo |
+
+Scripts: `notes/figma-pillar-v2/media-p4-paper.js` (illustrations). The README covers running it through Scripter.
+
+## 8. Gemini prompts for persona photos
+Apply to every prompt: *natural daylight, warm-neutral color, slightly muted saturation, candid documentary style, shallow depth of field, ordinary real-world setting, no visible faces (shown from behind, cropped below the eyes, or hands only), no text, no logos, no app interfaces on screens, no celebration poses.* Generate at 4:3 and crop to the slot. Run the `image-backgrounds-spec.md` checklist on each image and log it in `docs/brand/assets/site-imagery/manifest.md`.
+
+**4.6 Tracking (360×300).** A paper weekly habit tracker taped to a white kitchen fridge door, four of seven boxes ticked in pen. A hand reaches in holding a pen, about to tick today's box. A phone lies face-up on the counter below showing a plain message bubble. Morning light, close-up, kitchen softly out of focus.
+*This one is easy to shoot for real: print a tracker and tape it to your fridge. A real photo beats AI here.*
+
+**4.8 card 1, One person (286×180).** Over-the-shoulder view at a café table: one person's hand holds a phone toward a friend across the table, and the friend's hands rest around a coffee cup. Only hands, forearms and the table are visible; the phone screen is a soft, unreadable blur. Window light, wooden table.
+
+**4.8 card 2, A small group (286×180).** Top-down view of a kitchen table on a weeknight: four people's hands and forearms around it, with open notebooks, pens, two phones face-down and mugs. One notebook shows a hand-drawn weekly grid with ticks. Warm overhead light. No faces in frame.
+
+**Goal tag on these photos:** add it in Figma, not in the AI image. A bone label with `GOAL · 12 WEEKS` / *Run four times a week.* pinned in a corner, at most one per photo.

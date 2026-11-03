@@ -30,6 +30,15 @@ Built from Grant's 9 comments on v2.2 (comments stay pinned on the v2.2 frame): 
 
 **v2.3.1 (same day):** three small comments were applied in place on `48:292`, desktop and mobile, and synced into `p4-goal-setting-v2.3.js`. The 4.6 go-deeper card is removed (rule: at most one per page). Band 9 "Neighbor guides" became "Guides", listing one guide. The band 7B note's "$1" was restored. A Scripter text check found no garbled characters, the H1 accent split correctly, the new CTA headline is in place, and the Brandon paragraph is gone. Grant: "looking good". The layout is signed off; next is the media pass. The approved template rules are now in the pillar skill (Part B) and the playbook (§3.2).
 
+## Media pass 1 (2026-11-03): illustrations and product UI placed in v2.3
+`media-p4-paper.js` (Paper style, which Grant picked) put the hero, 4.1 and 4.3 illustrations into `48:292` and its mobile frames. 4.1 was then re-placed with better positions (`63:280`, `63:317`). The 4.7 `week-board` renders went in as image fills (`65:280` desktop, `65:282` mobile) through a generated script that embeds the PNGs as base64 (`figma.base64Decode` + `figma.createImage`). Still open: the persona photos (4.6, 4.8 cards 1–2), the 4.8 card 3 illustration, and the goal tag. See `docs/marketing/pillar-media-plan-2026-11-03.md` §7–8.
+
+**Scripter gotchas found on the way:**
+- Copy with `node notes/figma-pillar-v2/to-scripter.js <file>`. It strips whole-line comments and copies as UTF-8.
+- Open a **fresh "+" script tab for each run**. A tab that once held other text kept throwing "unexpected token" on a script that ran fine in a new tab.
+- Check from a screenshot that Scripter is really open before pasting, or the paste lands on the canvas as a text layer.
+- Anything Grant copies in the meantime replaces the clipboard, so look at the editor before clicking run.
+
 ## Hero style frame v1 (2026-11-03): media pass, step 1
 `hero-style-v1.js` (plain API, run through Scripter) builds frame `54:293` at x 15350. It holds the P4 hero illustration (goal card "Run four times a week" plus a week grid with 4 of 4 kept) on three grounds: A Paper (line), B Ink, C Ember soft. Each is shown at desktop 460×400 and mobile 335×230, then dropped into a copy of the v2.3 hero. It was checked by eye in Chrome. Then the off-day cells were made visible (soft stroke) and the goal was set to break "Run four times / a week.", patched in place and in the script. Waiting for Grant's pick. Chrome screenshots of Figma keep failing because LastPass's content script throws on figma.com. Turning LastPass off for that site should fix it.
 

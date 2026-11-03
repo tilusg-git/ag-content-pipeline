@@ -1,6 +1,6 @@
-# Website imagery guidelines (proposal)
+# Website imagery guidelines
 
-**Status:** proposal for Grant, 2026-11-03. Once approved, this becomes brand standards **§15 Website imagery**, and §14's photo exception is extended to cover it. It builds on §14 (imagery direction), `image-backgrounds-spec.md` (sourcing and safety checklist), playbook §3.3 (pillar media slots), and the P4 media plan (`docs/marketing/pillar-media-plan-2026-11-03.md`).
+**Status:** approved by Grant 2026-11-03 as brand standards **§16 Website imagery** (summary there). §14's photo exception is extended to cover it. Decisions: three families and placement approved; AI persona images are generated with Gemini, with no identifiable faces; the goal tag is approved; the illustration ground is Paper (line ground, panel card). It builds on §14 (imagery direction), `image-backgrounds-spec.md` (sourcing and safety checklist), playbook §3.3 (pillar media slots), and the P4 media plan (`docs/marketing/pillar-media-plan-2026-11-03.md`).
 
 ## 1. Why a rule is needed
 Today's brand standards make typography and brand motifs the default and allow photos only behind social quote cards. The website needs two more things that rule doesn't allow: **product imagery** to show what Accountability Guild is, and **persona imagery** to show who it's for and what follow-through looks like. Without a rule, each page would pick its own look. Photos would drift into stock clichés (high-fives, laptop handshakes) and AI images into uncanny "members".
@@ -11,7 +11,7 @@ Today's brand standards make typography and brand motifs the default and allow p
 |---|---|---|---|
 | **1. Product** | Show what the app does | Real app screens with sample data, rendered from the app's own CSS (`product-views/render.js`). Desktop panels or phone captures, on a flat token ground | The renderer only. No mockups of unshipped features |
 | **2. Brand illustration** | Explain an idea using the brand's own materials | Flat, token-only drawings of *written things*: goal cards, week grids, trackers, calendars, ledgers, receipts. Newsreader italic for the "handwritten" line, JetBrains Mono labels, ember used once | Figma (scripted), exported SVG/WebP |
-| **3. Persona** | Show the people and the moments: someone doing the work, checking in, being seen | Natural-light photos of real activities (running, lifting, hiking, reading, studying, budgeting at a kitchen table) and small-group moments | Grant's own photos first, AI-generated second (§5), CC/licensed last |
+| **3. Persona** | Show the people and the moments: someone doing the work, checking in, being seen | Natural-light photos of real activities (running, lifting, hiking, reading, studying, budgeting at a kitchen table) and small-group moments | Grant's own photos first, AI-generated with Gemini second (§5), CC/licensed last |
 
 **The test:** product images answer *"what is it?"*, illustrations answer *"how does this work?"*, persona images answer *"is this for me?"*. If an image answers none of those, cut it.
 
@@ -50,7 +50,7 @@ Today's brand standards make typography and brand motifs the default and allow p
 Proposed treatments, to be shown in the next style frame:
 - **Photos:** full color, natural light, warm-neutral grade, slightly lowered saturation so ember stays the one warm beat. No filters, gradients, vignettes, or duotones.
 - **The goal tag (proposed signature):** a small bone label pinned to a persona photo, carrying the goal in mono and Newsreader italic (`GOAL · 12 WEEKS` / *Run four times a week.*). It ties people photos to the goal-card illustration family and to the product. At most one per photo, never on product screenshots.
-- **Grounds:** illustrations and product panels sit on one of the hero-style grounds Grant picks (paper / ink / ember soft). Each page uses one ground family.
+- **Grounds:** illustrations and product panels sit on the **Paper** ground (line `#E5E2DA` with a panel card), chosen 2026-11-03.
 - **Frames:** square corners, no drop shadows. A 1 px line-token keyline only where a light image meets a light page.
 
 ## 7. Specs
@@ -70,7 +70,10 @@ Proposed treatments, to be shown in the next style frame:
 - No more than one product image on a Topical Pillar.
 - No images that carry a point the text skips.
 
-## 10. Decisions for Grant
+## 10. Decisions (Grant, 2026-11-03)
+1–4 approved as proposed: the three-family model and placement, the AI rules (Gemini, no identifiable faces), the goal tag, and the natural full-color grade. 5 is open: a shortlist of Grant's own photos.
+
+### Original questions
 1. Approve the three-family model and the placement table (§2–3)?
 2. AI rules (§5): is "no identifiable faces" the right line?
 3. The **goal tag** overlay as a signature for persona photos: worth a style frame?
