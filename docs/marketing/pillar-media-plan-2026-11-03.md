@@ -127,3 +127,7 @@ Generate 3 to 4 variations of each, pick the best, and drop the originals in a f
 **Goal tags** (added in Figma, never generated): hero "GOAL · 12 WEEKS / *Run four times a week.*", 4.3 "GOAL / *Walk 30 minutes three times a week.*". The other photos carry no tag; the guideline allows at most one per photo.
 
 **4.6 shortcut:** a real photo of a printed tracker on your own fridge beats AI here, and takes two minutes.
+
+### Progress (2026-11-03, late)
+- **Placed in Figma `48:292`, desktop and mobile:** #1 hero (goal tag top-right), #2 4.1 sticky note, #3 4.3 friends (goal tag bottom-left; callout list hidden; alt text updated). Each was checked by eye. The Paper illustrations stay hidden as fallbacks. Source images are in Drive "Website Images" (synced at G:My DriveWebsite Images) and `docs/brand/assets/site-imagery/`, with the manifest.
+- **Tomorrow (2026-11-04), Grant:** #4–#7. Then Claude places them and applies the two copy changes (4.6 checklist item, 4.7 product paragraph) in Figma.
