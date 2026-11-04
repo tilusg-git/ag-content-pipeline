@@ -18,8 +18,10 @@ SEO pass on the v5 mockup (`index.html`), run 2026-11-03 against the SEO checkli
 ## Required in this PR
 
 - **Metadata.** Update the code defaults in `generateMetadata()` and keep `absoluteTitle: true`. The `homepage` global's SEO tab overrides the code, so set the same values there (see CMS follow-ups).
-- **Primary term on the page.** "Accountability software" appears nowhere in the v5 copy, and it's the term the site profile and `llms.txt` lead with. The H1 already carries "accountability group". Proposed fix, **needs Grant's OK on the copy**: a one-line hero sub under the H1:
-  > Accountability software for groups that already meet. No monthly fee.
+- **Primary term on the page.** "Accountability software" was missing from the v5 copy, and it's the term the site profile and `llms.txt` lead with. Grant approved a hero sub under the H1 (2026-11-04), now in the mockup; ship it as body text (`<p>`), not a heading:
+  > Accountability software for partners or groups. No monthly fee.
+
+  "No monthly fee" moved up from the hero note, which now reads only "Free to start, and set up in five minutes."
 - **Proof photo** (Step 2 phone screen): keep the alt text, set `width`/`height`, serve WebP through `next/image`, lazy-load it (it's below the fold), and give the file a descriptive name, e.g. `home-proof-spin-bike-workout.webp`.
 - **Keep the internal links the current homepage gives.** Today `/` links to `/faq`, `/startup-accountability-system` and `/blog/weekly-or-4-week-goal-reporting-template-for-founders-and-operators`; v5 drops all three. Add FAQ to the footer, and make sure the other two are still linked from `/resources`, `/blog` or a pillar, so they don't lose their only link from `/`.
 - **Product screens are HTML text, not images.** Keep them that way (it helps crawlers), but wrap each one in a `<figure>` with a short `aria-label` ("Sample group: week view") so the sample names and amounts read as illustration, not as claims.
