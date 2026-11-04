@@ -142,7 +142,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .who-row b{font-family:var(--sans);font-weight:500;font-size:13px;flex:1}
 .who-row .mono{font-size:8px}.who-row .mono.ember{color:var(--ember)}
 /* Step 2: a phone with the app's check-in sheet (mirrors MarkSheet in dashboard-today-marks.tsx) */
-.device{position:relative;width:290px;margin:0 auto;padding:11px;border-radius:52px;background:#1C1C1A;
+.device{position:relative;width:290px;margin:0 auto;zoom:.8;padding:11px;border-radius:52px;background:#1C1C1A;
   box-shadow:inset 0 0 0 1.5px #3A3A37,inset 0 0 0 4px #121211,0 40px 70px -28px rgba(15,15,14,.45),0 12px 24px -12px rgba(15,15,14,.25)}
 .device::before,.device::after{content:"";position:absolute;width:3px;background:#2A2A27;border-radius:2px}
 .device::before{left:-3px;top:118px;height:56px;box-shadow:0 70px 0 #2A2A27}
@@ -168,11 +168,9 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .outcomes .on i{background:var(--ember);border-color:var(--ember);color:#fff}
 .sheet .row{display:flex;justify-content:space-between;margin-top:12px}
 .sheet .note{border:1px solid var(--line);background:var(--panel);padding:8px 10px;font-size:13px;margin:6px 0 12px;min-height:44px}
-.slot{border:1px dashed var(--ember);padding:6px;margin-top:6px;text-align:center;background:var(--panel)}
+.slot{margin-top:6px}
 .slot img{display:block;width:100%;aspect-ratio:2/1;object-fit:cover}
-.slot b{display:block;font-weight:400;font-size:12px;margin-top:5px}
-.slot small{display:block;font-family:var(--sans);font-size:10px;color:var(--ink-soft)}
-.sheet .done{background:var(--ink);color:var(--bone);text-align:center;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.14em;padding:11px;margin-top:12px}
+.sheet .done{background:var(--ink);color:var(--bone);text-align:center;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.14em;padding:11px;margin-top:16px}
 .home{position:absolute;bottom:7px;left:50%;width:104px;height:4px;margin-left:-52px;border-radius:2px;background:var(--ink);z-index:3}
 .report .tally{display:flex;gap:36px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
 .report .tally b{display:block;font-weight:400;font-size:19px;margin-top:2px}
@@ -308,6 +306,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
   .step,.step.flip{grid-template-columns:1fr;gap:32px;margin-top:72px}
   .step.flip .step-copy{order:0}
   .step-copy h3{font-size:27px}
+  .device{zoom:.74}
   .card{padding:20px 16px}
   .kv{grid-template-columns:96px 1fr}
   .report .tally{gap:22px}
@@ -337,7 +336,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
   .sticky span strong{color:var(--ink)}
   .sticky .btn{padding:11px 14px;font-size:11px}
 }
-@media (max-width:360px){.device{width:100%;max-width:290px}.nav .lockup i{font-size:17px}.nav .lockup b{font-size:10px;letter-spacing:.24em}.nav .btn-sm{padding:9px 10px;letter-spacing:.04em}}
+@media (max-width:360px){.nav .lockup i{font-size:17px}.nav .lockup b{font-size:10px;letter-spacing:.24em}.nav .btn-sm{padding:9px 10px;letter-spacing:.04em}}
 </style>
 </head>
 <body>
@@ -487,7 +486,6 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
             <div class="mono">Photo</div>
             <div class="slot">
               <img src="../../brand/assets/site-imagery/out/home-proof-photo-440x220.jpg" alt="A spin bike's handlebars and ride screen showing a 42:38 workout.">
-              <b>ride-screen.jpg</b><small>Tap image to replace</small>
             </div>
             <div class="done">DONE</div>
           </div>
