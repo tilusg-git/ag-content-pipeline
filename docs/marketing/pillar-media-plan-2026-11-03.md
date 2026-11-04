@@ -137,3 +137,34 @@ Generate 3 to 4 variations of each, pick the best, and drop the originals in a f
 - **Both copy changes are applied:** 4.6 checklist item 1 now reads "One place: a paper sheet, a spreadsheet, a note on your phone, or Accountability Guild if you track with a group." 4.7 has the product-context paragraph (guideline §3a) after the context line on desktop and after the UI caption on mobile.
 - **Open:** the 4.7 alt line still describes "a weekly report", but the image is the `week-board` scene.
 
+
+## 10. P7 /types-of-personal-goals (2026-11-04): the same rules, applied up front
+P7 skips the v2.1→v2.3 comment rounds: its data (`notes/figma-pillar-v2/p7-types-of-personal-goals-v2.3.js`) is built straight on the approved v2.3 template with revision 2 media rules. **Five media beats** across eight modules, never more than two modules apart:
+
+| Slot | Media | Route |
+|---|---|---|
+| Hero | Persona photo + goal tag "LEAD AREA · MONEY / *Move $100 to savings every Friday.*" (money, so it doesn't repeat P4's runner) | Gemini P7-1 |
+| 4.1 Health | Photo: lacing walking shoes beside a ticked week sheet | Gemini P7-2 |
+| 4.2 Money | None (the hero carries money) | — |
+| 4.3 Career | Photo: half-ticked project checklist, ship date circled | Gemini P7-3 |
+| 4.4 Relationships | None. v2.1's phone-calendar image dropped: it read as product UI | — |
+| 4.5 Learning and growth | Photo: writing summary cards for finished books | Gemini P7-4 |
+| 4.6 Four goal shapes | **Product UI** below the table: `week-board` with one goal per tracking mode (daily marks = process, count = open, at-report = outcome), plus the product-context line | Renderer, new spec (demo-clock tokens) |
+| 4.7 Short and long term | Native figure (year → week stack) | Figma |
+| 4.8 Lead area | None | — |
+| Band 7 | v2.1's own-group photo removed (no photos of Brandon's group); illustrative panel instead | — |
+
+### Gemini prompts (add the §9 style line to each)
+| # | Slot (crop) | Ask Gemini for | Prompt |
+|---|---|---|---|
+| P7-1 | **Hero** (460×400; mobile 335×230) | 4:3, subject left of center, calm space top-right for the goal tag | A person sitting at a kitchen table in the morning, seen from the side with the face out of frame, circling every Friday on a paper wall-style month calendar laid flat on the table with a pen. A mug and a closed laptop nearby. |
+| P7-2 | **4.1 Health** (360×320) | 4:3 | A person sitting on a front step in early morning light, lacing up walking shoes, cropped at the shoulders. Beside them on the step, a folded one-page week sheet with three days ticked in pen. |
+| P7-3 | **4.3 Career** (360×300) | 4:3 | Over-the-shoulder view of a tidy desk: a printed project checklist with about half the items ticked in pen, and a small desk calendar with one date near the end of the month circled in red. Hands rest near a keyboard. |
+| P7-4 | **4.5 Learning and growth** (360×320) | 1:1 | Close-up of hands writing a short paragraph on an index card, resting on a short stack of three finished paperback books, each with an index card tucked inside as a bookmark. Wooden table, soft window light. |
+
+Text on the calendar or cards should stay unreadable; the goal tag carries the words. Log each pick in `docs/brand/assets/site-imagery/manifest.md`.
+
+### Open before the P7 media pass
+- **4.6 renderer spec:** write a `week-board` spec with one goal per mode (`daily`, `count`, `report`) using demo-clock tokens, then render desktop and mobile.
+- **Confirm with Brandon** that report-only ("tracked at the cycle report") is a live tracking mode before the 4.6 product line ships.
+- **Grant's OK** on the 20 area-by-shape grid cells (band 2), open since 2026-10-30.

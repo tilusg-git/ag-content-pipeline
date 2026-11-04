@@ -1,4 +1,4 @@
-# Topical Pillar v2.1 / v2.2 Figma build (P7 pending)
+# Topical Pillar v2.1 to v2.3 Figma builds (P4 done; P7 v2.3 data ready)
 
 Rebuilds the /goal-setting and /types-of-personal-goals mockups to the v2.1 spec (skill B3a element mix, B7 media beats) on page `25:2` of the homepage Figma file (`l27WIk0vje0syTYWN2iZee`), next to the v1 frames. Copy matches the v2.1 module docs in Drive (P4 `1MoB4eE3J-arMEzZAaPdoT0uobOeUAJRpQfDn0vPYvX8`, P7 `1QnORvxjkE8DisWWOcB-QBM8u6PgFuAOoJFz9xsUn6xE`).
 
@@ -12,6 +12,9 @@ The Starter plan's MCP cap can run out after a single call, so run builds and ca
 4. Results and errors go to the browser console. Read them with `read_console_messages`, and have scripts `console.log(JSON.stringify(...))` so the output is readable.
 5. Comments: `fetch('/api/file/<fileKey>/comments')` in the Figma tab. Mapping pins to nodes is a read script in Scripter: compare `client_meta.node_offset` against `absoluteBoundingBox`.
 6. Screenshot checks: Chrome screenshots of the Figma canvas break often (`Cannot access a chrome-extension:// URL`). Save the MCP calls for `get_screenshot`.
+
+## P7 v2.3 (2026-11-04): next pillar, built straight on the approved template
+Grant picked /types-of-personal-goals as the pillar after P4. Instead of repeating the v2.1 → v2.2 → v2.3 comment rounds, `p7-types-of-personal-goals-v2.3.js` puts the v2.1 module-doc copy on the v2.3 build with every P4 lesson applied (list in the frame's change-log note and in media plan §10). Assemble with `node assemble-v2.2.js 2.3 p7-types-of-personal-goals` (the second argument is new; it defaults to P4). `build-v2.3.js` gained three backward-compatible hooks: `D.mDiagram` (page-specific mobile diagram; P4 still gets the loop), `MEL.stack` (mobile year-to-week figure), and `media.below` (product UI under a full-width table instead of a split). The P4 output re-assembles unchanged apart from those hooks. **Not run in Figma yet:** next step is one Scripter run (fresh "+" tab, `node to-scripter.js out/p7-types-of-personal-goals-v2.3.manual.js`), then a text check and Grant's review. The old v2.1 `p7-types-of-personal-goals.js` is superseded.
 
 ## v2.3 (P4, 2026-11-03): last layout pass before imagery
 Built from Grant's 9 comments on v2.2 (comments stay pinned on the v2.2 frame): `build-v2.3.js` + `p4-goal-setting-v2.3.js`, assembled with `node assemble-v2.2.js 2.3`. Frame `48:292` at x 12675, with 19 mobile frames and 18 notes beside it. Run through Scripter; the run returned no errors. Chrome then lost access to the Figma tab (`Cannot access a chrome-extension:// URL`) and the MCP was still capped, so v2.3 has had **no visual or text check**.
