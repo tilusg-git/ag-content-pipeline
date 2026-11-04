@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" class="clock-pending">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accountability Guild · Homepage v5 (HTML mockup)</title>
+<!--
+  Homepage v5 as responsive HTML (desktop 1440 and mobile 375), built from the
+  Figma v5 frame 77:2 in file l27WIk0vje0syTYWN2iZee. Copy is word for word from
+  Figma. Every date comes from the shared demo clock
+  (docs/brand/assets/product-views/demo-clock.js), so the product screens always
+  show the current week. Add ?today=YYYY-MM-DD to the URL to preview another day.
+
+  The demo group meets on the first Thursday of each month (Brandon's group),
+  so the cycle numbers follow the real calendar.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#FAFAF7; --panel:#FFFFFF; --ink:#0F0F0E; --ink-soft:#5C5C58; --line:#E5E2DA;
+  --ember:#D8512A; --ember-soft:#F0A98A;
+  --serif:"Newsreader",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  --wrap:1200px; --gutter:120px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html.clock-pending body{visibility:hidden}
+body{background:var(--bone);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+em,.em{font-style:italic;color:var(--ember)}
+.wrap{max-width:calc(var(--wrap) + 2*var(--gutter));margin:0 auto;padding:0 var(--gutter)}
+.mono{font-family:var(--mono);font-weight:500;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.lockup{display:inline-flex;align-items:baseline;gap:8px;white-space:nowrap}
+.lockup i{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink)}
+.lockup b{font-family:var(--sans);font-weight:600;font-size:12.8px;letter-spacing:.34em}
+.lockup.sm i{font-size:15px}.lockup.sm b{font-size:8.7px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:15px 24px;border:1.5px solid var(--ink);white-space:nowrap}
+.btn-ink{background:var(--ink);color:var(--bone)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-sm{padding:10px 18px}
+.on-ink .btn-ink{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+.on-ink .btn-line{color:var(--bone);border-color:var(--bone)}
+
+/* Type */
+h1,h2,h3{font-weight:400;letter-spacing:-.02em}
+.ui-h{display:block}.ui-h3{font-weight:400;letter-spacing:-.02em}
+.h1{font-size:60px;line-height:1.02}
+.h2{font-size:44px;line-height:1.08}
+.h3{font-size:32px;line-height:1.15}
+.lede{font-size:19px;line-height:1.55;color:var(--ink-soft)}
+.body{font-size:17px;line-height:1.6;color:var(--ink-soft)}
+
+/* Nav */
+.nav{border-bottom:1px solid var(--line);background:var(--bone)}
+.nav .wrap{display:flex;align-items:center;height:83px;gap:40px}
+.nav-links{display:flex;gap:40px;font-family:var(--sans);font-weight:500;font-size:14px;color:var(--ink-soft);flex:1}
+.nav-login{font-family:var(--sans);font-weight:500;font-size:14px}
+
+/* Hero */
+.hero .wrap{display:grid;grid-template-columns:560px 1fr;gap:80px;align-items:center;padding-top:110px;padding-bottom:120px}
+.hero-ctas{display:flex;gap:12px;margin-top:42px;flex-wrap:wrap}
+.hero-note{margin-top:28px;font-family:var(--sans);font-size:14px;color:var(--ink-soft)}
+.hero-note strong{color:var(--ink);font-weight:600}
+.hero-note i{font-family:var(--serif);font-size:16px}
+
+/* App window (hero mock) */
+.app{background:var(--panel);border:1.5px solid var(--ink);box-shadow:0 30px 60px -30px rgba(15,15,14,.25)}
+.app-bar{height:24px;background:#F3F1EA;border-bottom:1px solid var(--line);display:flex;gap:5px;align-items:center;padding-left:12px}
+.app-bar span{width:6px;height:6px;border-radius:50%;background:var(--line)}
+.app-nav{display:flex;align-items:baseline;gap:22px;padding:14px 22px;border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;color:var(--ink-soft)}
+.app-nav .on{color:var(--ink);font-weight:500}
+.app-body{padding:20px 22px 8px}
+.app-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.app-head .ui-h{font-weight:400;font-size:20px;line-height:1.2;margin-top:6px;max-width:300px}
+.stats{display:flex;gap:18px}
+.stat .mono{font-size:8px;letter-spacing:.12em}
+.stat b{display:block;font-weight:400;font-size:17px;margin-top:2px}
+.week-head{display:grid;grid-template-columns:1fr repeat(7,26px);gap:3px;align-items:end;padding:12px 0 10px;border-bottom:1px solid var(--line)}
+.week-head .label .mono{font-size:8px}
+.week-head .label div:last-child{font-size:15px;margin-top:2px}
+.dh{text-align:center;font-family:var(--mono);font-size:7px;letter-spacing:.08em;color:var(--ink-soft)}
+.dh b{display:block;font-family:var(--serif);font-weight:400;font-size:12px;letter-spacing:0;color:var(--ink);margin-top:2px}
+.dh.today,.dh.today b{color:var(--ember)}
+.goal-row{display:grid;grid-template-columns:1fr repeat(7,26px);gap:3px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.goal-row .t .mono{font-size:7.5px}
+.goal-row .t div:last-child{font-size:13px;line-height:1.3;margin-top:2px;padding-right:12px}
+.cell{width:26px;height:26px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:12px}
+.cell.done{background:var(--ink);border-color:var(--ink);color:var(--bone)}
+.cell.skip{background:#F1EEE6;border-color:#F1EEE6;color:var(--ink-soft)}
+.cell.now{background:var(--ember);border-color:var(--ember);color:var(--bone)}
+.cell.open-now{border:1.5px solid var(--ember)}
+.count-row{grid-column:2 / span 7;display:flex;justify-content:flex-end;align-items:center;gap:10px}
+.count-row .pill{border:1.5px solid var(--ink);padding:5px 9px;font-family:var(--mono);font-size:10px}
+
+/* Section shells */
+.sec{padding:112px 0}
+.sec-white{background:var(--panel)}
+.sec-head{max-width:900px}
+.sec-head .lede{margin-top:24px;max-width:720px}
+
+/* 02 Replaces */
+.replaces{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-top:1px solid var(--line)}
+.replaces > div{padding:24px 28px 0 0;margin-right:28px;border-right:1px solid var(--line)}
+.replaces > div:last-child{border-right:0;margin-right:0}
+.replaces s{font-style:italic;color:var(--ink-soft);font-size:15px}
+.replaces p{font-size:17px;line-height:1.45;margin-top:14px}
+
+/* 03 How it works */
+.how-head{max-width:900px}
+.how-head .lede{margin-top:24px}
+.how-head .btn{margin-top:32px}
+.overview{margin-top:48px;background:var(--panel);border:1px solid var(--line);padding:32px 40px}
+.overview-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.overview-top .ui-h{font-size:30px;margin-top:8px}
+.overview .stats{gap:32px}.overview .stat b{font-size:22px}
+.progress-meta{display:flex;justify-content:space-between;margin:22px 0 8px}
+.progress{display:grid;gap:4px}
+.progress span{height:6px;background:var(--line);position:relative;overflow:hidden}
+.progress span i{position:absolute;inset:0 auto 0 0;background:var(--ink)}
+.members{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.member{border:1px solid var(--line);background:#FCFBF8;padding:12px 14px;display:flex;gap:12px;align-items:center}
+.av{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-style:italic;font-size:14px;flex:none;background:var(--bone)}
+.av.ink{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.member b{font-family:var(--sans);font-weight:500;font-size:13px;display:block}
+.member small{font-style:italic;color:var(--ink-soft);font-size:12px}
+.step{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;margin-top:120px}
+.step.flip .step-copy{order:2}
+.step-copy h3{font-size:34px}
+.step-copy .body{margin-top:22px}
+.card{background:var(--panel);border:1px solid var(--line);padding:28px 30px}
+.card .ui-h{font-weight:400;font-size:26px;margin:6px 0 16px}
+.kv{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--line)}
+.kv > *{padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+.kv .mono{font-size:8px;display:flex;align-items:center}
+.who{margin-top:22px}
+.who-row{display:flex;align-items:center;gap:12px;padding:6px 0}
+.who-row b{font-family:var(--sans);font-weight:500;font-size:13px;flex:1}
+.who-row .mono{font-size:8px}.who-row .mono.ember{color:var(--ember)}
+.phone{width:250px;margin:0 auto;border:6px solid var(--ink);border-radius:30px;background:var(--panel);padding:22px 18px 18px}
+.phone h5{font-weight:400;font-size:15px;line-height:1.3;margin:8px 0 12px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0 14px}
+.seg span{border:1px solid var(--line);font-family:var(--sans);font-size:10.5px;text-align:center;padding:8px 0}
+.seg .on{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.phone .note{border:1px solid var(--line);padding:10px;font-size:12.5px;margin:6px 0 14px;min-height:46px}
+.phone .row{display:flex;justify-content:space-between}
+.phone img{width:100%;aspect-ratio:2/1;object-fit:cover;margin-top:6px}
+.phone .done{background:var(--ink);color:var(--bone);text-align:center;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.14em;padding:11px;margin-top:12px}
+.report .tally{display:flex;gap:36px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.report .tally b{display:block;font-weight:400;font-size:19px;margin-top:2px}
+.report .tally .em{font-style:normal}
+.score{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.score span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:4px 7px}
+.score span.part{border:1.5px solid var(--ink)}
+.reflect{background:#F6F4EE;border:1px solid var(--line);padding:12px;font-size:13px;line-height:1.5;margin-top:8px}
+.ledger-sum{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin:16px 0 8px}
+.ledger-sum > div{padding:10px 12px;border-right:1px solid var(--line)}
+.ledger-sum > div:last-child{border-right:0}
+.ledger-sum .mono{font-size:7.5px;letter-spacing:.1em}
+.ledger-sum b{display:block;font-weight:400;font-size:18px;margin-top:2px}
+.entry{display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line)}
+.entry .mono{font-size:8px}
+.entry div b{font-family:var(--sans);font-weight:500;font-size:12.5px;display:block}
+.entry div i{font-size:12px;color:var(--ink-soft)}
+.entry .amt{font-size:14px}
+.sub-i{font-style:italic;color:var(--ink-soft);font-size:13px}
+
+/* 04 Money */
+.money{display:grid;grid-template-columns:560px 1fr;gap:64px;margin-top:48px;align-items:start}
+.receipt{border:1px solid var(--ink);padding:28px 32px;background:var(--panel)}
+.receipt-top{display:flex;justify-content:space-between}
+.rtable{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+.rtable th{font-family:var(--mono);font-weight:500;font-size:8.5px;letter-spacing:.14em;color:var(--ink-soft);text-align:right;padding:10px 0;border-bottom:1px solid var(--ink)}
+.rtable th:first-child,.rtable td:first-child{text-align:left}
+.rtable td{text-align:right;padding:9px 0;border-bottom:1px solid var(--line)}
+.rsum{margin-top:6px;font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
+.rsum div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line)}
+.rsum .total{border-top:2px solid var(--ink);border-bottom:0;color:var(--ink);font-weight:600;padding-top:10px}
+.rsum .total span:last-child{font-family:var(--serif);font-style:italic;font-weight:400;font-size:20px;color:var(--ember)}
+.rfoot{font-style:italic;font-size:12px;color:var(--ink-soft);margin-top:10px}
+.faq > div{padding:20px 0;border-bottom:1px solid var(--line)}
+.faq > div:first-child{padding-top:0}
+.faq h3{letter-spacing:normal;font-weight:400;font-size:20px}
+.faq p{font-size:15px;line-height:1.55;color:var(--ink-soft);margin-top:8px}
+
+/* 05 Who */
+.who-head{display:flex;flex-direction:column;align-items:flex-start;max-width:820px}
+.who-head .btn{margin-top:28px}
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.types > div{background:var(--panel);border:1px solid var(--line);padding:24px}
+.types h3{letter-spacing:normal;font-weight:400;font-size:20px}
+.types p{font-size:15px;line-height:1.5;color:var(--ink-soft);margin-top:10px}
+
+/* 06 Founder */
+.founder .wrap > div{display:grid;grid-template-columns:420px 1fr;gap:80px;border-top:1px solid var(--ink);padding-top:64px}
+.founder h3{font-size:30px}
+.founder .note{border-left:1.5px solid var(--ember);padding-left:26px}
+.founder .note p{font-size:18px;line-height:1.6;color:var(--ink-soft);margin-bottom:16px}
+.founder .note .mono{margin-top:8px}
+.founder{padding:16px 0 112px}
+
+/* 07 CTA */
+.cta{background:var(--ink);color:var(--bone);padding:112px 0}
+.cta .h2{color:var(--bone)}
+.cta-steps{display:grid;grid-template-columns:repeat(3,1fr);margin:44px 0 48px}
+.cta-steps > div{padding-right:28px;margin-right:28px;border-right:1px solid #3a3a37}
+.cta-steps > div:last-child{border-right:0}
+.cta-steps .mono{color:var(--ember-soft);font-size:11px}
+.cta-steps p{font-size:18px;line-height:1.4;margin-top:12px}
+.cta .ctas{display:flex;gap:12px;flex-wrap:wrap}
+
+/* 08 Field notes */
+.notes-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px}
+.notes-head a{font-family:var(--mono);font-size:11px;letter-spacing:.18em;font-weight:500}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.notes a{display:block;background:var(--panel);border:1px solid var(--line);padding:24px}
+.notes h3{letter-spacing:normal;font-weight:400;font-size:18px;line-height:1.35}
+.notes i{display:block;margin-top:14px;font-size:13px;color:var(--ink-soft)}
+
+/* Footer */
+.foot{border-top:1px solid var(--line);padding:36px 0}
+.foot .wrap{display:flex;align-items:center;gap:36px}
+.foot nav{display:flex;gap:28px;flex:1;font-family:var(--sans);font-size:13px;color:var(--ink-soft)}
+.foot .mono{font-size:10px}
+
+/* Grid children may shrink below their content width (stops mock UI widening the page) */
+.hero .wrap > *,.step > *,.money > *,.founder .wrap > div > *{min-width:0}
+.app{overflow:hidden}
+.nw{white-space:nowrap}
+
+/* Sticky mobile CTA (approved pattern from the pillar template v2.3) */
+.sticky{display:none}
+
+/* ---------- Tablet ---------- */
+@media (max-width:1200px){
+  :root{--gutter:48px}
+  .hero .wrap{grid-template-columns:1fr;gap:56px}
+  .money{grid-template-columns:1fr}
+  .step{gap:56px}
+}
+
+/* ---------- Mobile (375 target) ---------- */
+@media (max-width:760px){
+  :root{--gutter:20px}
+  .nav .wrap{height:64px;gap:12px}
+  .nav-links,.nav-login{display:none}
+  .nav .lockup{flex:1}
+  .nav .lockup i{font-size:19px}.nav .lockup b{font-size:11px}
+  .nav .btn{padding:9px 12px;font-size:11px}
+  .h1{font-size:40px}
+  .h2{font-size:31px}
+  .lede{font-size:17px}
+  .hero .wrap{padding-top:44px;padding-bottom:64px;gap:40px}
+  .hero-ctas{margin-top:28px;flex-direction:column}
+  .hero-ctas .btn{width:100%}
+  .app-body{padding:16px 14px 4px}
+  .app-nav{padding:12px 14px;gap:14px;font-size:11px}
+  .app-nav .lockup.sm i{font-size:13px}.app-nav .lockup.sm b{font-size:7.5px;letter-spacing:.28em}
+  .app-head{flex-direction:column;align-items:flex-start}
+  .app-head .ui-h{font-size:17px}
+  .app-head .mono{letter-spacing:.1em}
+  .week-head,.goal-row{grid-template-columns:repeat(7,1fr)}
+  .week-head .label,.goal-row .t{grid-column:1 / -1}
+  .goal-row .t{margin-bottom:8px}
+  .cell{width:100%;height:30px}
+  .count-row{grid-column:1 / -1;justify-content:flex-start}
+  .sec{padding:72px 0}
+  /* Swipe rows with a peek, as on the pillar template */
+  .swipe{display:grid;grid-auto-flow:column;grid-auto-columns:78%;grid-template-columns:none;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:calc(-1 * var(--gutter));padding-right:var(--gutter);scrollbar-width:none}
+  .swipe::-webkit-scrollbar{display:none}
+  .swipe > *{scroll-snap-align:start}
+  .replaces{border-top:0;margin-top:32px}
+  .replaces > div{border:1px solid var(--line);margin:0;padding:20px;background:var(--bone)}
+  .replaces > div:last-child{border-right:1px solid var(--line)}
+  .overview{padding:20px 16px;margin-top:36px}
+  .overview-top{flex-direction:column;align-items:flex-start}
+  .overview-top .ui-h{font-size:24px}
+  .members{grid-template-columns:1fr 1fr;gap:8px}
+  .step,.step.flip{grid-template-columns:1fr;gap:32px;margin-top:72px}
+  .step.flip .step-copy{order:0}
+  .step-copy h3{font-size:27px}
+  .card{padding:20px 16px}
+  .kv{grid-template-columns:96px 1fr}
+  .report .tally{gap:22px}
+  .money{gap:36px;margin-top:32px}
+  .receipt{padding:20px 16px}
+  .rtable{font-size:13px}
+  .receipt-top{flex-direction:column;gap:4px}
+  .rtable th,.rtable td{padding-left:8px}.rtable th:first-child,.rtable td:first-child{padding-left:0}
+  .who-head .btn{width:100%}
+  .types{margin-top:32px}
+  .founder .wrap > div{grid-template-columns:1fr;gap:24px;padding-top:40px}
+  .founder h3{font-size:25px}
+  .founder .note p{font-size:16.5px}
+  .founder{padding:8px 0 72px}
+  .cta{padding:72px 0 96px}
+  .cta-steps{grid-template-columns:1fr;margin:32px 0}
+  .cta-steps > div{border-right:0;margin:0;padding:16px 0;border-bottom:1px solid #3a3a37}
+  .cta .ctas{flex-direction:column}.cta .ctas .btn{width:100%}
+  .notes-head{flex-direction:column}
+  .notes{margin-top:24px}
+  .foot .wrap{flex-direction:column;align-items:flex-start;gap:18px}
+  .foot nav{flex-wrap:wrap;gap:16px 22px}
+  .foot{padding-bottom:96px}
+  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px calc(12px + env(safe-area-inset-bottom));background:var(--bone);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s ease}
+  .sticky.show{transform:none}
+  .sticky span{font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
+  .sticky span strong{color:var(--ink)}
+  .sticky .btn{padding:11px 14px;font-size:11px}
+}
+@media (max-width:360px){.nav .lockup i{font-size:17px}.nav .lockup b{font-size:10px;letter-spacing:.24em}.nav .btn-sm{padding:9px 10px;letter-spacing:.04em}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="https://accountabilityguild.com/" class="lockup"><i>Accountability</i><b>GUILD</b></a>
+    <nav class="nav-links"><a href="https://accountabilityguild.com/how-it-works">How it works</a><a href="https://accountabilityguild.com/pricing">Pricing</a><a href="https://accountabilityguild.com/blog">Field notes</a></nav>
+    <a href="https://accountabilityguild.com/login" class="nav-login">Log in</a>
+    <a href="https://accountabilityguild.com/create-account" class="btn btn-ink btn-sm">Start a group</a>
+  </div>
+</header>
+
+<!-- 01 Hero -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div>
+      <h1 class="h1">One place for your accountability group’s <em>goals, <span class="nw">check-ins</span> and reports.</em></h1>
+      <div class="hero-ctas">
+        <a href="https://accountabilityguild.com/create-account" class="btn btn-ink">Start a group&nbsp; →</a>
+        <a href="#how" class="btn btn-line">How it works</a>
+      </div>
+      <p class="hero-note"><strong>No monthly fee.</strong> <i>Free to start, and set up in five minutes.</i></p>
+    </div>
+    <div class="app" aria-label="Dashboard: this week's marks">
+      <div class="app-bar"><span></span><span></span><span></span></div>
+      <div class="app-nav"><span class="lockup sm"><i>Accountability</i><b>GUILD</b></span><span class="on">Dashboard</span><span>Group</span><span>Reports</span></div>
+      <div class="app-body">
+        <div class="app-head">
+          <div>
+            <div class="mono">Thursday night group · Cycle {{n:cycleNo}} · {{range:start:end}}</div>
+            <div class="ui-h ui-h4">Day {{n:day}} of {{n:length}}. Page through the week and mark what you did.</div>
+          </div>
+          <div class="stats">
+            <div class="stat"><div class="mono">Days left</div><b>{{n:daysLeft}}</b></div>
+            <div class="stat"><div class="mono">At-stake</div><b>$100</b></div>
+          </div>
+        </div>
+        <div class="week-head" id="week-head">
+          <div class="label"><div class="mono">Week {{n:week}} of {{n:weeks}} · This week</div><div>Mark the week · <span id="week-range"></span></div></div>
+        </div>
+        <div id="week-goals"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 What it replaces -->
+<section class="sec sec-white">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2">Replace the shared spreadsheet your group <em>forgets to update.</em></h2>
+      <p class="lede">Set up your group in five minutes. From then on, everyone’s goals, progress and reports live in one place, so each meeting starts with what actually happened.</p>
+    </div>
+    <div class="replaces swipe">
+      <div><s>The shared spreadsheet</s><p>Everyone writes goals the whole group can see, support, and report against.</p></div>
+      <div><s>The group chat</s><p>Log progress in a few taps from your phone, whenever you sit down.</p></div>
+      <div><s>Chasing updates</s><p>Automatic notifications remind everyone when reports are due, on your group’s own schedule.</p></div>
+      <div><s>The honor system</s><p>Every goal and report is visible to the group, and missed goals cost real money, paid into the group’s shared pot.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 How it works -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="how-head">
+      <h2 class="h2">Each cycle follows your group’s <em>meeting schedule.</em></h2>
+      <p class="lede">A cycle is the stretch between check-ins: a week or a month, whatever your group already does. It works the same whether you meet in person or online. Every cycle has four steps.</p>
+      <a href="/how-it-works" class="btn btn-line">See how it works&nbsp; →</a>
+    </div>
+
+    <div class="overview">
+      <div class="overview-top">
+        <div>
+          <div class="mono">Thursday night group · Cycle {{n:cycleNo}} · {{n:month}} · Meets in person</div>
+          <div class="ui-h ui-h3">The {{n:month}} cycle <em>{{n:closesIn}}.</em></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="mono">At-stake</div><b>$100</b></div>
+          <div class="stat"><div class="mono">Members</div><b>4</b></div>
+          <div class="stat"><div class="mono">Next meeting</div><b>{{d:close|dowmd}}</b></div>
+        </div>
+      </div>
+      <div class="progress-meta"><span class="mono">Week {{n:week2}} of {{n:weeks2}}</span><span class="mono">Reports due {{d:end|md}}</span></div>
+      <div class="progress" id="progress"></div>
+      <div class="members">
+        <div class="member"><span class="av ink">B</span><div><b>Brandon</b><small>Organizer · 4 goals</small></div></div>
+        <div class="member"><span class="av">M</span><div><b>Marcus</b><small>5 goals</small></div></div>
+        <div class="member"><span class="av">D</span><div><b>Dan</b><small>3 goals</small></div></div>
+        <div class="member"><span class="av">J</span><div><b>Josh</b><small>4 goals</small></div></div>
+      </div>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step">
+      <div class="step-copy">
+        <h3 class="h3">1. Everyone <em>sets their goals</em> for the cycle.</h3>
+        <p class="body">The group’s organizer sets the schedule and the stakes, then invites the group. Everyone else joins from an email invite, writes their own measurable goals (called commitments), and agrees to the group’s schedule and stakes before the first cycle starts.</p>
+      </div>
+      <div class="card">
+        <div class="mono">Step 5 of 5 · Review and sign</div>
+        <div class="ui-h ui-h4">The commitment, on paper.</div>
+        <div class="kv">
+          <span class="mono">Group</span><span>Tuesday Founders Group</span>
+          <span class="mono">Meets</span><span>Every two weeks, Tuesday · video call</span>
+          <span class="mono">First cycle</span><span>{{d:setupStart|dowmd}} to {{d:setupEnd|dowmd}}</span>
+          <span class="mono">At-stake</span><span>$50 per cycle, split across your goals</span>
+          <span class="mono">Reports due</span><span>Before the group meets</span>
+        </div>
+        <div class="who">
+          <div class="mono">Members · 3 of 4 joined</div>
+          <div class="who-row"><span class="av ink">P</span><b>Priya</b><span class="mono">Organizer</span></div>
+          <div class="who-row"><span class="av">L</span><b>Leo</b><span class="mono">Joined</span></div>
+          <div class="who-row"><span class="av">S</span><b>Sam</b><span class="mono">Joined</span></div>
+          <div class="who-row"><span class="av">K</span><b>Kate</b><span class="mono ember">Invited</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step flip">
+      <div class="step-copy">
+        <h3 class="h3">2. Track progress toward each goal <em>as you go.</em></h3>
+        <p class="body">Log progress in a few taps, each day or whenever it fits during the cycle: kept, missed, skipped, or a count toward your target. Add a note or a photo as proof. No more spreadsheets: when report day comes, your progress is already there.</p>
+      </div>
+      <div class="phone" aria-label="Phone: marking today's goal">
+        <div class="mono">Fitness · Weekly</div>
+        <h5>Lift four times a week, two strength and two zone-2.</h5>
+        <div class="mono">{{d:0|DOWMD}} · Today</div>
+        <div class="seg"><span class="on">✓ Kept</span><span>Missed</span><span>Skipped</span></div>
+        <div class="row"><span class="mono">Note</span><span class="mono">26 / 240</span></div>
+        <div class="note">Zone-2 on the bike, 40 min.</div>
+        <div class="mono">Photo</div>
+        <img src="data:image/jpeg;base64,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" alt="A spin bike's handlebars and ride screen showing a 42:38 workout.">
+        <div class="done">DONE</div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <div class="step-copy">
+        <h3 class="h3">3. Report back to the group <em>before you meet.</em></h3>
+        <p class="body">A report is a short check-in at the end of each cycle: score each goal and write a few lines on what happened. Your whole group reads it, so they know where you’re stuck, can push you when you slip, and back you when you’re close.</p>
+      </div>
+      <div class="card report">
+        <div class="mono">Cycle {{n:prevNo}} · Marcus · Filed {{d:filed|md}} · $100 at-stake</div>
+        <div class="ui-h ui-h4">Report <em>filed.</em></div>
+        <div class="tally">
+          <div><div class="mono">Kept</div><b>3 / 5</b></div>
+          <div><div class="mono">Forfeit</div><b class="em">$15</b></div>
+          <div><div class="mono">Filed</div><b>{{d:filed|md}}</b></div>
+        </div>
+        <div class="score">Lift four times a week<span>100%</span></div>
+        <div class="score">Read 20 pages a night<span>100%</span></div>
+        <div class="score">Ship two client proposals<span>100%</span></div>
+        <div class="score">Phone away at dinner<span class="part">75%</span></div>
+        <div class="score">Journal six mornings a week<span class="part">50%</span></div>
+        <div class="mono" style="margin-top:16px">The reflection · What happened</div>
+        <div class="reflect">Training and reading held all month, and both proposals went out. Dinner rule slipped the week we traveled. Journaled three mornings out of six; moving it to the evening next cycle.</div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step flip">
+      <div class="step-copy">
+        <h3 class="h3">4. Missed goals add money to the <em>group’s shared pot.</em></h3>
+        <p class="body">Each member puts money on the line for the cycle, which adds one more layer of accountability. At the end, you’re charged for the goals you missed, and the money collects in the group’s kitty. The organizer pays it out for whatever the group agreed, and everyone sees every withdrawal.</p>
+      </div>
+      <div class="card">
+        <div class="mono">The ledger · Thursday night group</div>
+        <div class="ui-h ui-h4" style="margin-bottom:4px">Per-member contributions</div>
+        <div class="sub-i">Member forfeits paid into the group kitty, most recent cycle first.</div>
+        <div class="ledger-sum">
+          <div><div class="mono">Current kitty</div><b>$412.40</b></div>
+          <div><div class="mono">Into kitty · Cycle {{n:prevNo}}</div><b>$60.51</b></div>
+          <div><div class="mono">Paid out · {{d:paidOut|year}}</div><b>$180.00</b></div>
+        </div>
+        <div class="entry"><span class="mono">{{d:start|md}}</span><div><b>Cycle {{n:prevNo}} close · Marcus</b><i>Forfeit $15.00, after fees</i></div><span class="amt">+$13.26</span></div>
+        <div class="entry"><span class="mono">{{d:start|md}}</span><div><b>Cycle {{n:prevNo}} close · Dan</b><i>Forfeit $50.00, after fees</i></div><span class="amt">+$47.25</span></div>
+        <div class="entry"><span class="mono">{{d:paidOut|md}}</span><div><b>Paid out by Brandon</b><i>Reason: cabin deposit for the January retreat</i></div><span class="amt">−$180.00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 The money -->
+<section class="sec sec-white" id="money">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2">Put money on your goals. Misses <em>pay your group, not Accountability Guild.</em></h2>
+      <p class="lede">Every member puts the same amount at stake each cycle, say $100, divided evenly across their own goals. At the end of the cycle, you pay only for the goals you missed, or the part of a goal you didn’t finish. Miss nothing, pay nothing.</p>
+    </div>
+    <div class="money">
+      <div class="receipt">
+        <div class="receipt-top"><span class="mono">One member’s cycle · Example</span><span class="mono">$100 at-stake · 5 goals</span></div>
+        <table class="rtable">
+          <thead><tr><th>Goal</th><th>At stake</th><th>Done</th><th>Owed</th></tr></thead>
+          <tbody>
+            <tr><td>Lift four times a week</td><td>$20</td><td>100%</td><td>$0</td></tr>
+            <tr><td>Read 20 pages a night</td><td>$20</td><td>100%</td><td>$0</td></tr>
+            <tr><td>Ship two client proposals</td><td>$20</td><td>100%</td><td>$0</td></tr>
+            <tr><td>Phone away at dinner</td><td>$20</td><td>75%</td><td>$5</td></tr>
+            <tr><td>Journal six mornings a week</td><td>$20</td><td>50%</td><td>$10</td></tr>
+          </tbody>
+        </table>
+        <div class="rsum">
+          <div><span>Charged at the end of the cycle</span><span>$15.00</span></div>
+          <div><span>Platform fee</span><span>−$1.00</span></div>
+          <div><span>Card processing (est.)</span><span>−$0.74</span></div>
+          <div class="total"><span>To your group’s kitty</span><span>$13.26</span></div>
+        </div>
+        <p class="rfoot">Each member’s amounts come from their own goals. No report means the full $100.</p>
+      </div>
+      <div class="faq">
+        <div><h3>When is my card charged?</h3><p>Each member saves a card when they join the group. It’s charged automatically at the end of the cycle, and only for the goals, or parts of goals, you missed. Hit all your goals and you pay nothing.</p></div>
+        <div><h3>Where does the money go?</h3><p>Into your group’s kitty, for whatever the group agrees on: a retreat or a group dinner, a payout to whoever kept the most goals, a shared subscription, or a charity. Accountability Guild keeps $1 per charge, and card processing comes out of the same amount.</p></div>
+        <div><h3>How is the kitty spent?</h3><p>The organizer pays it out once the group agrees on a use. Every withdrawal shows the amount and the reason to the whole group.</p></div>
+        <div><h3>Why don’t you charge a monthly fee?</h3><p>The point is for you and your group to hit your goals, so there’s nothing to pay up front. Accountability Guild makes money only when a forfeit is collected: a $1 platform fee plus card processing, both taken out of the forfeit, not added on top.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 Who it's for -->
+<section class="sec">
+  <div class="wrap">
+    <div class="who-head">
+      <h2 class="h2">For groups that have met for years, and groups <em>just getting started.</em></h2>
+      <p class="lede" style="margin-top:24px">One organizer sets up the group and invites everyone. Everyone else joins from an email invite, writes their goals, and reports on the same schedule.</p>
+      <a href="https://accountabilityguild.com/create-account" class="btn btn-ink">Start a group&nbsp; →</a>
+    </div>
+    <div class="types swipe">
+      <div><h3>Church small groups</h3><p>Members keep each other on track with prayer, Bible reading, and serving goals between weekly meetings.</p></div>
+      <div><h3>Founder groups</h3><p>Founders who meet monthly to hit revenue, shipping, and hiring targets, with the numbers in front of the group.</p></div>
+      <div><h3>Workout crews</h3><p>Training partners committing to sessions, mileage, or nutrition targets, with every workout logged.</p></div>
+      <div><h3>Friends</h3><p>Friends chasing personal goals, like saving, reading, or health, who want a reason to follow through.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 Founder note -->
+<section class="founder">
+  <div class="wrap">
+    <div>
+      <h3 class="h3">Built for a first-Thursday group that still runs on it.</h3>
+      <div class="note">
+        <p>I built this because I’m part of a small group that meets on the first Thursday of each month, and the reporting rhythm should not depend on one person chasing everyone. The app I wanted didn’t exist: every habit tracker is built for one person, alone.</p>
+        <p>Accountability Guild is a different shape. It assumes the room. It assumes you’ve already done the hard part: finding three or five or ten people who agreed to hold each other to something.</p>
+        <p>One cycle, then the next. Receipts at the close. That’s it.</p>
+        <div class="mono">Brandon Tilus · Founder</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 Final CTA -->
+<section class="cta on-ink">
+  <div class="wrap">
+    <h2 class="h2">Set up your group in <em>five minutes.</em></h2>
+    <div class="cta-steps">
+      <div><div class="mono">01</div><p>Create your account. No monthly fee.</p></div>
+      <div><div class="mono">02</div><p>Set your group’s schedule in five short steps.</p></div>
+      <div><div class="mono">03</div><p>Invite your group. Nothing is charged until a cycle closes.</p></div>
+    </div>
+    <div class="ctas"><a href="https://accountabilityguild.com/create-account" class="btn btn-ink">Start a group&nbsp; →</a><a href="#how" class="btn btn-line">How it works</a></div>
+  </div>
+</section>
+
+<!-- 08 Field notes -->
+<section class="sec" id="notes">
+  <div class="wrap">
+    <div class="notes-head">
+      <h2 class="h3" style="font-size:34px">Guides for running an accountability group.</h2>
+      <a href="https://accountabilityguild.com/resources">ALL GUIDES&nbsp; →</a>
+    </div>
+    <div class="notes swipe">
+      <a href="https://accountabilityguild.com/personal-accountability"><h3>Personal Accountability: How to Follow Through on Your Commitments</h3><i>14 min read</i></a>
+      <a href="https://accountabilityguild.com/goal-setting"><h3>Goal Setting That Actually Sticks: A Practical Step-by-Step Guide</h3><i>14 min read</i></a>
+      <a href="https://accountabilityguild.com/behavior-change"><h3>Behavior Change 101: Build Better Habits and Break Bad Ones</h3><i>7 min read</i></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="lockup sm"><i>Accountability</i><b>GUILD</b></span>
+    <nav><a href="https://accountabilityguild.com/how-it-works">How it works</a><a href="https://accountabilityguild.com/pricing">Pricing</a><a href="https://accountabilityguild.com/blog">Field notes</a><a href="https://accountabilityguild.com/privacy">Privacy</a><a href="https://accountabilityguild.com/terms">Terms</a></nav>
+    <span class="mono">© {{d:0|year}}</span>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><span><strong>No monthly fee.</strong> Set up in five minutes.</span><a href="https://accountabilityguild.com/create-account" class="btn btn-ink">Start a group&nbsp; →</a></div>
+
+<script>
+/* Accountability Guild: demo clock.
+ *
+ * One place that turns "relative" sample dates into real ones, so product
+ * images and the homepage mockup always show the current week instead of a
+ * date someone typed months ago. Works in Node (render.js) and in the browser
+ * (homepage HTML, as window.AGDemoClock). No dependencies.
+ *
+ * Every date is an offset in days from "today" (0 = today, -2 = two days ago).
+ *
+ *   const clock = createClock({ today: "2026-11-03" });   // omit today = the real date
+ *   clock.fmt(-8)                 // "Oct 26"
+ *   clock.fmt(0, "DOWMD")         // "TUE, NOV 3"
+ *   clock.range(-4, 2)            // "Oct 30–Nov 5"
+ *   clock.expand(spec)            // fills {{tokens}} and $days blocks anywhere in an object
+ *
+ * Tokens (inside any string):
+ *   {{d:OFFSET}}  or  {{d:OFFSET|FORMAT}}   a date, e.g. {{d:-8}} → "Oct 26"
+ *   {{d:NAME|FORMAT}}                        a named date from the cycle (see below)
+ *   {{range:FROM:TO}}                        "Oct 30–Nov 5", "Nov 2–8"
+ *   {{n:NAME}}                               a number or word from the cycle
+ *
+ * Formats: md "Oct 26" (default) · dowmd "Mon, Oct 26" · DOWMD "MON, OCT 26"
+ *   dow "Mon" · DOW "MON" · dow2 "Mo" · day "Monday" · dom "26" · month "October"
+ *   mdy "Oct 26, 2026" · iso "2026-10-26"
+ *
+ * $days block: { "$days": { "from": -4, "count": 7 } } becomes the week-board
+ * day list: [{ dow: "Th", dom: 29 }, ..., { dow: "Mo", dom: 2, today: true }, ...].
+ * The scene's cell patterns are positional, so "today" always sits in the same
+ * column whatever weekday it is.
+ *
+ * Cycle (optional), two rules:
+ *   { meets: "Thu", weeks: 4, minDaysLeft: 5 }  every 4 weeks; the closing
+ *     meeting is always at least 5 days out, so the cycle looks well underway.
+ *   { meets: "Thu", rule: "first" }  first Thursday of every month (the real
+ *     calendar, so it can close tomorrow; use {{n:closesIn}} for the wording).
+ * Gives you:
+ *   dates  start (meeting that opened it), end (day before the close), close
+ *          (the closing meeting), next, nextEnd (the cycle after), weekStart
+ *   values daysLeft, closesIn, day, length (days), week, weeks, month (the
+ *          month the cycle started in: "the October cycle")
+ *
+ * Time zone: the default "today" is the local date where the code runs (the
+ * visitor's date in a browser). Pass { tz: "America/Chicago" } to pin a zone,
+ * or { today: "YYYY-MM-DD" } to reproduce an image exactly.
+ */
+(function (root) {
+  "use strict";
+  const DAY = 86400000;
+  const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  // Dates are UTC midnights, so day arithmetic never trips on DST.
+  function ymd(y, m, d) { return new Date(Date.UTC(y, m - 1, d)); }
+
+  function todayIn(tz) {
+    const now = new Date();
+    if (!tz) return ymd(now.getFullYear(), now.getMonth() + 1, now.getDate());
+    const parts = new Intl.DateTimeFormat("en-CA", { timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
+    const [y, m, d] = parts.split("-").map(Number);
+    return ymd(y, m, d);
+  }
+
+  function parseToday(v, tz) {
+    if (!v) return todayIn(tz);
+    if (v instanceof Date) return ymd(v.getUTCFullYear(), v.getUTCMonth() + 1, v.getUTCDate());
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v));
+    if (!m) throw new Error(`demo-clock: today must be YYYY-MM-DD, got "${v}"`);
+    return ymd(+m[1], +m[2], +m[3]);
+  }
+
+  function format(date, fmt) {
+    const mon = MONTHS[date.getUTCMonth()];
+    const m3 = mon.slice(0, 3);
+    const dayName = DAYS[date.getUTCDay()];
+    const d3 = dayName.slice(0, 3);
+    const dom = date.getUTCDate();
+    switch (fmt || "md") {
+      case "md": return `${m3} ${dom}`;
+      case "dowmd": return `${d3}, ${m3} ${dom}`;
+      case "DOWMD": return `${d3}, ${m3} ${dom}`.toUpperCase();
+      case "dow": return d3;
+      case "DOW": return d3.toUpperCase();
+      case "dow2": return dayName.slice(0, 2);
+      case "day": return dayName;
+      case "dom": return String(dom);
+      case "month": return mon;
+      case "mdy": return `${m3} ${dom}, ${date.getUTCFullYear()}`;
+      case "iso": return date.toISOString().slice(0, 10);
+      default: throw new Error(`demo-clock: unknown format "${fmt}"`);
+    }
+  }
+
+  const WEEKDAY = { sun: 0, mon: 1, tue: 2, wed: 3, thu: 4, fri: 5, sat: 6 };
+
+  // Two cycle rules:
+  //   "every" (default): meets on a weekday every `weeks` weeks; picks the next
+  //     meeting at least minDaysLeft away, so the cycle is always well underway.
+  //   "first": meets on the first <weekday> of each month (Brandon's group). This
+  //     is the real calendar, so daysLeft runs 1 to 35 (the meeting day opens the
+  //     next cycle); use {{n:closesIn}} for
+  //     "closes tomorrow" / "closes in 9 days".
+  function firstWeekdayOf(y, m0, wd) {
+    const d = new Date(Date.UTC(y, m0, 1));
+    return new Date(d.getTime() + ((wd - d.getUTCDay() + 7) % 7) * DAY);
+  }
+
+  function buildCycle(today, cfg) {
+    const target = WEEKDAY[String(cfg.meets || "thu").slice(0, 3).toLowerCase()];
+    if (target === undefined) throw new Error(`demo-clock: cycle.meets "${cfg.meets}" is not a weekday`);
+    let start, close, next;
+    if (cfg.rule === "first") {
+      const y = today.getUTCFullYear(), m = today.getUTCMonth();
+      close = firstWeekdayOf(y, m, target);
+      if (close <= today) close = firstWeekdayOf(y, m + 1, target);
+      start = firstWeekdayOf(close.getUTCFullYear(), close.getUTCMonth() - 1, target);
+      next = firstWeekdayOf(close.getUTCFullYear(), close.getUTCMonth() + 1, target);
+    } else {
+      const weeks = cfg.weeks || 4;
+      const minLeft = cfg.minDaysLeft == null ? 5 : cfg.minDaysLeft;
+      let left = (target - today.getUTCDay() + 7) % 7;
+      while (left < minLeft) left += 7;
+      close = new Date(today.getTime() + left * DAY);
+      start = new Date(close.getTime() - weeks * 7 * DAY);
+      next = new Date(close.getTime() + weeks * 7 * DAY);
+    }
+    const length = Math.round((close - start) / DAY);
+    const elapsed = Math.round((today - start) / DAY);
+    const daysLeft = Math.round((close - today) / DAY);
+    return {
+      // start = the meeting that opened this cycle; end = the day before the
+      // closing meeting; close = the closing meeting; next/nextEnd = the cycle after.
+      dates: { start, end: new Date(close.getTime() - DAY), close, next, nextEnd: new Date(next.getTime() - DAY), weekStart: new Date(start.getTime() + Math.floor(elapsed / 7) * 7 * DAY) },
+      values: {
+        daysLeft,
+        closesIn: daysLeft === 0 ? "closes today" : daysLeft === 1 ? "closes tomorrow" : `closes in ${daysLeft} days`,
+        day: elapsed + 1,
+        length,
+        week: Math.floor(elapsed / 7) + 1,
+        weeks: Math.ceil(length / 7),
+        // A cycle is named for the month it starts in ("the October cycle").
+        month: MONTHS[start.getUTCMonth()],
+      },
+    };
+  }
+
+  function createClock(opts) {
+    opts = opts || {};
+    const today = parseToday(opts.today, opts.tz);
+    const cycle = opts.cycle ? buildCycle(today, opts.cycle) : null;
+
+    const day = (offset) => new Date(today.getTime() + offset * DAY);
+    const resolve = (ref) => {
+      if (/^[+-]?\d+$/.test(ref)) return day(Number(ref));
+      if (ref === "today") return today;
+      if (cycle && cycle.dates[ref]) return cycle.dates[ref];
+      throw new Error(`demo-clock: unknown date "${ref}"${cycle ? "" : " (no cycle configured)"}`);
+    };
+    const fmt = (ref, f) => format(typeof ref === "number" ? day(ref) : resolve(String(ref)), f);
+    const range = (from, to) => {
+      const a = resolve(String(from)), b = resolve(String(to));
+      const sameMonth = a.getUTCMonth() === b.getUTCMonth();
+      return sameMonth ? `${format(a, "md")}–${b.getUTCDate()}` : `${format(a, "md")}–${format(b, "md")}`;
+    };
+    const days = ({ from, count }) => Array.from({ length: count }, (_, i) => {
+      const off = from + i;
+      const entry = { dow: format(day(off), "dow2"), dom: day(off).getUTCDate() };
+      if (off === 0) entry.today = true;
+      return entry;
+    });
+    const value = (name) => {
+      if (!cycle || !(name in cycle.values)) throw new Error(`demo-clock: unknown value "${name}"`);
+      return cycle.values[name];
+    };
+
+    const TOKEN = /\{\{\s*(d|range|n)\s*:\s*([^}|]+?)\s*(?:\|\s*([A-Za-z0-9]+)\s*)?\}\}/g;
+    const expandString = (s) => s.replace(TOKEN, (_, kind, arg, f) => {
+      if (kind === "d") return fmt(arg.trim(), f);
+      if (kind === "range") { const [a, b] = arg.split(":"); return range(a.trim(), b.trim()); }
+      return String(value(arg.trim()));
+    });
+    const expand = (node) => {
+      if (typeof node === "string") {
+        // A string that is only {{n:...}} keeps the number type.
+        const only = /^\{\{\s*n\s*:\s*([A-Za-z]+)\s*\}\}$/.exec(node);
+        return only && typeof value(only[1]) === "number" ? value(only[1]) : expandString(node);
+      }
+      if (Array.isArray(node)) return node.map(expand);
+      if (node && typeof node === "object") {
+        if (node.$days) return days(node.$days);
+        const out = {};
+        for (const [k, v] of Object.entries(node)) out[k] = expand(v);
+        return out;
+      }
+      return node;
+    };
+
+    return { today, iso: format(today, "iso"), day, fmt, range, days, value, cycle, expand };
+  }
+
+  // For a render spec: reads its optional "clock" block ({ today, tz, cycle })
+  // and fills every token. `override` (e.g. --today from the CLI) wins.
+  function applyToSpec(spec, override) {
+    const cfg = Object.assign({}, spec.clock || {}, override || {});
+    const clock = createClock(cfg);
+    const out = clock.expand(Object.fromEntries(Object.entries(spec).filter(([k]) => k !== "clock")));
+    out.clock = Object.assign({}, spec.clock || {}, { resolvedToday: clock.iso });
+    return out;
+  }
+
+  const api = { createClock, applyToSpec, format };
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+  else root.AGDemoClock = api;
+})(typeof globalThis !== "undefined" ? globalThis : this);
+
+</script>
+<script>
+window.addEventListener("error", function () { document.documentElement.classList.remove("clock-pending"); });
+(function () {
+  // ?today=YYYY-MM-DD previews any day; otherwise the visitor's own date.
+  var q = new URLSearchParams(location.search).get("today");
+  var clock = AGDemoClock.createClock({ today: q || undefined, cycle: { meets: "Thu", rule: "first" } });
+  var C = clock.cycle, V = C.values, DAY = 86400000;
+
+  // Page-level values the clock doesn't know: cycle numbers, the report filing
+  // date, and the last payout. The current cycle is always Cycle 5, so the
+  // filed report and ledger entries belong to Cycle 4, which closed at this
+  // cycle's opening meeting.
+  var extra = {
+    cycleNo: 5, prevNo: 4,
+    week2: String(V.week).padStart(2, "0"), weeks2: String(V.weeks).padStart(2, "0")
+  };
+  var setupStart = clock.day(((2 - clock.today.getUTCDay() + 7) % 7) || 7);
+  if (Math.round((setupStart - clock.today) / DAY) < 2) setupStart = new Date(setupStart.getTime() + 7 * DAY);
+  var named = {
+    filed: new Date(C.dates.start.getTime() - 2 * DAY),   // two days before the meeting
+    paidOut: new Date(C.dates.start.getTime() - 50 * DAY), // an earlier payout
+    // Step 1 setup card: a different group (Tuesday Founders Group) whose first
+    // two-week cycle starts at its next Tuesday call, at least two days out.
+    setupStart: setupStart, setupEnd: new Date(setupStart.getTime() + 13 * DAY)
+  };
+  function fmt(date, f) {
+    if (f === "year") return String(date.getUTCFullYear());
+    return AGDemoClock.format(date, f);
+  }
+  function resolveDate(ref, f) {
+    if (named[ref]) return fmt(named[ref], f);
+    if (f === "year") return String((/^[+-]?\d+$/.test(ref) ? clock.day(+ref) : C.dates[ref]).getUTCFullYear());
+    return clock.fmt(/^[+-]?\d+$/.test(ref) ? +ref : ref, f);
+  }
+  function fill(s) {
+    return s.replace(/\{\{\s*(d|n|range)\s*:\s*([^}|]+?)\s*(?:\|\s*([A-Za-z0-9]+)\s*)?\}\}/g, function (_, k, a, f) {
+      if (k === "d") return resolveDate(a, f);
+      if (k === "range") { var p = a.split(":"); return clock.range(p[0], p[1]); }
+      return a in extra ? extra[a] : clock.value(a);
+    });
+  }
+  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  for (var n; (n = walker.nextNode());) {
+    var tag = n.parentNode && n.parentNode.nodeName;
+    if (tag === "SCRIPT" || tag === "STYLE") continue; // the single-file build inlines demo-clock.js
+    if (n.nodeValue.indexOf("{{") > -1) n.nodeValue = fill(n.nodeValue);
+  }
+
+  // Hero week board: the cycle week that contains today. Past days show the
+  // goal's pattern, today is marked in ember, later days are empty.
+  var ws = C.dates.weekStart, todayIdx = Math.round((clock.today - ws) / DAY);
+  var head = document.getElementById("week-head");
+  for (var i = 0; i < 7; i++) {
+    var d = new Date(ws.getTime() + i * DAY), el = document.createElement("div");
+    el.className = "dh" + (i === todayIdx ? " today" : "");
+    el.innerHTML = AGDemoClock.format(d, "dow2").toUpperCase() + "<b>" + d.getUTCDate() + "</b>";
+    head.appendChild(el);
+  }
+  document.getElementById("week-range").textContent = clock.range(
+    String(Math.round((ws - clock.today) / DAY)), String(Math.round((ws - clock.today) / DAY) + 6));
+
+  var goals = [
+    { p: "Fitness", t: "Lift four times a week, two strength and two zone-2.", past: ["done", "skip", "done", "", "done", "skip", "done"], today: "now" },
+    { p: "Professional", t: "Ship two client proposals by the end of the month.", count: "1 / 2" },
+    { p: "Personal", t: "Read 20 pages a night, five nights a week.", past: ["done", "done", "", "done", "done", "", "done"], today: "now" },
+    { p: "Family", t: "Phone away at dinner, every weeknight.", past: ["done", "skip", "done", "done", "", "done", "skip"], today: "open-now" }
+  ];
+  var GLYPH = { done: "✓", now: "✓", skip: "–" };
+  var rows = document.getElementById("week-goals");
+  goals.forEach(function (g) {
+    var row = document.createElement("div");
+    row.className = "goal-row";
+    var html = '<div class="t"><div class="mono">' + g.p + "</div><div>" + g.t + "</div></div>";
+    if (g.count) {
+      html += '<div class="count-row"><span class="mono">This week</span><span class="pill">' + g.count + "</span></div>";
+    } else {
+      for (var i = 0; i < 7; i++) {
+        var s = i < todayIdx ? g.past[i] : i === todayIdx ? g.today : "";
+        html += '<div class="cell ' + s + '">' + (GLYPH[s] || "") + "</div>";
+      }
+    }
+    row.innerHTML = html;
+    rows.appendChild(row);
+  });
+
+  // Overview progress: one bar per cycle week, filled up to today.
+  var prog = document.getElementById("progress");
+  prog.style.gridTemplateColumns = "repeat(" + V.weeks + ", 1fr)";
+  for (var w = 0; w < V.weeks; w++) {
+    var done = Math.max(0, Math.min(1, (V.day - w * 7) / 7));
+    prog.insertAdjacentHTML("beforeend", '<span><i style="width:' + (done * 100).toFixed(1) + '%"></i></span>');
+  }
+
+  // Mobile sticky CTA appears once the hero buttons scroll out of view.
+  var heroCtas = document.querySelector(".hero-ctas"), sticky = document.getElementById("sticky");
+  new IntersectionObserver(function (e) { sticky.classList.toggle("show", !e[0].isIntersecting && e[0].boundingClientRect.top < 0); }).observe(heroCtas);
+
+  document.documentElement.classList.remove("clock-pending");
+})();
+</script>
+</body>
+</html>

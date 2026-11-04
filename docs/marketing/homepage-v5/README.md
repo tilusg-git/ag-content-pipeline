@@ -21,6 +21,14 @@ node .claude/tools/static-server.js 4173
 
 Then open http://localhost:4173/docs/marketing/homepage-v5/index.html. In the Claude desktop app, the `docs-static` preview config starts the same server.
 
+## Single-file copy (for sharing)
+
+`node build-single-file.js` writes `dist/accountability-guild-homepage-v5.html`: the same page with the demo clock inlined and the proof photo embedded, so it opens straight from an email attachment (it needs internet only for the fonts). Rebuild it after any change to `index.html`.
+
+## SEO
+
+`seo-requirements.md` lists what the production build must ship with: metadata, server-rendered dates, links, image handling, CMS follow-ups. The mockup already has the fixed heading outline and real links.
+
 ## Open questions for Grant
 
 - **Mobile** is a first proposal: there's no Figma mobile homepage to match yet.

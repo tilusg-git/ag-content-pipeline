@@ -47,6 +47,7 @@ em,.em{font-style:italic;color:var(--ember)}
 
 /* Type */
 h1,h2,h3{font-weight:400;letter-spacing:-.02em}
+.ui-h{display:block}.ui-h3{font-weight:400;letter-spacing:-.02em}
 .h1{font-size:60px;line-height:1.02}
 .h2{font-size:44px;line-height:1.08}
 .h3{font-size:32px;line-height:1.15}
@@ -74,7 +75,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .app-nav .on{color:var(--ink);font-weight:500}
 .app-body{padding:20px 22px 8px}
 .app-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
-.app-head h4{font-weight:400;font-size:20px;line-height:1.2;margin-top:6px;max-width:300px}
+.app-head .ui-h{font-weight:400;font-size:20px;line-height:1.2;margin-top:6px;max-width:300px}
 .stats{display:flex;gap:18px}
 .stat .mono{font-size:8px;letter-spacing:.12em}
 .stat b{display:block;font-weight:400;font-size:17px;margin-top:2px}
@@ -114,7 +115,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .how-head .btn{margin-top:32px}
 .overview{margin-top:48px;background:var(--panel);border:1px solid var(--line);padding:32px 40px}
 .overview-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
-.overview-top h3{font-size:30px;margin-top:8px}
+.overview-top .ui-h{font-size:30px;margin-top:8px}
 .overview .stats{gap:32px}.overview .stat b{font-size:22px}
 .progress-meta{display:flex;justify-content:space-between;margin:22px 0 8px}
 .progress{display:grid;gap:4px}
@@ -131,7 +132,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .step-copy h3{font-size:34px}
 .step-copy .body{margin-top:22px}
 .card{background:var(--panel);border:1px solid var(--line);padding:28px 30px}
-.card h4{font-weight:400;font-size:26px;margin:6px 0 16px}
+.card .ui-h{font-weight:400;font-size:26px;margin:6px 0 16px}
 .kv{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--line)}
 .kv > *{padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
 .kv .mono{font-size:8px;display:flex;align-items:center}
@@ -182,7 +183,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .rfoot{font-style:italic;font-size:12px;color:var(--ink-soft);margin-top:10px}
 .faq > div{padding:20px 0;border-bottom:1px solid var(--line)}
 .faq > div:first-child{padding-top:0}
-.faq h4{font-weight:400;font-size:20px}
+.faq h3{letter-spacing:normal;font-weight:400;font-size:20px}
 .faq p{font-size:15px;line-height:1.55;color:var(--ink-soft);margin-top:8px}
 
 /* 05 Who */
@@ -190,7 +191,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .who-head .btn{margin-top:28px}
 .types{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
 .types > div{background:var(--panel);border:1px solid var(--line);padding:24px}
-.types h4{font-weight:400;font-size:20px}
+.types h3{letter-spacing:normal;font-weight:400;font-size:20px}
 .types p{font-size:15px;line-height:1.5;color:var(--ink-soft);margin-top:10px}
 
 /* 06 Founder */
@@ -216,7 +217,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .notes-head a{font-family:var(--mono);font-size:11px;letter-spacing:.18em;font-weight:500}
 .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 .notes a{display:block;background:var(--panel);border:1px solid var(--line);padding:24px}
-.notes h4{font-weight:400;font-size:18px;line-height:1.35}
+.notes h3{letter-spacing:normal;font-weight:400;font-size:18px;line-height:1.35}
 .notes i{display:block;margin-top:14px;font-size:13px;color:var(--ink-soft)}
 
 /* Footer */
@@ -259,7 +260,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
   .app-nav{padding:12px 14px;gap:14px;font-size:11px}
   .app-nav .lockup.sm i{font-size:13px}.app-nav .lockup.sm b{font-size:7.5px;letter-spacing:.28em}
   .app-head{flex-direction:column;align-items:flex-start}
-  .app-head h4{font-size:17px}
+  .app-head .ui-h{font-size:17px}
   .app-head .mono{letter-spacing:.1em}
   .week-head,.goal-row{grid-template-columns:repeat(7,1fr)}
   .week-head .label,.goal-row .t{grid-column:1 / -1}
@@ -276,7 +277,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
   .replaces > div:last-child{border-right:1px solid var(--line)}
   .overview{padding:20px 16px;margin-top:36px}
   .overview-top{flex-direction:column;align-items:flex-start}
-  .overview-top h3{font-size:24px}
+  .overview-top .ui-h{font-size:24px}
   .members{grid-template-columns:1fr 1fr;gap:8px}
   .step,.step.flip{grid-template-columns:1fr;gap:32px;margin-top:72px}
   .step.flip .step-copy{order:0}
@@ -310,16 +311,17 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
   .sticky span strong{color:var(--ink)}
   .sticky .btn{padding:11px 14px;font-size:11px}
 }
+@media (max-width:360px){.nav .lockup i{font-size:17px}.nav .lockup b{font-size:10px;letter-spacing:.24em}.nav .btn-sm{padding:9px 10px;letter-spacing:.04em}}
 </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap">
-    <a href="#" class="lockup"><i>Accountability</i><b>GUILD</b></a>
-    <nav class="nav-links"><a href="#how">How it works</a><a href="#money">Pricing</a><a href="#notes">Field notes</a></nav>
-    <a href="#" class="nav-login">Log in</a>
-    <a href="#" class="btn btn-ink btn-sm">Start a group</a>
+    <a href="https://accountabilityguild.com/" class="lockup"><i>Accountability</i><b>GUILD</b></a>
+    <nav class="nav-links"><a href="https://accountabilityguild.com/how-it-works">How it works</a><a href="https://accountabilityguild.com/pricing">Pricing</a><a href="https://accountabilityguild.com/blog">Field notes</a></nav>
+    <a href="https://accountabilityguild.com/login" class="nav-login">Log in</a>
+    <a href="https://accountabilityguild.com/create-account" class="btn btn-ink btn-sm">Start a group</a>
   </div>
 </header>
 
@@ -329,7 +331,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
     <div>
       <h1 class="h1">One place for your accountability group’s <em>goals, <span class="nw">check-ins</span> and reports.</em></h1>
       <div class="hero-ctas">
-        <a href="#" class="btn btn-ink">Start a group&nbsp; →</a>
+        <a href="https://accountabilityguild.com/create-account" class="btn btn-ink">Start a group&nbsp; →</a>
         <a href="#how" class="btn btn-line">How it works</a>
       </div>
       <p class="hero-note"><strong>No monthly fee.</strong> <i>Free to start, and set up in five minutes.</i></p>
@@ -341,7 +343,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
         <div class="app-head">
           <div>
             <div class="mono">Thursday night group · Cycle {{n:cycleNo}} · {{range:start:end}}</div>
-            <h4>Day {{n:day}} of {{n:length}}. Page through the week and mark what you did.</h4>
+            <div class="ui-h ui-h4">Day {{n:day}} of {{n:length}}. Page through the week and mark what you did.</div>
           </div>
           <div class="stats">
             <div class="stat"><div class="mono">Days left</div><b>{{n:daysLeft}}</b></div>
@@ -386,7 +388,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
       <div class="overview-top">
         <div>
           <div class="mono">Thursday night group · Cycle {{n:cycleNo}} · {{n:month}} · Meets in person</div>
-          <h3>The {{n:month}} cycle <em>{{n:closesIn}}.</em></h3>
+          <div class="ui-h ui-h3">The {{n:month}} cycle <em>{{n:closesIn}}.</em></div>
         </div>
         <div class="stats">
           <div class="stat"><div class="mono">At-stake</div><b>$100</b></div>
@@ -412,7 +414,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
       </div>
       <div class="card">
         <div class="mono">Step 5 of 5 · Review and sign</div>
-        <h4>The commitment, on paper.</h4>
+        <div class="ui-h ui-h4">The commitment, on paper.</div>
         <div class="kv">
           <span class="mono">Group</span><span>Tuesday Founders Group</span>
           <span class="mono">Meets</span><span>Every two weeks, Tuesday · video call</span>
@@ -457,7 +459,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
       </div>
       <div class="card report">
         <div class="mono">Cycle {{n:prevNo}} · Marcus · Filed {{d:filed|md}} · $100 at-stake</div>
-        <h4>Report <em>filed.</em></h4>
+        <div class="ui-h ui-h4">Report <em>filed.</em></div>
         <div class="tally">
           <div><div class="mono">Kept</div><b>3 / 5</b></div>
           <div><div class="mono">Forfeit</div><b class="em">$15</b></div>
@@ -481,7 +483,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
       </div>
       <div class="card">
         <div class="mono">The ledger · Thursday night group</div>
-        <h4 style="margin-bottom:4px">Per-member contributions</h4>
+        <div class="ui-h ui-h4" style="margin-bottom:4px">Per-member contributions</div>
         <div class="sub-i">Member forfeits paid into the group kitty, most recent cycle first.</div>
         <div class="ledger-sum">
           <div><div class="mono">Current kitty</div><b>$412.40</b></div>
@@ -525,10 +527,10 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
         <p class="rfoot">Each member’s amounts come from their own goals. No report means the full $100.</p>
       </div>
       <div class="faq">
-        <div><h4>When is my card charged?</h4><p>Each member saves a card when they join the group. It’s charged automatically at the end of the cycle, and only for the goals, or parts of goals, you missed. Hit all your goals and you pay nothing.</p></div>
-        <div><h4>Where does the money go?</h4><p>Into your group’s kitty, for whatever the group agrees on: a retreat or a group dinner, a payout to whoever kept the most goals, a shared subscription, or a charity. Accountability Guild keeps $1 per charge, and card processing comes out of the same amount.</p></div>
-        <div><h4>How is the kitty spent?</h4><p>The organizer pays it out once the group agrees on a use. Every withdrawal shows the amount and the reason to the whole group.</p></div>
-        <div><h4>Why don’t you charge a monthly fee?</h4><p>The point is for you and your group to hit your goals, so there’s nothing to pay up front. Accountability Guild makes money only when a forfeit is collected: a $1 platform fee plus card processing, both taken out of the forfeit, not added on top.</p></div>
+        <div><h3>When is my card charged?</h3><p>Each member saves a card when they join the group. It’s charged automatically at the end of the cycle, and only for the goals, or parts of goals, you missed. Hit all your goals and you pay nothing.</p></div>
+        <div><h3>Where does the money go?</h3><p>Into your group’s kitty, for whatever the group agrees on: a retreat or a group dinner, a payout to whoever kept the most goals, a shared subscription, or a charity. Accountability Guild keeps $1 per charge, and card processing comes out of the same amount.</p></div>
+        <div><h3>How is the kitty spent?</h3><p>The organizer pays it out once the group agrees on a use. Every withdrawal shows the amount and the reason to the whole group.</p></div>
+        <div><h3>Why don’t you charge a monthly fee?</h3><p>The point is for you and your group to hit your goals, so there’s nothing to pay up front. Accountability Guild makes money only when a forfeit is collected: a $1 platform fee plus card processing, both taken out of the forfeit, not added on top.</p></div>
       </div>
     </div>
   </div>
@@ -540,13 +542,13 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
     <div class="who-head">
       <h2 class="h2">For groups that have met for years, and groups <em>just getting started.</em></h2>
       <p class="lede" style="margin-top:24px">One organizer sets up the group and invites everyone. Everyone else joins from an email invite, writes their goals, and reports on the same schedule.</p>
-      <a href="#" class="btn btn-ink">Start a group&nbsp; →</a>
+      <a href="https://accountabilityguild.com/create-account" class="btn btn-ink">Start a group&nbsp; →</a>
     </div>
     <div class="types swipe">
-      <div><h4>Church small groups</h4><p>Members keep each other on track with prayer, Bible reading, and serving goals between weekly meetings.</p></div>
-      <div><h4>Founder groups</h4><p>Founders who meet monthly to hit revenue, shipping, and hiring targets, with the numbers in front of the group.</p></div>
-      <div><h4>Workout crews</h4><p>Training partners committing to sessions, mileage, or nutrition targets, with every workout logged.</p></div>
-      <div><h4>Friends</h4><p>Friends chasing personal goals, like saving, reading, or health, who want a reason to follow through.</p></div>
+      <div><h3>Church small groups</h3><p>Members keep each other on track with prayer, Bible reading, and serving goals between weekly meetings.</p></div>
+      <div><h3>Founder groups</h3><p>Founders who meet monthly to hit revenue, shipping, and hiring targets, with the numbers in front of the group.</p></div>
+      <div><h3>Workout crews</h3><p>Training partners committing to sessions, mileage, or nutrition targets, with every workout logged.</p></div>
+      <div><h3>Friends</h3><p>Friends chasing personal goals, like saving, reading, or health, who want a reason to follow through.</p></div>
     </div>
   </div>
 </section>
@@ -575,7 +577,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
       <div><div class="mono">02</div><p>Set your group’s schedule in five short steps.</p></div>
       <div><div class="mono">03</div><p>Invite your group. Nothing is charged until a cycle closes.</p></div>
     </div>
-    <div class="ctas"><a href="#" class="btn btn-ink">Start a group&nbsp; →</a><a href="#how" class="btn btn-line">How it works</a></div>
+    <div class="ctas"><a href="https://accountabilityguild.com/create-account" class="btn btn-ink">Start a group&nbsp; →</a><a href="#how" class="btn btn-line">How it works</a></div>
   </div>
 </section>
 
@@ -584,12 +586,12 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
   <div class="wrap">
     <div class="notes-head">
       <h2 class="h3" style="font-size:34px">Guides for running an accountability group.</h2>
-      <a href="https://accountabilityguild.com/resources">ALL FIELD NOTES&nbsp; →</a>
+      <a href="https://accountabilityguild.com/resources">ALL GUIDES&nbsp; →</a>
     </div>
     <div class="notes swipe">
-      <a href="https://accountabilityguild.com/blog/personal-accountability"><h4>Personal Accountability: How to Follow Through on Your Commitments</h4><i>14 min read</i></a>
-      <a href="https://accountabilityguild.com/blog/goal-setting"><h4>Goal Setting That Actually Sticks: A Practical Step-by-Step Guide</h4><i>14 min read</i></a>
-      <a href="https://accountabilityguild.com/blog/behavior-change"><h4>Behavior Change 101: Build Better Habits and Break Bad Ones</h4><i>7 min read</i></a>
+      <a href="https://accountabilityguild.com/personal-accountability"><h3>Personal Accountability: How to Follow Through on Your Commitments</h3><i>14 min read</i></a>
+      <a href="https://accountabilityguild.com/goal-setting"><h3>Goal Setting That Actually Sticks: A Practical Step-by-Step Guide</h3><i>14 min read</i></a>
+      <a href="https://accountabilityguild.com/behavior-change"><h3>Behavior Change 101: Build Better Habits and Break Bad Ones</h3><i>7 min read</i></a>
     </div>
   </div>
 </section>
@@ -597,15 +599,16 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 <footer class="foot">
   <div class="wrap">
     <span class="lockup sm"><i>Accountability</i><b>GUILD</b></span>
-    <nav><a href="#how">How it works</a><a href="#money">Pricing</a><a href="#notes">Field notes</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+    <nav><a href="https://accountabilityguild.com/how-it-works">How it works</a><a href="https://accountabilityguild.com/pricing">Pricing</a><a href="https://accountabilityguild.com/blog">Field notes</a><a href="https://accountabilityguild.com/privacy">Privacy</a><a href="https://accountabilityguild.com/terms">Terms</a></nav>
     <span class="mono">© {{d:0|year}}</span>
   </div>
 </footer>
 
-<div class="sticky" id="sticky"><span><strong>No monthly fee.</strong> Set up in five minutes.</span><a href="#" class="btn btn-ink">Start a group&nbsp; →</a></div>
+<div class="sticky" id="sticky"><span><strong>No monthly fee.</strong> Set up in five minutes.</span><a href="https://accountabilityguild.com/create-account" class="btn btn-ink">Start a group&nbsp; →</a></div>
 
 <script src="../../brand/assets/product-views/demo-clock.js"></script>
 <script>
+window.addEventListener("error", function () { document.documentElement.classList.remove("clock-pending"); });
 (function () {
   // ?today=YYYY-MM-DD previews any day; otherwise the visitor's own date.
   var q = new URLSearchParams(location.search).get("today");
@@ -646,7 +649,11 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
     });
   }
   var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-  for (var n; (n = walker.nextNode());) if (n.nodeValue.indexOf("{{") > -1) n.nodeValue = fill(n.nodeValue);
+  for (var n; (n = walker.nextNode());) {
+    var tag = n.parentNode && n.parentNode.nodeName;
+    if (tag === "SCRIPT" || tag === "STYLE") continue; // the single-file build inlines demo-clock.js
+    if (n.nodeValue.indexOf("{{") > -1) n.nodeValue = fill(n.nodeValue);
+  }
 
   // Hero week board: the cycle week that contains today. Past days show the
   // goal's pattern, today is marked in ember, later days are empty.
