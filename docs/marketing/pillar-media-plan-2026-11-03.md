@@ -131,3 +131,9 @@ Generate 3 to 4 variations of each, pick the best, and drop the originals in a f
 ### Progress (2026-11-03, late)
 - **Placed in Figma `48:292`, desktop and mobile:** #1 hero (goal tag top-right), #2 4.1 sticky note, #3 4.3 friends (goal tag bottom-left; callout list hidden; alt text updated). Each was checked by eye. The Paper illustrations stay hidden as fallbacks. Source images are in Drive "Website Images" (synced at G:My DriveWebsite Images) and `docs/brand/assets/site-imagery/`, with the manifest.
 - **Tomorrow (2026-11-04), Grant:** #4–#7. Then Claude places them and applies the two copy changes (4.6 checklist item, 4.7 product paragraph) in Figma.
+
+### Progress (2026-11-04)
+- **All 7 P4 photos are placed** in Figma `48:292`, desktop and mobile: #4 in 4.6 (fridge tracker) and #5–#7 in the three 4.8 cards (park bench, kitchen table, and a group circle with a clipboard tracker, Grant's pick over the cork board). The fallbacks are hidden, not deleted. Placed with `place-p4-photos.js 2` (one combined Scripter run) and checked by eye in Chrome. Crop notes and the one rejected image (faces) are in the manifest.
+- **Both copy changes are applied:** 4.6 checklist item 1 now reads "One place: a paper sheet, a spreadsheet, a note on your phone, or Accountability Guild if you track with a group." 4.7 has the product-context paragraph (guideline §3a) after the context line on desktop and after the UI caption on mobile.
+- **Open:** the 4.7 alt line still describes "a weekly report", but the image is the `week-board` scene.
+

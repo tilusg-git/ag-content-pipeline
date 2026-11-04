@@ -46,7 +46,7 @@ Templates set *where* media sits, not *what* it is. For each module, ask what a 
 
 ## 5. AI-generated persona images: the rules
 §14 forbids AI portraits. This keeps that intent and makes AI usable for scenes:
-- **No identifiable faces.** People are shown from behind, side-on at mid-distance, cropped below the eyes, or as hands and objects. Nobody should be recognizable or look like a specific real person.
+- **No identifiable faces.** People are shown from behind, side-on at mid-distance, cropped below the eyes, or as hands and objects. Nobody should be recognizable or look like a specific real person. Faces that are out of focus in the background are fine (Grant, 2026-11-04, P4 4.8 card 3); the subject in focus still follows this rule.
 - **Never presented as members or customers.** No names, quotes, captions, or testimonials attached to an AI person. Captions describe the moment ("A small group's monthly check-in"), never a person.
 - **Objects carry the story:** notebooks, trackers, phones showing a plain text bubble (never a fake app screen), running shoes, a whiteboard tally. AI must never render our UI. Product UI comes only from the renderer.
 - **Plausible and plain:** check hands, text, reflections and object counts. Any AI artifact means regenerate or drop it.

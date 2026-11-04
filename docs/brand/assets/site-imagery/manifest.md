@@ -8,11 +8,19 @@ Every image used on the website (brand standards §16). One row per image. Sourc
 | `source/Gemini_Generated_Image_ubevzhubevzhubev.jpg` → `out/p4-p41-*.jpg` | /goal-setting · 4.1 Pick one goal | Persona (object) | AI, Gemini (Grant 2026-11-03) | Media plan §9 #2 | Grant, 2026-11-03 | A sticky note on an open notebook that reads "One goal (12 weeks): Finish my certification." |
 | `source/Gemini_Generated_Image_3a7kia3a7kia3a7k.jpg` → `out/p4-p43-*.jpg` | /goal-setting · 4.3 Checkable goals (goal tag "Walk 30 minutes three times a week.") | Persona | AI, Gemini (Grant 2026-11-03) | Media plan §9 #3 | Grant, 2026-11-03 | Two friends at a kitchen table; one points to a goal written in a notebook. |
 | `source/Gemini_Generated_Image_f660a1f660a1f660.jpg` → `out/home-proof-photo-440x220.jpg` | Homepage · Step 2 proof photo in the phone mock (Figma v5 `77:2`) | Persona (object) | AI, Gemini (Grant 2026-11-03) | Grant's own prompt | Grant, 2026-11-03 (Figma comment on v4) | A spin bike's handlebars and ride screen in a gym, showing a 42:38 workout. |
+| `source/Gemini_Generated_Image_v8wqx6v8wqx6v8wq.jpg` → `out/p4-p46-*.jpg` | /goal-setting · 4.6 Track your progress | Persona (object) | AI, Gemini (Grant 2026-11-04) | Media plan §9 #4 | Grant, 2026-11-04 | A hand ticking today’s box on a paper weekly habit tracker taped to a fridge door. |
+| `source/Gemini_Generated_Image_ub0px3ub0px3ub0p.jpg` → `out/p4-p48a-*.jpg` | /goal-setting · 4.8 card 1 "One person" | Persona | AI, Gemini (Grant 2026-11-04) | Media plan §9 #5 | Grant, 2026-11-04 | A person on a park bench after a walk, typing a message on a phone. |
+| `source/Gemini_Generated_Image_thbh6tthbh6tthbh.jpg` → `out/p4-p48b-*.jpg` | /goal-setting · 4.8 card 2 "A small group" | Persona | AI, Gemini (Grant 2026-11-04) | Media plan §9 #6 | Grant, 2026-11-04 | Four people around a kitchen table with notebooks open and phones face down. |
+| `source/Gemini_Generated_Image_akk710akk710akk7.jpg` → `out/p4-p48c-*.jpg` | /goal-setting · 4.8 card 3 "A contribution, not a contest" | Persona | AI, Gemini (Grant 2026-11-04) | Media plan §9 #7 (Grant's variant: a group in a circle) | Grant, 2026-11-04 | A group meeting in a living room; one member holds a clipboard with a shared tracker of colored ticks. |
 
 **Checklist notes** (from `image-backgrounds-spec.md`):
 - None of the three shows an identifiable face. In 4.3 the near person is seen from behind; the far person is cropped below the eyes.
 - No logos or app screens appear.
 - Handwriting is correct on 4.1. On 4.3 the notebook text is AI scribble, unreadable at page size; regenerate it if the page ever shows this image large.
+
+- **Batch 2 (2026-11-04) crops do the face check:** the park-bench source shows the man's profile, so both p48a crops start below his beard line; never use the uncropped source. The fridge tracker is dated "May 6 – May 12": fine at page size, regenerate if it's ever shown large.
+- **Card 3 is the group-circle image (`akk7`), Grant's pick.** Its background faces are out of focus, which Grant OK'd on 2026-11-04 (now in the imagery guideline). The man in profile at the front right is soft and cut by the frame. The clipboard header is garbled AI text ("GROUP ATTENDANCE TRACKER"), unreadable at card size; regenerate it if the image is ever shown large.
+- **Not used:** `Gemini_Generated_Image_qljmlgqljmlgqljm.jpg` (cork-board tracker, placed first, then swapped out). The source stays in `source/` as a spare.
 
 Placement: `place-p4-photos.js` crops each image and generates the Scripter scripts. The Paper illustrations stay in Figma hidden, as fallbacks.
 - Homepage proof photo: the source image shows a **Peloton logo** on the bike screen. The crop starts below the logo, so the slot shows only the ride stats. Never use the uncropped source on the site; regenerate it without branding if a bigger view is needed.
