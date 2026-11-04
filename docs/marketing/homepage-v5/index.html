@@ -414,18 +414,18 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
         <div class="mono">Step 5 of 5 · Review and sign</div>
         <h4>The commitment, on paper.</h4>
         <div class="kv">
-          <span class="mono">Group</span><span>Thursday Night Group</span>
-          <span class="mono">Meets</span><span>Monthly, first Thursday · in person</span>
-          <span class="mono">First cycle</span><span>{{d:close|dowmd}} to {{d:nextEnd|dowmd}}</span>
-          <span class="mono">At-stake</span><span>$100 per cycle, split across your goals</span>
+          <span class="mono">Group</span><span>Tuesday Founders Group</span>
+          <span class="mono">Meets</span><span>Every two weeks, Tuesday · video call</span>
+          <span class="mono">First cycle</span><span>{{d:setupStart|dowmd}} to {{d:setupEnd|dowmd}}</span>
+          <span class="mono">At-stake</span><span>$50 per cycle, split across your goals</span>
           <span class="mono">Reports due</span><span>Before the group meets</span>
         </div>
         <div class="who">
           <div class="mono">Members · 3 of 4 joined</div>
-          <div class="who-row"><span class="av ink">B</span><b>Brandon</b><span class="mono">Organizer</span></div>
-          <div class="who-row"><span class="av">M</span><b>Marcus</b><span class="mono">Joined</span></div>
-          <div class="who-row"><span class="av">D</span><b>Dan</b><span class="mono">Joined</span></div>
-          <div class="who-row"><span class="av">J</span><b>Josh</b><span class="mono ember">Invited</span></div>
+          <div class="who-row"><span class="av ink">P</span><b>Priya</b><span class="mono">Organizer</span></div>
+          <div class="who-row"><span class="av">L</span><b>Leo</b><span class="mono">Joined</span></div>
+          <div class="who-row"><span class="av">S</span><b>Sam</b><span class="mono">Joined</span></div>
+          <div class="who-row"><span class="av">K</span><b>Kate</b><span class="mono ember">Invited</span></div>
         </div>
       </div>
     </div>
@@ -620,9 +620,14 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
     cycleNo: 5, prevNo: 4,
     week2: String(V.week).padStart(2, "0"), weeks2: String(V.weeks).padStart(2, "0")
   };
+  var setupStart = clock.day(((2 - clock.today.getUTCDay() + 7) % 7) || 7);
+  if (Math.round((setupStart - clock.today) / DAY) < 2) setupStart = new Date(setupStart.getTime() + 7 * DAY);
   var named = {
     filed: new Date(C.dates.start.getTime() - 2 * DAY),   // two days before the meeting
-    paidOut: new Date(C.dates.start.getTime() - 50 * DAY) // an earlier payout
+    paidOut: new Date(C.dates.start.getTime() - 50 * DAY), // an earlier payout
+    // Step 1 setup card: a different group (Tuesday Founders Group) whose first
+    // two-week cycle starts at its next Tuesday call, at least two days out.
+    setupStart: setupStart, setupEnd: new Date(setupStart.getTime() + 13 * DAY)
   };
   function fmt(date, f) {
     if (f === "year") return String(date.getUTCFullYear());

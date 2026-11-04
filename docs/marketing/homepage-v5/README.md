@@ -23,6 +23,9 @@ Then open http://localhost:4173/docs/marketing/homepage-v5/index.html. In the Cl
 
 ## Open questions for Grant
 
-- **Onboarding card vs. hero (carried over from Figma):** the Step 1 card says the group's *first* cycle starts at the next meeting, while the hero shows the same group already in Cycle 5. It reads as "here's what setup looks like", but you may want the card's group name changed so it's clearly a different group.
 - **Mobile** is a first proposal: there's no Figma mobile homepage to match yet.
+
+## Resolved
+
+- **Setup card vs. hero (2026-11-03, Grant):** the Step 1 card is now a different group, Tuesday Founders Group (Priya, Leo, Sam, Kate; every two weeks on a video call, $50 a cycle). Its first cycle starts at its next Tuesday call, at least two days out. Same change in Figma v5 (`77:2`) and its change log.
 - Field notes card links point at the live `/blog/<slug>` URLs.
