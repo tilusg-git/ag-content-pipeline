@@ -141,15 +141,39 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .who-row{display:flex;align-items:center;gap:12px;padding:6px 0}
 .who-row b{font-family:var(--sans);font-weight:500;font-size:13px;flex:1}
 .who-row .mono{font-size:8px}.who-row .mono.ember{color:var(--ember)}
-.phone{width:250px;margin:0 auto;border:6px solid var(--ink);border-radius:30px;background:var(--panel);padding:22px 18px 18px}
-.phone h5{font-weight:400;font-size:15px;line-height:1.3;margin:8px 0 12px}
-.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0 14px}
-.seg span{border:1px solid var(--line);font-family:var(--sans);font-size:10.5px;text-align:center;padding:8px 0}
-.seg .on{background:var(--ink);color:var(--bone);border-color:var(--ink)}
-.phone .note{border:1px solid var(--line);padding:10px;font-size:12.5px;margin:6px 0 14px;min-height:46px}
-.phone .row{display:flex;justify-content:space-between}
-.phone img{width:100%;aspect-ratio:2/1;object-fit:cover;margin-top:6px}
-.phone .done{background:var(--ink);color:var(--bone);text-align:center;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.14em;padding:11px;margin-top:12px}
+/* Step 2: a phone with the app's check-in sheet (mirrors MarkSheet in dashboard-today-marks.tsx) */
+.device{position:relative;width:290px;margin:0 auto;padding:11px;border-radius:52px;background:#1C1C1A;
+  box-shadow:inset 0 0 0 1.5px #3A3A37,inset 0 0 0 4px #121211,0 40px 70px -28px rgba(15,15,14,.45),0 12px 24px -12px rgba(15,15,14,.25)}
+.device::before,.device::after{content:"";position:absolute;width:3px;background:#2A2A27;border-radius:2px}
+.device::before{left:-3px;top:118px;height:56px;box-shadow:0 70px 0 #2A2A27}
+.device::after{right:-3px;top:150px;height:84px}
+.screen{position:relative;height:580px;border-radius:42px;overflow:hidden;background:#E9E7E1}
+.status{position:absolute;inset:0 0 auto;height:44px;display:flex;align-items:center;justify-content:space-between;padding:4px 26px 0 30px;font-family:var(--sans);font-weight:600;font-size:13px;color:var(--ink);z-index:3}
+.island{position:absolute;top:10px;left:50%;width:88px;height:25px;margin-left:-44px;border-radius:14px;background:#0B0B0A;z-index:4}
+.status svg{display:block}
+.status .icons{display:flex;gap:5px;align-items:center}
+.behind{position:absolute;inset:44px 0 0;padding:10px 18px;background:var(--bone);opacity:.55}
+.behind .lockup i{font-size:15px}.behind .lockup b{font-size:8.5px}
+.behind .bar{height:8px;background:var(--line);margin-top:16px;width:70%}
+.sheet{position:absolute;left:0;right:0;bottom:0;top:78px;background:var(--bone);border-radius:18px 18px 0 0;box-shadow:0 -10px 30px rgba(15,15,14,.18);padding:8px 18px 0;z-index:2}
+.grab{width:36px;height:4px;border-radius:2px;background:#CFCBC1;margin:0 auto 12px}
+.sheet-head{display:flex;justify-content:space-between;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.sheet-head .ttl{font-weight:400;font-size:16px;line-height:1.25;margin:5px 0 6px;color:var(--ink)}
+.sheet-head .x{font-family:var(--sans);font-size:17px;line-height:1;color:var(--ink-soft)}
+.sheet .mono{font-size:8px}
+.outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:7px 0 13px}
+.outcomes span{display:flex;align-items:center;justify-content:center;gap:5px;border:1px solid var(--line);background:var(--panel);font-family:var(--sans);font-weight:600;font-size:10.5px;padding:9px 0}
+.outcomes i{width:12px;height:12px;border:1px solid var(--line);font-style:normal;font-size:9px;line-height:11px;text-align:center}
+.outcomes .on{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.outcomes .on i{background:var(--ember);border-color:var(--ember);color:#fff}
+.sheet .row{display:flex;justify-content:space-between;margin-top:12px}
+.sheet .note{border:1px solid var(--line);background:var(--panel);padding:8px 10px;font-size:13px;margin:6px 0 12px;min-height:44px}
+.slot{border:1px dashed var(--ember);padding:6px;margin-top:6px;text-align:center;background:var(--panel)}
+.slot img{display:block;width:100%;aspect-ratio:2/1;object-fit:cover}
+.slot b{display:block;font-weight:400;font-size:12px;margin-top:5px}
+.slot small{display:block;font-family:var(--sans);font-size:10px;color:var(--ink-soft)}
+.sheet .done{background:var(--ink);color:var(--bone);text-align:center;font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.14em;padding:11px;margin-top:12px}
+.home{position:absolute;bottom:7px;left:50%;width:104px;height:4px;margin-left:-52px;border-radius:2px;background:var(--ink);z-index:3}
 .report .tally{display:flex;gap:36px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
 .report .tally b{display:block;font-weight:400;font-size:19px;margin-top:2px}
 .report .tally .em{font-style:normal}
@@ -313,7 +337,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
   .sticky span strong{color:var(--ink)}
   .sticky .btn{padding:11px 14px;font-size:11px}
 }
-@media (max-width:360px){.nav .lockup i{font-size:17px}.nav .lockup b{font-size:10px;letter-spacing:.24em}.nav .btn-sm{padding:9px 10px;letter-spacing:.04em}}
+@media (max-width:360px){.device{width:100%;max-width:290px}.nav .lockup i{font-size:17px}.nav .lockup b{font-size:10px;letter-spacing:.24em}.nav .btn-sm{padding:9px 10px;letter-spacing:.04em}}
 </style>
 </head>
 <body>
@@ -441,17 +465,35 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
         <h3 class="h3">2. Track progress toward each goal <em>as you go.</em></h3>
         <p class="body">Log progress in a few taps, each day or whenever it fits during the cycle: kept, missed, skipped, or a count toward your target. Add a note or a photo as proof. No more spreadsheets: when report day comes, your progress is already there.</p>
       </div>
-      <div class="phone" aria-label="Phone: marking today's goal">
-        <div class="mono">Fitness · Weekly</div>
-        <h5>Lift four times a week, two strength and two zone-2.</h5>
-        <div class="mono">{{d:0|DOWMD}} · Today</div>
-        <div class="seg"><span class="on">✓ Kept</span><span>Missed</span><span>Skipped</span></div>
-        <div class="row"><span class="mono">Note</span><span class="mono">26 / 240</span></div>
-        <div class="note">Zone-2 on the bike, 40 min.</div>
-        <div class="mono">Photo</div>
-        <img src="../../brand/assets/site-imagery/out/home-proof-photo-440x220.jpg" alt="A spin bike's handlebars and ride screen showing a 42:38 workout.">
-        <div class="done">DONE</div>
-      </div>
+      <figure class="device" aria-label="Phone: logging today's workout in the app">
+        <div class="screen">
+          <div class="island"></div>
+          <div class="status"><span>9:41</span><span class="icons" aria-hidden="true"><svg width="17" height="11" viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx="1" fill="#0F0F0E"/><rect x="4.5" y="5" width="3" height="6" rx="1" fill="#0F0F0E"/><rect x="9" y="2.5" width="3" height="8.5" rx="1" fill="#0F0F0E"/><rect x="13.5" y="0" width="3" height="11" rx="1" fill="#0F0F0E"/></svg><svg width="15" height="11" viewBox="0 0 15 11"><path d="M7.5 2.2c2.2 0 4.2.9 5.7 2.3l1.1-1.1C12.5 1.6 10.1.6 7.5.6S2.5 1.6.7 3.4l1.1 1.1c1.5-1.4 3.5-2.3 5.7-2.3zm0 3.1c1.3 0 2.5.5 3.4 1.4l1.1-1.1C10.8 4.4 9.2 3.7 7.5 3.7S4.2 4.4 3 5.6l1.1 1.1c.9-.9 2.1-1.4 3.4-1.4zm0 3.1c-.6 0-1.1.2-1.4.6l1.4 1.4 1.4-1.4c-.4-.4-.8-.6-1.4-.6z" fill="#0F0F0E"/></svg><svg width="25" height="12" viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="#0F0F0E" opacity=".4"/><rect x="2" y="2" width="15" height="8" rx="1.6" fill="#0F0F0E"/><rect x="22.5" y="4" width="1.6" height="4" rx=".8" fill="#0F0F0E" opacity=".4"/></svg></span></div>
+          <div class="behind" aria-hidden="true"><span class="lockup"><i>Accountability</i><b>GUILD</b></span><div class="bar"></div><div class="bar" style="width:45%"></div></div>
+          <div class="sheet">
+            <div class="grab"></div>
+            <div class="sheet-head">
+              <div>
+                <div class="mono">Fitness · Weekly</div>
+                <div class="ttl">Lift four times a week, two strength and two zone-2.</div>
+                <div class="mono">{{d:0|DOWMD}} · This day</div>
+              </div>
+              <span class="x" aria-hidden="true">×</span>
+            </div>
+            <div class="mono" style="margin-top:12px">This day</div>
+            <div class="outcomes"><span class="on"><i>✓</i>Kept</span><span><i></i>Missed</span><span><i></i>Skipped</span></div>
+            <div class="row" style="margin-top:0"><span class="mono">Note</span><span class="mono">27 / 240</span></div>
+            <div class="note">Zone-2 on the bike, 40 min.</div>
+            <div class="mono">Photo</div>
+            <div class="slot">
+              <img src="../../brand/assets/site-imagery/out/home-proof-photo-440x220.jpg" alt="A spin bike's handlebars and ride screen showing a 42:38 workout.">
+              <b>ride-screen.jpg</b><small>Tap image to replace</small>
+            </div>
+            <div class="done">DONE</div>
+          </div>
+          <div class="home"></div>
+        </div>
+      </figure>
     </div>
 
     <!-- Step 3 -->
