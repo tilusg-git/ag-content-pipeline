@@ -186,7 +186,8 @@ All seven P7 photos are placed in **v2.3.3, frame `116:4994`**, on desktop and m
 - **Crops:** they remove faces, the book titles, and in-focus faces at the group table. The manifest has the details.
 - **Open:**
   - 4.10 card 1 (closed notebook, whisky glass) is a weak match for "check your own log".
-  - The 4.7 product UI still needs its renderer spec.
+  - **Done the same day:** 4.5 recropped to show the books (Grant), and the 4.7 product UI placed. It is a `week-board` render with one running goal per tracking mode: daily marks for the process goal, a 9/12 count for the open goal, and "tracked at the cycle report" for the outcome goal. Specs: `docs/brand/assets/product-views/examples/pillar-types-of-goals-shapes*.json`. Placed with `place-p7-photos.js 2`; the desktop slot is 900×524 and the mobile slot 335×344.
+  - **Still to confirm:** Brandon, that report-only is a live tracking mode.
 
 ### Open before the P7 media pass
 - **4.6 renderer spec:** write a `week-board` spec with one goal per mode (`daily`, `count`, `report`) using demo-clock tokens, then render desktop and mobile.

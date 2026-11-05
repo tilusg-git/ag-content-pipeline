@@ -28,7 +28,33 @@ async function crop(file, [x, y, w, h], ow, oh, out) {
   const c = createCanvas(ow * 2, oh * 2); c.getContext('2d').drawImage(img, x, y, w, h, 0, 0, ow * 2, oh * 2);
   const buf = c.toBuffer('image/jpeg', 84); fs.writeFileSync(out, buf); return buf.toString('base64');
 }
-(async () => {
+// Batch 2 (2026-11-05, Grant): recrop 4.5 to show the books (swaps the image fill in the placed photo frames 117:6226/6227),
+// and place the 4.7 product UI (week-board, one goal per tracking mode; specs product-views/examples/pillar-types-of-goals-shapes*.json).
+// The product slots are resized to the render's aspect ratio. Usage: node place-p7-photos.js 2 → place-p7-batch2.js in the OS temp folder.
+const B2 = {
+  p45: { src: G('wnil12wnil12wnil'), d: { node: '117:6226', w: 360, h: 320, crop: [340, 560, 1170, 1040] }, m: { node: '117:6227', w: 335, h: 210, crop: [300, 700, 1404, 880] } },
+  ui: { d: { node: '116:5465', file: '../product-views/out/pillar-types-of-goals-shapes-2000x1200-bare.png', w: 900, crop: [0, 0, 1790, 1042] },
+        m: { node: '116:5963', file: '../product-views/out/pillar-types-of-goals-shapes-mobile-mobile-bare.png', w: 335, crop: [0, 30, 1170, 1200] } },
+};
+async function cropFile(file, [x, y, w, h], ow, oh, out, png) {
+  const img = await loadImage(path.join(dir, file));
+  const c = createCanvas(ow * 2, oh * 2); c.getContext('2d').drawImage(img, x, y, w, h, 0, 0, ow * 2, oh * 2);
+  const buf = png ? c.toBuffer('image/png') : c.toBuffer('image/jpeg', 84); fs.writeFileSync(out, buf); return buf.toString('base64');
+}
+if (process.argv[2] === '2') (async () => {
+  const o = n => path.join(dir, 'out', n);
+  const p45d = await cropFile('source/' + B2.p45.src, B2.p45.d.crop, B2.p45.d.w, B2.p45.d.h, o('p7-p45-desktop.jpg'));
+  const p45m = await cropFile('source/' + B2.p45.src, B2.p45.m.crop, B2.p45.m.w, B2.p45.m.h, o('p7-p45-mobile.jpg'));
+  const ui = {};
+  for (const k of ['d', 'm']) { const s = B2.ui[k]; const h = Math.round(s.w * s.crop[3] / s.crop[2]); ui[k] = { ...s, h, b64: await cropFile(s.file, s.crop, s.w, h, o(`p7-p47-ui-${k === 'd' ? 'desktop' : 'mobile'}.png`), true) }; }
+  let js = header;
+  js += `for (const [id, b] of [['${B2.p45.d.node}', '${p45d}'], ['${B2.p45.m.node}', '${p45m}']]) { const n = await figma.getNodeByIdAsync(id); n.fills = [{ type: 'IMAGE', imageHash: figma.createImage(figma.base64Decode(b)).hash, scaleMode: 'FILL' }]; }\n`;
+  for (const k of ['d', 'm']) js += `out.ui_${k} = await place('${ui[k].node}', '${ui[k].b64}', ${ui[k].w}, ${ui[k].h}, 'Product UI · week-board · ${k === 'd' ? 'desktop' : 'mobile'}', null, '', 1);\n`;
+  js += `figma.notify('P7 batch 2 placed'); return out;\n})()`;
+  fs.writeFileSync(path.join(os.tmpdir(), 'place-p7-batch2.js'), js);
+  console.log('batch2', Math.round(js.length / 1024), 'KB', JSON.stringify({ d: [ui.d.w, ui.d.h], m: [ui.m.w, ui.m.h] }));
+})();
+else (async () => {
   fs.mkdirSync(path.join(dir, 'out'), { recursive: true });
   let js = header;
   const sheet = createCanvas(1500, 300 * SLOTS.length); const g = sheet.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, 1500, 300 * SLOTS.length);

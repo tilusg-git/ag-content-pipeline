@@ -1,0 +1,47 @@
+{
+  "scene": "week-board",
+  "frame": "bare",
+  "data": {
+    "weekIndex": 2,
+    "weekCount": 4,
+    "thisWeek": true,
+    "weekLabel": "{{range:-6:0}}",
+    "days": {
+      "$days": {
+        "from": -6,
+        "count": 7
+      }
+    },
+    "goals": [
+      {
+        "pillar": "fitness",
+        "title": "Run four times a week",
+        "mode": "daily",
+        "cells": [
+          "done",
+          "skip",
+          "done+note",
+          "skip",
+          "done",
+          "skip",
+          "today"
+        ]
+      },
+      {
+        "pillar": "fitness",
+        "title": "Log every run this month",
+        "mode": "count",
+        "value": 9,
+        "target": 12
+      },
+      {
+        "pillar": "fitness",
+        "title": "Run a half marathon in May",
+        "mode": "report"
+      }
+    ]
+  },
+  "slug": "pillar-types-of-goals-shapes-mobile",
+  "size": "1080x1140",
+  "layout": "mobile"
+}

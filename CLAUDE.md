@@ -77,7 +77,8 @@ v2.3.1 tweaks are applied: one go-deeper card per page, and one guide in band 9.
 
 Then **v2.3.3, frame `116:4994`** at x 28025 (same day):
 - 4.4 uses P4's week calendar.
-- All seven Gemini photos are placed with `docs/brand/assets/site-imagery/place-p7-photos.js` (crops and face checks in the manifest).
+- All seven Gemini photos are placed with `docs/brand/assets/site-imagery/place-p7-photos.js` (crops and face checks in the manifest). 4.5 is recropped to show the books.
+- The 4.7 product UI is placed (`week-board`, one goal per tracking mode; specs `product-views/examples/pillar-types-of-goals-shapes*.json`).
 
 Awaiting Grant's review. Media is in pillar media plan §10 (with the v2.3.2 update and progress):
 - hero persona with a money goal tag
@@ -87,7 +88,6 @@ Awaiting Grant's review. Media is in pillar media plan §10 (with the v2.3.2 upd
 Open:
 - Grant's OK on the 24 grid cells
 - Brandon to confirm report-only is a live tracking mode
-- a new renderer spec for 4.7
 - `export-handoff.js` must handle prose modules (no `el`) before the P7 hand-off
 - **Website imagery: approved as brand standards §16** (`docs/brand/website-imagery-guidelines.md`). Three families: product / brand illustration / persona. AI persona photos come from Gemini, with no identifiable faces. The goal tag overlay is approved. **Figma workflow from here on (cap-free):** read comments with `fetch('/api/file/<key>/comments')` in Chrome; run every build and read script in Scripter, not `use_figma` (the README has the steps); spend MCP calls only on `get_screenshot` checks.
 
