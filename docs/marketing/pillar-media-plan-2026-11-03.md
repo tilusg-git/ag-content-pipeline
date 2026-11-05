@@ -178,6 +178,16 @@ Grant's comments on v2.3.1 renumbered the page:
 
 P7-7 is deliberately not P4's group circle with a clipboard. Blurred background faces are fine; only in-focus faces break the rule.
 
+### Progress (2026-11-05)
+All seven P7 photos are placed in **v2.3.3, frame `116:4994`**, on desktop and mobile.
+- **Script:** `docs/brand/assets/site-imagery/place-p7-photos.js`. The placeholders stay hidden.
+- **Hero:** carries the goal tag top-right.
+- **Variants:** Grant chose 4.1 (walking into a gym) and 4.10 card 2 (a café table) over the prompt wording.
+- **Crops:** they remove faces, the book titles, and in-focus faces at the group table. The manifest has the details.
+- **Open:**
+  - 4.10 card 1 (closed notebook, whisky glass) is a weak match for "check your own log".
+  - The 4.7 product UI still needs its renderer spec.
+
 ### Open before the P7 media pass
 - **4.6 renderer spec:** write a `week-board` spec with one goal per mode (`daily`, `count`, `report`) using demo-clock tokens, then render desktop and mobile.
 - **Confirm with Brandon** that report-only ("tracked at the cycle report") is a live tracking mode before the 4.6 product line ships.

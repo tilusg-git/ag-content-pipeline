@@ -1,4 +1,4 @@
-# Topical Pillar v2.1 to v2.3 Figma builds (P4 done; P7 v2.3.2 built)
+# Topical Pillar v2.1 to v2.3 Figma builds (P4 done; P7 v2.3.3 built, photos placed)
 
 Rebuilds the /goal-setting and /types-of-personal-goals mockups to the v2.1 spec (skill B3a element mix, B7 media beats) on page `25:2` of the homepage Figma file (`l27WIk0vje0syTYWN2iZee`), next to the v1 frames. Copy matches the v2.1 module docs in Drive (P4 `1MoB4eE3J-arMEzZAaPdoT0uobOeUAJRpQfDn0vPYvX8`, P7 `1QnORvxjkE8DisWWOcB-QBM8u6PgFuAOoJFz9xsUn6xE`).
 
@@ -12,6 +12,12 @@ The Starter plan's MCP cap can run out after a single call, so run builds and ca
 4. Results and errors go to the browser console. Read them with `read_console_messages`, and have scripts `console.log(JSON.stringify(...))` so the output is readable.
 5. Comments: `fetch('/api/file/<fileKey>/comments')` in the Figma tab. Mapping pins to nodes is a read script in Scripter: compare `client_meta.node_offset` against `absoluteBoundingBox`.
 6. Screenshot checks: Chrome screenshots of the Figma canvas break often (`Cannot access a chrome-extension:// URL`). Save the MCP calls for `get_screenshot`.
+
+## P7 v2.3.3 (2026-11-05): week calendar in 4.4, photos placed
+Frame `116:4994` at x 28025, with 18 mobile frames and 17 notes. Grant's comment on `113:3790` stays pinned there: "Should this UI be more of the calendar view like we previously used in the other pillar page?" (his example was P4's week figure).
+- **4.4** now uses that `week` element: four days, each with a minimum, in place of the rewrite list.
+- **Photos:** the seven Gemini photos are placed with `docs/brand/assets/site-imagery/place-p7-photos.js`. It reuses the P4 `place()`/`tag()` helpers and makes one ~950 KB script, pasted with the textarea route and run with `new Function('return ' + src)()`.
+- **Checks:** desktop and mobile were checked by eye in Chrome (hero tag, 4.4 week figure, 4.10 cards).
 
 ## P7 v2.3.2 (2026-11-05): Grant's 6 comments on 108:1372
 Frame `113:3790` at x 25350 (12,013 px tall), with 18 mobile frames and 17 notes beside it. The comments stay pinned on `108:1372`.

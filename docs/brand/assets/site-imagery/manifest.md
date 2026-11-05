@@ -12,6 +12,13 @@ Every image used on the website (brand standards §16). One row per image. Sourc
 | `source/Gemini_Generated_Image_ub0px3ub0px3ub0p.jpg` → `out/p4-p48a-*.jpg` | /goal-setting · 4.8 card 1 "One person" | Persona | AI, Gemini (Grant 2026-11-04) | Media plan §9 #5 | Grant, 2026-11-04 | A person on a park bench after a walk, typing a message on a phone. |
 | `source/Gemini_Generated_Image_thbh6tthbh6tthbh.jpg` → `out/p4-p48b-*.jpg` | /goal-setting · 4.8 card 2 "A small group" | Persona | AI, Gemini (Grant 2026-11-04) | Media plan §9 #6 | Grant, 2026-11-04 | Four people around a kitchen table with notebooks open and phones face down. |
 | `source/Gemini_Generated_Image_akk710akk710akk7.jpg` → `out/p4-p48c-*.jpg` | /goal-setting · 4.8 card 3 "A contribution, not a contest" | Persona | AI, Gemini (Grant 2026-11-04) | Media plan §9 #7 (Grant's variant: a group in a circle) | Grant, 2026-11-04 | A group meeting in a living room; one member holds a clipboard with a shared tracker of colored ticks. |
+| `source/Gemini_Generated_Image_vwuqhgvwuqhgvwuq.jpg` → `out/p7-hero-*.jpg` | /types-of-personal-goals · hero (goal tag "Move $100 to savings every Friday.") | Persona | AI, Gemini (Grant 2026-11-05) | Media plan §10 P7-1 | Pending Grant's review (placed 2026-11-05) | A person at a table marking dates on a paper month calendar. |
+| `source/Gemini_Generated_Image_405h5r405h5r405h.jpg` → `out/p7-p41-*.jpg` | /types-of-personal-goals · 4.1 Health | Persona | AI, Gemini (Grant 2026-11-05) | Media plan §10 P7-2 (Grant's variant: walking into a gym) | Pending Grant's review (placed 2026-11-05) | A person walking into a gym in the evening, carrying training shoes. |
+| `source/Gemini_Generated_Image_cxr6zncxr6zncxr6.jpg` → `out/p7-p43-*.jpg` | /types-of-personal-goals · 4.3 Career | Persona | AI, Gemini (Grant 2026-11-05) | Media plan §10 P7-3 | Pending Grant's review (placed 2026-11-05) | A desk with a printed project checklist and a date circled on a desk calendar. |
+| `source/Gemini_Generated_Image_wnil12wnil12wnil.jpg` → `out/p7-p45-*.jpg` | /types-of-personal-goals · 4.5 Learning and growth | Persona | AI, Gemini (Grant 2026-11-05) | Media plan §10 P7-4 | Pending Grant's review (placed 2026-11-05) | Hands writing a short summary on an index card. |
+| `source/Gemini_Generated_Image_y7vk3oy7vk3oy7vk.jpg` → `out/p7-p410a-*.jpg` | /types-of-personal-goals · 4.10 card 1 "On your own" | Persona | AI, Gemini (Grant 2026-11-05) | Media plan §10 P7-5 | Pending Grant's review (placed 2026-11-05) | A hand resting on a closed notebook, sofa and lamp behind. |
+| `source/Gemini_Generated_Image_s8iunes8iunes8iu.jpg` → `out/p7-p410b-*.jpg` | /types-of-personal-goals · 4.10 card 2 "With a partner" | Persona | AI, Gemini (Grant 2026-11-05) | Media plan §10 P7-6 (Grant's variant: a café table) | Pending Grant's review (placed 2026-11-05) | Two people at a café table, one showing the other a phone. |
+| `source/Gemini_Generated_Image_fzdo2nfzdo2nfzdo.jpg` → `out/p7-p410c-*.jpg` | /types-of-personal-goals · 4.10 card 3 "With a group" | Persona | AI, Gemini (Grant 2026-11-05) | Media plan §10 P7-7 | Pending Grant's review (placed 2026-11-05) | A group at a community-room table with notes and printed sheets. |
 
 **Checklist notes** (from `image-backgrounds-spec.md`):
 - None of the three shows an identifiable face. In 4.3 the near person is seen from behind; the far person is cropped below the eyes.
@@ -21,6 +28,15 @@ Every image used on the website (brand standards §16). One row per image. Sourc
 - **Batch 2 (2026-11-04) crops do the face check:** the park-bench source shows the man's profile, so both p48a crops start below his beard line; never use the uncropped source. The fridge tracker is dated "May 6 – May 12": fine at page size, regenerate if it's ever shown large.
 - **Card 3 is the group-circle image (`akk7`), Grant's pick.** Its background faces are out of focus, which Grant OK'd on 2026-11-04 (now in the imagery guideline). The man in profile at the front right is soft and cut by the frame. The clipboard header is garbled AI text ("GROUP ATTENDANCE TRACKER"), unreadable at card size; regenerate it if the image is ever shown large.
 - **Not used:** `Gemini_Generated_Image_qljmlgqljmlgqljm.jpg` (cork-board tracker, placed first, then swapped out). The source stays in `source/` as a spare.
+
+- **P7 batch (2026-11-05), placed in Figma `116:4994` with `place-p7-photos.js`:** the crops do the face and brand checks. Never use these sources uncropped:
+  - **Hero:** the source shows the writer's beard and mouth, so the crop starts below them.
+  - **4.3:** the crop cuts the cheek at the left edge.
+  - **4.5:** the source shows real book titles on the spines (*Good to Great*, *Start With Why*) and the writer's cheek. The crop keeps only the hands and the card. Its handwriting is half-legible AI text; regenerate if the page ever shows it large.
+  - **4.10 card 3:** the source has several in-focus faces, so the crop starts below them (table, papers and backs only).
+- **Open for Grant:**
+  - 4.10 card 1 shows a closed notebook and a whisky glass, not someone ticking a log. Regenerate it without alcohol?
+  - 4.10 card 2: the man on the right is in three-quarter profile from behind.
 
 Placement: `place-p4-photos.js` crops each image and generates the Scripter scripts. The Paper illustrations stay in Figma hidden, as fallbacks.
 - Homepage proof photo: the source image shows a **Peloton logo** on the bike screen. The crop starts below the logo, so the slot shows only the ride stats. Never use the uncropped source on the site; regenerate it without branding if a bigger view is needed.

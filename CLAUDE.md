@@ -75,7 +75,11 @@ v2.3.1 tweaks are applied: one go-deeper card per page, and one guide in band 9.
 - band 7 became module 4.10, using P4's image card grid
 - band 9 is a 3×1 grid (one item per column, like P4)
 
-Awaiting Grant's review, then the photo pass. Media is in pillar media plan §10 (with the v2.3.2 update):
+Then **v2.3.3, frame `116:4994`** at x 28025 (same day):
+- 4.4 uses P4's week calendar.
+- All seven Gemini photos are placed with `docs/brand/assets/site-imagery/place-p7-photos.js` (crops and face checks in the manifest).
+
+Awaiting Grant's review. Media is in pillar media plan §10 (with the v2.3.2 update and progress):
 - hero persona with a money goal tag
 - 6 module photos (Gemini prompts P7-1 to P7-7)
 - `week-board` product UI in 4.7 showing one goal per tracking mode
