@@ -1,4 +1,4 @@
-# Topical Pillar v2.1 to v2.3 Figma builds (P4 done; P7 v2.3 built)
+# Topical Pillar v2.1 to v2.3 Figma builds (P4 done; P7 v2.3.1 built)
 
 Rebuilds the /goal-setting and /types-of-personal-goals mockups to the v2.1 spec (skill B3a element mix, B7 media beats) on page `25:2` of the homepage Figma file (`l27WIk0vje0syTYWN2iZee`), next to the v1 frames. Copy matches the v2.1 module docs in Drive (P4 `1MoB4eE3J-arMEzZAaPdoT0uobOeUAJRpQfDn0vPYvX8`, P7 `1QnORvxjkE8DisWWOcB-QBM8u6PgFuAOoJFz9xsUn6xE`).
 
@@ -12,6 +12,26 @@ The Starter plan's MCP cap can run out after a single call, so run builds and ca
 4. Results and errors go to the browser console. Read them with `read_console_messages`, and have scripts `console.log(JSON.stringify(...))` so the output is readable.
 5. Comments: `fetch('/api/file/<fileKey>/comments')` in the Figma tab. Mapping pins to nodes is a read script in Scripter: compare `client_meta.node_offset` against `absoluteBoundingBox`.
 6. Screenshot checks: Chrome screenshots of the Figma canvas break often (`Cannot access a chrome-extension:// URL`). Save the MCP calls for `get_screenshot`.
+
+## P7 v2.3.1 (2026-11-05): Grant's 16 comments on 99:276
+Frame `108:1372` at x 22675 (12,262 px tall), with 18 mobile frames and 17 notes beside it; the comments stay pinned on `99:276`. Built from Claude in Chrome with the textarea paste route. New optional hooks in `build-v2.3.js`: `D.diagIntro` and `D.b7.cards`/`D.b7.foot` (P4 re-assembles unchanged). Checked: key points one line each, 15 linked text blocks, modules 4.1-4.9 in order, no text past the frame edge. Chrome canvas screenshots came back blurred or blank, so the visual check is still Grant's.
+
+| Comment on 99:276 | v2.3.1 change |
+|---|---|
+| Key points: one line each | Cut to five one-liners (all render on one line) |
+| Grid "floating there" | Intro sentence above the grid: how to read rows and columns, where each is explained |
+| Add faith/spirituality, with body content | Faith row in the grid, index item, new module 4.6 (5 rewrites), signal-table row in 4.9 |
+| Health: how it feeds every other pursuit (+ "ok to expand") | 4.1 lead expanded |
+| 4.1: only one supporting statement (the habit study) | Federal-guidelines line cut |
+| Money: wealth-builder vs. debt | 4.2 lead covers both; investing rewrite replaces eating out |
+| Career: promotion vs. stability | 4.3 lead covers both; "feel secure in my job" rewrite |
+| Relationships: single, married, friendship | 4.4 lead covers all three; dating rewrite replaces volunteering |
+| Learning: excellence, skill gap, something new | 4.5 lead names all three; faith moved out |
+| Explain "shape" so the table makes sense | 4.7 lead defines each shape before the table |
+| Expand on the why (short/long term; lead area) | 4.8 and 4.9 leads give the reason |
+| Body links to other pillars and 1-2 Field notes | /self-improvement (4.5), /life-planning + /goal-setting + 30-day sprint (4.8), /personal-life-audit (4.9), /personal-accountability + check-ins article (band 7) |
+| Band 7 out of place; tie goal types to self and partner/group accountability | Rebuilt: "Hold yourself to your goals, then let someone else ask" with three cards (on your own, with a partner, with a group) |
+| Band 9: always 3 items | 3 guides + 2 Field notes |
 
 ## P7 v2.3 (2026-11-04): next pillar, built straight on the approved template
 Grant picked /types-of-personal-goals as the pillar after P4. Instead of repeating the v2.1 → v2.2 → v2.3 comment rounds, `p7-types-of-personal-goals-v2.3.js` puts the v2.1 module-doc copy on the v2.3 build with every P4 lesson applied (list in the frame's change-log note and in media plan §10). Assemble with `node assemble-v2.2.js 2.3 p7-types-of-personal-goals` (the second argument is new; it defaults to P4). `build-v2.3.js` gained three backward-compatible hooks: `D.mDiagram` (page-specific mobile diagram; P4 still gets the loop), `MEL.stack` (mobile year-to-week figure), and `media.below` (product UI under a full-width table instead of a split). The P4 output re-assembles unchanged apart from those hooks. **Built 2026-11-04:** frame `99:276` at x 20000 (10,486 px tall), with 17 mobile frames and 16 notes beside it, on page `25:2`. It ran straight from Claude in Chrome: the script was pasted into a temporary textarea on the Figma tab (a real Ctrl+V, because `navigator.clipboard.readText()` hangs there) and run with `new Function`. Text check: all 15 headings present, no undefined/NaN strings, no overlap with other frames. Only the desktop hero has been eyeballed; the rest awaits Grant's review. The old v2.1 `p7-types-of-personal-goals.js` is superseded.
