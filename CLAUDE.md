@@ -88,8 +88,23 @@ Awaiting Grant's review. Media is in pillar media plan §10 (with the v2.3.2 upd
 
 Open:
 - Grant's OK on the 24 grid cells
-- Brandon to confirm report-only is a live tracking mode
-- `export-handoff.js` must handle prose modules (no `el`) before the P7 hand-off
+- **Report-only is live:** it is the app's percentage mode, which the week board labels "Tracked at the cycle report" (resolved 2026-11-05).
+
+**P7 publish package (2026-11-05):**
+- Generated from the page data by `notes/figma-pillar-v2/export-html.js` and `export-handoff-p7.js`, which share `p7-publish-config.js` (link map, media, SEO).
+- HTML mockup: `docs/marketing/pillars/types-of-personal-goals/index.html`, plus `dist/` single file and private artifact https://claude.ai/artifact/FxfarqNmhRtcdu9qeU1hkA.
+- Hand-off: `content/pillars/types-of-personal-goals.md`. SEO: `docs/marketing/types-of-personal-goals-pillar-seo-requirements-2026-11-05.md`.
+- Not sent: Brandon's P4 feedback (2026-11-05) applies to P7 too.
+
+**Brandon's P4 feedback (email, 2026-11-05):** pillars must match how AG groups actually work:
+- Goals are often set yearly (his group: January).
+- The repeatable commitment *is* "the goal"; a half marathon is the accomplishment.
+- Reporting follows the group's cycle (often monthly or 4-week), not a weekly review.
+- Track only as the commitment needs.
+- Members present commitments to the group, discuss, then decide; the group reads the reports.
+- Acknowledge *Atomic Habits*.
+
+He also replied on homepage v5 the same day.
 - **Website imagery: approved as brand standards §16** (`docs/brand/website-imagery-guidelines.md`). Three families: product / brand illustration / persona. AI persona photos come from Gemini, with no identifiable faces. The goal tag overlay is approved. **Figma workflow from here on (cap-free):** read comments with `fetch('/api/file/<key>/comments')` in Chrome; run every build and read script in Scripter, not `use_figma` (the README has the steps); spend MCP calls only on `get_screenshot` checks.
 
 ## Research knowledge base
