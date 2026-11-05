@@ -1,4 +1,4 @@
-# Topical Pillar v2.1 to v2.3 Figma builds (P4 done; P7 v2.3.1 built)
+# Topical Pillar v2.1 to v2.3 Figma builds (P4 done; P7 v2.3.2 built)
 
 Rebuilds the /goal-setting and /types-of-personal-goals mockups to the v2.1 spec (skill B3a element mix, B7 media beats) on page `25:2` of the homepage Figma file (`l27WIk0vje0syTYWN2iZee`), next to the v1 frames. Copy matches the v2.1 module docs in Drive (P4 `1MoB4eE3J-arMEzZAaPdoT0uobOeUAJRpQfDn0vPYvX8`, P7 `1QnORvxjkE8DisWWOcB-QBM8u6PgFuAOoJFz9xsUn6xE`).
 
@@ -12,6 +12,25 @@ The Starter plan's MCP cap can run out after a single call, so run builds and ca
 4. Results and errors go to the browser console. Read them with `read_console_messages`, and have scripts `console.log(JSON.stringify(...))` so the output is readable.
 5. Comments: `fetch('/api/file/<fileKey>/comments')` in the Figma tab. Mapping pins to nodes is a read script in Scripter: compare `client_meta.node_offset` against `absoluteBoundingBox`.
 6. Screenshot checks: Chrome screenshots of the Figma canvas break often (`Cannot access a chrome-extension:// URL`). Save the MCP calls for `get_screenshot`.
+
+## P7 v2.3.2 (2026-11-05): Grant's 6 comments on 108:1372
+Frame `113:3790` at x 25350 (12,013 px tall), with 18 mobile frames and 17 notes beside it. The comments stay pinned on `108:1372`.
+
+New in `build-v2.3.js` (P4 re-assembles unchanged apart from the mobile stat padding):
+- `m.body` (serif paragraphs) and an optional `m.el`, so a module can be prose only.
+- `D.b7` is optional.
+- The mobile stat callout has more padding.
+
+Checked: modules 4.1 to 4.10 in order, no band 7, three image cards at 286×343, no unresolved text, nothing past the frame edge.
+
+| Comment on 108:1372 | v2.3.2 change |
+|---|---|
+| "Emergency fund" not buffer | Grid cell, 4.2 rewrite and 4.9 copy changed |
+| Shapes, short/long term and lead area aren't "types" | Reframed as types: the definition sorts goals three ways (life area, shape, time frame). H2s: "Know the four goal shapes…", "Use short-term goals to reach long-term ones". 4.9 is "Where to start". Kept because "types of goals" searches expect short-term vs long-term and process vs outcome |
+| 4.9 table too light, use paragraphs | Signal table replaced by two paragraphs (`m.body`). The page now has 2 tables |
+| Band 7 UI unlike the rest; see example (P4 4.8) | Band 7 removed. Its content is now module 4.10, the same image card grid as P4's 4.8, with 3 photos (prompts P7-5 to P7-7 in media plan §10) |
+| Band 9: a 3×1 grid like the other pillar | Three columns with one item each: Plan weekly actions, Check in on progress, Guides |
+| Mobile answer band needs more padding | Stat callout padding 12/16/12/20 (shared template change) |
 
 ## P7 v2.3.1 (2026-11-05): Grant's 16 comments on 99:276
 Frame `108:1372` at x 22675 (12,262 px tall), with 18 mobile frames and 17 notes beside it; the comments stay pinned on `99:276`. Built from Claude in Chrome with the textarea paste route. New optional hooks in `build-v2.3.js`: `D.diagIntro` and `D.b7.cards`/`D.b7.foot` (P4 re-assembles unchanged). Checked: key points one line each, 15 linked text blocks, modules 4.1-4.9 in order, no text past the frame edge. Chrome canvas screenshots came back blurred or blank, so the visual check is still Grant's.

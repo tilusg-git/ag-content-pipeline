@@ -68,7 +68,23 @@ v2.3.1 tweaks are applied: one go-deeper card per page, and one guide in band 9.
 - **Grant's decisions:** AI images are OK where his own photos don't fit, and there are no photos of Brandon's group. The beat target is 3 to 6, set by page length. 4.7 uses the `week-board` scene. Never mention $0 or "optional" money stakes.
 - **Hero style frame `54:293`:** Grant picked **A Paper** (line ground, panel card).
 - **Revision 2 (Grant, 2026-11-03 evening):** Topical Pillars are persona-led. The hero is a persona photo with a goal tag. Product UI appears only where a module ties to the product, always with a product-context line (guideline §3a). Imagery is chosen per module. For P4: hero, 4.1, 4.3, 4.6 and 4.8 become Gemini/own photos (7 prompts in media plan §9). 4.7 keeps the `week-board` UI plus new product copy. 4.6 adds "or Accountability Guild". **All 7 photos are placed** on desktop and mobile (#1–3 on 2026-11-03 with goal tags; #4–7 on 2026-11-04 in 4.6 and the 4.8 cards), and the 4.6 checklist and 4.7 product-context copy changes are applied. The Paper illustrations stay hidden as fallbacks. New photos come from Drive "Website Images" (synced locally at G:My DriveWebsite Images); place them with `docs/brand/assets/site-imagery/place-p4-photos.js <batch>` and log them in its `manifest.md`. **Build hand-off (2026-11-04):** `content/pillars/goal-setting.md` (final copy, media slots, link map, retrofit list; generated from the v2.3 data by `notes/figma-pillar-v2/export-handoff.js`, never hand-edited; it supersedes the v2.1 Drive module doc) and `docs/marketing/goal-setting-pillar-seo-requirements-2026-11-04.md` (final SEO pass). Review email to Brandon drafted in Gmail.
-**Next pillar: P7 /types-of-personal-goals (Grant, 2026-11-04).** Built straight on the approved v2.3 template with all P4 lessons applied, skipping the comment rounds: `notes/figma-pillar-v2/p7-types-of-personal-goals-v2.3.js` (assembled `out/p7-types-of-personal-goals-v2.3.manual.js`; built 2026-11-04 as frame `99:276`; Grant left 16 comments, applied 2026-11-05 as **v2.3.1, frame `108:1372`** at x 22675: a new faith goal type (module 4.6), leads that name each reader's motivation, band 7 rebuilt around self/partner/group accountability, body links to pillars and Field notes, and band 9 always lists 3+ items; awaiting Grant's review). Media is in pillar media plan §10: hero persona with a money goal tag, 3 module photos (Gemini prompts P7-1 to P7-4), `week-board` product UI in 4.6 showing one goal per tracking mode. Open: Grant's OK on the 20 grid cells, Brandon to confirm report-only is a live tracking mode, a new renderer spec for 4.6.
+**Next pillar: P7 /types-of-personal-goals (Grant, 2026-11-04).** Built straight on the approved v2.3 template with all P4 lessons applied, skipping the comment rounds: `notes/figma-pillar-v2/p7-types-of-personal-goals-v2.3.js` (assembled `out/p7-types-of-personal-goals-v2.3.manual.js`; built 2026-11-04 as frame `99:276`; Grant left 16 comments, applied 2026-11-05 as v2.3.1, frame `108:1372` at x 22675: a new faith goal type (module 4.6), leads that name each reader's motivation, band 7 rebuilt around self/partner/group accountability, body links to pillars and Field notes, and band 9 always lists 3+ items). Grant left 6 more comments on `108:1372`, applied the same day as **v2.3.2, frame `113:3790`** at x 25350:
+- "emergency fund" replaces "buffer"
+- shapes and short/long term are reframed as goal types (by shape, by time frame)
+- 4.9 is now prose
+- band 7 became module 4.10, using P4's image card grid
+- band 9 is a 3×1 grid (one item per column, like P4)
+
+Awaiting Grant's review, then the photo pass. Media is in pillar media plan §10 (with the v2.3.2 update):
+- hero persona with a money goal tag
+- 6 module photos (Gemini prompts P7-1 to P7-7)
+- `week-board` product UI in 4.7 showing one goal per tracking mode
+
+Open:
+- Grant's OK on the 24 grid cells
+- Brandon to confirm report-only is a live tracking mode
+- a new renderer spec for 4.7
+- `export-handoff.js` must handle prose modules (no `el`) before the P7 hand-off
 - **Website imagery: approved as brand standards §16** (`docs/brand/website-imagery-guidelines.md`). Three families: product / brand illustration / persona. AI persona photos come from Gemini, with no identifiable faces. The goal tag overlay is approved. **Figma workflow from here on (cap-free):** read comments with `fetch('/api/file/<key>/comments')` in Chrome; run every build and read script in Scripter, not `use_figma` (the README has the steps); spend MCP calls only on `get_screenshot` checks.
 
 ## Research knowledge base

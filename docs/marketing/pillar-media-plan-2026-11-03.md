@@ -164,7 +164,21 @@ P7 skips the v2.1→v2.3 comment rounds: its data (`notes/figma-pillar-v2/p7-typ
 
 Text on the calendar or cards should stay unreadable; the goal tag carries the words. Log each pick in `docs/brand/assets/site-imagery/manifest.md`.
 
+### v2.3.2 update (2026-11-05): ten modules, seven photos
+Grant's comments on v2.3.1 renumbered the page:
+- Faith became module 4.6, so shapes moved to 4.7, short and long term to 4.8, and the lead area (now prose) to 4.9.
+- Band 7 became module **4.10, the same image card grid as P4's 4.8**, with three photos.
+- The slot table above still uses the v2.3 numbering. Current beats: hero, 4.1, 4.3, 4.5, the 4.7 product UI, the 4.8 native figure, and the 4.10 cards.
+
+| # | Slot (crop) | Ask Gemini for | Prompt |
+|---|---|---|---|
+| P7-5 | **4.10 card 1 · On your own** (286×180) | 16:9 | Close-up of a person at a desk in the evening, cropped at the shoulders, ticking a box on a one-page weekly sheet in an open notebook. A desk lamp is on, and a mug sits nearby. The focus is on the hand, the pen and the row of boxes. |
+| P7-6 | **4.10 card 2 · With a partner** (286×180) | 16:9 | Two people sitting side by side on a front porch step with coffee mugs, seen from behind. One holds a small open notebook toward the other and points at a row of ticks. Late afternoon light. |
+| P7-7 | **4.10 card 3 · With a group** (286×180) | 16:9 | Six people around a long folding table in a church fellowship hall or community room in the evening, shot from one end of the table so they are seen from behind and the side. Each has a notebook or printed sheet in front of them. One person reads from their sheet while the others listen. Background faces are softly out of focus. |
+
+P7-7 is deliberately not P4's group circle with a clipboard. Blurred background faces are fine; only in-focus faces break the rule.
+
 ### Open before the P7 media pass
 - **4.6 renderer spec:** write a `week-board` spec with one goal per mode (`daily`, `count`, `report`) using demo-clock tokens, then render desktop and mobile.
 - **Confirm with Brandon** that report-only ("tracked at the cycle report") is a live tracking mode before the 4.6 product line ships.
-- **Grant's OK** on the 20 area-by-shape grid cells (band 2), open since 2026-10-30.
+- **Grant's OK** on the 24 area-by-shape grid cells (band 2), open since 2026-10-30 (six rows since faith was added).
