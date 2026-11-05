@@ -41,8 +41,6 @@ What changed and what the build must carry is in `build-handoff.md`, which goes 
 
 ## Open questions for Grant
 
-- **`--ember-text: #B8401C`**: a darker ember for small text only, so it passes AA contrast. It needs your OK as a brand token.
-
 - **Mobile** is a first proposal: there's no Figma mobile homepage to match yet.
 
 ## Resolved

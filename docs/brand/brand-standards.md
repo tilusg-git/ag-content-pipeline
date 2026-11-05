@@ -103,6 +103,9 @@ Bone is the background, ink is for type, ember is the one warm beat. The two gre
 | Line | `#E5E2DA` | Hairlines, rules, borders |
 | Ember | `#D8512A` | The accent — one warm beat |
 | Ember Soft | `#F0A98A` | Soft accent tint |
+| Ember Text | `#B8401C` | Small ember text only (approved 2026-11-05) |
+
+**Ember Text (approved by Grant 2026-11-05):** Ember is 3.9:1 on bone, which fails WCAG AA for small text. Text in ember under 24 px (18.66 px bold) uses Ember Text, which is 5.3:1 on bone and 5.5:1 on panel. Large type, rules and fills stay Ember. Ember Text is a darker shade of the same accent, not a new color: it never appears as a fill, a rule or a large headline.
 
 **Scope note (added 2026-07-20):** the seven tokens are the *brand-surface* palette (marketing, social, icons). The app UI uses an extended functional palette — panelSoft, inkSofter, lineSoft/lineStrong, accentInk, and error/success/warning/info state pairs — implemented in `repo/public/ag-refresh/components.css` and canonicalized in `docs/brand/design-system/tokens.json`. State colors never appear on brand surfaces; both layers share the same seven core values, so there is no conflict.
 
