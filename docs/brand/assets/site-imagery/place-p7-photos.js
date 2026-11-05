@@ -43,10 +43,14 @@ async function cropFile(file, [x, y, w, h], ow, oh, out, png) {
 }
 // Batch 3 (2026-11-05): swap the image in already-placed photo frames. 4.10 card 1 "On your own" is now gktj (kitchen counter,
 // pencil ticking a weekly grid), replacing y7vk (closed notebook and a whisky glass).
-const SWAP = [{ key: 'p410a', src: G('gktj7xgktj7xgktj'), d: { node: '117:6228', w: 286, h: 180, crop: [500, 151, 2200, 1385] }, m: { node: '117:6229', w: 260, h: 150, crop: [350, 151, 2400, 1385] } }];
+const SWAP = [{ key: 'p410a', src: G('gktj7xgktj7xgktj'), d: { node: '117:6228', w: 286, h: 180, crop: [500, 151, 2200, 1385] }, m: { node: '117:6229', w: 260, h: 150, crop: [350, 151, 2400, 1385] } },
+  // Grant, 2026-11-05 (later): 4.5 is the regenerated single-novel photo (yqdz, prompt P7-4b); card 3 recropped higher so it ends at the
+  // table edge (no under-table view) and starts below the chins.
+  { key: 'p45', src: G('yqdz2yyqdz2yyqdz'), d: { node: '117:6226', w: 360, h: 320, crop: [280, 420, 1768, 1572] }, m: { node: '117:6227', w: 335, h: 210, crop: [0, 520, 2048, 1284] } },
+  { key: 'p410c', src: G('fzdo2nfzdo2nfzdo'), d: { node: '117:6232', w: 286, h: 180, crop: [820, 690, 874, 550] }, m: { node: '117:6233', w: 260, h: 150, crop: [780, 690, 953, 550] } }];
 if (process.argv[2] === '3') (async () => {
   let js = header;
-  for (const s of SWAP) for (const k of ['d', 'm']) {
+  for (const s of SWAP.filter(x => !process.argv[3] || process.argv[3].split(',').includes(x.key))) for (const k of ['d', 'm']) {
     const b = await cropFile('source/' + s.src, s[k].crop, s[k].w, s[k].h, path.join(dir, 'out', `p7-${s.key}-${k === 'd' ? 'desktop' : 'mobile'}.jpg`));
     js += `{ const n = await figma.getNodeByIdAsync('${s[k].node}'); n.fills = [{ type: 'IMAGE', imageHash: figma.createImage(figma.base64Decode('${b}')).hash, scaleMode: 'FILL' }]; out.${s.key}_${k} = n.id; }\n`;
   }
