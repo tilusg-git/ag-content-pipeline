@@ -1,5 +1,7 @@
 # Homepage v5: SEO requirements for the build
 
+This checklist goes out with `build-handoff.md` (Brandon, 2026-11-05: the SEO checklist stays with the build handoff).
+
 SEO pass on the v5 mockup (`index.html`), run 2026-11-03 against the SEO checklist (`.claude/skills/seo-review/checklist.md`) and the site profile for `www/`. It lists what the production homepage (`www/src/app/(site)/page.tsx` + the `homepage` global) must ship with when v5 replaces the current page. The PR still gets its own `seo-review` against the real diff.
 
 **Route:** `/` (changed). No new or removed routes, so no redirects.
@@ -24,7 +26,7 @@ SEO pass on the v5 mockup (`index.html`), run 2026-11-03 against the SEO checkli
   "No monthly fee" moved up from the hero note, which now reads only "Free to start, and set up in five minutes."
 - **Proof photo** (Step 2 phone screen): keep the alt text, set `width`/`height`, serve WebP through `next/image`, lazy-load it (it's below the fold), and give the file a descriptive name, e.g. `home-proof-spin-bike-workout.webp`.
 - **Keep the internal links the current homepage gives.** Today `/` links to `/faq`, `/startup-accountability-system` and `/blog/weekly-or-4-week-goal-reporting-template-for-founders-and-operators`; v5 drops all three. Add FAQ to the footer, and make sure the other two are still linked from `/resources`, `/blog` or a pillar, so they don't lose their only link from `/`.
-- **Product screens are HTML text, not images.** Keep them that way (it helps crawlers), but wrap each one in a `<figure>` with a short `aria-label` ("Sample group: week view") so the sample names and amounts read as illustration, not as claims.
+- **Product screens are HTML text, not images.** Keep them that way (it helps crawlers). The mockup now wraps each one in a `<figure>` with an `aria-label` and a visible "Illustrative · sample group" caption, so the sample names and amounts read as illustration, not as claims. Keep both in the build (see `build-handoff.md`).
 
 ## Recommended
 
@@ -48,4 +50,6 @@ SEO pass on the v5 mockup (`index.html`), run 2026-11-03 against the SEO checkli
 
 | Route | Title (chars) | Meta description (chars) | Canonical |
 |---|---|---|---|
-| `/` | Accountability Software for Groups \| Accountability Guild (57) | Accountability software for groups: set goals each cycle, track progress, report back before you meet. Missed goals pay your group’s pot. No monthly fee. (153) | `https://accountabilityguild.com` (unchanged) |
+| `/` | Accountability Software for Groups \| Accountability Guild (57) | Accountability software for groups: set goals, track progress your way, and report back before you meet. Missed goals pay your group’s pot. No monthly fee. (155) | `https://accountabilityguild.com` (unchanged) |
+
+The description was revised 2026-11-05 for Brandon's Step 2 positioning: the report is the core, and tracking in the app is optional ("track progress your way").

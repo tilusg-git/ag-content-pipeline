@@ -21,6 +21,7 @@
 :root{
   --bone:#FAFAF7; --panel:#FFFFFF; --ink:#0F0F0E; --ink-soft:#5C5C58; --line:#E5E2DA;
   --ember:#D8512A; --ember-soft:#F0A98A;
+  --ember-text:#B8401C; /* small ember text only: 5.3:1 on bone, 5.5:1 on panel (ember is 3.9:1) */
   --serif:"Newsreader",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
   --wrap:1200px; --gutter:120px;
 }
@@ -28,6 +29,11 @@
 html.clock-pending body{visibility:hidden}
 body{background:var(--bone);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.on-ink :focus-visible{outline-color:var(--bone)}
+.ex{margin:0;min-width:0}
+.ex .cap{margin-top:10px;font-style:italic;font-size:14px;color:var(--ink-soft)}
+.ex:has(.device) .cap{text-align:center}
 img{display:block;max-width:100%}
 em,.em{font-style:italic;color:var(--ember)}
 .wrap{max-width:calc(var(--wrap) + 2*var(--gutter));margin:0 auto;padding:0 var(--gutter)}
@@ -58,7 +64,8 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .nav{border-bottom:1px solid var(--line);background:var(--bone)}
 .nav .wrap{display:flex;align-items:center;height:83px;gap:40px}
 .nav-links{display:flex;gap:40px;font-family:var(--sans);font-weight:500;font-size:14px;color:var(--ink-soft);flex:1}
-.nav-login{font-family:var(--sans);font-weight:500;font-size:14px}
+.nav-login{font-family:var(--sans);font-weight:500;font-size:14px;white-space:nowrap}
+.nav-links a{white-space:nowrap}
 
 /* Hero */
 .hero .wrap{display:grid;grid-template-columns:560px 1fr;gap:80px;align-items:center;padding-top:110px;padding-bottom:120px}
@@ -85,7 +92,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .week-head .label div:last-child{font-size:15px;margin-top:2px}
 .dh{text-align:center;font-family:var(--mono);font-size:7px;letter-spacing:.08em;color:var(--ink-soft)}
 .dh b{display:block;font-family:var(--serif);font-weight:400;font-size:12px;letter-spacing:0;color:var(--ink);margin-top:2px}
-.dh.today,.dh.today b{color:var(--ember)}
+.dh.today,.dh.today b{color:var(--ember-text)}
 .goal-row{display:grid;grid-template-columns:1fr repeat(7,26px);gap:3px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
 .goal-row .t .mono{font-size:7.5px}
 .goal-row .t div:last-child{font-size:13px;line-height:1.3;margin-top:2px;padding-right:12px}
@@ -140,7 +147,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .who{margin-top:22px}
 .who-row{display:flex;align-items:center;gap:12px;padding:6px 0}
 .who-row b{font-family:var(--sans);font-weight:500;font-size:13px;flex:1}
-.who-row .mono{font-size:8px}.who-row .mono.ember{color:var(--ember)}
+.who-row .mono{font-size:8px}.who-row .mono.ember{color:var(--ember-text)}
 /* Step 2: a phone with the app's check-in sheet (mirrors MarkSheet in dashboard-today-marks.tsx) */
 .device{position:relative;width:290px;margin:0 auto;zoom:.8;padding:11px;border-radius:52px;background:#1C1C1A;
   box-shadow:inset 0 0 0 1.5px #3A3A37,inset 0 0 0 4px #121211,0 40px 70px -28px rgba(15,15,14,.45),0 12px 24px -12px rgba(15,15,14,.25)}
@@ -174,7 +181,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .home{position:absolute;bottom:7px;left:50%;width:104px;height:4px;margin-left:-52px;border-radius:2px;background:var(--ink);z-index:3}
 .report .tally{display:flex;gap:36px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
 .report .tally b{display:block;font-weight:400;font-size:19px;margin-top:2px}
-.report .tally .em{font-style:normal}
+.report .tally .em{font-style:normal;color:var(--ember-text)}
 .score{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
 .score span{font-family:var(--mono);font-size:9px;border:1px solid var(--line);padding:4px 7px}
 .score span.part{border:1.5px solid var(--ink)}
@@ -202,7 +209,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 .rsum{margin-top:6px;font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
 .rsum div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line)}
 .rsum .total{border-top:2px solid var(--ink);border-bottom:0;color:var(--ink);font-weight:600;padding-top:10px}
-.rsum .total span:last-child{font-family:var(--serif);font-style:italic;font-weight:400;font-size:20px;color:var(--ember)}
+.rsum .total span:last-child{font-family:var(--serif);font-style:italic;font-weight:400;font-size:20px;color:var(--ember-text)}
 .rfoot{font-style:italic;font-size:12px;color:var(--ink-soft);margin-top:10px}
 .faq > div{padding:20px 0;border-bottom:1px solid var(--line)}
 .faq > div:first-child{padding-top:0}
@@ -219,7 +226,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 
 /* 06 Founder */
 .founder .wrap > div{display:grid;grid-template-columns:420px 1fr;gap:80px;border-top:1px solid var(--ink);padding-top:64px}
-.founder h3{font-size:30px}
+.founder h2{font-size:30px}
 .founder .note{border-left:1.5px solid var(--ember);padding-left:26px}
 .founder .note p{font-size:18px;line-height:1.6;color:var(--ink-soft);margin-bottom:16px}
 .founder .note .mono{margin-top:8px}
@@ -256,6 +263,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 
 /* Sticky mobile CTA (approved pattern from the pillar template v2.3) */
 .sticky{display:none}
+.swipe-hint{display:none;font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
 
 /* ---------- Tablet ---------- */
 @media (max-width:1200px){
@@ -263,16 +271,36 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
   .hero .wrap{grid-template-columns:1fr;gap:56px}
   .money{grid-template-columns:1fr}
   .step{gap:56px}
+  /* founder note stacks early so the letter keeps a readable measure */
+  .founder .wrap > div{grid-template-columns:1fr;gap:28px}
+  .founder .note{max-width:720px}
+  /* audience and replaces rows go 2 × 2 */
+  .types{grid-template-columns:repeat(2,1fr)}
+  .replaces{grid-template-columns:repeat(2,1fr);row-gap:32px}
+  .replaces > div:nth-child(2n){border-right:0;margin-right:0}
+}
+@media (max-width:960px){
+  :root{--gutter:32px}
+  .nav .wrap,.nav-links{gap:20px}
+  .nav-links,.nav-login{font-size:13.5px}
+  .nav .btn-sm{padding:10px 14px;letter-spacing:.1em}
+  .step,.step.flip{grid-template-columns:1fr;gap:40px;margin-top:96px}
+  .step.flip .step-copy{order:0}
+  .step-copy{max-width:640px}
+  .step > .ex{max-width:560px}
+  .members{grid-template-columns:1fr 1fr}
+  .overview-top{flex-direction:column;align-items:flex-start}
 }
 
 /* ---------- Mobile (375 target) ---------- */
 @media (max-width:760px){
   :root{--gutter:20px}
   .nav .wrap{height:64px;gap:12px}
-  .nav-links,.nav-login{display:none}
+  .nav-links{display:none}
+  .nav-login{font-size:13px;padding:10px 2px;white-space:nowrap}
   .nav .lockup{flex:1}
-  .nav .lockup i{font-size:19px}.nav .lockup b{font-size:11px}
-  .nav .btn{padding:9px 12px;font-size:11px}
+  .nav .lockup i{font-size:18px}.nav .lockup b{font-size:10.5px;letter-spacing:.28em}
+  .nav .btn{padding:9px 10px;font-size:11px;letter-spacing:.08em}
   .h1{font-size:40px}
   .h2{font-size:31px}
   .lede{font-size:17px}
@@ -293,8 +321,11 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
   .count-row{grid-column:1 / -1;justify-content:flex-start}
   .sec{padding:72px 0}
   /* Swipe rows with a peek, as on the pillar template */
-  .swipe{display:grid;grid-auto-flow:column;grid-auto-columns:78%;grid-template-columns:none;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:calc(-1 * var(--gutter));padding-right:var(--gutter);scrollbar-width:none}
-  .swipe::-webkit-scrollbar{display:none}
+  .swipe{display:grid;grid-auto-flow:column;grid-auto-columns:78%;grid-template-columns:none;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:calc(-1 * var(--gutter));padding:0 var(--gutter) 14px 0;scrollbar-width:thin;scrollbar-color:var(--ink-soft) var(--line)}
+  .swipe::-webkit-scrollbar{height:4px}.swipe::-webkit-scrollbar-track{background:var(--line)}.swipe::-webkit-scrollbar-thumb{background:var(--ink-soft)}
+  .swipe:focus-visible{outline-offset:4px}
+  .swipe-hint{display:block;margin-top:10px}
+  html{scroll-padding-bottom:96px}
   .swipe > *{scroll-snap-align:start}
   .replaces{border-top:0;margin-top:32px}
   .replaces > div{border:1px solid var(--line);margin:0;padding:20px;background:var(--bone)}
@@ -335,8 +366,11 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
   .sticky span{font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
   .sticky span strong{color:var(--ink)}
   .sticky .btn{padding:11px 14px;font-size:11px}
+  .sticky{visibility:hidden;transition:transform .25s ease,visibility 0s linear .25s}
+  .sticky.show{visibility:visible;transition:transform .25s ease,visibility 0s}
 }
-@media (max-width:360px){.nav .lockup i{font-size:17px}.nav .lockup b{font-size:10px;letter-spacing:.24em}.nav .btn-sm{padding:9px 10px;letter-spacing:.04em}}
+@media (max-width:360px){.nav .wrap{gap:10px}.nav .lockup i{font-size:16px}.nav .lockup b{font-size:9.5px;letter-spacing:.22em}.nav .btn-sm{padding:9px 8px;letter-spacing:.03em}.nav-login{font-size:12.5px}}
+@media (max-width:340px){:root{--gutter:16px}.nav .lockup i{font-size:14.5px}.nav .lockup b{font-size:8.5px;letter-spacing:.2em}.nav-login{font-size:12px}}
 </style>
 </head>
 <body>
@@ -362,7 +396,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
       </div>
       <p class="hero-note"><i>Free to start, and set up in five minutes.</i></p>
     </div>
-    <div class="app" aria-label="Dashboard: this week's marks">
+    <figure class="ex" aria-label="Example app screen: one member’s week board"><div class="app">
       <div class="app-bar"><span></span><span></span><span></span></div>
       <div class="app-nav"><span class="lockup sm"><i>Accountability</i><b>GUILD</b></span><span class="on">Dashboard</span><span>Group</span><span>Reports</span></div>
       <div class="app-body">
@@ -381,7 +415,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
         </div>
         <div id="week-goals"></div>
       </div>
-    </div>
+    </div><figcaption class="cap">Illustrative · sample group</figcaption></figure>
   </div>
 </section>
 
@@ -390,11 +424,11 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h2">Replace the shared spreadsheet your group <em>forgets to update.</em></h2>
-      <p class="lede">Set up your group in five minutes. From then on, everyone’s goals, progress and reports live in one place, so each meeting starts with what actually happened.</p>
+      <p class="lede">Set up your group in five minutes. From then on, everyone’s goals and reports live in one place, so each meeting starts with what actually happened.</p>
     </div>
-    <div class="replaces swipe">
+    <div class="replaces swipe" data-label="What Accountability Guild replaces">
       <div><s>The shared spreadsheet</s><p>Everyone writes goals the whole group can see, support, and report against.</p></div>
-      <div><s>The group chat</s><p>Log progress in a few taps from your phone, whenever you sit down.</p></div>
+      <div><s>The group chat</s><p>Each member’s report arrives in one place before the meeting, not scattered through a thread.</p></div>
       <div><s>Chasing updates</s><p>Automatic notifications remind everyone when reports are due, on your group’s own schedule.</p></div>
       <div><s>The honor system</s><p>Every goal and report is visible to the group, and missed goals cost real money, paid into the group’s shared pot.</p></div>
     </div>
@@ -410,7 +444,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
       <a href="/how-it-works" class="btn btn-line">See how it works&nbsp; →</a>
     </div>
 
-    <div class="overview">
+    <figure class="ex" aria-label="Example app screen: a group’s cycle overview"><div class="overview">
       <div class="overview-top">
         <div>
           <div class="mono">Thursday night group · Cycle {{n:cycleNo}} · {{n:month}} · Meets in person</div>
@@ -430,7 +464,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
         <div class="member"><span class="av">D</span><div><b>Dan</b><small>3 goals</small></div></div>
         <div class="member"><span class="av">J</span><div><b>Josh</b><small>4 goals</small></div></div>
       </div>
-    </div>
+    </div><figcaption class="cap">Illustrative · sample group</figcaption></figure>
 
     <!-- Step 1 -->
     <div class="step">
@@ -438,7 +472,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
         <h3 class="h3">1. Everyone <em>sets their goals</em> for the cycle.</h3>
         <p class="body">The group’s organizer sets the schedule and the stakes, then invites the group. Everyone else joins from an email invite, writes their own measurable goals (called commitments), and agrees to the group’s schedule and stakes before the first cycle starts.</p>
       </div>
-      <div class="card">
+      <figure class="ex" aria-label="Example app screen: a new group’s setup, ready to sign"><div class="card">
         <div class="mono">Step 5 of 5 · Review and sign</div>
         <div class="ui-h ui-h4">The commitment, on paper.</div>
         <div class="kv">
@@ -455,16 +489,16 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
           <div class="who-row"><span class="av">S</span><b>Sam</b><span class="mono">Joined</span></div>
           <div class="who-row"><span class="av">K</span><b>Kate</b><span class="mono ember">Invited</span></div>
         </div>
-      </div>
+      </div><figcaption class="cap">Illustrative · sample group</figcaption></figure>
     </div>
 
     <!-- Step 2 -->
     <div class="step flip">
       <div class="step-copy">
-        <h3 class="h3">2. Track progress toward each goal <em>as you go.</em></h3>
-        <p class="body">Log progress in a few taps, each day or whenever it fits during the cycle: kept, missed, skipped, or a count toward your target. Add a note or a photo as proof. No more spreadsheets: when report day comes, your progress is already there.</p>
+        <h3 class="h3">2. Track progress <em>your way.</em></h3>
+        <p class="body">Use Accountability Guild to log progress, add notes or share photos, or keep using the tools you already like. When report day comes, bring it together in your report so the group knows what happened.</p>
       </div>
-      <figure class="device" aria-label="Phone: logging today's workout in the app">
+      <figure class="ex" aria-label="Example app screen: logging a workout on a phone"><div class="device">
         <div class="screen">
           <div class="island"></div>
           <div class="status"><span>9:41</span><span class="icons" aria-hidden="true"><svg width="17" height="11" viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx="1" fill="#0F0F0E"/><rect x="4.5" y="5" width="3" height="6" rx="1" fill="#0F0F0E"/><rect x="9" y="2.5" width="3" height="8.5" rx="1" fill="#0F0F0E"/><rect x="13.5" y="0" width="3" height="11" rx="1" fill="#0F0F0E"/></svg><svg width="15" height="11" viewBox="0 0 15 11"><path d="M7.5 2.2c2.2 0 4.2.9 5.7 2.3l1.1-1.1C12.5 1.6 10.1.6 7.5.6S2.5 1.6.7 3.4l1.1 1.1c1.5-1.4 3.5-2.3 5.7-2.3zm0 3.1c1.3 0 2.5.5 3.4 1.4l1.1-1.1C10.8 4.4 9.2 3.7 7.5 3.7S4.2 4.4 3 5.6l1.1 1.1c.9-.9 2.1-1.4 3.4-1.4zm0 3.1c-.6 0-1.1.2-1.4.6l1.4 1.4 1.4-1.4c-.4-.4-.8-.6-1.4-.6z" fill="#0F0F0E"/></svg><svg width="25" height="12" viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="#0F0F0E" opacity=".4"/><rect x="2" y="2" width="15" height="8" rx="1.6" fill="#0F0F0E"/><rect x="22.5" y="4" width="1.6" height="4" rx=".8" fill="#0F0F0E" opacity=".4"/></svg></span></div>
@@ -491,7 +525,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
           </div>
           <div class="home"></div>
         </div>
-      </figure>
+      </div><figcaption class="cap">Illustrative · sample group</figcaption></figure>
     </div>
 
     <!-- Step 3 -->
@@ -500,7 +534,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
         <h3 class="h3">3. Report back to the group <em>before you meet.</em></h3>
         <p class="body">A report is a short check-in at the end of each cycle: score each goal and write a few lines on what happened. Your whole group reads it, so they know where you’re stuck, can push you when you slip, and back you when you’re close.</p>
       </div>
-      <div class="card report">
+      <figure class="ex" aria-label="Example app screen: a member’s filed cycle report"><div class="card report">
         <div class="mono">Cycle {{n:prevNo}} · Marcus · Filed {{d:filed|md}} · $100 at-stake</div>
         <div class="ui-h ui-h4">Report <em>filed.</em></div>
         <div class="tally">
@@ -515,7 +549,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
         <div class="score">Journal six mornings a week<span class="part">50%</span></div>
         <div class="mono" style="margin-top:16px">The reflection · What happened</div>
         <div class="reflect">Training and reading held all month, and both proposals went out. Dinner rule slipped the week we traveled. Journaled three mornings out of six; moving it to the evening next cycle.</div>
-      </div>
+      </div><figcaption class="cap">Illustrative · sample group</figcaption></figure>
     </div>
 
     <!-- Step 4 -->
@@ -524,7 +558,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
         <h3 class="h3">4. Missed goals add money to the <em>group’s shared pot.</em></h3>
         <p class="body">Each member puts money on the line for the cycle, which adds one more layer of accountability. At the end, you’re charged for the goals you missed, and the money collects in the group’s kitty. The organizer pays it out for whatever the group agreed, and everyone sees every withdrawal.</p>
       </div>
-      <div class="card">
+      <figure class="ex" aria-label="Example app screen: the group kitty ledger"><div class="card">
         <div class="mono">The ledger · Thursday night group</div>
         <div class="ui-h ui-h4" style="margin-bottom:4px">Per-member contributions</div>
         <div class="sub-i">Member forfeits paid into the group kitty, most recent cycle first.</div>
@@ -536,7 +570,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
         <div class="entry"><span class="mono">{{d:start|md}}</span><div><b>Cycle {{n:prevNo}} close · Marcus</b><i>Forfeit $15.00, after fees</i></div><span class="amt">+$13.26</span></div>
         <div class="entry"><span class="mono">{{d:start|md}}</span><div><b>Cycle {{n:prevNo}} close · Dan</b><i>Forfeit $50.00, after fees</i></div><span class="amt">+$47.25</span></div>
         <div class="entry"><span class="mono">{{d:paidOut|md}}</span><div><b>Paid out by Brandon</b><i>Reason: cabin deposit for the January retreat</i></div><span class="amt">−$180.00</span></div>
-      </div>
+      </div><figcaption class="cap">Illustrative · sample group</figcaption></figure>
     </div>
   </div>
 </section>
@@ -587,10 +621,10 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
       <p class="lede" style="margin-top:24px">One organizer sets up the group and invites everyone. Everyone else joins from an email invite, writes their goals, and reports on the same schedule.</p>
       <a href="https://accountabilityguild.com/create-account" class="btn btn-ink">Start a group&nbsp; →</a>
     </div>
-    <div class="types swipe">
+    <div class="types swipe" data-label="Groups it’s for">
       <div><h3>Church small groups</h3><p>Members keep each other on track with prayer, Bible reading, and serving goals between weekly meetings.</p></div>
       <div><h3>Founder groups</h3><p>Founders who meet monthly to hit revenue, shipping, and hiring targets, with the numbers in front of the group.</p></div>
-      <div><h3>Workout crews</h3><p>Training partners committing to sessions, mileage, or nutrition targets, with every workout logged.</p></div>
+      <div><h3>Workout crews</h3><p>Training partners committing to sessions, mileage, or nutrition targets, and reporting back to each other every cycle.</p></div>
       <div><h3>Friends</h3><p>Friends chasing personal goals, like saving, reading, or health, who want a reason to follow through.</p></div>
     </div>
   </div>
@@ -600,7 +634,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
 <section class="founder">
   <div class="wrap">
     <div>
-      <h3 class="h3">Built for a first-Thursday group that still runs on it.</h3>
+      <h2 class="h3">Built for a first-Thursday group that still runs on it.</h2>
       <div class="note">
         <p>I built this because I’m part of a small group that meets on the first Thursday of each month, and the reporting rhythm should not depend on one person chasing everyone. The app I wanted didn’t exist: every habit tracker is built for one person, alone.</p>
         <p>Accountability Guild is a different shape. It assumes the room. It assumes you’ve already done the hard part: finding three or five or ten people who agreed to hold each other to something.</p>
@@ -631,7 +665,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em}
       <h2 class="h3" style="font-size:34px">Guides for running an accountability group.</h2>
       <a href="https://accountabilityguild.com/resources">ALL GUIDES&nbsp; →</a>
     </div>
-    <div class="notes swipe">
+    <div class="notes swipe" data-label="Guides">
       <a href="https://accountabilityguild.com/personal-accountability"><h3>Personal Accountability: How to Follow Through on Your Commitments</h3><i>14 min read</i></a>
       <a href="https://accountabilityguild.com/goal-setting"><h3>Goal Setting That Actually Sticks: A Practical Step-by-Step Guide</h3><i>14 min read</i></a>
       <a href="https://accountabilityguild.com/behavior-change"><h3>Behavior Change 101: Build Better Habits and Break Bad Ones</h3><i>7 min read</i></a>
@@ -958,9 +992,36 @@ window.addEventListener("error", function () { document.documentElement.classLis
     prog.insertAdjacentHTML("beforeend", '<span><i style="width:' + (done * 100).toFixed(1) + '%"></i></span>');
   }
 
-  // Mobile sticky CTA appears once the hero buttons scroll out of view.
+  // Mobile sticky CTA appears once the hero buttons scroll out of view, and
+  // steps aside when the final CTA or footer is on screen so it never covers
+  // them. While hidden it is also invisible to keyboard and screen readers.
   var heroCtas = document.querySelector(".hero-ctas"), sticky = document.getElementById("sticky");
-  new IntersectionObserver(function (e) { sticky.classList.toggle("show", !e[0].isIntersecting && e[0].boundingClientRect.top < 0); }).observe(heroCtas);
+  var pastHero = false, nearEnd = false;
+  function syncSticky() { sticky.classList.toggle("show", pastHero && !nearEnd); }
+  new IntersectionObserver(function (e) { pastHero = !e[0].isIntersecting && e[0].boundingClientRect.top < 0; syncSticky(); }).observe(heroCtas);
+  var seen = new Set(), endObs = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
+    nearEnd = seen.size > 0; syncSticky();
+  });
+  endObs.observe(document.querySelector(".cta")); endObs.observe(document.querySelector(".foot"));
+
+  // Swipe rows: when a row actually scrolls (mobile), make it a labelled,
+  // focusable region so arrow keys scroll it, and show a "swipe" hint.
+  document.querySelectorAll(".swipe").forEach(function (row) {
+    var hint = document.createElement("p");
+    hint.className = "swipe-hint"; hint.setAttribute("aria-hidden", "true");
+    hint.textContent = "Swipe or use arrow keys for more →";
+    row.insertAdjacentElement("afterend", hint);
+    function sync() {
+      var scrolls = row.scrollWidth > row.clientWidth + 1;
+      hint.hidden = !scrolls;
+      if (scrolls) {
+        row.setAttribute("tabindex", "0"); row.setAttribute("role", "region");
+        row.setAttribute("aria-label", row.dataset.label + " (scrolls sideways)");
+      } else { row.removeAttribute("tabindex"); row.removeAttribute("role"); row.removeAttribute("aria-label"); }
+    }
+    sync(); window.addEventListener("resize", sync);
+  });
 
   document.documentElement.classList.remove("clock-pending");
 })();

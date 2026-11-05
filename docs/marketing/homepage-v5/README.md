@@ -29,7 +29,19 @@ Then open http://localhost:4173/docs/marketing/homepage-v5/index.html. In the Cl
 
 `seo-requirements.md` lists what the production build must ship with: metadata, server-rendered dates, links, image handling, CMS follow-ups. The mockup already has the fixed heading outline and real links.
 
+## Round 2 (Brandon's feedback, 2026-11-05)
+
+Brandon's email asked for these changes, all applied here:
+- Step 2 is now "Track progress your way", and the rest of the tracking copy follows it.
+- "Log in" stays visible on mobile.
+- Tablet layouts are fixed.
+- Accessibility work is done.
+
+What changed and what the build must carry is in `build-handoff.md`, which goes out with `seo-requirements.md`. **From this round on, the HTML is ahead of Figma v5 (`77:2`).** The builder and release date are still open.
+
 ## Open questions for Grant
+
+- **`--ember-text: #B8401C`**: a darker ember for small text only, so it passes AA contrast. It needs your OK as a brand token.
 
 - **Mobile** is a first proposal: there's no Figma mobile homepage to match yet.
 
