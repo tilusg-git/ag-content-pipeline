@@ -27,6 +27,8 @@ Today's brand standards make typography and brand motifs the default and allow p
 | OG/social share images | Optional | **Default** | Optional | Must read at thumbnail size |
 
 ### 3a. Product placements carry one line of product context (Grant, 2026-11-03)
+Every product UI image also carries the caption "Illustrative: sample data in the Accountability Guild app." directly below it, on desktop and mobile (Grant, 2026-11-05).
+
 Wherever a page shows the product lightly (a product UI image, or an app mention in a list), add one or two plain sentences beside it. Say what Accountability Guild does at that step and why it's easier than the usual alternative: a notebook, a spreadsheet, or a group chat. Keep it factual and within shipped features, with no superlatives. Example (P4 4.7): *"Accountability Guild keeps this board for you. Each member marks the day in a tap, adds a note or photo when it matters, and the group sees it. When the review comes, the week is already filled in: no spreadsheet to rebuild, no notebook to find."*
 
 ### 3b. Choose imagery per module, by content (Grant, 2026-11-03)

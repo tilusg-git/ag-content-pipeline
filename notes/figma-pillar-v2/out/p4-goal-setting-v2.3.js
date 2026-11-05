@@ -105,6 +105,8 @@ mframe(b9,'Cluster index',f=>{h2m(f,D.b9h2);D.cluster.forEach(([g,ls])=>{const c
 // ---------- notes ----------
 let last=-1e9;const notes=[];
 function note(node,s){const y0=Math.max(node.absoluteBoundingBox.y,last+12);const [h,b]=s.split('|');const n=al(null,'H',{name:'Note · '+h,bg:'panel',stroke:'line'});page.appendChild(n);n.resize(320,10);n.layoutSizingVertical='HUG';const er=figma.createRectangle();er.fills=P('ember');n.appendChild(er);er.resize(3,10);er.layoutSizingVertical='FILL';const c=al(n,'V',{gap:6,pad:[12,14,12,14]});c.layoutSizingHorizontal='FILL';tx(c,h,{f:'mono',size:10,c:'ember',ls:0.14,w:'fill'});tx(c,b,{size:12,c:'soft',lh:1.45,w:'fill'});n.x=NX;n.y=y0;last=y0+n.height;notes.push(n.id);}
+// Template rule (Grant, 2026-11-05): every product UI view carries the 'Illustrative' caption directly below it, desktop and mobile.
+for(const r of [pg,...mob.map(m=>typeof m==="string"?figma.getNodeById(m):m)])r.findAll(n=>n.type==='INSTANCE'&&n.name==='Media · Product UI').forEach(i=>{const p=i.parent;const c=cap(p,'Illustrative: sample data in the Accountability Guild app.');c.name='Product UI caption · Illustrative';p.insertChild(p.children.indexOf(i)+1,c);});
 note(nav,D.notes.log);note(hero,D.notes.hero);note(b2,D.notes.b2);note(b3,D.notes.b3);for(const [f,m] of modFrames)note(f,m.note);if(b7)note(b7,D.notes.b7);note(cta,D.notes.cta);note(b8,D.notes.b8);note(b9,D.notes.b9);
 return {pg:pg.id,x:X,h:Math.round(pg.height),mobile:mob,notes:notes.length};}
 

@@ -105,6 +105,7 @@ Topical Pillars cover a whole topic, and the SERPs they compete in are full of g
 - **The page reads complete without it.** Media adds to a section; it never carries a point the text skips. A page can ship with empty slots.
 - **Alt text** for every image, describing what it shows (not "image of"). **Captions** where the image makes a claim. **Captions + transcript** for every video.
 - **Brand standards** (`docs/brand/brand-standards.md`): seven color tokens, no gradients, no off-token color. Product UI only where it shows something actually shipped (`docs/product/capability-ui-inventory.md`), labeled illustrative.
+- **Product UI caption (template rule, Grant 2026-11-05):** every product UI view carries "Illustrative: sample data in the Accountability Guild app." directly below it, desktop and mobile.
 - **Real or licensed only.** Own photography, AI-generated imagery approved per page, or CC/licensed with attribution, the same sourcing rule as the image-backed social cards (`docs/brand/image-backgrounds-spec.md`). No stock photos of fake "group members" presented as real.
 - **Schema:** `ImageObject` for the hero; `VideoObject` (name, description, thumbnail, duration, upload date, transcript) for any video.
 - **Performance:** lazy-load below-the-fold media; video uses a click-to-load facade, not autoplay.

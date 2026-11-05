@@ -188,6 +188,13 @@ All seven P7 photos are placed in **v2.3.3, frame `116:4994`**, on desktop and m
   - 4.10 card 1 (closed notebook, whisky glass) is a weak match for "check your own log".
   - **Done the same day:** 4.5 recropped to show the books (Grant), and the 4.7 product UI placed. It is a `week-board` render with one running goal per tracking mode: daily marks for the process goal, a 9/12 count for the open goal, and "tracked at the cycle report" for the outcome goal. Specs: `docs/brand/assets/product-views/examples/pillar-types-of-goals-shapes*.json`. Placed with `place-p7-photos.js 2`; the desktop slot is 900×524 and the mobile slot 335×344.
   - **Still to confirm:** Brandon, that report-only is a live tracking mode.
+  - **Later the same day:**
+    - 4.10 card 1 was swapped for Grant's regenerated kitchen-counter photo (P7-5b).
+    - Every product UI view now carries the "Illustrative: sample data in the Accountability Guild app." caption (template rule).
+    - 4.5 is to be regenerated with the prompt below.
+
+**P7-4b · 4.5 Learning and growth** (1:1; replaces P7-4. The note was about a novel, but the stack was business titles):
+> Close-up of hands writing a short summary on a lined index card that rests on top of a single closed hardcover novel with a plain, untitled cloth cover and a ribbon bookmark. The card has three or four lines of handwriting in blue pen, slightly out of focus so no words are readable. Wooden table, soft window light from the left, a mug at the edge of the frame. Overhead, slightly angled. No book titles, author names, or readable text on the cover or spine. 1:1. (Add the §9 style line.)
 
 ### Open before the P7 media pass
 - **4.6 renderer spec:** write a `week-board` spec with one goal per mode (`daily`, `count`, `report`) using demo-clock tokens, then render desktop and mobile.

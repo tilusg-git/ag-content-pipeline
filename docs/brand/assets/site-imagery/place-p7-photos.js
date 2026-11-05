@@ -41,7 +41,20 @@ async function cropFile(file, [x, y, w, h], ow, oh, out, png) {
   const c = createCanvas(ow * 2, oh * 2); c.getContext('2d').drawImage(img, x, y, w, h, 0, 0, ow * 2, oh * 2);
   const buf = png ? c.toBuffer('image/png') : c.toBuffer('image/jpeg', 84); fs.writeFileSync(out, buf); return buf.toString('base64');
 }
-if (process.argv[2] === '2') (async () => {
+// Batch 3 (2026-11-05): swap the image in already-placed photo frames. 4.10 card 1 "On your own" is now gktj (kitchen counter,
+// pencil ticking a weekly grid), replacing y7vk (closed notebook and a whisky glass).
+const SWAP = [{ key: 'p410a', src: G('gktj7xgktj7xgktj'), d: { node: '117:6228', w: 286, h: 180, crop: [500, 151, 2200, 1385] }, m: { node: '117:6229', w: 260, h: 150, crop: [350, 151, 2400, 1385] } }];
+if (process.argv[2] === '3') (async () => {
+  let js = header;
+  for (const s of SWAP) for (const k of ['d', 'm']) {
+    const b = await cropFile('source/' + s.src, s[k].crop, s[k].w, s[k].h, path.join(dir, 'out', `p7-${s.key}-${k === 'd' ? 'desktop' : 'mobile'}.jpg`));
+    js += `{ const n = await figma.getNodeByIdAsync('${s[k].node}'); n.fills = [{ type: 'IMAGE', imageHash: figma.createImage(figma.base64Decode('${b}')).hash, scaleMode: 'FILL' }]; out.${s.key}_${k} = n.id; }\n`;
+  }
+  js += `figma.notify('P7 swap placed'); return out;\n})()`;
+  fs.writeFileSync(path.join(os.tmpdir(), 'place-p7-batch3.js'), js);
+  console.log('batch3', Math.round(js.length / 1024), 'KB');
+})();
+else if (process.argv[2] === '2') (async () => {
   const o = n => path.join(dir, 'out', n);
   const p45d = await cropFile('source/' + B2.p45.src, B2.p45.d.crop, B2.p45.d.w, B2.p45.d.h, o('p7-p45-desktop.jpg'));
   const p45m = await cropFile('source/' + B2.p45.src, B2.p45.m.crop, B2.p45.m.w, B2.p45.m.h, o('p7-p45-mobile.jpg'));

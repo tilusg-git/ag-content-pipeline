@@ -78,6 +78,7 @@ v2.3.1 tweaks are applied: one go-deeper card per page, and one guide in band 9.
 Then **v2.3.3, frame `116:4994`** at x 28025 (same day):
 - 4.4 uses P4's week calendar.
 - All seven Gemini photos are placed with `docs/brand/assets/site-imagery/place-p7-photos.js` (crops and face checks in the manifest). 4.5 is recropped to show the books.
+- 4.10 card 1 swapped for the kitchen-counter photo; every product UI view now carries the "Illustrative" caption (template rule, in the skill and playbook); 4.5 awaits a regenerated single-novel photo (prompt P7-4b).
 - The 4.7 product UI is placed (`week-board`, one goal per tracking mode; specs `product-views/examples/pillar-types-of-goals-shapes*.json`).
 
 Awaiting Grant's review. Media is in pillar media plan §10 (with the v2.3.2 update and progress):
