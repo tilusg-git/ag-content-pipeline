@@ -2,6 +2,8 @@
 
 *2026-10-19. Draft for Brandon's review. Built from the homepage copy (`repo/src/app/page.tsx`), the group-create flow (`repo/src/components/guided-onboarding-flow.tsx`), the invite page (`repo/src/app/i/[code]/accept/page.tsx`), voice-and-tone, the glossary, and a review of every existing product screenshot (`docs/product/screenshots-2026-10-03/`, `docs/product/reddit-ad-screenshots-2026-10-03/`).*
 
+> **Brandon's review (email, 2026-11-06).** Happy with the direction. Applied here: his narration for scenes 6, 7 and 8 (§3), his decisions (§8) and his answers to the facts (§9.4). The key point: **tracking in AG is optional; reporting back to the group is the central act.** Carry that into footage and captions too. Production changes hands: Brandon's team built the demo area on **staging** (not local dev), and asks us to do the screen recordings, voiceover, edit and finished video, so §9's agent request is superseded for capture. Demo logins are in his email (not stored in this public repo). Production plan: `notes/inbox-plans/2026-11-06-explainer-video-production.md`.
+
 ## 1. Objective
 
 **One sentence:** In about 90 seconds, show a group organizer how one cycle works and where the money goes, so they create a group and invite their people.
@@ -24,7 +26,7 @@
 | Objection | Answered in |
 |---|---|
 | "We already have a group chat / spreadsheet." | Scenes 1-2 (promises fade between meetings) and 6 (a shared record instead of a thread) |
-| "My friends won't want to put a card on file." | Scene 4 (charged only for a miss; nothing commits until the first cycle opens) |
+| "My friends won't want to put a card on file." | Scene 4 (charged only for a miss). Don't say "nothing commits until the first cycle opens": cycles open on their calendar schedule while setup continues (Brandon, 2026-11-06). |
 | "Who keeps the money?" | Scenes 8-9 (the group's kitty, $1 platform fee) |
 | "Is this complicated to set up?" | Scene 3 (five short steps) |
 
@@ -45,9 +47,9 @@ Narration is second person, plain, no humor (voice-and-tone). About 200 words, w
 | 3 | 0:12-0:26 | Start by setting the standard. Name the group, pick a cadence, and set what's at-stake for a miss. Then invite the people you already meet with. | **Recording:** group-create steps 1, 2, 4, 5: "Name the group." → "How often, how much." (monthly, $20) → "Who else is in?" (type 3-4 emails) → "The contract, on paper." | ACT 1 · SET THE STANDARD |
 | 4 | 0:26-0:33 | Each member accepts, adds a card, and writes their own commitments. The card is only charged for a miss. | Invite page "You are in." → card authorization screen ("Where we will pull from if you miss"). Card field blurred or empty. | *Charged only for a miss.* |
 | 5 | 0:33-0:40 | Commitments are specific and measurable. Lift four times a week. Read twenty pages a night. | Goals list, slow scroll through the five pillar goals. | |
-| 6 | 0:40-0:54 | During the cycle, mark what you did, whenever you sit down. Add a note or a photo as proof. The whole group can see the cycle moving. | **Recording:** click cells on the "Mark the week" grid → open one day, type a note, attach a photo → cut to group overview "closes in N days." | ACT 2 · RUN THE CYCLE |
-| 7 | 0:54-1:07 | At the close, everyone files a short report. Score each commitment and write what happened. Misses are tallied, and forfeits are charged automatically. | **Recording:** submit-report with scores and "what happened" filled → reports archive, one closed cycle with most members filed. | ACT 3 · CLOSE WITH RECEIPTS |
-| 8 | 1:07-1:18 | Every forfeit goes into your group's kitty. The group decides what it's for: reward the top performers, fund a retreat, or give it to a shared charity. | Group overview ledger with a real kitty balance. Optional: three simple icons or text lines for the three disbursement options. | ACT 4 · POOL THE FORFEITS |
+| 6 | 0:40-0:54 | Track your own progress, in the app or somewhere else. We follow the honor system—you'll summarize how you did for the group at the end of the cycle. *(Brandon, 2026-11-06)* | Tracking in the app is shown as one option, not a requirement. **Recording:** click cells on the "Mark the week" grid → open one day, type a note, attach a photo → cut to group overview "closes in N days." | ACT 2 · RUN THE CYCLE |
+| 7 | 0:54-1:07 | At the end of the cycle, tell the group how you did. Score each commitment and write what happened. Unmet commitments—or a missing report—result in an automatic forfeit under your group's rules. *(Brandon, 2026-11-06)* | **Recording:** submit-report with scores and "what happened" filled → reports archive, one closed cycle with most members filed. | ACT 3 · CLOSE WITH RECEIPTS |
+| 8 | 1:07-1:18 | Forfeits go into your group's kitty, minus fees. Your group decides how to use it: reward top performers, fund a retreat, or give to charity. *(Brandon, 2026-11-06)* | Group overview per-member ledger with the real kitty balance ($21.67 on the staging demo). Kitty uses are agreed by the group; the product only offers owner cash-out, so never show automatic rewards or charity payouts. Optional: three simple icons or text lines for the three disbursement options. | ACT 4 · POOL THE FORFEITS |
 | 9 | 1:18-1:24 | There's no monthly fee. A one-dollar platform fee, plus card processing, applies only when a forfeit is charged. | Live `/pricing` card ("No monthly fee"). | No monthly fee · $1 per forfeit |
 | 10 | 1:24-1:30 | Set the standard. Run the cycle. Close with receipts. Start your group. | End card: logo, the three phrases, "Create your group" and accountabilityguild.com. | |
 
@@ -89,6 +91,7 @@ Either way, keep the values consistent across every scene:
 - **Group:** Thursday Night Group · peer mode · monthly · $20 at-stake · 1 hall pass
 - **Members (fictional):** Marcus (you, the organizer), Priya, Dave, Elena, Sam. Emails on `example.com`.
 - **Current cycle:** Cycle 4, October, about day 17. **Prior cycle:** Cycle 3, September, closed, most members kept, one partial, one forfeit, kitty balance after fees.
+- **As built on staging (Brandon, 2026-11-06), which replaces the two lines above:** Cycle 4 is November 2026; the completed cycle is October 2026 (dates follow the live app, no fixed clock). October: Marcus, Priya and Dave kept everything; Elena reported 75% and forfeited $5; Sam didn't file and forfeited $20. $25 in Stripe test captures, minus $1.33 processing and $2 platform fees = **$21.67 kitty**. Cash-outs are disabled. A separate report account has an unfiled October report for recording R13; an empty organizer account covers group creation; a fresh invite page (expires 2026-12-06) covers R07. No proof photo or hall pass was preloaded; a note is there, and we can add a non-personal illustrative photo. Keep the onboarding header out of frame (stale month/setup sentence), and note the archive shows a generic "Accountability Guild" label (the Group page shows the right name).
 - **Marcus's goals:** the five pillar goals already in the October captures.
 
 ## 6. Recording tips
@@ -112,6 +115,8 @@ Either way, keep the values consistent across every scene:
 2. Demo data: seeded demo group (engineering ticket) or manual run with test cards.
 3. Placement: under the hero, or inside the "how it works" section.
 4. Peer mode only, or a 5-second mention of owner-led mode for coaches. The draft is peer only, to stay focused on the organizer.
+
+**Brandon's answers (2026-11-06):** 1. AI voice, with captions. 2. Seeded demo group, built on staging by his team. 3. Placement is our call. 4. Peer groups only for this first video.
 
 ## 9. Asset request for Brandon's agents
 
@@ -171,6 +176,8 @@ Playwright's built-in `recordVideo` is too low quality for this (compressed WebM
   3. Can every member see the group's marks and reports in peer mode?
   4. Are the $1 platform fee and card processing taken out of the forfeit, or charged on top of it?
   5. "Nothing commits until the first cycle opens and every member has set up payment." Is that still accurate?
+
+  **Brandon's answers (2026-11-06):** 1. Yes: unmet commitments or a missing report result in an automatic forfeit. 2. Agreed by the group; the product provides owner cash-out, not automatic rewards or charity payouts. 3. Not answered. 4. Taken out of the forfeit (the $1 platform fee and the actual card-processing fee), not added on top. 5. No: cycles open on their calendar schedule while setup can continue. Don't repeat that assurance, and keep the onboarding header that says it out of frame.
 
 ### 9.5 Media and brand files
 
