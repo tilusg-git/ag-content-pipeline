@@ -115,6 +115,7 @@ Open:
 - **Photos:** the v2.3 photos were cloned in (4.8 reordered; hero tag "Goal · This year").
 - **4.7:** shows the `report-close` render (`product-views/examples/pillar-goal-setting-report.json`).
 - **4.1 photo:** placed 2026-11-05 (`5we8`, prompt P4-8).
+- **Sent to Brandon** 2026-11-05 as a reply in his feedback thread (commit `0f81101`, pushed). Waiting on his sign-off.
 - **Open:** the P7 pass, and the skill/playbook rule.
 - **Watch out:** the build froze the Chrome tab for 10+ minutes, but it had finished. Reopen the file in a fresh tab before assuming it failed.
 He also replied on homepage v5 the same day.
