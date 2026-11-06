@@ -101,7 +101,7 @@ Open:
 - Generated from the page data by `notes/figma-pillar-v2/export-html.js` and `export-handoff-p7.js`, which share `p7-publish-config.js` (link map, media, SEO).
 - HTML mockup: `docs/marketing/pillars/types-of-personal-goals/index.html`, plus `dist/` single file and private artifact https://claude.ai/artifact/FxfarqNmhRtcdu9qeU1hkA.
 - Hand-off: `content/pillars/types-of-personal-goals.md`. SEO: `docs/marketing/types-of-personal-goals-pillar-seo-requirements-2026-11-05.md`.
-- **Sent to Brandon 2026-11-05** (email), before the P4 feedback was applied. **His reply (2026-11-06):** apply the P4 feedback here too (planning model, tracking language, open-goal illustration; keep the faith examples and visuals), with a reference packet of anonymized planning examples attached (keep it out of this public repo). Plan and open questions: `notes/inbox-plans/2026-11-06-p7-types-of-goals-brandon-feedback.md`. Not started.
+- **Sent to Brandon 2026-11-05** (email), before the P4 feedback was applied. **His reply (2026-11-06):** apply the P4 feedback here too (planning model, tracking language, open-goal illustration; keep the faith examples and visuals), with a reference packet of anonymized planning examples attached (keep it out of this public repo). Plan and open questions: `notes/inbox-plans/2026-11-06-p7-types-of-goals-brandon-feedback.md`. Not started. Grant (2026-11-06): switch to his five life areas, patch P4 to match, packet saved in PersonalAG-reference (private).
 
 **Brandon's P4 feedback (email, 2026-11-05):** pillars must match how AG groups actually work:
 - Goals are often set yearly (his group: January).

@@ -86,3 +86,22 @@ under a private location (Drive, or a git-ignored folder) and paraphrase from it
 
 One full working session, maybe two: copy rewrite across ~10 modules, one renderer spec change,
 a Scripter Figma build, regenerated hand-off/HTML, and a P4 consistency check.
+
+## Grant's decisions (2026-11-06)
+
+1. **Life areas: switch to Brandon's five** (faith, family, fitness, work/business, personal). This
+   rebuilds the area-by-shape grid, the module order and the per-area modules, and changes the SEO
+   targets. Money, career and learning examples fold into work/business and personal. Re-check the
+   title, meta and H2 keywords in `docs/marketing/types-of-personal-goals-pillar-seo-requirements-2026-11-05.md`.
+2. **P4 matching pass: yes.** Check `p4-goal-setting-v2.4.js` against the new points (frequency vs
+   reporting cycle, 8-12 week focus as an option, "what would it take", deferring) and patch so
+   both guides match.
+3. **Reference packet saved privately** at
+   `C:\Users\tilus\Claude\Projects\Personal\AG-reference\2026-11-06-brandon-personal-goals-reference.{pdf,txt}`
+   (Drive-backed, not in this repo). Paraphrase from it, and don't copy its records into the repo.
+4. **Holding reply drafted** in Brandon's thread (Gmail draft, Grant sends).
+
+Vocabulary: use "accomplishment" (what you want) vs "commitment" (what you do), matching Brandon's
+wording and P4 v2.4. Check against `docs/brand/glossary.md` when drafting.
+
+Next step: copy draft for P7 v2.4 (+ P4 patch list) for Grant's approval, then the Scripter Figma build.
