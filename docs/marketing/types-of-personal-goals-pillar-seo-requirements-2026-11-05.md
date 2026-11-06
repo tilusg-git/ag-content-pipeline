@@ -1,6 +1,6 @@
 # /types-of-personal-goals (Topical Pillar P7): SEO requirements for the build
 
-This is the final SEO pass on the P7 design: Figma frame `116:4994`, v2.3.3 with photos and the product screen. **Updated 2026-11-06 for v2.4** (frame `135:412`, five life areas): new meta description, secondary terms and image names below; everything else stands. It was run on 2026-11-05 against the SEO checklist (`.claude/skills/seo-review/checklist.md`) and the site profile for `www/`. It follows the same format as the P4 pass (`goal-setting-pillar-seo-requirements-2026-11-04.md`).
+This is the final SEO pass on the P7 design: Figma frame `116:4994`, v2.3.3 with photos and the product screen. **Updated 2026-11-06 for v2.4** (frame `135:412`, five life areas): new meta description, secondary terms and image names below; everything else stands. **v2.4.1 (2026-11-07, frame `151:472`):** the work module H2 is now “Aim career and work goals at the effort you put in”, so “career goals” appears in an H2 again; its contents label is “Career and work goals” (anchor `#career-and-work-goals`). Title, meta description and alt text are unchanged. It was run on 2026-11-05 against the SEO checklist (`.claude/skills/seo-review/checklist.md`) and the site profile for `www/`. It follows the same format as the P4 pass (`goal-setting-pillar-seo-requirements-2026-11-04.md`).
 
 Three companion files:
 - **Copy, media slots and link map:** the hand-off, [`content/pillars/types-of-personal-goals.md`](../../content/pillars/types-of-personal-goals.md).
@@ -50,7 +50,7 @@ Three companion files:
   - Set `dateModified` to the real publish date of this version. The page shows no visible date, by design.
   - Use the hero photo as `image`.
   - Don't add `FAQPage`, `HowTo` or `ItemList`: the page has no visible Q&A, and the grid is a comparison, not a ranked list.
-- **Anchor IDs** from the contents labels, all 13 of them (the hand-off lists each one; for example `#health-goals`, `#goal-shapes`, `#where-to-start`). The topic index and the contents rail link to them with real `<a href="#…">` elements.
+- **Anchor IDs** from the contents labels, all 12 of them (the hand-off lists each one; for example `#faith-goals`, `#career-and-work-goals`, `#goal-shapes`). The topic index and the contents rail link to them with real `<a href="#…">` elements.
 - **Images.**
   - Use the 2× crops in `docs/brand/assets/site-imagery/out/` (`p7-*`), not the Gemini sources.
   - Serve WebP through `next/image` with explicit `width`/`height`, art-directed desktop and mobile crops, and the public file names in the hand-off (e.g. `types-of-personal-goals-hero-calendar.webp`).

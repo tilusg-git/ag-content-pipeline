@@ -3,7 +3,7 @@
 // map); photo slots come from MEDIA (docs/brand/assets/site-imagery/manifest.md), because the data file's media notes describe the
 // pre-photo layout for some slots.
 // Usage: node notes/figma-pillar-v2/export-handoff.js [data file] [out file]
-//   default: p4-goal-setting-v2.4.js (Brandon's model, Figma frame 121:380) → content/pillars/goal-setting.md (the build hand-off)
+//   default: p4-goal-setting-v2.4.js (Brandon's model; v2.4.2 is Figma frame 150:454) → content/pillars/goal-setting.md (the build hand-off)
 //   older version for comparison: node notes/figma-pillar-v2/export-handoff.js p4-goal-setting-v2.3.js <out file>
 const fs = require('fs');
 const path = require('path');
@@ -66,8 +66,8 @@ const isItem = x => /^(s*[-|]|d+. )/.test(x);
 const P = (...all) => { const l = all.filter(x => x !== ''); l.forEach((x, i) => { out.push(x); if (!(isItem(x) && isItem(l[i + 1] || ''))) out.push(''); }); };
 P('# /goal-setting · Topical Pillar P4 · publish hand-off',
   `*Generated ${new Date().toISOString().slice(0, 10)} by \`notes/figma-pillar-v2/export-handoff.js\` from \`${DATA}\`, the data the Figma frame was built from. Don't edit this file by hand; change the data and rerun.*`,
-  V24 ? '**Status:** v2.4, rewritten around Brandon’s 2026-11-05 feedback (change list: `docs/marketing/goal-setting-pillar-revision-2026-11-05.md`). Copy approved by Grant and built in Figma 2026-11-05. All photos placed. Waiting on Brandon’s review.' : '**Status:** layout signed off by Grant 2026-11-03 (v2.3); photos placed 2026-11-04. Waiting on Brandon’s review.',
-  V24 ? '**Design:** Figma frame `121:380` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=121-380' : '**Design:** Figma frame `48:292` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=48-292',
+  V24 ? '**Status:** v2.4.2, rewritten around Brandon’s 2026-11-05 feedback (change list: `docs/marketing/goal-setting-pillar-revision-2026-11-05.md`), plus v2.4.1 (a “what it takes” check in 4.1) and v2.4.2 (a short why paragraph under the lead in 4.1 to 4.8, from Grant’s Figma comments of 2026-11-06). Built in Figma 2026-11-07. All photos placed. Waiting on Brandon’s review of both guides together.' : '**Status:** layout signed off by Grant 2026-11-03 (v2.3); photos placed 2026-11-04. Waiting on Brandon’s review.',
+  V24 ? '**Design:** Figma frame `150:454` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=150-454 (v2.4 with Grant’s comments: `121:380`)' : '**Design:** Figma frame `48:292` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=48-292',
   '**Route:** `/goal-setting`, upgraded in place (same URL, no redirect). **SEO requirements:** [`docs/marketing/goal-setting-pillar-seo-requirements-2026-11-04.md`](../../docs/marketing/goal-setting-pillar-seo-requirements-2026-11-04.md).',
   '**Build blocker:** this page needs the Topical Pillar template (playbook §9 item 9): full-width bands, a sticky contents rail, typed module elements and media fields. Don’t publish it onto the current `ResourceArticle` template, which renders only headings and paragraphs.',
   '**Supersedes** the v2.1 module doc on Drive (“DRAFT v2.1 · Goal Setting module doc”). Since v2.1: plain-language H2s; a hero CTA; no visible updated date; the 4.6 go-deeper card removed (one per page); the band 7 founder paragraph removed; the soft CTA card replaced by the product CTA band; band 9 lists one neighbor guide; photos replace the illustrations; 4.6 checklist item 1 and the 4.7 product-context paragraph added.',
@@ -100,7 +100,7 @@ const el = (e, m) => {
   return L;
 };
 for (const m of D.mods) {
-  P(`## Module ${m.id} · ${m.h2}`, `*Anchor \`#${slug(m.toc)}\`, TOC label “${m.toc}”.*`, `**Lead:** ${m.lead}`, ...el(m.el, m));
+  P(`## Module ${m.id} · ${m.h2}`, `*Anchor \`#${slug(m.toc)}\`, TOC label “${m.toc}”.*`, `**Lead:** ${m.lead}`, ...(m.body || []).map(b => `**Why:** ${link(b)}`), ...el(m.el, m));
   m.ctx.forEach(c => P(link(c)));
   if (MEDIA[m.id]) P(media(m.id) + ` Layout: media split, photo ${m.media.side}.`);
   if (m.id === '4.7') P(`> **Media · product UI** (${m.media.side}, about ${V24 ? '360×380 desktop / 335×354 mobile' : '360×228 desktop / 335×272 mobile'}): the \`${V24 ? 'report-close' : 'week-board'}\` scene from \`docs/brand/assets/product-views/\`. Caption: “Illustrative: sample data in the Accountability Guild app.” Alt: “${m.media.alt}” Build it as HTML with server-rendered sample dates from the shared demo clock (like the homepage v5 screens), or as a PNG from \`render.js\` re-rendered on a schedule; a static PNG goes out of date.`);

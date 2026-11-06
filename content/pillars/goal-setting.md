@@ -2,9 +2,9 @@
 
 *Generated 2026-11-06 by `notes/figma-pillar-v2/export-handoff.js` from `p4-goal-setting-v2.4.js`, the data the Figma frame was built from. Don't edit this file by hand; change the data and rerun.*
 
-**Status:** v2.4, rewritten around Brandon’s 2026-11-05 feedback (change list: `docs/marketing/goal-setting-pillar-revision-2026-11-05.md`). Copy approved by Grant and built in Figma 2026-11-05. All photos placed. Waiting on Brandon’s review.
+**Status:** v2.4.2, rewritten around Brandon’s 2026-11-05 feedback (change list: `docs/marketing/goal-setting-pillar-revision-2026-11-05.md`), plus v2.4.1 (a “what it takes” check in 4.1) and v2.4.2 (a short why paragraph under the lead in 4.1 to 4.8, from Grant’s Figma comments of 2026-11-06). Built in Figma 2026-11-07. All photos placed. Waiting on Brandon’s review of both guides together.
 
-**Design:** Figma frame `121:380` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=121-380
+**Design:** Figma frame `150:454` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=150-454 (v2.4 with Grant’s comments: `121:380`)
 
 **Route:** `/goal-setting`, upgraded in place (same URL, no redirect). **SEO requirements:** [`docs/marketing/goal-setting-pillar-seo-requirements-2026-11-04.md`](../../docs/marketing/goal-setting-pillar-seo-requirements-2026-11-04.md).
 
@@ -67,6 +67,8 @@ No byline, no read time, no visible updated date (`dateModified` stays in the sc
 
 **Lead:** Many groups set goals once a year, often in January, then hold each other to them through every reporting cycle that follows.
 
+**Why:** A year gives a goal room to survive a slow month, a sick week, or a busy season. Setting goals together at the start also means the group knows what each person is working toward before the first report is due.
+
 *Checklist:*
 
 - ✓ It matters enough to you to keep at it for a full year.
@@ -85,6 +87,8 @@ An idea that fails these checks can wait for another year; deferring it is a cho
 
 **Lead:** A strong goal has two layers: the accomplishment you want, for direction, and the repeatable commitment you report on, which is the goal itself.
 
+**Why:** Report on the goal, not the accomplishment. You can’t decide when a race time or a promotion arrives, but you can decide whether you train or study today, so every report is about something you control.
+
 *Comparison table:*
 
 | Accomplishment you want | Goal you commit to | How you’d report it |
@@ -95,15 +99,17 @@ An idea that fails these checks can wait for another year; deferring it is a cho
 
 *Caption: Examples are illustrative.*
 
-Report on the goal, not the accomplishment. If you kept the goal and the result is slow, change the goal; if you didn’t, you already know what to fix. Process, outcome, learning, and open goals are compared in [the four goal shapes](/types-of-personal-goals).
+If you kept the goal and the result is slow, change the goal; if you didn’t, you know what to fix. Process, outcome, learning, and open goals are compared in [the four goal shapes](/types-of-personal-goals).
 
-Accountability Guild’s approach owes a lot to James Clear’s Atomic Habits, which argues that results come from the small behaviors you repeat. That is why the goal you commit to is the repeated behavior.
+Accountability Guild’s approach owes a lot to James Clear’s Atomic Habits, which argues that results come from the small behaviors you repeat.
 
 ## Module 4.3 · Write your goal so anyone could check it
 
 *Anchor `#make-it-checkable`, TOC label “Make it checkable”.*
 
 **Lead:** A goal is checkable when someone else could read your report at the end of the cycle and say done or not done without asking you anything.
+
+**Why:** A goal only you can judge gets judged generously in a bad week. When anyone could check it, the report is a fact rather than a feeling, and the group can help with the real problem instead of debating what counts.
 
 *Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
 
@@ -123,6 +129,8 @@ Most real goals fail this test. In [a study of 512 real goals](https://doi.org/1
 
 **Lead:** SMART (specific, measurable, achievable, relevant, time-bound) is a useful checklist, but being measured and tracked matters more than being highly specific.
 
+**Why:** Specific targets help once you know your starting point. Set too early, they are guesses that make a normal week look like a failure. Measuring and reporting what you actually did keeps the goal honest either way.
+
 *Comparison table:*
 
 | Goal style | What it looks like | Works best for |
@@ -140,6 +148,8 @@ In [a large review of physical activity programs](https://doi.org/10.1080/174371
 *Anchor `#give-it-a-rhythm`, TOC label “Give it a rhythm”.*
 
 **Lead:** Goals don’t all run on a weekly plan. Some happen daily, some a few times a week, some once a month, and some by a date.
+
+**Why:** A goal forced into the wrong rhythm either creates busywork, like logging a monthly date night every day, or gets lost, like a daily habit checked once a month. Matching the rhythm to the goal keeps your effort on the goal itself.
 
 *Figure: stacked bars that narrow as the rhythm gets more frequent; the last (daily) bar is ember. Built in HTML; this list is its text. Alt (if rendered as an image): “Four goal rhythms, from by-a-date to daily, each with how much tracking it needs.”*
 
@@ -160,6 +170,8 @@ Breaking a goal into weekly steps is one option, not a rule. Use it when it help
 
 **Lead:** Track in a way that fits the goal: a daily mark for a daily goal, a tally for a weekly one, nothing until the report for a monthly one.
 
+**Why:** Tracking is there to make the report accurate, not to become a second job. Track too little and you report from memory; track too much and the logging wears you out before the goal does.
+
 *Checklist:*
 
 - ✓ One place: a paper sheet, a spreadsheet, a note on your phone, or Accountability Guild if you track with a group.
@@ -177,6 +189,8 @@ In [a large review of 138 experiments](https://doi.org/10.1037/bul0000025), peop
 
 **Lead:** Your group agrees a reporting cycle, often monthly or every four weeks, and at each close every member reports on every goal.
 
+**Why:** A report on a known date turns an intention into a promise with a deadline. Asking the same questions every cycle makes each report easy to compare with the last one.
+
 *Steps (question as the step line, what it does as the detail):*
 
 1. **Did I keep each goal?** Reads straight from what you tracked, so the answer is a fact.
@@ -187,7 +201,7 @@ In [a large review of 138 experiments](https://doi.org/10.1037/bul0000025), peop
 
 4. **What should the group ask me about?** Points the group at the goal that needs the most help.
 
-Weekly suits some groups and quarterly suits others; pick the cycle that fits your goals and your meetings. The same questions every cycle make reports easy to compare.
+Weekly suits some groups and quarterly suits others; pick the cycle that fits your goals and your meetings.
 
 Accountability Guild keeps the record for you. Members log proof as they go, a mark, a note or a photo, and submit a short report at each cycle close. The group reads every report, so nobody rebuilds a spreadsheet before the meeting.
 
@@ -198,6 +212,8 @@ Accountability Guild keeps the record for you. Members log proof as they go, a m
 *Anchor `#present-to-your-group`, TOC label “Present to your group”.*
 
 **Lead:** Share your goals with the group, hear their questions and suggestions, then make the call yourself; the group reads your reports all year.
+
+**Why:** Saying a goal out loud tests it: the group spots a goal that is too vague or too big before the year starts. Deciding for yourself keeps it your goal, not one the group handed you.
 
 *Image card grid (mobile: swipe row with the next card peeking):*
 

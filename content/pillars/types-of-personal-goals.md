@@ -2,9 +2,9 @@
 
 *Generated 2026-11-06 by `notes/figma-pillar-v2/export-handoff-p7.js` from `p7-types-of-personal-goals-v2.4.js` (the data the Figma frame was built from) and `p7-publish-config.js`. Don't edit this file by hand; change the data and rerun.*
 
-**Status:** v2.4, rewritten around Brandon’s 2026-11-06 feedback to match /goal-setting v2.4 (change list: `docs/marketing/types-of-personal-goals-pillar-revision-2026-11-06.md`). Copy approved by Grant and built in Figma 2026-11-06 (frame 135:412); photos and the product screen placed. Waiting on Brandon’s review of both guides together.
+**Status:** v2.4, rewritten around Brandon’s 2026-11-06 feedback to match /goal-setting v2.4 (change list: `docs/marketing/types-of-personal-goals-pillar-revision-2026-11-06.md`). v2.4.1 (2026-11-07) adds Grant’s Figma comments of 2026-11-06: a short why paragraph under the lead in 4.1 to 4.5, 4.7 and 4.9; a fitness H2 without “training” and “race”; “Career and work goals”; 4.1 faith as a commitment → year-end accomplishment table; 4.2 family as a rhythm stack. Built in Figma 2026-11-07 (frame 151:472; v2.4 with Grant’s comments is 135:412); photos and the product screen placed. Waiting on Brandon’s review of both guides together.
 
-**Design:** Figma frame `135:412` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=135-412
+**Design:** Figma frame `151:472` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=151-472
 
 **HTML mockup:** [`docs/marketing/pillars/types-of-personal-goals/index.html`](../../docs/marketing/pillars/types-of-personal-goals/index.html) (desktop and mobile in one responsive page, generated from the same data; the `dist/` copy has every image inlined and opens from an email attachment).
 
@@ -26,7 +26,7 @@
 
 **Buttons:** “Start a group →” (`/create-account`, via `siteHref()`) and a “See how it works” text link (`/how-it-works`). On mobile, a compact sticky bar (“No monthly fee. Set up in five minutes.” + “Start a group →”) keeps the button in reach once the hero buttons scroll away.
 
-**On this page** (desktop: sticky contents rail; mobile: dropdown under the dek): What they are (`#what-they-are`) · At a glance (`#at-a-glance`) · Faith goals (`#faith-goals`) · Family goals (`#family-goals`) · Fitness goals (`#fitness-goals`) · Work goals (`#work-goals`) · Personal goals (`#personal-goals`) · Goal shapes (`#goal-shapes`) · Time frames (`#time-frames`) · Choose what to commit to (`#choose-what-to-commit-to`) · Goals and accountability (`#goals-and-accountability`) · Where next (`#where-next`)
+**On this page** (desktop: sticky contents rail; mobile: dropdown under the dek): What they are (`#what-they-are`) · At a glance (`#at-a-glance`) · Faith goals (`#faith-goals`) · Family goals (`#family-goals`) · Fitness goals (`#fitness-goals`) · Career and work goals (`#career-and-work-goals`) · Personal goals (`#personal-goals`) · Goal shapes (`#goal-shapes`) · Time frames (`#time-frames`) · Choose what to commit to (`#choose-what-to-commit-to`) · Goals and accountability (`#goals-and-accountability`) · Where next (`#where-next`)
 
 No byline, no read time, no visible updated date (`dateModified` stays in the schema).
 
@@ -69,7 +69,7 @@ No byline, no read time, no visible updated date (`dateModified` stays in the sc
 1. **Faith goals** (`#faith-goals`): Prayer, scripture, worship, service, and giving, written as practices you choose to keep.
 2. **Family goals** (`#family-goals`): Spouse, children, parents, and time together, often kept on a monthly rhythm.
 3. **Fitness goals** (`#fitness-goals`): Training, movement, sleep, and recovery, written as sessions you repeat each week.
-4. **Work goals** (`#work-goals`): Career, business, and money, written around the time and work you put in.
+4. **Career and work goals** (`#career-and-work-goals`): Your job, a business, and money, written around the time and effort you put in.
 5. **Personal goals** (`#personal-goals`): Friendships, reading, hobbies, and skills, measured by practice kept or things finished.
 6. **Goal shapes** (`#goal-shapes`): Process, outcome, learning, and open goals: what each one measures.
 7. **Time frames** (`#time-frames`): Long-term direction, this year’s commitments, and the cycle you report on.
@@ -82,15 +82,19 @@ No byline, no read time, no visible updated date (`dateModified` stays in the sc
 
 **Lead:** Faith goals cover prayer, scripture, worship, service, and giving, and they hold best as a practice you choose to keep on a set rhythm.
 
-*Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
+Faith shapes how many people treat their family, their work, and their time, so it often comes first on the list. A practice on a set rhythm keeps it from being the commitment a busy week squeezes out.
 
-- *Instead of “Read the Bible more”:* Read three pages of the Bible each day
-- *Instead of “Pray more”:* Pray with my spouse twice a week
-- *Instead of “Grow in my faith”:* Read for one hour a week from a book on faith
-- *Instead of “Get into the Gospels”:* Finish a 90-day Gospel devotional by Easter
-- *Instead of “Be more generous”:* Give a set amount on the first of every month
+*Comparison table (mobile: a swipe row, one card per row):*
 
-*Caption: Examples are illustrative.*
+| Commitment (daily or weekly) | By the end of the year |
+|---|---|
+| Read the Bible for 30 minutes a day | Read the whole Bible |
+| Read for one hour a week from a book on faith | Finish six books on faith |
+| Pray with my spouse twice a week | About a hundred evenings of prayer together |
+| Read a short devotional before my morning routine on weekdays | Finish a year-long devotional |
+| Give a set amount on the first of every month | Twelve gifts, and the year’s giving total I chose in January |
+
+*Caption: Each row pairs a commitment you report on with the accomplishment it builds toward. Examples are illustrative.*
 
 A checked box shows you kept the practice you chose. It doesn’t measure spiritual growth, and nobody should treat it that way. If you already meet with a small group or a prayer partner, that meeting is a natural place to report back.
 
@@ -100,24 +104,26 @@ A checked box shows you kept the practice you chose. It doesn’t measure spirit
 
 **Lead:** Family goals cover your spouse, children, parents, and time together, and many run monthly: a date, a one-on-one, a trip you plan together.
 
-*Comparison table (mobile: a swipe row, one card per row):*
+Family time slips quietly, because nobody sends a reminder when a date or a one-on-one doesn’t happen. A written commitment you report on gives that time a fixed place in the month, instead of whatever is left over.
 
-| Commitment | How often | What you’d say at a monthly report |
-|---|---|---|
-| Two dates with my spouse | Monthly | Both happened; the second moved back a week. |
-| Two hours planning our family trip | Monthly | Used the time to compare three options. No daily log. |
-| One hour with each child on music, sport, or reading | Weekly | Kept it three weeks out of four; travel took one. |
-| Phone off from arriving home to bedtime | Four weekdays | Kept it most nights; Thursdays slipped. |
+*Figure: rhythm stack, four bars that narrow as the commitment gets more frequent (monthly to weekdays); the last bar has an ember border. Built in HTML; this list is its text.*
+
+- Monthly: Two hours planning our family trip. Reported as “Compared three options; no daily log.”
+- Monthly: Two dates with my spouse. Reported as “Both happened; the second moved back a week.”
+- Weekly: One hour with each child on music, sport, or reading. Reported as “Kept it three weeks out of four.”
+- Weekdays: Phone off from arriving home to bedtime, four weekdays. Reported as “Most nights; Thursdays slipped.”
 
 *Caption: Examples are illustrative, not member reports.*
 
 A monthly commitment doesn’t need a daily grid. Two hours of trip planning a month is a complete commitment, and the report says what you did with them. The group reports on its own cycle, whatever each commitment’s rhythm.
 
-## Module 4.3 · Commit to the training, and let the race be the accomplishment
+## Module 4.3 · Commit to regular movement, and let the result be the accomplishment
 
 *Anchor `#fitness-goals`, contents label “Fitness goals”.*
 
-**Lead:** Fitness goals cover training, movement, sleep, and recovery; the commitment is usually the sessions, and the race or the lift is the accomplishment they serve.
+**Lead:** Fitness goals cover training, movement, sleep, and recovery; the commitment is usually the sessions, and a race, a lift, or a health number is the accomplishment they serve.
+
+Your health feeds every other area: the energy you bring to your family, your work, and your faith. A weight or a race time moves slowly and depends on more than effort, so commit to the sessions you control.
 
 *Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
 
@@ -132,11 +138,13 @@ A monthly commitment doesn’t need a daily grid. Two hours of trip planning a m
 
 Plan in months. In [a review of 20 studies on habit formation](https://doi.org/10.3390/healthcare12232488), a new health behavior typically took about 59 to 66 days to feel automatic. A training app, a calendar, or a notebook can help you recall the sessions; the report is where you account for them.
 
-## Module 4.4 · Aim work goals at the time and work you put in
+## Module 4.4 · Aim career and work goals at the effort you put in
 
-*Anchor `#work-goals`, contents label “Work goals”.*
+*Anchor `#career-and-work-goals`, contents label “Career and work goals”.*
 
-**Lead:** Work goals cover your career, a business, and money, and they hold best when they name the time or work you put in, not the title or the revenue.
+**Lead:** Career and work goals cover your job, a business, and money, and they hold best when they name the time or work you put in, not the title or revenue.
+
+Work already takes most of your week, so the risk is rarely too little effort; it is effort with no direction. Committing set time to what moves your career or business forward makes those hours count and leaves room for everything else.
 
 *Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
 
@@ -155,6 +163,8 @@ Time spent is a fair commitment when the result isn’t in your hands yet. A pro
 *Anchor `#personal-goals`, contents label “Personal goals”.*
 
 **Lead:** Personal goals cover friendships, reading, hobbies, and new skills, and you can measure them by the practice you keep or by something you finish.
+
+Personal goals are often the first to go when work and family get busy, yet they are what keep you rested and connected. A commitment of their own, however small, keeps them on the list when the year fills up.
 
 *Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
 
@@ -198,6 +208,8 @@ In Accountability Guild, how you track is a separate choice from the shape: dail
 
 **Lead:** Goals also sort by time frame: a direction you may hold for years, the commitments you choose for this year, and the cycle you report on.
 
+Without a long-term direction, this year’s commitments drift toward whatever feels urgent; without a reporting cycle, a good direction stays a wish. Separate clocks let each commitment run at its own pace and still report on one day.
+
 *Figure: “three clocks”, four stacked bars from long-term direction to when you report; the last bar has an ember border. Built in HTML.*
 
 - Long-term direction: Run a marathon one day.
@@ -207,9 +219,9 @@ In Accountability Guild, how you track is a separate choice from the shape: dail
 
 *Caption: Three clocks: what you want, how often you act, and when you report. Example is illustrative.*
 
-You don’t have to break every aim into quarters, months, and weeks. Some commitments repeat, some are a monthly action, and some are a dated deliverable. Many groups set the year’s commitments in January; a focused eight to twelve weeks works too when a season calls for it.
+You don’t have to break every aim into quarters, months, and weeks. Many groups set the year’s commitments in January; a focused eight to twelve weeks works too when a season calls for it.
 
-No long-term direction yet? [The life planning guide](/life-planning) starts there. Setting and reporting on the year’s goals is in [the goal setting guide](/goal-setting), and [a 30-day accountability sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint) shows one focused month.
+No long-term direction yet? [The life planning guide](/life-planning) starts there; [the goal setting guide](/goal-setting) covers the year’s goals, and [a 30-day accountability sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint) shows one focused month.
 
 ## Module 4.8 · Choose what to commit to, and what can wait
 
@@ -233,6 +245,8 @@ Not sure where things stand? [A personal life audit](/personal-life-audit) rates
 *Anchor `#goals-and-accountability`, contents label “Goals and accountability”.*
 
 **Lead:** Every commitment on this page ends in something you can report: a practice kept, a session done, an hour protected, a call made.
+
+A goal only you know about is easy to drop without a word. When someone expects a report, you plan around keeping the commitment, and a miss becomes a conversation about the cause instead of a quiet restart.
 
 *Image card grid, 3 across (mobile: swipe row with the next card peeking):*
 

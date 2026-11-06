@@ -16,7 +16,7 @@ const DOI = d => `https://doi.org/${d}`;
 module.exports = {
   loadData,
   slug: 'types-of-personal-goals',
-  figma: { node: '135:412', url: 'https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=135-412' },
+  figma: { node: '151:472', url: 'https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=151-472' },
   // Inline anchors ([[...]] in the data) → URL, with the KB entry each citation comes from.
   LINKS: {
     'a review of 27 sport studies': [DOI('10.1080/1750984X.2022.2116723'), 'KB #7 Williamson et al. 2022'],

@@ -15,12 +15,25 @@ Prose limits pass (script-checked):
 - dek: 156 characters
 - no em dashes in page copy
 
-Element mix: 3 table-type elements (the grid, 4.2 and 4.6), none adjacent. Element types: grid, rewrite list, table, stack figure, checklist and image card grid. Media beats:
+Element mix (v2.4.1): 3 table-type elements (the grid, 4.1 and 4.6), none adjacent; 4.2 is a stack figure (in v2.4 the tables were the grid, 4.2 and 4.6). Element types: grid, rewrite list, table, stack figure, checklist and image card grid. Media beats:
 - 4.3: photo
 - 4.5: photo
 - 4.6: product UI
 - 4.7: native figure
 - 4.9: image cards
+
+## v2.4.1: Grant's 10 Figma comments on 135:412 (2026-11-06/07)
+
+Built as Figma frame `151:472` (x 39500); `135:412` keeps the comments. Mapping and the open question: `notes/inbox-plans/2026-11-09-grant-figma-comments-p4-p7.md`.
+
+| Comment | v2.4.1 change |
+|---|---|
+| "Expand a bit more here to speak to the WHY" (7 comments: 4.1 faith, 4.2 family, 4.3 fitness, 4.4 work, 4.5 personal, 4.7 time frames, 4.9 accountability) | A short serif paragraph under each lead says why the area or step matters. 4.7's context was trimmed to stay within 100 words (the "some repeat, some monthly, some dated" sentence cut; the link sentence shortened, same link texts). |
+| 4.3: "training" and "race" are examples, not the broad message for a health/fitness goal | H2 "Commit to regular movement, and let the result be the accomplishment". Lead: "a race, a lift, or a health number is the accomplishment they serve". |
+| 4.4: adjust slightly for work/career/professional positioning | H2 "Aim career and work goals at the effort you put in". Lead opens "Career and work goals cover your job, a business, and money". Contents label and topic index "Career and work goals" (anchor `#career-and-work-goals`). The grid row stays "Work", the app's life area. |
+| 4.1: the rewrite list doesn't need a table, "unless maybe we integrate an annual goal with daily/weekly goals?" | **Grant's call (2026-11-07): option B, as a table, faith only.** 4.1 Faith is now a two-column table, “Commitment (daily or weekly)” / “By the end of the year”, five rows built on the module’s existing faith examples (Grant’s row: “Read the Bible for 30 minutes a day” → “Read the whole Bible”). Faith only; fitness, work and personal keep their rewrite lists and could follow if Grant wants. To keep the cap of 3 table-type elements with none adjacent (grid, 4.1, 4.6), the 4.2 Family table became the rhythm stack figure from P4 4.5, with the same four commitments, sorted monthly to weekdays. |
+
+Prose check after v2.4.1 (script): H2s at most 11 words, leads at most 30, module prose at most 99 words, no paragraph over 56 words, no em dashes in page copy. Meta description, title and image alt text are unchanged.
 
 ## Brandon's points, mapped to changes
 
@@ -67,198 +80,6 @@ Already covered in P4 v2.4: frequency vs reporting cycle (4.5, 4.7), optional tr
 
 ---
 
-## Full copy (generated from the v2.4 data)
+## Full copy
 
-**H1:** Types of personal goals: how to pick the ones worth keeping
-
-**Dek:** Personal goals sort by life area, by shape, and by time frame. Use them to choose what matters this year, then commit to an action someone else could check.
-
-**Hero:** Photo (Gemini P7-1): a person at a table marking a paper month calendar, face cropped out. Goal tag: “Family · This year / Plan our family trip, two hours a month.”
-
-## What are the types of personal goals?
-
-Personal goals are aims you set for your own life, not for an employer. They sort three ways: by life area (faith, family, fitness, work, and personal), by shape (process, outcome, learning, or open), and by time frame. Most people hold goals in several areas at once and choose them for the year.
-
-Key points:
-- Every goal has a life area, a shape, and a time frame.
-- Name the accomplishment you want, then commit to the action that gets you there.
-- A commitment can be daily, weekly, or monthly; your group still reports on its own cycle.
-- Track only as much as a commitment needs; the report at the cycle close is what counts.
-- Before you commit, count what it takes: time, money, help, and trade-offs with family.
-
-Stat: Goals about the actions you control improved performance far more than goals about the final result, in [a review of 27 sport studies]. (Williamson et al., 2022)
-
-Grid intro: Find an example on the grid. Pick the row for a life area, then the column for a goal shape. Each area has its own section below, and the four shapes follow them.
-
-| Area | Process | Outcome | Learning | Open |
-|---|---|---|---|---|
-| Faith | Read three pages of the Bible each day | Finish a 90-day Gospel devotional by Easter | Try two ways to keep a daily quiet time | Count the mornings I journal with scripture this month |
-| Family | Two dates with my spouse each month | Take a week-long family road trip this summer | Learn three ways to plan a trip on a budget | Count the evenings the phone stays off this month |
-| Fitness | Three strength sessions a week | Finish a marathon in the fall | Learn three strength lifts with good form | Record every run this month and see how far I get |
-| Work | One protected hour a week on a business idea | Ship one project this quarter | Learn to build a monthly budget | Count the prospect calls I make this month |
-| Personal | Call a friend or family member each week | Hold a ten-minute conversation in Spanish by March | Try three ways to practice piano | Count the books I finish this year |
-
-## The types of personal goals at a glance
-
-1. Faith goals. Prayer, scripture, worship, service, and giving, written as practices you choose to keep.
-2. Family goals. Spouse, children, parents, and time together, often kept on a monthly rhythm.
-3. Fitness goals. Training, movement, sleep, and recovery, written as sessions you repeat each week.
-4. Work goals. Career, business, and money, written around the time and work you put in.
-5. Personal goals. Friendships, reading, hobbies, and skills, measured by practice kept or things finished.
-6. Goal shapes. Process, outcome, learning, and open goals: what each one measures.
-7. Time frames. Long-term direction, this year’s commitments, and the cycle you report on.
-8. Choose what to commit to. Questions that turn a wish into a commitment, or a reason to wait.
-9. Goals and accountability. Holding yourself to a goal, and letting a partner or group ask.
-
-## 4.1 Build faith goals around practices you choose to keep
-
-*Faith goals cover prayer, scripture, worship, service, and giving, and they hold best as a practice you choose to keep on a set rhythm.*
-
-- Instead of “Read the Bible more”: Read three pages of the Bible each day
-- Instead of “Pray more”: Pray with my spouse twice a week
-- Instead of “Grow in my faith”: Read for one hour a week from a book on faith
-- Instead of “Get into the Gospels”: Finish a 90-day Gospel devotional by Easter
-- Instead of “Be more generous”: Give a set amount on the first of every month
-
-Caption: Examples are illustrative.
-
-A checked box shows you kept the practice you chose. It doesn’t measure spiritual growth, and nobody should treat it that way. If you already meet with a small group or a prayer partner, that meeting is a natural place to report back.
-
-## 4.2 Give family goals the rhythm they need, often monthly
-
-*Family goals cover your spouse, children, parents, and time together, and many run monthly: a date, a one-on-one, a trip you plan together.*
-
-| Commitment | How often | What you’d say at a monthly report |
-|---|---|---|
-| Two dates with my spouse | Monthly | Both happened; the second moved back a week. |
-| Two hours planning our family trip | Monthly | Used the time to compare three options. No daily log. |
-| One hour with each child on music, sport, or reading | Weekly | Kept it three weeks out of four; travel took one. |
-| Phone off from arriving home to bedtime | Four weekdays | Kept it most nights; Thursdays slipped. |
-
-Caption: Examples are illustrative, not member reports.
-
-A monthly commitment doesn’t need a daily grid. Two hours of trip planning a month is a complete commitment, and the report says what you did with them. The group reports on its own cycle, whatever each commitment’s rhythm.
-
-## 4.3 Commit to the training, and let the race be the accomplishment
-
-*Fitness goals cover training, movement, sleep, and recovery; the commitment is usually the sessions, and the race or the lift is the accomplishment they serve.*
-
-- Instead of “Get in shape”: Three strength sessions a week
-- Instead of “Run a marathon”: Follow my training plan’s sessions every week
-- Instead of “Be more flexible”: Stretch for 15 minutes on four days a week
-- Instead of “Sleep more”: Lights off by 11 p.m. on weeknights
-
-Caption: Examples are illustrative.
-
-Media: Photo (Gemini P7-2): a person seen from behind walking into a gym in the evening, carrying training shoes.
-
-Plan in months. In [a review of 20 studies on habit formation], a new health behavior typically took about 59 to 66 days to feel automatic. A training app, a calendar, or a notebook can help you recall the sessions; the report is where you account for them.
-
-## 4.4 Aim work goals at the time and work you put in
-
-*Work goals cover your career, a business, and money, and they hold best when they name the time or work you put in, not the title or the revenue.*
-
-- Instead of “Grow the business”: Protect one hour a week to develop a product idea
-- Instead of “Get more customers”: Make 45 calls to prospective customers each month
-- Instead of “Get promoted”: Ship one project this quarter that I can show in my review
-- Instead of “Run things better”: Put one operational improvement in place each month
-- Instead of “Save more”: Move $100 into savings every Friday
-
-Caption: Examples are illustrative.
-
-Time spent is a fair commitment when the result isn’t in your hands yet. A promotion or a sale depends partly on other people; the hour and the calls don’t. To see where your money stands first, take the Consumer Financial Protection Bureau’s [free 10-question financial well-being check].
-
-## 4.5 Keep personal goals as practice you enjoy or things you finish
-
-*Personal goals cover friendships, reading, hobbies, and new skills, and you can measure them by the practice you keep or by something you finish.*
-
-- Instead of “Stay in touch”: Call one friend or family member each week and see one in person each month
-- Instead of “Read more”: Read for 30 minutes a day
-- Instead of “Learn piano”: Practice for 20 minutes on three days a week
-- Instead of “Learn Spanish”: Hold a ten-minute conversation in Spanish by March
-
-Caption: Examples are illustrative.
-
-Media: Photo (Gemini P7-4b): hands writing a short summary on an index card resting on a finished novel.
-
-Practice time is a real commitment; not every hobby needs an output target. Turn character goals into a behavior: “be more grateful” becomes “write down three things each night.” More on making growth stick is in [the self-improvement guide].
-
-## 4.6 Know the four goal shapes: process, outcome, learning, and open
-
-*Every goal also has a shape, which decides what you measure: the actions you take, a result by a date, a skill you are learning, or how far you get.*
-
-| Goal shape | What it targets | Example | Works best when |
-|---|---|---|---|
-| Process | Actions you control | Three strength sessions a week | You know what to do and need to do it consistently |
-| Outcome | A result by a date | Finish a marathon in the fall | You want a direction to aim the process at |
-| Learning | A skill or strategy to master | Learn three ways to pace a long run | You don’t yet have the skills the goal needs |
-| Open | Seeing how far you get, with no target | Record every run this month and see how far you get | You are new to it or returning after a long break |
-
-Caption: Examples are illustrative.
-
-Media: Real app screen (product-view renderer, week-board scene, spec pillar-types-of-goals-shapes-v2.4): one member’s week with three goals tracked three ways: daily marks (faith reading), a running tally with no target (runs), and tracked at the cycle report (family trip planning).
-
-In a group, the commitment you report on is usually a process goal, and an outcome goal is often the accomplishment it serves. Use [learning goals when you lack the skills] a task needs, and [open goals] when you are starting out: [early evidence from a small study] found beginners did better and enjoyed them more.
-
-In Accountability Guild, how you track is a separate choice from the shape: daily marks, a running tally with no target, or nothing until the cycle report. Every member reports at the cycle close either way.
-
-## 4.7 Connect your long-term direction to this year’s commitments
-
-*Goals also sort by time frame: a direction you may hold for years, the commitments you choose for this year, and the cycle you report on.*
-
-- Long-term direction: Run a marathon one day.
-- This year’s commitment: Follow my training plan, four runs a week.
-- How often it happens: Four times a week, on the days the plan sets.
-- When you report: At each monthly cycle close, with every other goal.
-
-Caption: Three clocks: what you want, how often you act, and when you report. Example is illustrative.
-
-You don’t have to break every aim into quarters, months, and weeks. Some commitments repeat, some are a monthly action, and some are a dated deliverable. Many groups set the year’s commitments in January; a focused eight to twelve weeks works too when a season calls for it.
-
-No long-term direction yet? [The life planning guide] starts there. Setting and reporting on the year’s goals is in [the goal setting guide], and [a 30-day accountability sprint] shows one focused month.
-
-## 4.8 Choose what to commit to, and what can wait
-
-*Not everyone starts knowing what they want, so work from narrow questions, then count what each idea would take before you commit to it.*
-
-- What do I want to build, experience, learn, or keep going this year?
-- What action am I willing to commit to and report on?
-- What would it take: time, money, practice, help, and trade-offs with family?
-- What would I tell my group at the next report?
-
-An idea that fails the third question can wait. Deferring a bucket-list trip or a second business is a choice, not a failure. You can hold commitments in several areas at once; in a demanding season, say which one gets less.
-
-Not sure where things stand? [A personal life audit] rates each area first. Then write down how you will report on each one: in [a study of 512 real goals], fewer than a quarter said how success would be measured.
-
-## 4.9 Hold yourself to your goals, then let someone else ask
-
-*Every commitment on this page ends in something you can report: a practice kept, a session done, an hour protected, a call made.*
-
-- On your own. Check your log, calendar, or notebook on a set day, and write yourself a short report each cycle.
-- With a partner. One person asks on a set day. A spouse, friend, or prayer partner already knows the context.
-- With a group. Members present their goals, hear the group out, decide for themselves, and report on the same cycle.
-
-In [a large review of 141 studies], goal setting worked better when goals were public and set as a group. More on following through on your own is in [the personal accountability guide]. To run the check-in well, see [how to run accountability check-ins that change behavior].
-
-## Product CTA band
-
-**Pick your goals, then keep them with a group that reads the reports.** Each member commits to goals anyone could check, tracks as much as helps, and reports at each cycle close. The group sees who followed through.
-
-1. Present your goals to the group
-2. Track as much as helps
-3. Report at each cycle close
-
-No monthly fee · $1 platform fee per forfeit charged
-
-## Keep going: choose your next step
-
-- Ready to set the year’s goals · Goal setting · How to set goals and report on them.
-- Not sure where things stand · Personal life audit · See where each area stands first.
-- Planning the next few years · Life planning · From values to a long-term direction.
-- Keeping goals with a group · How it works · See how a group runs it.
-
-## Related guides
-
-- Report each cycle: How to run accountability check-ins that actually change behavior
-- Try a focused month: From good intentions to shipped work: a 30-day accountability sprint
-- Guides: Goal setting: how to set goals you will actually keep
+The full v2.4.1 copy is in the generated hand-off, `content/pillars/types-of-personal-goals.md` (built from `notes/figma-pillar-v2/p7-types-of-personal-goals-v2.4.js`). The v2.4 copy that used to be pasted here is in git history (commit `86ed565`).

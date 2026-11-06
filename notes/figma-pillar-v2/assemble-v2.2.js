@@ -4,9 +4,10 @@ const path = require('path');
 const dir = __dirname;
 const V = process.argv[2] || '2.2';
 const PAGE = process.argv[3] || 'p4-goal-setting'; // data file prefix, e.g. p7-types-of-personal-goals
+const BUILD = process.argv[4] || V; // build script version when it differs from the data version: v2.4 data runs on build-v2.3.js (`node assemble-v2.2.js 2.4 p7-types-of-personal-goals 2.3`)
 const lib = fs.readFileSync(path.join(dir, 'lib.js'), 'utf8').split('// ---------- page build ----------')[0];
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
-const code = [lib, fs.readFileSync(path.join(dir, `build-v${V}.js`), 'utf8'), fs.readFileSync(path.join(dir, `${PAGE}-v${V}.js`), 'utf8')].join('\n');
+const code = [lib, fs.readFileSync(path.join(dir, `build-v${BUILD}.js`), 'utf8'), fs.readFileSync(path.join(dir, `${PAGE}-v${V}.js`), 'utf8')].join('\n');
 new AsyncFunction('figma', code); // throws on a syntax error
 fs.writeFileSync(path.join(dir, 'out', `${PAGE}-v${V}.js`), code);
 console.log(`${PAGE}-v${V}.js`, code.length, 'chars', code.length > 50000 ? 'OVER use_figma 50k limit' : 'ok');

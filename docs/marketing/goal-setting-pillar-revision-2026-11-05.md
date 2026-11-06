@@ -8,7 +8,9 @@ Brandon's email (2026-11-05) asked for the guide to be rebuilt around how Accoun
 - **4.1 photo:** placed 2026-11-05 (item 2).
 - **Still open:** items 4 to 8.
 
-Prose limits pass (script-checked): definition 50 words; key points 14 to 16 words; H2s at most 12 words; leads at most 29 words; module prose at most 76 words; no paragraph over 50 words; no em dashes.
+**v2.4.2 (2026-11-06/07, Grant's 8 Figma comments on `121:380`):** every comment asked to "speak to the WHY" in modules 4.1 to 4.8. Each now has a short serif paragraph under the lead saying why the step matters (on the page between the lead and the element; in the hand-off as a "Why:" line). To stay within 100 words of module prose: 4.2 drops "Report on the goal, not the accomplishment" from the context (it opens the why paragraph now) and the second Atomic Habits sentence; 4.7's "same questions every cycle" line moved into the why paragraph. No new research claims. Built as Figma frame `150:454` (x 36350); `121:380` keeps the comments. Mapping: `notes/inbox-plans/2026-11-09-grant-figma-comments-p4-p7.md`. Prose check after v2.4.2: H2s at most 12 words, leads at most 29, module prose at most 99 words, no paragraph over 50 words, no em dashes.
+
+Prose limits pass (script-checked, v2.4): definition 50 words; key points 14 to 16 words; H2s at most 12 words; leads at most 29 words; module prose at most 76 words; no paragraph over 50 words; no em dashes.
 
 ## Brandon's points, mapped to changes
 
