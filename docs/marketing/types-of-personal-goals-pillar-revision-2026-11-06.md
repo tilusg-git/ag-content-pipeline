@@ -50,7 +50,7 @@ Already covered in P4 v2.4: frequency vs reporting cycle (4.5, 4.7), optional tr
 
 ## Open items for Grant
 
-1. **Open-goal product render.** The app's real running tally with no target shows "3 /–" and draws a **full bar**, which reads as "done". Render: `docs/brand/assets/product-views/out/pillar-types-of-goals-shapes-v2.4-2000x1200-bare.png` (rows: faith daily marks, run tally with no target, family trip at the cycle report). Brandon said to use a separate illustration if the app can't show it faithfully. Options:
+1. ~~**Open-goal product render.**~~ **Decided (Grant, 2026-11-06): use the app screen as is** (option a): the real no-target tally, "3 /–", stays in the 4.6 product UI with the faith and family rows. If Brandon objects to the full bar, the fallback is option (b). The app's real running tally with no target shows "3 /–" and draws a **full bar**, which reads as "done". Render: `docs/brand/assets/product-views/out/pillar-types-of-goals-shapes-v2.4-2000x1200-bare.png` (rows: faith daily marks, run tally with no target, family trip at the cycle report). Brandon said to use a separate illustration if the app can't show it faithfully. Options:
    - (a) Use it as is. It's the real app.
    - (b) **Recommended:** keep the faith and family rows in the product UI, and show the open goal as a small editorial tally ("3 runs recorded this week, see how far you get") under the table, not in the app screen.
    - (c) Ask Brandon whether the app should draw no bar when there's no target (a product change, his call).
@@ -61,7 +61,7 @@ Already covered in P4 v2.4: frequency vs reporting cycle (4.5, 4.7), optional tr
 6. **Terminology:** as on P4, the page says "goal" and treats the commitment as the goal. It doesn't use "commitment" in product copy per the glossary, apart from where it teaches accomplishment vs commitment.
 
 ## After sign-off
-1. Render the final 4.6 product UI (per item 1). Build v2.4 in Figma through Scripter: data `x` 33675, to the right of P4 v2.4. Clone in the photos. Rebuild P4 4.1 as v2.4.1.
+1. 4.6 product UI: use the v2.4 render as is (item 1). Build v2.4 in Figma through Scripter: data `x` 33675, to the right of P4 v2.4. Clone in the photos. Rebuild P4 4.1 as v2.4.1.
 2. Point `export-html.js` and `export-handoff-p7.js` at the v2.4 data. Regenerate `content/pillars/types-of-personal-goals.md`, the HTML mockup and `dist/`, then `content/pillars/goal-setting.md`.
 3. Send both guides back to Brandon together, using GitHub links.
 
