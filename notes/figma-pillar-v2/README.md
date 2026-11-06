@@ -13,6 +13,19 @@ The Starter plan's MCP cap can run out after a single call, so run builds and ca
 5. Comments: `fetch('/api/file/<fileKey>/comments')` in the Figma tab. Mapping pins to nodes is a read script in Scripter: compare `client_meta.node_offset` against `absoluteBoundingBox`.
 6. Screenshot checks: Chrome screenshots of the Figma canvas break often (`Cannot access a chrome-extension:// URL`). Save the MCP calls for `get_screenshot`.
 
+## P4 v2.4 (2026-11-05): Brandon's model
+This is frame `121:380` at x 31000, with 19 mobile frames and 18 notes. The data is `p4-goal-setting-v2.4.js`, run on `build-v2.3.js` (new optional hook `D.loopBackM` for the mobile loop line). There's no `assemble-v2.2.js` invocation for a cross-version pair, so the scratch assembly joined `lib.js` (before `// ---------- page build ----------`), `build-v2.3.js` and the v2.4 data, the same way that script does. Output: `out/p4-goal-setting-v2.4(.manual).js`.
+
+It was run from Claude in Chrome with the textarea paste route and `new Function`. The tab froze for 10+ minutes and never answered, but the build had finished, which a fresh tab confirmed.
+
+After the build:
+- **Photos:** the v2.3 photo frames were cloned into the new slots (4.8 order: kitchen table, park bench, living room). The hero tag text became "GOAL · THIS YEAR".
+- **4.7:** the `report-close` render was placed (`product-views/examples/pillar-goal-setting-report.json`, 720×760 JPEG). Mobile slot 335×354.
+- **Mobile frames:** restacked with 24 px gaps after the taller 4.7.
+- **4.1:** keeps the plain placeholder until the new photo exists.
+
+Change list: `docs/marketing/goal-setting-pillar-revision-2026-11-05.md`.
+
 ## P7 v2.3.3 (2026-11-05): week calendar in 4.4, photos placed
 Frame `116:4994` at x 28025, with 18 mobile frames and 17 notes. Grant's comment on `113:3790` stays pinned there: "Should this UI be more of the calendar view like we previously used in the other pillar page?" (his example was P4's week figure).
 - **4.4** now uses that `week` element: four days, each with a minimum, in place of the rewrite list.

@@ -40,5 +40,7 @@ Every image used on the website (brand standards §16). One row per image. Sourc
   - 4.10 card 3 recropped (Grant): it now ends at the table edge, with no under-table view, and starts below the chins (source y 690–1240).
   - 4.10 card 2: the man on the right is in three-quarter profile from behind.
 
+- **P4 v2.4 4.1 (2026-11-05):** `source/Gemini_Generated_Image_5we8xq5we8xq5we8.jpg` → `out/p4-p41-v24-desktop.jpg` (source crop 420,0,1626,1536) and `out/p4-p41-v24-mobile.jpg` (0,90,2306,1446). Prompt P4-8 (revision doc). Persona, AI, Gemini, Grant 2026-11-05. The source shows the writer's beard at the top right; both crops leave it out, so never use the uncropped source. The writing is unreadable. Placed in Figma `121:380` (and mobile `121:1036`) by a one-off script. It replaces the "One goal (12 weeks)" sticky note, which v2.4 retired.
+
 Placement: `place-p4-photos.js` crops each image and generates the Scripter scripts. The Paper illustrations stay in Figma hidden, as fallbacks.
 - Homepage proof photo: the source image shows a **Peloton logo** on the bike screen. The crop starts below the logo, so the slot shows only the ride stats. Never use the uncropped source on the site; regenerate it without branding if a bigger view is needed.

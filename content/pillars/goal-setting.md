@@ -1,10 +1,10 @@
 # /goal-setting · Topical Pillar P4 · publish hand-off
 
-*Generated 2026-11-04 by `notes/figma-pillar-v2/export-handoff.js` from `p4-goal-setting-v2.3.js`, the data the Figma frame was built from. Don't edit this file by hand; change the data and rerun.*
+*Generated 2026-11-06 by `notes/figma-pillar-v2/export-handoff.js` from `p4-goal-setting-v2.4.js`, the data the Figma frame was built from. Don't edit this file by hand; change the data and rerun.*
 
-**Status:** layout signed off by Grant 2026-11-03 (v2.3); photos placed 2026-11-04. Waiting on Brandon’s review.
+**Status:** v2.4, rewritten around Brandon’s 2026-11-05 feedback (change list: `docs/marketing/goal-setting-pillar-revision-2026-11-05.md`). Copy approved by Grant and built in Figma 2026-11-05. All photos placed. Waiting on Brandon’s review.
 
-**Design:** Figma frame `48:292` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=48-292
+**Design:** Figma frame `121:380` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=121-380
 
 **Route:** `/goal-setting`, upgraded in place (same URL, no redirect). **SEO requirements:** [`docs/marketing/goal-setting-pillar-seo-requirements-2026-11-04.md`](../../docs/marketing/goal-setting-pillar-seo-requirements-2026-11-04.md).
 
@@ -20,74 +20,74 @@
 
 *“Goal setting” (before the colon) is set in ember italic.*
 
-**Dek:** Goals stick when someone could check them, they are broken into weekly actions, and they are tracked, reviewed every week, and shared.
+**Dek:** Goals stick when you commit to a repeatable behavior, present it to your group, track it as it needs, and report on it every cycle.
 
 **Buttons:** “Start a group →” (`/create-account`, via `siteHref()`) and a “See how it works” text link (`/how-it-works`). On mobile, a compact sticky bar keeps “Start a group” in reach once the hero button scrolls away.
 
-**On this page** (desktop: sticky contents rail; mobile: dropdown under the dek): What goal setting is (`#what-goal-setting-is`) · At a glance (`#at-a-glance`) · Pick one goal (`#pick-one-goal`) · Results and actions (`#results-and-actions`) · Make it checkable (`#make-it-checkable`) · SMART and beyond (`#smart-and-beyond`) · Plan weekly actions (`#plan-weekly-actions`) · Track your progress (`#track-your-progress`) · Run a weekly review (`#run-a-weekly-review`) · Share it with others (`#share-it-with-others`) · Plan for setbacks (`#plan-for-setbacks`) · Common mistakes (`#common-mistakes`) · Goals in a group (`#goals-in-a-group`) · Where next (`#where-next`)
+**On this page** (desktop: sticky contents rail; mobile: dropdown under the dek): What goal setting is (`#what-goal-setting-is`) · At a glance (`#at-a-glance`) · Set yearly goals (`#set-yearly-goals`) · Accomplishments and goals (`#accomplishments-and-goals`) · Make it checkable (`#make-it-checkable`) · SMART and beyond (`#smart-and-beyond`) · Give it a rhythm (`#give-it-a-rhythm`) · Track what it needs (`#track-what-it-needs`) · Report each cycle (`#report-each-cycle`) · Present to your group (`#present-to-your-group`) · Plan for setbacks (`#plan-for-setbacks`) · Common mistakes (`#common-mistakes`) · Goals in a group (`#goals-in-a-group`) · Where next (`#where-next`)
 
 No byline, no read time, no visible updated date (`dateModified` stays in the schema).
 
-> **Media · photo** (460×400 / 335×230). Files: [p4-hero-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-hero-desktop.jpg), [p4-hero-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-hero-mobile.jpg). Public name: `goal-setting-hero-runner.webp`. Alt: “A runner seen from behind, stepping off a front porch onto a quiet street at sunrise.” Goal tag (HTML text over the photo, not baked in): Top-right: “GOAL · 12 WEEKS” / “Run four times a week.” Loading: Eager, `priority` (LCP image).
+> **Media · photo** (460×400 / 335×230). Files: [p4-hero-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-hero-desktop.jpg), [p4-hero-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-hero-mobile.jpg). Public name: `goal-setting-hero-runner.webp`. Alt: “A runner seen from behind, stepping off a front porch onto a quiet street at sunrise.” Goal tag (HTML text over the photo, not baked in): Top-right: “GOAL · THIS YEAR” / “Run four times a week.” Loading: Eager, `priority` (LCP image).
 
 ## Band 2 · Answer: What is goal setting?
 
-**Definition card:** Goal setting is deciding on a specific result or action, writing it down, and setting a way to check your progress by a date. A wish says what you want. A goal also says what you will do about it, how you will measure it, and when you will look at the results.
+**Definition card:** Goal setting is deciding what you want to accomplish and the repeatable commitment that will get you there, writing it down, and agreeing how you will report on it. A wish says what you want. A goal says what you will do, how often, and when you will report back.
 
 **Key points:**
 
-- Pick one priority goal and give it eight to twelve weeks.
-- Write it so someone else could read it and say done or not done.
-- Turn it into three to five weekly actions, each with a minimum version.
-- Track it the same day, review it weekly, and share it with someone who will ask.
-- Plan your response to the first bad week before it happens.
+- Set goals for the year, often in January, and report on them every cycle.
+- Name the accomplishment you want, then commit to the repeatable behavior that gets you there.
+- Write each goal so someone else could read your report and say done or not done.
+- Present your goals to your group, hear their input, then decide what you commit to.
+- Track each goal as much as it needs, and report on the group’s cycle.
 
 **Stat callout:** Goals direct your attention, raise your effort, keep you going longer, and push you toward better strategies, according to [the psychologists who developed goal-setting theory](https://doi.org/10.1037/mot0000127). *(Locke and Latham, 2019)*
 
-> **Media · diagram** (required original, HTML/SVG so the labels are text): the goal loop, 01 Write the goal → 02 Track progress → 03 Review weekly → 04 Adjust, then “↺ Then back to step 1, every week”. Caption: “Goals hold when they sit inside a weekly loop.” Alt: “Diagram of a four-step loop: write the goal, track progress, review weekly, adjust.”
+> **Media · diagram** (required original, HTML/SVG so the labels are text): the goal loop, 01 Commit → 02 Track as needed → 03 Report each cycle → 04 Adjust, then “↺ Then back to step 2, every cycle”. Caption: “Goals hold when they sit inside a reporting cycle.” Alt: “Diagram of a four-step cycle: commit, track as needed, report each cycle, adjust.”
 
 ## Band 3 · Topic index: Goal setting at a glance
 
 *Card grid; each card jumps to its module anchor.*
 
-- **Pick one goal** (`#pick-one-goal`): One priority for eight to twelve weeks, pointed at a longer direction.
-- **Results and actions** (`#results-and-actions`): Pair the result you want with actions you control.
+- **Set yearly goals** (`#set-yearly-goals`): Set them once a year with your group, then report on them all year.
+- **Accomplishments and goals** (`#accomplishments-and-goals`): Separate what you want to achieve from the behavior you commit to.
 - **Make it checkable** (`#make-it-checkable`): Write it so someone else could mark it done or not done.
 - **SMART and beyond** (`#smart-and-beyond`): When a SMART goal fits, and when an open goal works better.
-- **Plan weekly actions** (`#plan-weekly-actions`): Three to five actions a week, each with a minimum version.
-- **Track your progress** (`#track-your-progress`): A ten-second record, kept the same day, somewhere you see it.
-- **Run a weekly review** (`#run-a-weekly-review`): Fifteen minutes and the same four questions every week.
-- **Share it with others** (`#share-it-with-others`): Someone who will ask, and how to frame the goal for them.
-- **Plan for setbacks** (`#plan-for-setbacks`): If-then plans written before the first bad week.
-- **Common mistakes** (`#common-mistakes`): The three that sink most goals by week two.
+- **Give it a rhythm** (`#give-it-a-rhythm`): Daily, weekly, monthly, or by a date: whatever the goal needs.
+- **Track what it needs** (`#track-what-it-needs`): A daily mark for a daily goal; a monthly goal may need nothing until the report.
+- **Report each cycle** (`#report-each-cycle`): Monthly or every four weeks for many groups, with the same questions each time.
+- **Present to your group** (`#present-to-your-group`): Share your goals, hear the group out, then decide for yourself.
+- **Plan for setbacks** (`#plan-for-setbacks`): If-then plans written before the first bad stretch.
+- **Common mistakes** (`#common-mistakes`): The three that sink most goals in the first month.
 
-## Module 4.1 · Pick one goal for the next eight to twelve weeks
+## Module 4.1 · Set your goals for the year, then report on them all year
 
-*Anchor `#pick-one-goal`, TOC label “Pick one goal”.*
+*Anchor `#set-yearly-goals`, TOC label “Set yearly goals”.*
 
-**Lead:** Choose one priority goal and give it eight to twelve weeks: long enough to see progress, short enough that the deadline still feels close.
+**Lead:** Many groups set goals once a year, often in January, then hold each other to them through every reporting cycle that follows.
 
 *Checklist:*
 
-- ✓ It is the one change that would make the biggest practical difference in three months.
-- ✓ It points at a long-term direction, such as being debt-free next year.
-- ✓ It ends on a date eight to twelve weeks from now.
+- ✓ It matters enough to you to keep at it for a full year.
+- ✓ It is a behavior you can repeat, not a one-off wish.
+- ✓ You have few enough goals to keep every one of them going.
 - ✓ It fits your real schedule, not your ideal one.
-- ✓ The basics elsewhere keep running without becoming new goals.
+- ✓ A shorter run, such as twelve weeks, works too when a season or a fresh start calls for one.
 
 Choosing between areas of life, such as health or money, is a question of which goal to pick; the guide to [which kinds of goals to pick](/types-of-personal-goals) covers it.
 
-> **Media · photo** (360×340 / 335×210). Files: [p4-p41-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p41-desktop.jpg), [p4-p41-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p41-mobile.jpg). Public name: `goal-setting-one-goal-sticky-note.webp`. Alt: “A sticky note on an open notebook that reads "One goal (12 weeks): Finish my certification."” Loading: Lazy. Layout: media split, photo right.
+> **Media · photo** (360×340 / 335×210). Files: [p4-p41-v24-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p41-v24-desktop.jpg), [p4-p41-v24-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p41-v24-mobile.jpg). Public name: `goal-setting-yearly-planning-notebook.webp`. Alt: “A person writing in a notebook at a kitchen table by a window on a winter morning, a second notebook open beside a glass of juice.” Loading: Lazy. Layout: media split, photo right.
 
-## Module 4.2 · Get the results you want through actions you control
+## Module 4.2 · Separate what you want to accomplish from the goal you commit to
 
-*Anchor `#results-and-actions`, TOC label “Results and actions”.*
+*Anchor `#accomplishments-and-goals`, TOC label “Accomplishments and goals”.*
 
-**Lead:** A strong goal has two layers: the result you want, for direction, and the actions you control, for this week.
+**Lead:** A strong goal has two layers: the accomplishment you want, for direction, and the repeatable commitment you report on, which is the goal itself.
 
 *Comparison table:*
 
-| Result you want | Action you control | How you’d check it |
+| Accomplishment you want | Goal you commit to | How you’d report it |
 |---|---|---|
 | Run a half marathon | Run four times a week | Training log |
 | Save $1,200 by August 31 | Move $100 to savings every Friday | Bank transfer history |
@@ -95,13 +95,15 @@ Choosing between areas of life, such as health or money, is a question of which 
 
 *Caption: Examples are illustrative.*
 
-Judge each week on the actions. If you did them and the result is slow, change the actions; if you didn’t, you already know what to fix. Process, outcome, learning, and open goals are compared in [the four goal shapes](/types-of-personal-goals).
+Report on the goal, not the accomplishment. If you kept the goal and the result is slow, change the goal; if you didn’t, you already know what to fix. Process, outcome, learning, and open goals are compared in [the four goal shapes](/types-of-personal-goals).
+
+Accountability Guild’s approach owes a lot to James Clear’s Atomic Habits, which argues that results come from the small behaviors you repeat. That is why the goal you commit to is the repeated behavior.
 
 ## Module 4.3 · Write your goal so anyone could check it
 
 *Anchor `#make-it-checkable`, TOC label “Make it checkable”.*
 
-**Lead:** A goal is checkable when someone else could read it on Sunday and say done or not done without asking you anything.
+**Lead:** A goal is checkable when someone else could read your report at the end of the cycle and say done or not done without asking you anything.
 
 *Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
 
@@ -131,97 +133,97 @@ Most real goals fail this test. In [a study of 512 real goals](https://doi.org/1
 
 *Caption: Examples are illustrative.*
 
-In [a large review of physical activity programs](https://doi.org/10.1080/17437199.2015.1104258), goal setting helped, but specific goals did not do significantly better than vague ones. New to something? Run an open goal for a month to learn your starting point, then set a specific target.
+In [a large review of physical activity programs](https://doi.org/10.1080/17437199.2015.1104258), goal setting helped, but specific goals did not do significantly better than vague ones. New to something? Run an open goal for a cycle to learn your starting point, then set a specific target.
 
-## Module 4.5 · Break your goal into three to five weekly actions
+## Module 4.5 · Give each goal the rhythm it needs
 
-*Anchor `#plan-weekly-actions`, TOC label “Plan weekly actions”.*
+*Anchor `#give-it-a-rhythm`, TOC label “Give it a rhythm”.*
 
-**Lead:** Turn the goal into three to five actions a week, each tied to a day and each with a minimum version for a bad week.
+**Lead:** Goals don’t all run on a weekly plan. Some happen daily, some a few times a week, some once a month, and some by a date.
 
-*Figure: a seven-day strip with four day cards, the minimum version under each, off days blank. Built in HTML; this list is its text. Alt (if rendered as an image): “A week with four planned study days, each with a smaller fallback action.”*
+*Figure: stacked bars that narrow as the rhythm gets more frequent; the last (daily) bar is ember. Built in HTML; this list is its text. Alt (if rendered as an image): “Four goal rhythms, from by-a-date to daily, each with how much tracking it needs.”*
 
-- Monday: Study 45 minutes, finish one module. Minimum: watch one lesson.
-- Wednesday: Study 45 minutes, practice questions. Minimum: answer five practice questions.
-- Friday: Study 45 minutes, review the week’s notes. Minimum: reread one page of notes.
-- Sunday: Fifteen-minute weekly review. Minimum: five minutes to tick off the week and pick Monday’s lesson.
+- **By a date:** Finish a certification by June. A progress note each cycle is enough.
+- **Monthly:** One date night a month. A single check at the report.
+- **Weekly:** Run four times a week. A tally you add to after each run.
+- **Daily:** Read ten minutes every day. A mark each day, so the streak shows.
 
-*Caption: Example is illustrative.*
+*Caption: Examples are illustrative.*
 
-Plan around your real week: if Tuesdays are always packed, keep the hard action off Tuesday. After two weeks you will know whether the plan is realistic.
+Breaking a goal into weekly steps is one option, not a rule. Use it when it helps you keep the commitment, and skip it when it doesn’t.
 
-**Go-deeper card** (“Go deeper · Field notes article”, “Read the article →”): [From good intentions to shipped work: a 30-day accountability sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint). Turn the first month of a goal into weekly milestones.
+**Go-deeper card** (“Go deeper · Field notes article”, “Read the article →”): [From good intentions to shipped work: a 30-day accountability sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint). One way to plan a goal’s first month in weekly milestones.
 
-## Module 4.6 · Track progress the same day so you see it building
+## Module 4.6 · Track each goal only as much as it needs
 
-*Anchor `#track-your-progress`, TOC label “Track your progress”.*
+*Anchor `#track-what-it-needs`, TOC label “Track what it needs”.*
 
-**Lead:** Record progress the same day in one place you see daily; a ten-second tick you keep beats a detailed log you abandon.
+**Lead:** Track in a way that fits the goal: a daily mark for a daily goal, a tally for a weekly one, nothing until the report for a monthly one.
 
 *Checklist:*
 
 - ✓ One place: a paper sheet, a spreadsheet, a note on your phone, or Accountability Guild if you track with a group.
-- ✓ Recorded the same day, at about the same time.
-- ✓ Visible every day, on the fridge or pinned on your phone.
-- ✓ Shared with someone, even if it is one weekly text.
+- ✓ As often as the goal happens, and no more.
+- ✓ Enough to answer the report as fact, not from memory.
+- ✓ Visible to your group, so the report holds no surprises.
 
 In [a large review of 138 experiments](https://doi.org/10.1037/bul0000025), people prompted to track their progress reached their goals more often, with the biggest gains when progress was written down and shared. In [a review of weight-loss research](https://doi.org/10.1016/j.jada.2010.10.008), how consistently people tracked mattered more than how perfectly they behaved.
 
 > **Media · photo** (360×300 / 335×210). Files: [p4-p46-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p46-desktop.jpg), [p4-p46-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p46-mobile.jpg). Public name: `goal-setting-fridge-habit-tracker.webp`. Alt: “A hand ticking today’s box on a paper weekly habit tracker taped to a fridge door.” Loading: Lazy. Layout: media split, photo right.
 
-## Module 4.7 · Review your week in fifteen minutes to stay on course
+## Module 4.7 · Report on your goals at the end of every cycle
 
-*Anchor `#run-a-weekly-review`, TOC label “Run a weekly review”.*
+*Anchor `#report-each-cycle`, TOC label “Report each cycle”.*
 
-**Lead:** Spend fifteen minutes at a fixed time each week, such as Sunday evening, with your tracker and the same four questions.
+**Lead:** Your group agrees a reporting cycle, often monthly or every four weeks, and at each close every member reports on every goal.
 
 *Steps (question as the step line, what it does as the detail):*
 
-1. **What did I finish this week?** Reads straight from your tracker, so the answer is a fact.
+1. **Did I keep each goal?** Reads straight from what you tracked, so the answer is a fact.
 
-2. **What blocked me?** Turns a miss into a cause you can do something about.
+2. **What got in the way?** Turns a miss into a cause you can do something about.
 
-3. **What will I adjust?** Changes one thing in the plan instead of starting over.
+3. **What will I change next cycle?** Changes one thing instead of starting over.
 
-4. **What are my top three actions next week?** Ends the review with a plan already on the calendar.
+4. **What should the group ask me about?** Points the group at the goal that needs the most help.
 
-The same questions every week make weeks easy to compare. On a bad week, adjust one action instead of rewriting the goal.
+Weekly suits some groups and quarterly suits others; pick the cycle that fits your goals and your meetings. The same questions every cycle make reports easy to compare.
 
-Accountability Guild keeps this board for you. Each member marks the day in a tap, adds a note or photo when it matters, and the group sees it. When the review comes, the week is already filled in: no spreadsheet to rebuild, no notebook to find.
+Accountability Guild keeps the record for you. Members log proof as they go, a mark, a note or a photo, and submit a short report at each cycle close. The group reads every report, so nobody rebuilds a spreadsheet before the meeting.
 
-> **Media · product UI** (right, about 360×228 desktop / 335×272 mobile): the `week-board` scene from `docs/brand/assets/product-views/`. Caption: “Illustrative: sample data in the Accountability Guild app.” Alt: “A sample week board in Accountability Guild: four goals with this week’s days marked.” Build it as HTML with server-rendered sample dates from the shared demo clock (like the homepage v5 screens), or as a PNG from `render.js` re-rendered on a schedule; a static PNG goes out of date.
+> **Media · product UI** (right, about 360×380 desktop / 335×354 mobile): the `report-close` scene from `docs/brand/assets/product-views/`. Caption: “Illustrative: sample data in the Accountability Guild app.” Alt: “A sample cycle-close report in Accountability Guild: a member’s goals, each marked kept or missed.” Build it as HTML with server-rendered sample dates from the shared demo clock (like the homepage v5 screens), or as a PNG from `render.js` re-rendered on a schedule; a static PNG goes out of date.
 
-## Module 4.8 · Share your goal with someone who will ask about it
+## Module 4.8 · Present your goals to your group, then decide for yourself
 
-*Anchor `#share-it-with-others`, TOC label “Share it with others”.*
+*Anchor `#present-to-your-group`, TOC label “Present to your group”.*
 
-**Lead:** A goal you share with someone who will ask about it is more likely to last than one you keep to yourself.
+**Lead:** Share your goals with the group, hear their questions and suggestions, then make the call yourself; the group reads your reports all year.
 
 *Image card grid (mobile: swipe row with the next card peeking):*
 
-- **One person.** Send them your tracker every week and let them ask about misses.
-  **Media · photo** (286×180 / 260×150). Files: [p4-p48a-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p48a-desktop.jpg), [p4-p48a-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p48a-mobile.jpg). Public name: `goal-setting-share-one-person.webp`. Alt: “A person on a park bench after a walk, typing a message on a phone.” Loading: Lazy.
-- **A small group.** Meet on a set day; each person reports on their goal and asks about the others.
+- **Present.** Read out your goals for the year. The group asks questions and may suggest changes; you decide.
   **Media · photo** (286×180 / 260×150). Files: [p4-p48b-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p48b-desktop.jpg), [p4-p48b-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p48b-mobile.jpg). Public name: `goal-setting-share-small-group.webp`. Alt: “Four people around a kitchen table with notebooks open and phones face down.” Loading: Lazy.
-- **A contribution, not a contest.** Frame your goal as your part of the group’s effort, not a race to beat everyone.
+- **Report.** At each cycle close, report on every goal, from wherever you are.
+  **Media · photo** (286×180 / 260×150). Files: [p4-p48a-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p48a-desktop.jpg), [p4-p48a-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p48a-mobile.jpg). Public name: `goal-setting-share-one-person.webp`. Alt: “A person on a park bench after a walk, typing a message on a phone.” Loading: Lazy.
+- **Read the reports.** The group sees every goal and reads each report, so progress and misses are both in the open.
   **Media · photo** (286×180 / 260×150). Files: [p4-p48c-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p48c-desktop.jpg), [p4-p48c-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p48c-mobile.jpg). Public name: `goal-setting-share-group-tracker.webp`. Alt: “A group meeting in a living room; one member holds a clipboard with a shared tracker of colored ticks.” Loading: Lazy.
 
 In [a large review of 141 studies](https://doi.org/10.1037/ccp0000260), goal setting worked better when goals were set publicly and as a group. In [a large review of goal setting in groups](https://doi.org/10.1037/a0024315), goals framed as a contribution to the group helped, while “beat everyone else” goals backfired where members depended on each other.
 
-Not sure who to ask? Here is [how to find someone to check in with](/blog/how-to-find-an-accountability-partner-or-group).
+No group yet? Here is [how to find someone to check in with](/blog/how-to-find-an-accountability-partner-or-group).
 
-## Module 4.9 · Plan your response to a bad week before it happens
+## Module 4.9 · Plan your response to a bad stretch before it happens
 
 *Anchor `#plan-for-setbacks`, TOC label “Plan for setbacks”.*
 
-**Lead:** Before you start, name the obstacle most likely to derail you and write down what you will do when it shows up.
+**Lead:** Before the year starts, name the obstacle most likely to derail each goal and write down what you will do when it shows up.
 
 *Example list (“If” and “then” in ember italic):*
 
 - If I work late on a run day, then I run the next morning before work.
-- If I miss a study session, then I do the minimum version before bed.
+- If I miss a study session, then I do a shorter one before bed.
 - If I overspend on Saturday, then I skip eating out until Friday.
-- If I miss the same action three weeks running, then I shrink the goal at my weekly review.
+- If I miss the same goal two cycles running, then I raise it in my report and adjust it.
 
 *Caption: Examples are illustrative.*
 
@@ -231,31 +233,31 @@ In [a review of 21 studies](https://doi.org/10.3389/fpsyg.2021.565202), picturin
 
 *Anchor `#common-mistakes`, TOC label “Common mistakes”.*
 
-**Lead:** Most goals that fade by week two fall to one of three mistakes.
+**Lead:** Most goals that fade in the first month fall to one of three mistakes.
 
 *Before-and-after table:*
 
 | Mistake | Fix |
 |---|---|
-| Setting three new goals at once | Pick one and let the others wait their turn |
-| Writing a vague outcome | Add a number and a time frame until someone else could check it |
-| Quitting after one bad week | Do the minimum version, then fix the cause in your weekly review |
+| Taking on more goals than you can keep up | Keep the few that matter and save the rest for next year |
+| Writing a vague outcome | Name the behavior, a number, and how often, until someone else could check it |
+| Quitting after one bad stretch | Do a smaller version, then name the cause in your next report |
 
 ## Band 7 · In practice: Set goals with a group so you keep each other going
 
-A small group makes several of these steps easier at once. Members agree how often they meet; each writes a checkable goal, records progress, and reviews it together on a set day.
+A group makes several of these steps easier at once. Members present their goals together, often in January, log proof as they go, and report at the close of each cycle.
 
 *Illustrative panel, labeled “Illustrative”:* Cadence · Monthly. Goal · Run four times a week. Check · Training log.
 
 ## Band 7B · Product CTA band (ink): Start hitting your goals with a group that checks in.
 
-Each member writes a goal anyone could check, logs progress during the cycle, and reports at the close. The group sees who followed through.
+Each member commits to goals anyone could check, logs proof during the cycle, and reports at the close. The group sees who followed through.
 
-1. Set checkable goals
+1. Present your goals to the group
 
-2. Log progress as you go
+2. Log proof as you go
 
-3. Report back on a set day
+3. Report at each cycle close
 
 **Buttons:** “Start a group →” (`/create-account`) and “See how it works” (`/how-it-works`).
 
@@ -268,7 +270,7 @@ Each member writes a goal anyone could check, logs progress during the cycle, an
 *Four path cards (mobile: swipe row).*
 
 - **Still choosing a goal:** [Types of personal goals](/types-of-personal-goals). By life area and by shape.
-- **Ready to start this week:** [A 30-day sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint). From goal to finished work.
+- **Want a fast start:** [A 30-day sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint). From goal to finished work.
 - **Struggling to follow through:** [Personal accountability](/personal-accountability). A guide to personal accountability.
 - **Setting goals with a group:** [How it works](/how-it-works). See how a group runs it.
 
@@ -276,8 +278,8 @@ Each member writes a goal anyone could check, logs progress during the cycle, an
 
 *Cluster index, grouped by subtopic. Add each new cluster article as it publishes.*
 
-- **Plan weekly actions:** [From good intentions to shipped work: a 30-day accountability sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint)
-- **Track your progress:** [Weekly or 4-week goal reporting template for founders and operators](/blog/weekly-or-4-week-goal-reporting-template-for-founders-and-operators)
+- **Give it a rhythm:** [From good intentions to shipped work: a 30-day accountability sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint)
+- **Report each cycle:** [Weekly or 4-week goal reporting template for founders and operators](/blog/weekly-or-4-week-goal-reporting-template-for-founders-and-operators)
 - **Guides:** [Types of personal goals](/types-of-personal-goals)
 
 ---
@@ -291,11 +293,11 @@ The crops in `docs/brand/assets/site-imagery/out/` are 2× JPEGs at the exact sl
 | Slot | Display (desktop / mobile) | Public name | Alt | Loading |
 |---|---|---|---|---|
 | hero | 460×400 / 335×230 | `goal-setting-hero-runner.webp` | A runner seen from behind, stepping off a front porch onto a quiet street at sunrise. | Eager, `priority` (LCP image) |
-| 4.1 | 360×340 / 335×210 | `goal-setting-one-goal-sticky-note.webp` | A sticky note on an open notebook that reads "One goal (12 weeks): Finish my certification." | Lazy |
+| 4.1 | 360×340 / 335×210 | `goal-setting-yearly-planning-notebook.webp` | A person writing in a notebook at a kitchen table by a window on a winter morning, a second notebook open beside a glass of juice. | Lazy |
 | 4.3 | 360×300 / 335×240 | `goal-setting-checkable-goal-friends.webp` | Two friends at a kitchen table; one points to a goal written in a notebook. | Lazy |
 | 4.6 | 360×300 / 335×210 | `goal-setting-fridge-habit-tracker.webp` | A hand ticking today’s box on a paper weekly habit tracker taped to a fridge door. | Lazy |
-| 4.8a | 286×180 / 260×150 | `goal-setting-share-one-person.webp` | A person on a park bench after a walk, typing a message on a phone. | Lazy |
-| 4.8b | 286×180 / 260×150 | `goal-setting-share-small-group.webp` | Four people around a kitchen table with notebooks open and phones face down. | Lazy |
+| 4.8a | 286×180 / 260×150 | `goal-setting-share-small-group.webp` | Four people around a kitchen table with notebooks open and phones face down. | Lazy |
+| 4.8b | 286×180 / 260×150 | `goal-setting-share-one-person.webp` | A person on a park bench after a walk, typing a message on a phone. | Lazy |
 | 4.8c | 286×180 / 260×150 | `goal-setting-share-group-tracker.webp` | A group meeting in a living room; one member holds a clipboard with a shared tracker of colored ticks. | Lazy |
 
 ### Links

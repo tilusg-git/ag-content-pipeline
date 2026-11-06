@@ -1,0 +1,24 @@
+{
+  "scene": "report-close",
+  "slug": "pillar-goal-setting-report",
+  "frame": "bare",
+  "size": "1080x1140",
+  "data": {
+    "cycleTitle": "Cycle 10",
+    "dates": "{{d:-27}} – {{d:0}}",
+    "stake": "$100",
+    "kept": 3,
+    "forfeit": "$12.50",
+    "returned": "$87.50",
+    "noReport": 0,
+    "ready": true,
+    "lede": false,
+    "mastTally": false,
+    "goals": [
+      { "pillar": "fitness", "title": "Run four times a week", "pct": 100 },
+      { "pillar": "personal", "title": "Move $100 to savings every Friday", "pct": 100 },
+      { "pillar": "professional", "title": "Study 45 minutes on weekdays", "pct": 50 },
+      { "pillar": "personal", "title": "Read ten minutes every day", "pct": 100 }
+    ]
+  }
+}

@@ -111,7 +111,12 @@ Open:
 - Members present commitments to the group, discuss, then decide; the group reads the reports.
 - Acknowledge *Atomic Habits*.
 
-**P4 v2.4 (2026-11-05), copy only:** `notes/figma-pillar-v2/p4-goal-setting-v2.4.js`, previewed at `notes/figma-pillar-v2/out/p4-goal-setting-v2.4-handoff-preview.md` (`export-handoff.js` now takes `[data] [out]`; the default still writes v2.3 to `content/pillars/goal-setting.md`). The change map and open items (a new 4.1 photo, a `report-close` render for 4.7, the meta description, the P7 pass) are in `docs/marketing/goal-setting-pillar-revision-2026-11-05.md`. It's waiting on Grant's sign-off, then the Figma build.
+**P4 v2.4 (2026-11-05), built:** Grant approved the copy, and it's built as **Figma frame `121:380`** (x 31000, with 19 mobile frames and 18 notes). Data: `notes/figma-pillar-v2/p4-goal-setting-v2.4.js` (assembled from `build-v2.3.js`, which has a new optional `D.loopBackM` hook). `export-handoff.js` now defaults to v2.4 and regenerated `content/pillars/goal-setting.md`.
+- **Photos:** the v2.3 photos were cloned in (4.8 reordered; hero tag "Goal · This year").
+- **4.7:** shows the `report-close` render (`product-views/examples/pillar-goal-setting-report.json`).
+- **4.1 photo:** placed 2026-11-05 (`5we8`, prompt P4-8).
+- **Open:** the P7 pass, and the skill/playbook rule.
+- **Watch out:** the build froze the Chrome tab for 10+ minutes, but it had finished. Reopen the file in a fresh tab before assuming it failed.
 He also replied on homepage v5 the same day.
 - **Website imagery: approved as brand standards §16** (`docs/brand/website-imagery-guidelines.md`). Three families: product / brand illustration / persona. AI persona photos come from Gemini, with no identifiable faces. The goal tag overlay is approved. **Figma workflow from here on (cap-free):** read comments with `fetch('/api/file/<key>/comments')` in Chrome; run every build and read script in Scripter, not `use_figma` (the README has the steps); spend MCP calls only on `get_screenshot` checks.
 
