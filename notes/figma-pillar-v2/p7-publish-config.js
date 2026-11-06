@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 function loadData() {
-  const src = fs.readFileSync(path.join(__dirname, 'p7-types-of-personal-goals-v2.3.js'), 'utf8');
+  const src = fs.readFileSync(path.join(__dirname, 'p7-types-of-personal-goals-v2.4.js'), 'utf8');
   let D;
   new Function('build', src.replace('return await build(D);', 'D.grid = GRID; D.shapes = SHAPES; build(D);'))(d => { D = d; });
   return D;
@@ -16,7 +16,7 @@ const DOI = d => `https://doi.org/${d}`;
 module.exports = {
   loadData,
   slug: 'types-of-personal-goals',
-  figma: { node: '116:4994', url: 'https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=116-4994' },
+  figma: { node: '135:412', url: 'https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=135-412' },
   // Inline anchors ([[...]] in the data) → URL, with the KB entry each citation comes from.
   LINKS: {
     'a review of 27 sport studies': [DOI('10.1080/1750984X.2022.2116723'), 'KB #7 Williamson et al. 2022'],
@@ -47,20 +47,19 @@ module.exports = {
   },
   // Media slots. files are the 2x crops in docs/brand/assets/site-imagery/out/ (desktop, mobile).
   MEDIA: {
-    hero: { files: ['p7-hero-desktop.jpg', 'p7-hero-mobile.jpg'], d: [460, 400], m: [335, 230], name: 'types-of-personal-goals-hero-calendar', alt: 'A person at a table marking dates on a paper month calendar.', tag: ['Lead area · Money', 'Move $100 to savings every Friday.'], load: 'Eager, `priority` (LCP image)' },
-    '4.1': { files: ['p7-p41-desktop.jpg', 'p7-p41-mobile.jpg'], d: [360, 320], m: [335, 210], name: 'types-of-personal-goals-health-gym', alt: 'A person walking into a gym in the evening, carrying training shoes.', load: 'Lazy' },
-    '4.3': { files: ['p7-p43-desktop.jpg', 'p7-p43-mobile.jpg'], d: [360, 300], m: [335, 210], name: 'types-of-personal-goals-career-checklist', alt: 'A desk with a printed project checklist and a date circled on a desk calendar.', load: 'Lazy' },
-    '4.5': { files: ['p7-p45-desktop.jpg', 'p7-p45-mobile.jpg'], d: [360, 320], m: [335, 210], name: 'types-of-personal-goals-learning-book-summary', alt: 'Hands writing a short summary on an index card resting on a finished novel.', load: 'Lazy' },
-    '4.7': { files: ['p7-p47-ui-desktop.png', 'p7-p47-ui-mobile.png'], d: [900, 524], m: [335, 344], name: 'types-of-personal-goals-week-board', alt: 'A sample week in Accountability Guild: one goal marked by day, one counted toward 12, and one tracked at the cycle report.', load: 'Lazy', ui: true },
-    '4.10a': { files: ['p7-p410a-desktop.jpg', 'p7-p410a-mobile.jpg'], d: [286, 180], m: [260, 150], name: 'types-of-personal-goals-on-your-own', alt: 'A person at a kitchen counter ticking a weekly grid in a notebook with a pencil.', load: 'Lazy' },
-    '4.10b': { files: ['p7-p410b-desktop.jpg', 'p7-p410b-mobile.jpg'], d: [286, 180], m: [260, 150], name: 'types-of-personal-goals-with-a-partner', alt: 'Two people at a café table, one showing the other a phone.', load: 'Lazy' },
-    '4.10c': { files: ['p7-p410c-desktop.jpg', 'p7-p410c-mobile.jpg'], d: [286, 180], m: [260, 150], name: 'types-of-personal-goals-with-a-group', alt: 'A group at a community-room table with notes and printed sheets.', load: 'Lazy' },
+    hero: { files: ['p7-hero-desktop.jpg', 'p7-hero-mobile.jpg'], d: [460, 400], m: [335, 230], name: 'types-of-personal-goals-hero-calendar', alt: 'A person at a table marking dates on a paper month calendar.', tag: ['Family · This year', 'Plan our family trip, two hours a month.'], load: 'Eager, `priority` (LCP image)' },
+    '4.3': { files: ['p7-p41-desktop.jpg', 'p7-p41-mobile.jpg'], d: [360, 320], m: [335, 210], name: 'types-of-personal-goals-fitness-gym', alt: 'A person walking into a gym in the evening, carrying training shoes.', load: 'Lazy' },
+    '4.5': { files: ['p7-p45-desktop.jpg', 'p7-p45-mobile.jpg'], d: [360, 320], m: [335, 210], name: 'types-of-personal-goals-personal-book-summary', alt: 'Hands writing a short summary on an index card resting on a finished novel.', load: 'Lazy' },
+    '4.6': { files: ['p7-p46-ui-desktop.png', 'p7-p46-ui-mobile.png'], d: [900, 524], m: [335, 378], name: 'types-of-personal-goals-week-board', alt: 'A sample week in Accountability Guild: one goal marked by day, one counted with no target, and one tracked at the cycle report.', load: 'Lazy', ui: true },
+    '4.9a': { files: ['p7-p410a-desktop.jpg', 'p7-p410a-mobile.jpg'], d: [286, 180], m: [260, 150], name: 'types-of-personal-goals-on-your-own', alt: 'A person at a kitchen counter ticking a weekly grid in a notebook with a pencil.', load: 'Lazy' },
+    '4.9b': { files: ['p7-p410b-desktop.jpg', 'p7-p410b-mobile.jpg'], d: [286, 180], m: [260, 150], name: 'types-of-personal-goals-with-a-partner', alt: 'Two people at a café table, one showing the other a phone.', load: 'Lazy' },
+    '4.9c': { files: ['p7-p410c-desktop.jpg', 'p7-p410c-mobile.jpg'], d: [286, 180], m: [260, 150], name: 'types-of-personal-goals-with-a-group', alt: 'A group at a community-room table with notes and printed sheets.', load: 'Lazy' },
   },
   UI_CAPTION: 'Illustrative: sample data in the Accountability Guild app.',
   // SEO (final pass 2026-11-05). The site template appends " | Accountability Guild" (23 chars) to the page title.
   SEO: {
     title: 'Types of Personal Goals With Examples',
-    description: 'Personal goals sort by life area, shape, and time frame. See examples for health, money, career, relationships, learning, and faith, and where to start.',
+    description: 'Personal goals sort by life area, shape, and time frame. See examples for faith, family, fitness, work, and personal goals, and how to choose what to commit to.',
     canonical: 'https://accountabilityguild.com/types-of-personal-goals',
     datePublished: '2026-04-15',
     liveTitle: 'Types of Personal Goals: Choose the Right Goals for Every Life Area | Accountability Guild',

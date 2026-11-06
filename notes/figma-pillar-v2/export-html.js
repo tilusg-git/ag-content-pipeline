@@ -36,6 +36,7 @@ const EL = {
   stack: e => `<div class="stack">${e.items.map((it, i) => { const [l, t] = it.split(': '); return `<div class="bar b${i}"><span class="mono">${esc(l)}</span><p>${T(t)}</p></div>`; }).join('')}</div>`,
   week: e => { const map = {}; e.items.forEach(s => { map[s.split(':')[0]] = s; });
     return `<div class="week">${['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map(d => { const on = map[d]; if (!on) return `<div class="day off"><span class="mono">${d.slice(0, 3)}</span><p>Off</p></div>`; const m = on.match(/^\w+: (.+?)\. Minimum: (.+)$/); return `<div class="day on"><span class="mono">${d.slice(0, 3)}</span><p>${esc(m[1])}</p><div class="min"><span class="mono">Minimum</span><small>${esc(m[2].charAt(0).toUpperCase() + m[2].slice(1))}</small></div></div>`; }).join('')}</div>`; },
+  checklist: e => `<ul class="chk">${e.items.map(s => `<li><span class="tick">✓</span><p>${T(s)}</p></li>`).join('')}</ul>`,
   imageCards: (e, m) => `<div class="cards3 swipe">${e.items.map((s, i) => { const [t, l] = split(s); return `<div class="icard">${pic(m.id + 'abc'[i], 'ph-card')}<div><h3>${esc(t)}</h3><p>${T(l)}</p></div></div>`; }).join('')}</div>`,
 };
 
@@ -128,6 +129,7 @@ main{flex:0 1 900px;min-width:0;display:flex;flex-direction:column;gap:72px}
 .ctx{font-size:15px;line-height:1.6;color:var(--ink-soft);max-width:720px}
 .split{display:flex;gap:40px;align-items:flex-start}.split.left{flex-direction:row-reverse}.sp-el{flex:0 1 500px;display:flex;flex-direction:column;gap:12px}
 .ph-side{flex:0 0 360px}.ph-side img{aspect-ratio:auto}
+.chk{list-style:none;border-top:1px solid var(--ink)}.chk li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}.chk .tick{color:var(--ember);font-weight:600}.chk p{margin:0}
 .rw{list-style:none;border-top:1px solid var(--ink)}.rw li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
 .rw .ar{font-family:var(--serif);font-size:20px;color:var(--ember);line-height:1.3}.rw small{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:4px}
 .rw p{font-family:var(--serif);font-size:19px;line-height:1.35}
@@ -208,7 +210,7 @@ const html = `<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--
   ${cfg.slug} · Topical Pillar P7 · HTML mockup (desktop 1440 + mobile 375), generated ${new Date().toISOString().slice(0, 10)} by
-  notes/figma-pillar-v2/export-html.js from p7-types-of-personal-goals-v2.3.js, the data Figma frame ${cfg.figma.node} was built from.
+  notes/figma-pillar-v2/export-html.js from p7-types-of-personal-goals-v2.4.js, the data Figma frame ${cfg.figma.node} was built from.
   Don't edit by hand: change the data or p7-publish-config.js and rerun. Head tags below are the proposed production values.
 -->
 <title>${esc(cfg.SEO.title)} | Accountability Guild</title>
@@ -249,7 +251,7 @@ const html = `<!DOCTYPE html>
       <p class="intro">${T(D.diagIntro)}</p>
       <div class="swipe-wrap">${gridHtml.replace('<table class="grid">', '<table class="grid swipe">')}</div>
       <p class="swipe-dots">●&nbsp; ○&nbsp; ○&nbsp; ○&nbsp; ○&nbsp; ○&nbsp;&nbsp; Swipe for more</p>
-      <p class="cap">Every goal has an area and a shape. Examples are illustrative.</p>
+      <p class="cap">A teaching aid: every goal has an area and a shape. Examples are illustrative.</p>
     </section>
 
     <section class="band" id="${ids[1]}" aria-labelledby="${ids[1]}-h">

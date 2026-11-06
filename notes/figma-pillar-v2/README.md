@@ -13,6 +13,26 @@ The Starter plan's MCP cap can run out after a single call, so run builds and ca
 5. Comments: `fetch('/api/file/<fileKey>/comments')` in the Figma tab. Mapping pins to nodes is a read script in Scripter: compare `client_meta.node_offset` against `absoluteBoundingBox`.
 6. Screenshot checks: Chrome screenshots of the Figma canvas break often (`Cannot access a chrome-extension:// URL`). Save the MCP calls for `get_screenshot`.
 
+## P7 v2.4 (2026-11-06): Brandon's model, five life areas
+This is frame `135:412` at x 33675, with its mobile frames and notes (34 nodes from x 33500). The data is `p7-types-of-personal-goals-v2.4.js` on `build-v2.3.js`, assembled the same way as P4 v2.4 into `out/p7-types-of-personal-goals-v2.4.manual.js`. The change list is `docs/marketing/types-of-personal-goals-pillar-revision-2026-11-06.md`.
+
+**Paste route fix:** Figma now swallows paste events, so a plain textarea stays empty after Ctrl+V. What works:
+1. Put the textarea in a `<dialog>` opened with `showModal()`.
+2. Add a capture-phase `paste` listener on `window` that reads `clipboardData.getData('text/plain')` into a global and calls `stopImmediatePropagation()`.
+3. Run it with `new Function('figma', src)(figma)`.
+
+The tab froze for about a minute during the build, then came back.
+
+After the build:
+- **Photos:** the 12 placed v2.3.3 photo frames were cloned into the new slots inside Figma (no upload). The hero tag reads "FAMILY · THIS YEAR / Plan our family trip, two hours a month." Order: gym in 4.3, single novel in 4.5, the three cards in 4.9. The desk photo is unused.
+- **4.6:** the product UI is placed with `docs/brand/assets/site-imagery/place-p7-photos.js 4`. Specs: `pillar-types-of-goals-shapes-v2.4*.json`; the run tally has no target and shows "3 /–" (Grant chose the real app screen).
+- **Checks:** text check found all 9 module headings and no undefined or NaN strings. The hero was eyeballed in Chrome.
+- **P4 v2.4.1** was applied in frame `121:380` the same session:
+  - 4.1 checklist line (desktop `121:562`, mobile `121:1059`)
+  - 4.1 context paragraph (`121:572`), with the link underline re-applied
+
+Exporters now read v2.4: `p7-publish-config.js` (media keys 4.3 / 4.5 / 4.6 / 4.9a-c, new meta description), and `export-html.js` / `export-handoff-p7.js`, which gained a `checklist` element.
+
 ## P4 v2.4 (2026-11-05): Brandon's model
 This is frame `121:380` at x 31000, with 19 mobile frames and 18 notes. The data is `p4-goal-setting-v2.4.js`, run on `build-v2.3.js` (new optional hook `D.loopBackM` for the mobile loop line). There's no `assemble-v2.2.js` invocation for a cross-version pair, so the scratch assembly joined `lib.js` (before `// ---------- page build ----------`), `build-v2.3.js` and the v2.4 data, the same way that script does. Output: `out/p4-goal-setting-v2.4(.manual).js`.
 

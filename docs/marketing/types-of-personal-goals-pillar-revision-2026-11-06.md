@@ -2,7 +2,7 @@
 
 Brandon replied on 2026-11-06 to the P7 review email. He asked for the /goal-setting feedback to be applied here too, so both guides describe one approach. He also sent a reference packet of anonymized planning examples, which is kept privately in `Personal\AG-reference\`, not in this repo. Keep the faith examples and the visual direction. The main changes are the planning model, the tracking language and the open-goal illustration.
 
-**Status:** copy drafted in `notes/figma-pillar-v2/p7-types-of-personal-goals-v2.4.js` and waiting on Grant's approval. Nothing is built in Figma yet. The full copy is at the end of this doc.
+**Status (2026-11-06):** Grant approved the copy, and it's built in Figma as frame `135:412` (x 33675; mobile column and notes beside it), with photos cloned in and the 4.6 product UI placed. The hand-off (`content/pillars/types-of-personal-goals.md`), the HTML mockup and `dist/` are regenerated from the v2.4 data, and the SEO doc has the new meta description. P4 v2.4.1 is applied in Figma `121:380` and `content/pillars/goal-setting.md`. Not yet sent to Brandon. The full copy is at the end of this doc.
 
 Prose limits pass (script-checked):
 - definition: 53 words

@@ -48,7 +48,21 @@ const SWAP = [{ key: 'p410a', src: G('gktj7xgktj7xgktj'), d: { node: '117:6228',
   // table edge (no under-table view) and starts below the chins.
   { key: 'p45', src: G('yqdz2yyqdz2yyqdz'), d: { node: '117:6226', w: 360, h: 320, crop: [280, 420, 1768, 1572] }, m: { node: '117:6227', w: 335, h: 210, crop: [0, 520, 2048, 1284] } },
   { key: 'p410c', src: G('fzdo2nfzdo2nfzdo'), d: { node: '117:6232', w: 286, h: 180, crop: [820, 690, 874, 550] }, m: { node: '117:6233', w: 260, h: 150, crop: [780, 690, 953, 550] } }];
-if (process.argv[2] === '3') (async () => {
+// Batch 4 (2026-11-06): v2.4 frame 135:412. The photos were cloned in from v2.3.3 inside Figma (hero tag now "Family · This year /
+// Plan our family trip, two hours a month."). This places the 4.6 product UI (specs pillar-types-of-goals-shapes-v2.4*.json: faith daily
+// marks, a run tally with no target, family trip tracked at the cycle report). Usage: node place-p7-photos.js 4 → place-p7-batch4.js.
+const B4 = { d: { node: '135:837', file: '../product-views/out/pillar-types-of-goals-shapes-v2.4-2000x1200-bare.png', w: 900, crop: [0, 0, 1790, 1042] },
+  m: { node: '135:1321', file: '../product-views/out/pillar-types-of-goals-shapes-v2.4-mobile-mobile-bare.png', w: 335, crop: [0, 30, 1170, 1320] } };
+if (process.argv[2] === '4') (async () => {
+  let js = header;
+  for (const k of ['d', 'm']) { const s = B4[k]; const h = Math.round(s.w * s.crop[3] / s.crop[2]);
+    const b = await cropFile(s.file, s.crop, s.w, h, path.join(dir, 'out', `p7-p46-ui-${k === 'd' ? 'desktop' : 'mobile'}.png`), true);
+    js += `out.ui_${k} = await place('${s.node}', '${b}', ${s.w}, ${h}, 'Product UI · week-board v2.4 · ${k === 'd' ? 'desktop' : 'mobile'}', null, '', 1);\n`; }
+  js += `figma.notify('P7 v2.4 product UI placed'); window.__place4 = out; return out;\n})()`;
+  fs.writeFileSync(path.join(os.tmpdir(), 'place-p7-batch4.js'), js);
+  console.log('batch4', Math.round(js.length / 1024), 'KB');
+})();
+else if (process.argv[2] === '3') (async () => {
   let js = header;
   for (const s of SWAP.filter(x => !process.argv[3] || process.argv[3].split(',').includes(x.key))) for (const k of ['d', 'm']) {
     const b = await cropFile('source/' + s.src, s[k].crop, s[k].w, s[k].h, path.join(dir, 'out', `p7-${s.key}-${k === 'd' ? 'desktop' : 'mobile'}.jpg`));

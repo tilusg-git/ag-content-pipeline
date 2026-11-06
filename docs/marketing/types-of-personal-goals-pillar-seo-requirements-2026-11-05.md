@@ -1,6 +1,6 @@
 # /types-of-personal-goals (Topical Pillar P7): SEO requirements for the build
 
-This is the final SEO pass on the P7 design: Figma frame `116:4994`, v2.3.3 with photos and the product screen. It was run on 2026-11-05 against the SEO checklist (`.claude/skills/seo-review/checklist.md`) and the site profile for `www/`. It follows the same format as the P4 pass (`goal-setting-pillar-seo-requirements-2026-11-04.md`).
+This is the final SEO pass on the P7 design: Figma frame `116:4994`, v2.3.3 with photos and the product screen. **Updated 2026-11-06 for v2.4** (frame `135:412`, five life areas): new meta description, secondary terms and image names below; everything else stands. It was run on 2026-11-05 against the SEO checklist (`.claude/skills/seo-review/checklist.md`) and the site profile for `www/`. It follows the same format as the P4 pass (`goal-setting-pillar-seo-requirements-2026-11-04.md`).
 
 Three companion files:
 - **Copy, media slots and link map:** the hand-off, [`content/pillars/types-of-personal-goals.md`](../../content/pillars/types-of-personal-goals.md).
@@ -25,7 +25,7 @@ Three companion files:
   - the H2 "What are the types of personal goals?"
   - the topic-index H2
   - the title tag
-- **Secondary terms covered in visible copy:** health, money (financial), career, relationship, learning, faith, short-term and long-term goals, and process, outcome, learning and open goals. These match the live page's sections and the "types of goals" query, which expects short-term vs. long-term and process vs. outcome.
+- **Secondary terms covered in visible copy (v2.4):** faith, family, fitness, work (career, business and money), personal (friendships, reading, hobbies, skills), long-term goals and yearly commitments, and process, outcome, learning and open goals. These match the live page's sections and the "types of goals" query, which expects short-term vs. long-term and process vs. outcome.
 - **Claims.**
   - Every study is a ✓ entry in the behavior-science KB, cited with its DOI (KB #1, #3, #4, #6, #7, #8 and #11).
   - The 4.7 product line names only shipped features. Daily marks and count goals are in `repo/docs/product/capability-ui-inventory.md` (Complete). A goal "tracked at the cycle report" is the app's percentage mode, which the week board labels "Tracked at the cycle report — no daily grid." (`dashboard-today-marks.tsx`). That closes the open question about report-only goals.
@@ -83,6 +83,6 @@ Three companion files:
 
 | Route | Title (chars) | Meta description (chars) | Canonical |
 |---|---|---|---|
-| `/types-of-personal-goals` | Types of Personal Goals With Examples \| Accountability Guild (60) | Personal goals sort by life area, shape, and time frame. See examples for health, money, career, relationships, learning, and faith, and where to start. (152) | `https://accountabilityguild.com/types-of-personal-goals` (unchanged) |
+| `/types-of-personal-goals` | Types of Personal Goals With Examples \| Accountability Guild (60) | Personal goals sort by life area, shape, and time frame. See examples for faith, family, fitness, work, and personal goals, and how to choose what to commit to. (160) | `https://accountabilityguild.com/types-of-personal-goals` (unchanged) |
 
 The dek is separate copy, not the description. A script checked the character counts.

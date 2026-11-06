@@ -1,10 +1,10 @@
 # /types-of-personal-goals · Topical Pillar P7 · publish hand-off
 
-*Generated 2026-11-05 by `notes/figma-pillar-v2/export-handoff-p7.js` from `p7-types-of-personal-goals-v2.3.js` (the data the Figma frame was built from) and `p7-publish-config.js`. Don't edit this file by hand; change the data and rerun.*
+*Generated 2026-11-06 by `notes/figma-pillar-v2/export-handoff-p7.js` from `p7-types-of-personal-goals-v2.4.js` (the data the Figma frame was built from) and `p7-publish-config.js`. Don't edit this file by hand; change the data and rerun.*
 
-**Status:** built on the approved v2.3 template (the P4 layout Grant signed off 2026-11-03); three comment rounds applied 2026-11-05 (v2.3.1 to v2.3.3); photos and the product screen placed 2026-11-05. Waiting on Brandon’s review.
+**Status:** v2.4, rewritten around Brandon’s 2026-11-06 feedback to match /goal-setting v2.4 (change list: `docs/marketing/types-of-personal-goals-pillar-revision-2026-11-06.md`). Copy approved by Grant and built in Figma 2026-11-06 (frame 135:412); photos and the product screen placed. Waiting on Brandon’s review of both guides together.
 
-**Design:** Figma frame `116:4994` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=116-4994
+**Design:** Figma frame `135:412` (desktop 1440, with a 375 mobile column and band notes beside it): https://www.figma.com/design/l27WIk0vje0syTYWN2iZee?node-id=135-412
 
 **HTML mockup:** [`docs/marketing/pillars/types-of-personal-goals/index.html`](../../docs/marketing/pillars/types-of-personal-goals/index.html) (desktop and mobile in one responsive page, generated from the same data; the `dist/` copy has every image inlined and opens from an email attachment).
 
@@ -12,7 +12,7 @@
 
 **Build blocker:** like P4 /goal-setting, this page needs the Topical Pillar template (playbook §9 item 9): full-width bands, a sticky contents rail, typed module elements and media fields. Don’t publish it onto the current `ResourceArticle` template, which renders only headings and paragraphs. Build P4 and P7 on the same template; P7 adds no new element types beyond a prose-only module (4.9).
 
-**Supersedes** the v2.1 P7 module doc on Drive (renamed “SUPERSEDED”). Since then: six life areas (faith added), goals sorted three ways (area, shape, time frame), the area-by-shape grid with an intro line, leads that name each reader’s motivation, P4’s week calendar in 4.4, a prose module in 4.9, the accountability band rebuilt as module 4.10 (P4’s image card grid), band 9 as a 3×1 grid, photos and the product screen.
+**Supersedes** the v2.1 P7 module doc on Drive (renamed “SUPERSEDED”). Since then (v2.4): five life areas (faith, family, fitness, work, personal) in place of six. Before that: six life areas (faith added), goals sorted three ways (area, shape, time frame), the area-by-shape grid with an intro line, leads that name each reader’s motivation, P4’s week calendar in 4.4, a prose module in 4.9, the accountability band rebuilt as module 4.10 (P4’s image card grid), band 9 as a 3×1 grid, photos and the product screen.
 
 ---
 
@@ -22,251 +22,236 @@
 
 *“Types of personal goals” and the colon are set in ember italic.*
 
-**Dek:** Personal goals sort by life area, by shape, and by time frame. Lead with one area, pick the shape that fits, and write a goal someone else could check.
+**Dek:** Personal goals sort by life area, by shape, and by time frame. Use them to choose what matters this year, then commit to an action someone else could check.
 
 **Buttons:** “Start a group →” (`/create-account`, via `siteHref()`) and a “See how it works” text link (`/how-it-works`). On mobile, a compact sticky bar (“No monthly fee. Set up in five minutes.” + “Start a group →”) keeps the button in reach once the hero buttons scroll away.
 
-**On this page** (desktop: sticky contents rail; mobile: dropdown under the dek): What they are (`#what-they-are`) · At a glance (`#at-a-glance`) · Health goals (`#health-goals`) · Money goals (`#money-goals`) · Career goals (`#career-goals`) · Relationship goals (`#relationship-goals`) · Learning and growth (`#learning-and-growth`) · Faith goals (`#faith-goals`) · Goal shapes (`#goal-shapes`) · Short- and long-term goals (`#short-and-long-term-goals`) · Where to start (`#where-to-start`) · Goals and accountability (`#goals-and-accountability`) · Where next (`#where-next`)
+**On this page** (desktop: sticky contents rail; mobile: dropdown under the dek): What they are (`#what-they-are`) · At a glance (`#at-a-glance`) · Faith goals (`#faith-goals`) · Family goals (`#family-goals`) · Fitness goals (`#fitness-goals`) · Work goals (`#work-goals`) · Personal goals (`#personal-goals`) · Goal shapes (`#goal-shapes`) · Time frames (`#time-frames`) · Choose what to commit to (`#choose-what-to-commit-to`) · Goals and accountability (`#goals-and-accountability`) · Where next (`#where-next`)
 
 No byline, no read time, no visible updated date (`dateModified` stays in the schema).
 
-> **Media · photo** (460×400 desktop / 335×230 mobile). Files: [p7-hero-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-hero-desktop.jpg), [p7-hero-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-hero-mobile.jpg). Public name: `types-of-personal-goals-hero-calendar.webp`. Alt: “A person at a table marking dates on a paper month calendar.” Goal tag (HTML text over the photo, top-right, not baked in): “LEAD AREA · MONEY” / “Move $100 to savings every Friday.”. Loading: Eager, `priority` (LCP image).
+> **Media · photo** (460×400 desktop / 335×230 mobile). Files: [p7-hero-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-hero-desktop.jpg), [p7-hero-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-hero-mobile.jpg). Public name: `types-of-personal-goals-hero-calendar.webp`. Alt: “A person at a table marking dates on a paper month calendar.” Goal tag (HTML text over the photo, top-right, not baked in): “FAMILY · THIS YEAR” / “Plan our family trip, two hours a month.”. Loading: Eager, `priority` (LCP image).
 
 ## Band 2 · Answer: What are the types of personal goals?
 
 *Anchor `#what-they-are`.*
 
-**Definition card:** Personal goals are aims you set for your own life, not for an employer. They sort three ways: by life area (health, money, career, relationships, learning and growth, faith), by shape (process, outcome, learning, or open), and by time frame (short-term or long-term). Choosing well means one area and one shape that fit your life right now.
+**Definition card:** Personal goals are aims you set for your own life, not for an employer. They sort three ways: by life area (faith, family, fitness, work, and personal), by shape (process, outcome, learning, or open), and by time frame. Most people hold goals in several areas at once and choose them for the year.
 
 **Key points:**
 
 - Every goal has a life area, a shape, and a time frame.
-- Each life area has a form that works best.
-- Action goals usually beat result goals.
-- Long-term goals need a short-term goal for this week.
-- Lead with one life area for eight to twelve weeks.
+- Name the accomplishment you want, then commit to the action that gets you there.
+- A commitment can be daily, weekly, or monthly; your group still reports on its own cycle.
+- Track only as much as a commitment needs; the report at the cycle close is what counts.
+- Before you commit, count what it takes: time, money, help, and trade-offs with family.
 
 **Stat callout:** Goals about the actions you control improved performance far more than goals about the final result, in [a review of 27 sport studies](https://doi.org/10.1080/1750984X.2022.2116723). *(Williamson et al., 2022)*
 
-**Grid intro:** Find your goal on the grid. Pick the row for your life area, then the column for the shape you want. Each row has its own section below, and the four shapes are explained after them.
+**Grid intro:** Find an example on the grid. Pick the row for a life area, then the column for a goal shape. Each area has its own section below, and the four shapes follow them.
 
 **Diagram · area-by-shape grid** (required original; an HTML table, so every cell is text. Mobile: a swipe row with one card per life area):
 
 | Area / shape | Process | Outcome | Learning | Open |
 |---|---|---|---|---|
-| **Health** | Walk 30 minutes, Mon, Wed, Fri | Run a 5K by June | Learn three strength lifts with good form | Log every walk this month |
-| **Money** | Move $100 to savings every Friday | Two-month emergency fund by Dec 31 | Learn to build a monthly budget | Track every purchase for 30 days |
-| **Career** | Two hours of focused work each morning | Ship one project this quarter | Learn the reporting tool my team uses | Count client pitches sent this month |
-| **Relationships** | Call my parents every Sunday | Host four dinners by summer | Learn three ways to ask better questions | Log every in-person visit this month |
-| **Learning and growth** | Read 20 pages before bed | Finish one book a month through June | Try three study methods for Spanish | Count the days I practice guitar this month |
-| **Faith** | Ten minutes of prayer each morning | Read through the Gospels by Easter | Learn two ways to keep a daily quiet time | Count the mornings I keep my quiet time this month |
+| **Faith** | Read three pages of the Bible each day | Finish a 90-day Gospel devotional by Easter | Try two ways to keep a daily quiet time | Count the mornings I journal with scripture this month |
+| **Family** | Two dates with my spouse each month | Take a week-long family road trip this summer | Learn three ways to plan a trip on a budget | Count the evenings the phone stays off this month |
+| **Fitness** | Three strength sessions a week | Finish a marathon in the fall | Learn three strength lifts with good form | Record every run this month and see how far I get |
+| **Work** | One protected hour a week on a business idea | Ship one project this quarter | Learn to build a monthly budget | Count the prospect calls I make this month |
+| **Personal** | Call a friend or family member each week | Hold a ten-minute conversation in Spanish by March | Try three ways to practice piano | Count the books I finish this year |
 
-*Caption: Every goal has an area and a shape. Examples are illustrative.*
+*Caption: A teaching aid: every goal has an area and a shape. Examples are illustrative.*
 
 ## Band 3 · Topic index: The types of personal goals at a glance
 
 *Anchor `#at-a-glance`. Two-column numbered index; each item links to its module anchor.*
 
-1. **Health goals** (`#health-goals`): Sleep, movement, food, and energy, written as habits you repeat every week.
-2. **Money goals** (`#money-goals`): Debt, savings, spending, and investing, written as numbers you check on a set day.
-3. **Career goals** (`#career-goals`): Role, skills, income, and side projects, written around the work you deliver.
-4. **Relationship goals** (`#relationship-goals`): Partner, family, friends, and dating, written as time on the calendar.
-5. **Learning and growth goals** (`#learning-and-growth`): Skills, reading, creative work, and character, measured by what you finish.
-6. **Faith goals** (`#faith-goals`): Prayer, scripture, worship, service, and giving, written as a practice you keep.
-7. **Goal shapes** (`#goal-shapes`): Process, outcome, learning, and open goals: what each one measures.
-8. **Short- and long-term goals** (`#short-and-long-term-goals`): Goals by time frame, and how one feeds the other.
-9. **Where to start** (`#where-to-start`): Signs that show which life area to lead with.
-10. **Goals and accountability** (`#goals-and-accountability`): Holding yourself to a goal, and letting a partner or group ask.
+1. **Faith goals** (`#faith-goals`): Prayer, scripture, worship, service, and giving, written as practices you choose to keep.
+2. **Family goals** (`#family-goals`): Spouse, children, parents, and time together, often kept on a monthly rhythm.
+3. **Fitness goals** (`#fitness-goals`): Training, movement, sleep, and recovery, written as sessions you repeat each week.
+4. **Work goals** (`#work-goals`): Career, business, and money, written around the time and work you put in.
+5. **Personal goals** (`#personal-goals`): Friendships, reading, hobbies, and skills, measured by practice kept or things finished.
+6. **Goal shapes** (`#goal-shapes`): Process, outcome, learning, and open goals: what each one measures.
+7. **Time frames** (`#time-frames`): Long-term direction, this year’s commitments, and the cycle you report on.
+8. **Choose what to commit to** (`#choose-what-to-commit-to`): Questions that turn a wish into a commitment, or a reason to wait.
+9. **Goals and accountability** (`#goals-and-accountability`): Holding yourself to a goal, and letting a partner or group ask.
 
-## Module 4.1 · Write health goals as habits you repeat every week
-
-*Anchor `#health-goals`, contents label “Health goals”.*
-
-**Lead:** Health goals cover sleep, movement, food, energy, and stress. They come first for many people because they feed everything else: more energy and better sleep make it easier to show up for work, family, and every other goal on the list. They work best as habits you repeat every week.
-
-*Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
-
-- *Instead of “Get healthier”:* Walk 30 minutes on Monday, Wednesday, and Friday for twelve weeks
-- *Instead of “Sleep more”:* In bed with the lights off by 11 p.m. on weeknights
-- *Instead of “Get stronger”:* Strength training twice a week, logged in a notebook
-- *Instead of “Eat better”:* Cook dinner at home four nights a week
-
-*Caption: Examples are illustrative.*
-
-> **Media · photo** (360×320 desktop / 335×210 mobile). Files: [p7-p41-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p41-desktop.jpg), [p7-p41-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p41-mobile.jpg). Public name: `types-of-personal-goals-health-gym.webp`. Alt: “A person walking into a gym in the evening, carrying training shoes.” Loading: Lazy. Layout: media split, photo right; on mobile the photo sits above the element.
-
-Plan in months. In [a review of 20 studies on habit formation](https://doi.org/10.3390/healthcare12232488), a new health behavior typically took about 59 to 66 days to feel automatic.
-
-## Module 4.2 · Turn money goals into numbers you check on a set day
-
-*Anchor `#money-goals`, contents label “Money goals”.*
-
-**Lead:** Money goals cover debt, savings, spending, and investing. Some people start from a stretch of overspending or debt and want control back; others have the basics covered and want to build wealth. Either way, they are easiest to keep as numbers you check on a set day each month.
-
-*Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
-
-- *Instead of “Save more”:* Move $100 into savings every Friday
-- *Instead of “Build a safety net”:* Build a two-month emergency fund by December 31
-- *Instead of “Pay off the card”:* Pay an extra $150 toward the credit card on the first of every month
-- *Instead of “Start investing”:* Set up an automatic monthly transfer into a retirement account and check it each quarter
-
-*Caption: Examples are illustrative.*
-
-To see where you stand first, take the Consumer Financial Protection Bureau’s [free 10-question financial well-being check](https://www.consumerfinance.gov/consumer-tools/financial-well-being/). Then automate the action: a scheduled transfer does the saving for you.
-
-## Module 4.3 · Aim career goals at the work you deliver, not the title
-
-*Anchor `#career-goals`, contents label “Career goals”.*
-
-**Lead:** Career goals cover role, skills, income, and side projects. You might be pushing for a promotion, or you might want stability: a steadier income, a role that holds up in a reorganization, skills that keep you employable. Either way, they hold best when they name the work you will deliver.
-
-*Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
-
-- *Instead of “Get promoted”:* Ship one project this quarter that I can show in my review
-- *Instead of “Get more feedback”:* Hold a 30-minute feedback conversation with my manager every other Friday
-- *Instead of “Grow my side business”:* Publish one piece of work and contact five potential clients every week
-- *Instead of “Feel secure in my job”:* Finish one certification module a week and use it on a real task
-
-*Caption: Examples are illustrative.*
-
-> **Media · photo** (360×300 desktop / 335×210 mobile). Files: [p7-p43-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p43-desktop.jpg), [p7-p43-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p43-mobile.jpg). Public name: `types-of-personal-goals-career-checklist.webp`. Alt: “A desk with a printed project checklist and a date circled on a desk calendar.” Loading: Lazy. Layout: media split, photo left; on mobile the photo sits above the element.
-
-A promotion depends partly on other people; the work that earns it does not.
-
-## Module 4.4 · Put relationship goals on the calendar so they happen
-
-*Anchor `#relationship-goals`, contents label “Relationship goals”.*
-
-**Lead:** Relationship goals cover a partner, family, friends, and dating. If you are married, they may be about protecting time together; if you are single, about meeting new people; if you have moved or drifted apart from friends, about building connection back. They depend on showing up on a schedule more than on grand gestures, so give each one a day.
-
-*Figure: P4’s seven-day week calendar, four day cards with the minimum version under each, off days marked “Off”. Built in HTML; this list is its text. Mobile: a list, one row per day.*
-
-- Tuesday: Phone-free dinner with my partner. Minimum: dessert together with phones in another room.
-- Thursday: Text one friend to set this month’s visit. Minimum: send one message.
-- Saturday: Say yes to one plan or date. Minimum: reply to one invitation.
-- Sunday: Call my parents at 5 p.m. Minimum: a five-minute call.
-
-*Caption: One week of relationship goals on the calendar. Example is illustrative.*
-
-Nobody complains when you skip a call, so a fixed time on the calendar does the reminding.
-
-## Module 4.5 · Measure learning goals by what you finish, not time spent
-
-*Anchor `#learning-and-growth`, contents label “Learning and growth”.*
-
-**Lead:** Learning and growth goals cover skills, reading, creative work, and character. You might be chasing excellence in something you already do, closing a skill gap that holds you back, or taking on something new to test yourself. Either way, measure them by what you finish, not by time spent.
-
-*Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
-
-- *Instead of “Learn to code”:* Build and publish one small app by June
-- *Instead of “Read more”:* Write a one-paragraph summary of each book I finish
-- *Instead of “Learn Spanish”:* Practice 20 minutes a day and hold a ten-minute conversation by March
-- *Instead of “Be more patient with my kids”:* No phone during the first 30 minutes after school pickup
-
-*Caption: Examples are illustrative.*
-
-> **Media · photo** (360×320 desktop / 335×210 mobile). Files: [p7-p45-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p45-desktop.jpg), [p7-p45-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p45-mobile.jpg). Public name: `types-of-personal-goals-learning-book-summary.webp`. Alt: “Hands writing a short summary on an index card resting on a finished novel.” Loading: Lazy. Layout: media split, photo right; on mobile the photo sits above the element.
-
-Translate character goals into a behavior: “be more grateful” becomes “write down three things I’m grateful for each night.” Put time-based practice under an output: “practice guitar 20 minutes a day” leads to “play one full song for a friend by the end of the month.” More on making growth stick is in [the self-improvement guide](/self-improvement).
-
-## Module 4.6 · Build faith goals around a practice you keep every week
+## Module 4.1 · Build faith goals around practices you choose to keep
 
 *Anchor `#faith-goals`, contents label “Faith goals”.*
 
-**Lead:** Faith and spiritual goals cover prayer, scripture and other reading, worship, service, and giving. You can’t check a feeling of closeness, but you can check the practice that feeds it, so these goals hold best as something you do every day or every week.
+**Lead:** Faith goals cover prayer, scripture, worship, service, and giving, and they hold best as a practice you choose to keep on a set rhythm.
 
 *Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
 
-- *Instead of “Grow closer to God”:* Pray for ten minutes before work every morning
-- *Instead of “Read the Bible more”:* Read one chapter a day and write one line about it
-- *Instead of “Go to church more”:* Attend a weekly service and one small-group meeting a month
+- *Instead of “Read the Bible more”:* Read three pages of the Bible each day
+- *Instead of “Pray more”:* Pray with my spouse twice a week
+- *Instead of “Grow in my faith”:* Read for one hour a week from a book on faith
+- *Instead of “Get into the Gospels”:* Finish a 90-day Gospel devotional by Easter
 - *Instead of “Be more generous”:* Give a set amount on the first of every month
-- *Instead of “Serve more”:* Serve on one weekend team each month
 
 *Caption: Examples are illustrative.*
 
-If you already meet with a small group or a prayer partner, that meeting is a natural place to report back on these goals.
+A checked box shows you kept the practice you chose. It doesn’t measure spiritual growth, and nobody should treat it that way. If you already meet with a small group or a prayer partner, that meeting is a natural place to report back.
 
-## Module 4.7 · Know the four goal shapes: process, outcome, learning, and open
+## Module 4.2 · Give family goals the rhythm they need, often monthly
+
+*Anchor `#family-goals`, contents label “Family goals”.*
+
+**Lead:** Family goals cover your spouse, children, parents, and time together, and many run monthly: a date, a one-on-one, a trip you plan together.
+
+*Comparison table (mobile: a swipe row, one card per row):*
+
+| Commitment | How often | What you’d say at a monthly report |
+|---|---|---|
+| Two dates with my spouse | Monthly | Both happened; the second moved back a week. |
+| Two hours planning our family trip | Monthly | Used the time to compare three options. No daily log. |
+| One hour with each child on music, sport, or reading | Weekly | Kept it three weeks out of four; travel took one. |
+| Phone off from arriving home to bedtime | Four weekdays | Kept it most nights; Thursdays slipped. |
+
+*Caption: Examples are illustrative, not member reports.*
+
+A monthly commitment doesn’t need a daily grid. Two hours of trip planning a month is a complete commitment, and the report says what you did with them. The group reports on its own cycle, whatever each commitment’s rhythm.
+
+## Module 4.3 · Commit to the training, and let the race be the accomplishment
+
+*Anchor `#fitness-goals`, contents label “Fitness goals”.*
+
+**Lead:** Fitness goals cover training, movement, sleep, and recovery; the commitment is usually the sessions, and the race or the lift is the accomplishment they serve.
+
+*Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
+
+- *Instead of “Get in shape”:* Three strength sessions a week
+- *Instead of “Run a marathon”:* Follow my training plan’s sessions every week
+- *Instead of “Be more flexible”:* Stretch for 15 minutes on four days a week
+- *Instead of “Sleep more”:* Lights off by 11 p.m. on weeknights
+
+*Caption: Examples are illustrative.*
+
+> **Media · photo** (360×320 desktop / 335×210 mobile). Files: [p7-p41-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p41-desktop.jpg), [p7-p41-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p41-mobile.jpg). Public name: `types-of-personal-goals-fitness-gym.webp`. Alt: “A person walking into a gym in the evening, carrying training shoes.” Loading: Lazy. Layout: media split, photo right; on mobile the photo sits above the element.
+
+Plan in months. In [a review of 20 studies on habit formation](https://doi.org/10.3390/healthcare12232488), a new health behavior typically took about 59 to 66 days to feel automatic. A training app, a calendar, or a notebook can help you recall the sessions; the report is where you account for them.
+
+## Module 4.4 · Aim work goals at the time and work you put in
+
+*Anchor `#work-goals`, contents label “Work goals”.*
+
+**Lead:** Work goals cover your career, a business, and money, and they hold best when they name the time or work you put in, not the title or the revenue.
+
+*Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
+
+- *Instead of “Grow the business”:* Protect one hour a week to develop a product idea
+- *Instead of “Get more customers”:* Make 45 calls to prospective customers each month
+- *Instead of “Get promoted”:* Ship one project this quarter that I can show in my review
+- *Instead of “Run things better”:* Put one operational improvement in place each month
+- *Instead of “Save more”:* Move $100 into savings every Friday
+
+*Caption: Examples are illustrative.*
+
+Time spent is a fair commitment when the result isn’t in your hands yet. A promotion or a sale depends partly on other people; the hour and the calls don’t. To see where your money stands first, take the Consumer Financial Protection Bureau’s [free 10-question financial well-being check](https://www.consumerfinance.gov/consumer-tools/financial-well-being/).
+
+## Module 4.5 · Keep personal goals as practice you enjoy or things you finish
+
+*Anchor `#personal-goals`, contents label “Personal goals”.*
+
+**Lead:** Personal goals cover friendships, reading, hobbies, and new skills, and you can measure them by the practice you keep or by something you finish.
+
+*Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*
+
+- *Instead of “Stay in touch”:* Call one friend or family member each week and see one in person each month
+- *Instead of “Read more”:* Read for 30 minutes a day
+- *Instead of “Learn piano”:* Practice for 20 minutes on three days a week
+- *Instead of “Learn Spanish”:* Hold a ten-minute conversation in Spanish by March
+
+*Caption: Examples are illustrative.*
+
+> **Media · photo** (360×320 desktop / 335×210 mobile). Files: [p7-p45-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p45-desktop.jpg), [p7-p45-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p45-mobile.jpg). Public name: `types-of-personal-goals-personal-book-summary.webp`. Alt: “Hands writing a short summary on an index card resting on a finished novel.” Loading: Lazy. Layout: media split, photo right; on mobile the photo sits above the element.
+
+Practice time is a real commitment; not every hobby needs an output target. Turn character goals into a behavior: “be more grateful” becomes “write down three things each night.” More on making growth stick is in [the self-improvement guide](/self-improvement).
+
+## Module 4.6 · Know the four goal shapes: process, outcome, learning, and open
 
 *Anchor `#goal-shapes`, contents label “Goal shapes”.*
 
-**Lead:** Every goal also has a shape, which decides what you measure. A process goal measures the actions you take. An outcome goal measures a result by a date. A learning goal measures a skill you are still working out. An open goal measures how far you get, with no pass-or-fail line. The table shows when each one fits.
+**Lead:** Every goal also has a shape, which decides what you measure: the actions you take, a result by a date, a skill you are learning, or how far you get.
 
 *Comparison table (mobile: a swipe row, one card per row):*
 
 | Goal shape | What it targets | Example | Works best when |
 |---|---|---|---|
-| Process | Actions you control | Run four times a week | You know what to do and need to do it consistently |
-| Outcome | A result by a date | Run a half marathon in May | You need a direction to aim the process at |
+| Process | Actions you control | Three strength sessions a week | You know what to do and need to do it consistently |
+| Outcome | A result by a date | Finish a marathon in the fall | You want a direction to aim the process at |
 | Learning | A skill or strategy to master | Learn three ways to pace a long run | You don’t yet have the skills the goal needs |
-| Open | Seeing how far you get, measured | Log every run this month and see the total | You are new to it or returning after a long break |
+| Open | Seeing how far you get, with no target | Record every run this month and see how far you get | You are new to it or returning after a long break |
 
 *Caption: Examples are illustrative.*
 
-> **Media · product UI** (900×524 desktop / 335×344 mobile). Files: [p7-p47-ui-desktop.png](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p47-ui-desktop.png), [p7-p47-ui-mobile.png](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p47-ui-mobile.png). Public name: `types-of-personal-goals-week-board.webp`. Alt: “A sample week in Accountability Guild: one goal marked by day, one counted toward 12, and one tracked at the cycle report.” Loading: Lazy. Placed below the table, full width, in a `<figure>` with the caption “Illustrative: sample data in the Accountability Guild app.” (template rule). Rendered with the product-view renderer (`docs/brand/assets/product-views/examples/pillar-types-of-goals-shapes*.json`, `week-board` scene). In production build it as HTML with server-rendered sample dates from the shared demo clock, like the homepage v5 screens, or re-render the PNG on a schedule; a static PNG goes out of date.
+> **Media · product UI** (900×524 desktop / 335×378 mobile). Files: [p7-p46-ui-desktop.png](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p46-ui-desktop.png), [p7-p46-ui-mobile.png](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p46-ui-mobile.png). Public name: `types-of-personal-goals-week-board.webp`. Alt: “A sample week in Accountability Guild: one goal marked by day, one counted with no target, and one tracked at the cycle report.” Loading: Lazy. Placed below the table, full width, in a `<figure>` with the caption “Illustrative: sample data in the Accountability Guild app.” (template rule). Rendered with the product-view renderer (`docs/brand/assets/product-views/examples/pillar-types-of-goals-shapes*.json`, `week-board` scene). In production build it as HTML with server-rendered sample dates from the shared demo clock, like the homepage v5 screens, or re-render the PNG on a schedule; a static PNG goes out of date.
 
-Use [learning goals when you lack the skills](https://doi.org/10.1037/mot0000127) a task needs. Use [open goals](https://doi.org/10.1080/17437199.2025.2467695), measured but graded rather than pass or fail, when you are starting out: [early evidence from a small study](https://doi.org/10.1016/j.psychsport.2020.101661) found beginners did better and enjoyed them more.
+In a group, the commitment you report on is usually a process goal, and an outcome goal is often the accomplishment it serves. Use [learning goals when you lack the skills](https://doi.org/10.1037/mot0000127) a task needs, and [open goals](https://doi.org/10.1080/17437199.2025.2467695) when you are starting out: [early evidence from a small study](https://doi.org/10.1016/j.psychsport.2020.101661) found beginners did better and enjoyed them more.
 
-In Accountability Guild, each goal tracks the way its shape needs: daily marks for a process goal, a running count for an open goal, and a report at the cycle close for an outcome goal.
+In Accountability Guild, how you track is a separate choice from the shape: daily marks, a running tally with no target, or nothing until the cycle report. Every member reports at the cycle close either way.
 
-## Module 4.8 · Use short-term goals to reach long-term ones
+## Module 4.7 · Connect your long-term direction to this year’s commitments
 
-*Anchor `#short-and-long-term-goals`, contents label “Short- and long-term goals”.*
+*Anchor `#time-frames`, contents label “Time frames”.*
 
-**Lead:** Goals also sort by time frame. Long-term goals cover a year or more; short-term goals cover the next few weeks to three months. A year-long goal is too far away to act on today, so you break it down until it says what to do this week. The weekly step is the part you can do, check, and report on.
+**Lead:** Goals also sort by time frame: a direction you may hold for years, the commitments you choose for this year, and the cycle you report on.
 
-*Figure: four stacked bars narrowing from year to week; the week bar has an ember border. Built in HTML.*
+*Figure: “three clocks”, four stacked bars from long-term direction to when you report; the last bar has an ember border. Built in HTML.*
 
-- This year: Run a marathon next fall.
-- This quarter: Run four times a week.
-- This month: Log every run and reach 16 runs.
-- This week: Run Tuesday, Thursday, Saturday, and Sunday.
+- Long-term direction: Run a marathon one day.
+- This year’s commitment: Follow my training plan, four runs a week.
+- How often it happens: Four times a week, on the days the plan sets.
+- When you report: At each monthly cycle close, with every other goal.
 
-*Caption: A long-term goal becomes this week’s action. Example is illustrative.*
+*Caption: Three clocks: what you want, how often you act, and when you report. Example is illustrative.*
 
-Short-term goals you can start now: walk three times a week for a month, cut one spending category, finish a small project in 30 days, or call a friend every Sunday for six weeks.
+You don’t have to break every aim into quarters, months, and weeks. Some commitments repeat, some are a monthly action, and some are a dated deliverable. Many groups set the year’s commitments in January; a focused eight to twelve weeks works too when a season calls for it.
 
-No long-term direction yet? [The life planning guide](/life-planning) starts there. How to plan the weekly actions is in [the goal setting guide](/goal-setting), and [a 30-day accountability sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint) shows one month of it run start to finish.
+No long-term direction yet? [The life planning guide](/life-planning) starts there. Setting and reporting on the year’s goals is in [the goal setting guide](/goal-setting), and [a 30-day accountability sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint) shows one focused month.
 
-## Module 4.9 · Lead with one life area for the next eight to twelve weeks
+## Module 4.8 · Choose what to commit to, and what can wait
 
-*Anchor `#where-to-start`, contents label “Where to start”.*
+*Anchor `#choose-what-to-commit-to`, contents label “Choose what to commit to”.*
 
-**Lead:** Keep the basics running everywhere, but give one life area your new effort for the next eight to twelve weeks. Spreading new effort across five areas tends to leave all five half done; one lead area gets the attention it needs to become routine. Eight to twelve weeks is about how long a new habit takes to settle.
+**Lead:** Not everyone starts knowing what they want, so work from narrow questions, then count what each idea would take before you commit to it.
 
-Lead with health if you are tired most afternoons, sleeping badly, or rarely moving. Lead with money if bills cause dread or a surprise expense would hurt because there is no emergency fund. Lead with career if you feel bored or stuck at work, with no visible progress in a year.
+*Checklist (ember ticks):*
 
-Lead with relationships if weeks pass without real time with the people closest to you. Lead with learning and growth if you start courses or books and finish none of them. Lead with faith if your practice has slipped and you miss it.
+- What do I want to build, experience, learn, or keep going this year?
+- What action am I willing to commit to and report on?
+- What would it take: time, money, practice, help, and trade-offs with family?
+- What would I tell my group at the next report?
 
-*Prose module: lead and two paragraphs, no element (Grant: the signal table was too light for a table).*
+An idea that fails the third question can wait. Deferring a bucket-list trip or a second business is a choice, not a failure. You can hold commitments in several areas at once; in a demanding season, say which one gets less.
 
-If two areas fit, lead with the one that would make the others easier. Not sure where things stand? [A personal life audit](/personal-life-audit) rates each area first. Then write down how you will measure it: in [a study of 512 real goals](https://doi.org/10.1093/intqhc/mzae009), fewer than a quarter did.
+Not sure where things stand? [A personal life audit](/personal-life-audit) rates each area first. Then write down how you will report on each one: in [a study of 512 real goals](https://doi.org/10.1093/intqhc/mzae009), fewer than a quarter said how success would be measured.
 
-## Module 4.10 · Hold yourself to your goals, then let someone else ask
+## Module 4.9 · Hold yourself to your goals, then let someone else ask
 
 *Anchor `#goals-and-accountability`, contents label “Goals and accountability”.*
 
-**Lead:** Every goal type on this page ends in something checkable: a habit marked done, a number on a set day, a piece of work finished. That is what lets you hold yourself to it, and what lets someone else hold you to it too.
+**Lead:** Every commitment on this page ends in something you can report: a practice kept, a session done, an hour protected, a call made.
 
 *Image card grid, 3 across (mobile: swipe row with the next card peeking):*
 
-- **On your own.** Check your own log on a set day each week: a mark a day for habit goals, one number a month for money goals.
+- **On your own.** Check your log, calendar, or notebook on a set day, and write yourself a short report each cycle.
   **Media · photo** (286×180 desktop / 260×150 mobile). Files: [p7-p410a-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p410a-desktop.jpg), [p7-p410a-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p410a-mobile.jpg). Public name: `types-of-personal-goals-on-your-own.webp`. Alt: “A person at a kitchen counter ticking a weekly grid in a notebook with a pencil.” Loading: Lazy.
-- **With a partner.** One person asks on a set day. A spouse, friend, or prayer partner already knows the context of your goal.
+- **With a partner.** One person asks on a set day. A spouse, friend, or prayer partner already knows the context.
   **Media · photo** (286×180 desktop / 260×150 mobile). Files: [p7-p410b-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p410b-desktop.jpg), [p7-p410b-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p410b-mobile.jpg). Public name: `types-of-personal-goals-with-a-partner.webp`. Alt: “Two people at a café table, one showing the other a phone.” Loading: Lazy.
-- **With a group.** Several people report on the same day, each on their own goal, even when they lead with different life areas.
+- **With a group.** Members present their goals, hear the group out, decide for themselves, and report on the same cycle.
   **Media · photo** (286×180 desktop / 260×150 mobile). Files: [p7-p410c-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p410c-desktop.jpg), [p7-p410c-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p7-p410c-mobile.jpg). Public name: `types-of-personal-goals-with-a-group.webp`. Alt: “A group at a community-room table with notes and printed sheets.” Loading: Lazy.
 
-In [a large review of 141 studies](https://doi.org/10.1037/ccp0000260), goal setting worked better when goals were public and set as a group. More on following through on your own is in [the personal accountability guide](/personal-accountability). To run the weekly ask well, see [how to run accountability check-ins that change behavior](/blog/how-to-run-accountability-check-ins-that-actually-change-behavior).
+In [a large review of 141 studies](https://doi.org/10.1037/ccp0000260), goal setting worked better when goals were public and set as a group. More on following through on your own is in [the personal accountability guide](/personal-accountability). To run the check-in well, see [how to run accountability check-ins that change behavior](/blog/how-to-run-accountability-check-ins-that-actually-change-behavior).
 
-## Band 7B · Product CTA band (ink): Pick your goal, then keep it with a group that checks in.
+## Band 7B · Product CTA band (ink): Pick your goals, then keep them with a group that reads the reports.
 
-Each member writes a goal anyone could check, logs progress during the cycle, and reports at the close. The group sees who followed through.
+Each member commits to goals anyone could check, tracks as much as helps, and reports at each cycle close. The group sees who followed through.
 
-1. Set checkable goals
-2. Log progress as you go
-3. Report back on a set day
+1. Present your goals to the group
+2. Track as much as helps
+3. Report at each cycle close
 
 **Buttons:** “Start a group →” (`/create-account`) and “See how it works” (`/how-it-works`).
 
@@ -278,7 +263,7 @@ Each member writes a goal anyone could check, logs progress during the cycle, an
 
 *Anchor `#where-next`. Four path cards (mobile: swipe row).*
 
-- **Ready to write the goal:** [Goal setting](/goal-setting). How to set a goal and keep it.
+- **Ready to set the year’s goals:** [Goal setting](/goal-setting). How to set goals and report on them.
 - **Not sure where things stand:** [Personal life audit](/personal-life-audit). See where each area stands first.
 - **Planning the next few years:** [Life planning](/life-planning). From values to a long-term direction.
 - **Keeping goals with a group:** [How it works](/how-it-works). See how a group runs it.
@@ -287,8 +272,8 @@ Each member writes a goal anyone could check, logs progress during the cycle, an
 
 *Cluster index: a 3×1 grid, one item per column, the same component as P4. Swap in P7 Field notes articles as they publish.*
 
-- **Plan weekly actions:** [From good intentions to shipped work: a 30-day accountability sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint)
-- **Check in on progress:** [How to run accountability check-ins that actually change behavior](/blog/how-to-run-accountability-check-ins-that-actually-change-behavior)
+- **Report each cycle:** [How to run accountability check-ins that actually change behavior](/blog/how-to-run-accountability-check-ins-that-actually-change-behavior)
+- **Try a focused month:** [From good intentions to shipped work: a 30-day accountability sprint](/blog/from-good-intentions-to-shipped-work-a-30-day-accountability-sprint)
 - **Guides:** [Goal setting: how to set goals you will actually keep](/goal-setting)
 
 ---
@@ -302,13 +287,12 @@ The crops in `docs/brand/assets/site-imagery/out/` are 2× files at the exact sl
 | Slot | Display (desktop / mobile) | Public name | Alt | Loading |
 |---|---|---|---|---|
 | hero | 460×400 / 335×230 | `types-of-personal-goals-hero-calendar.webp` | A person at a table marking dates on a paper month calendar. | Eager, `priority` (LCP image) |
-| 4.1 | 360×320 / 335×210 | `types-of-personal-goals-health-gym.webp` | A person walking into a gym in the evening, carrying training shoes. | Lazy |
-| 4.3 | 360×300 / 335×210 | `types-of-personal-goals-career-checklist.webp` | A desk with a printed project checklist and a date circled on a desk calendar. | Lazy |
-| 4.5 | 360×320 / 335×210 | `types-of-personal-goals-learning-book-summary.webp` | Hands writing a short summary on an index card resting on a finished novel. | Lazy |
-| 4.7 | 900×524 / 335×344 | `types-of-personal-goals-week-board.webp` | A sample week in Accountability Guild: one goal marked by day, one counted toward 12, and one tracked at the cycle report. | Lazy |
-| 4.10a | 286×180 / 260×150 | `types-of-personal-goals-on-your-own.webp` | A person at a kitchen counter ticking a weekly grid in a notebook with a pencil. | Lazy |
-| 4.10b | 286×180 / 260×150 | `types-of-personal-goals-with-a-partner.webp` | Two people at a café table, one showing the other a phone. | Lazy |
-| 4.10c | 286×180 / 260×150 | `types-of-personal-goals-with-a-group.webp` | A group at a community-room table with notes and printed sheets. | Lazy |
+| 4.3 | 360×320 / 335×210 | `types-of-personal-goals-fitness-gym.webp` | A person walking into a gym in the evening, carrying training shoes. | Lazy |
+| 4.5 | 360×320 / 335×210 | `types-of-personal-goals-personal-book-summary.webp` | Hands writing a short summary on an index card resting on a finished novel. | Lazy |
+| 4.6 | 900×524 / 335×378 | `types-of-personal-goals-week-board.webp` | A sample week in Accountability Guild: one goal marked by day, one counted with no target, and one tracked at the cycle report. | Lazy |
+| 4.9a | 286×180 / 260×150 | `types-of-personal-goals-on-your-own.webp` | A person at a kitchen counter ticking a weekly grid in a notebook with a pencil. | Lazy |
+| 4.9b | 286×180 / 260×150 | `types-of-personal-goals-with-a-partner.webp` | Two people at a café table, one showing the other a phone. | Lazy |
+| 4.9c | 286×180 / 260×150 | `types-of-personal-goals-with-a-group.webp` | A group at a community-room table with notes and printed sheets. | Lazy |
 
 ### Links
 

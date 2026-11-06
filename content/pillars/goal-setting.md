@@ -72,10 +72,10 @@ No byline, no read time, no visible updated date (`dateModified` stays in the sc
 - ✓ It matters enough to you to keep at it for a full year.
 - ✓ It is a behavior you can repeat, not a one-off wish.
 - ✓ You have few enough goals to keep every one of them going.
-- ✓ It fits your real schedule, not your ideal one.
+- ✓ You have counted what it takes: time, money, help, and trade-offs with family.
 - ✓ A shorter run, such as twelve weeks, works too when a season or a fresh start calls for one.
 
-Choosing between areas of life, such as health or money, is a question of which goal to pick; the guide to [which kinds of goals to pick](/types-of-personal-goals) covers it.
+An idea that fails these checks can wait for another year; deferring it is a choice, not a failure. Choosing between areas of life, such as faith, family, or fitness, is covered in the guide to [which kinds of goals to pick](/types-of-personal-goals).
 
 > **Media · photo** (360×340 / 335×210). Files: [p4-p41-v24-desktop.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p41-v24-desktop.jpg), [p4-p41-v24-mobile.jpg](https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/site-imagery/out/p4-p41-v24-mobile.jpg). Public name: `goal-setting-yearly-planning-notebook.webp`. Alt: “A person writing in a notebook at a kitchen table by a window on a winter morning, a second notebook open beside a glass of juice.” Loading: Lazy. Layout: media split, photo right.
 

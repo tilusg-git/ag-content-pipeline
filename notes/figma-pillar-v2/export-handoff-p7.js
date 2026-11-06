@@ -19,13 +19,13 @@ const isItem = x => /^(\s*[-|]|\d+\. )/.test(x);
 const P = (...all) => { const l = all.filter(x => x !== ''); l.forEach((x, i) => { out.push(x); if (!(isItem(x) && isItem(l[i + 1] || ''))) out.push(''); }); };
 const ids = D.toc.map(slug);
 P('# /types-of-personal-goals · Topical Pillar P7 · publish hand-off',
-  `*Generated ${new Date().toISOString().slice(0, 10)} by \`notes/figma-pillar-v2/export-handoff-p7.js\` from \`p7-types-of-personal-goals-v2.3.js\` (the data the Figma frame was built from) and \`p7-publish-config.js\`. Don't edit this file by hand; change the data and rerun.*`,
-  '**Status:** built on the approved v2.3 template (the P4 layout Grant signed off 2026-11-03); three comment rounds applied 2026-11-05 (v2.3.1 to v2.3.3); photos and the product screen placed 2026-11-05. Waiting on Brandon’s review.',
+  `*Generated ${new Date().toISOString().slice(0, 10)} by \`notes/figma-pillar-v2/export-handoff-p7.js\` from \`p7-types-of-personal-goals-v2.4.js\` (the data the Figma frame was built from) and \`p7-publish-config.js\`. Don't edit this file by hand; change the data and rerun.*`,
+  '**Status:** v2.4, rewritten around Brandon’s 2026-11-06 feedback to match /goal-setting v2.4 (change list: `docs/marketing/types-of-personal-goals-pillar-revision-2026-11-06.md`). Copy approved by Grant and built in Figma 2026-11-06 (frame 135:412); photos and the product screen placed. Waiting on Brandon’s review of both guides together.',
   `**Design:** Figma frame \`${cfg.figma.node}\` (desktop 1440, with a 375 mobile column and band notes beside it): ${cfg.figma.url}`,
   '**HTML mockup:** [`docs/marketing/pillars/types-of-personal-goals/index.html`](../../docs/marketing/pillars/types-of-personal-goals/index.html) (desktop and mobile in one responsive page, generated from the same data; the `dist/` copy has every image inlined and opens from an email attachment).',
   '**Route:** `/types-of-personal-goals`, upgraded in place (same URL, no redirect). **SEO requirements:** [`docs/marketing/types-of-personal-goals-pillar-seo-requirements-2026-11-05.md`](../../docs/marketing/types-of-personal-goals-pillar-seo-requirements-2026-11-05.md).',
   '**Build blocker:** like P4 /goal-setting, this page needs the Topical Pillar template (playbook §9 item 9): full-width bands, a sticky contents rail, typed module elements and media fields. Don’t publish it onto the current `ResourceArticle` template, which renders only headings and paragraphs. Build P4 and P7 on the same template; P7 adds no new element types beyond a prose-only module (4.9).',
-  '**Supersedes** the v2.1 P7 module doc on Drive (renamed “SUPERSEDED”). Since then: six life areas (faith added), goals sorted three ways (area, shape, time frame), the area-by-shape grid with an intro line, leads that name each reader’s motivation, P4’s week calendar in 4.4, a prose module in 4.9, the accountability band rebuilt as module 4.10 (P4’s image card grid), band 9 as a 3×1 grid, photos and the product screen.',
+  '**Supersedes** the v2.1 P7 module doc on Drive (renamed “SUPERSEDED”). Since then (v2.4): five life areas (faith, family, fitness, work, personal) in place of six. Before that: six life areas (faith added), goals sorted three ways (area, shape, time frame), the area-by-shape grid with an intro line, leads that name each reader’s motivation, P4’s week calendar in 4.4, a prose module in 4.9, the accountability band rebuilt as module 4.10 (P4’s image card grid), band 9 as a 3×1 grid, photos and the product screen.',
   '---');
 
 P('## Band 1 · Hero', `**H1:** ${D.h1}`, `*“${D.h1.slice(0, D.h1.indexOf(':'))}” and the colon are set in ember italic.*`, `**Dek:** ${D.dek}`,
@@ -37,7 +37,7 @@ P(`## Band 2 · Answer: ${D.answerH2}`, `*Anchor \`#${ids[0]}\`.*`, `**Definitio
   `**Stat callout:** ${link(D.stat[0])} *(${D.stat[1]})*`, `**Grid intro:** ${link(D.diagIntro)}`,
   '**Diagram · area-by-shape grid** (required original; an HTML table, so every cell is text. Mobile: a swipe row with one card per life area):', '',
   `| Area / shape | ${D.shapes.join(' | ')} |`, `|${['', ...D.shapes].map(() => '---').join('|')}|`, ...D.grid.map(r => `| **${r[0]}** | ${r.slice(1).join(' | ')} |`), '',
-  '*Caption: Every goal has an area and a shape. Examples are illustrative.*');
+  '*Caption: A teaching aid: every goal has an area and a shape. Examples are illustrative.*');
 
 P(`## Band 3 · Topic index: ${D.mapH2}`, `*Anchor \`#${ids[1]}\`. Two-column numbered index; each item links to its module anchor.*`,
   ...D.map.map((m, i) => { const [t, r] = split(m); return `${i + 1}. **${t}** (\`#${ids[i + 2]}\`): ${r}`; }));
@@ -47,7 +47,8 @@ const el = (e, m) => {
   if (e.t === 'table') { const h = e.cols.map(c => c[0]); L.push('*Comparison table (mobile: a swipe row, one card per row):*', '', `| ${h.join(' | ')} |`, `|${h.map(() => '---').join('|')}|`, ...e.rows.map(r => `| ${r.join(' | ')} |`), ''); }
   if (e.t === 'rewrites') L.push('*Example list with rewrites (the vague goal as a small “Instead of” line above the checkable one):*', ...e.items.map(x => { const i = x.indexOf(': '); return `- *${x.slice(0, i)}:* ${x.slice(i + 2)}`; }));
   if (e.t === 'week') L.push('*Figure: P4’s seven-day week calendar, four day cards with the minimum version under each, off days marked “Off”. Built in HTML; this list is its text. Mobile: a list, one row per day.*', ...e.items.map(x => `- ${x}`));
-  if (e.t === 'stack') L.push('*Figure: four stacked bars narrowing from year to week; the week bar has an ember border. Built in HTML.*', ...e.items.map(x => `- ${x}`));
+  if (e.t === 'stack') L.push('*Figure: “three clocks”, four stacked bars from long-term direction to when you report; the last bar has an ember border. Built in HTML.*', ...e.items.map(x => `- ${x}`));
+  if (e.t === 'checklist') L.push('*Checklist (ember ticks):*', ...e.items.map(x => `- ${link(x)}`));
   if (e.t === 'imageCards') L.push('*Image card grid, 3 across (mobile: swipe row with the next card peeking):*', ...e.items.map((x, i) => { const [t, r] = split(x); return `- **${t}.** ${link(r)}\n  ${media(m.id + 'abc'[i]).replace('> ', '')}`; }));
   if (m.cap) L.push(`*Caption: ${m.cap}*`);
   return L;

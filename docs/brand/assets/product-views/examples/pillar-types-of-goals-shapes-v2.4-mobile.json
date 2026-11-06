@@ -1,0 +1,46 @@
+{
+  "scene": "week-board",
+  "frame": "bare",
+  "data": {
+    "weekIndex": 2,
+    "weekCount": 4,
+    "thisWeek": true,
+    "weekLabel": "{{range:-6:0}}",
+    "days": {
+      "$days": {
+        "from": -6,
+        "count": 7
+      }
+    },
+    "goals": [
+      {
+        "pillar": "faith",
+        "title": "Read three pages of the Bible each day",
+        "mode": "daily",
+        "cells": [
+          "done",
+          "done",
+          "done+note",
+          "done",
+          "skip",
+          "done",
+          "today"
+        ]
+      },
+      {
+        "pillar": "fitness",
+        "title": "Record every run and see how far I get",
+        "mode": "count",
+        "value": 3
+      },
+      {
+        "pillar": "family",
+        "title": "Plan our family trip, two hours a month",
+        "mode": "report"
+      }
+    ]
+  },
+  "slug": "pillar-types-of-goals-shapes-v2.4-mobile",
+  "size": "1080x1140",
+  "layout": "mobile"
+}
