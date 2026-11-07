@@ -33,7 +33,7 @@ async function crop(file, [x, y, w, h], ow, oh, out) {
 // The product slots are resized to the render's aspect ratio. Usage: node place-p7-photos.js 2 → place-p7-batch2.js in the OS temp folder.
 const B2 = {
   p45: { src: G('wnil12wnil12wnil'), d: { node: '117:6226', w: 360, h: 320, crop: [340, 560, 1170, 1040] }, m: { node: '117:6227', w: 335, h: 210, crop: [300, 700, 1404, 880] } },
-  ui: { d: { node: '116:5465', file: '../product-views/out/pillar-types-of-goals-shapes-2000x1200-bare.png', w: 900, crop: [0, 0, 1790, 1042] },
+  ui: { d: { node: '116:5465', file: '../product-views/out/pillar-types-of-goals-shapes-2000x1200-bare.png', w: 900, crop: [0, 0, 1960, 1018] },
         m: { node: '116:5963', file: '../product-views/out/pillar-types-of-goals-shapes-mobile-mobile-bare.png', w: 335, crop: [0, 30, 1170, 1200] } },
 };
 async function cropFile(file, [x, y, w, h], ow, oh, out, png) {
@@ -50,8 +50,8 @@ const SWAP = [{ key: 'p410a', src: G('gktj7xgktj7xgktj'), d: { node: '117:6228',
   { key: 'p410c', src: G('fzdo2nfzdo2nfzdo'), d: { node: '117:6232', w: 286, h: 180, crop: [820, 690, 874, 550] }, m: { node: '117:6233', w: 260, h: 150, crop: [780, 690, 953, 550] } }];
 // Batch 4 (2026-11-06): v2.4 frame 135:412. The photos were cloned in from v2.3.3 inside Figma (hero tag now "Family · This year /
 // Plan our family trip, two hours a month."). This places the 4.6 product UI (specs pillar-types-of-goals-shapes-v2.4*.json: faith daily
-// marks, a run tally with no target, family trip tracked at the cycle report). Usage: node place-p7-photos.js 4 → place-p7-batch4.js.
-const B4 = { d: { node: '135:837', file: '../product-views/out/pillar-types-of-goals-shapes-v2.4-2000x1200-bare.png', w: 900, crop: [0, 0, 1790, 1042] },
+// marks, a run tally with no target, family trip tracked at the cycle report). 2026-11-07: desktop crop now takes the whole panel (1960x1018, rendered with --today 2026-11-06); the old 1790 crop cut off Friday, the Mark button and the right arrow. Usage: node place-p7-photos.js 4 → place-p7-batch4.js.
+const B4 = { d: { node: '135:837', file: '../product-views/out/pillar-types-of-goals-shapes-v2.4-2000x1200-bare.png', w: 900, crop: [0, 0, 1960, 1018] },
   m: { node: '135:1321', file: '../product-views/out/pillar-types-of-goals-shapes-v2.4-mobile-mobile-bare.png', w: 335, crop: [0, 30, 1170, 1320] } };
 if (process.argv[2] === '4') (async () => {
   let js = header;
