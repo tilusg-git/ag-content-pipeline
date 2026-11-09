@@ -18,6 +18,20 @@ In Accountability Guild, every member writes a measurable commitment at the star
 
 What is one commitment you only started keeping once someone else knew about it?
 
+### 2026-11-09 · Your group can't hold you to a goal it never saw written down
+**Source:** https://www.facebook.com/122115418407370101/posts/122123009865370101 · **Flair:** Discussion · **Format:** text
+**Check before scheduling:** none
+
+Most accountability groups run on spoken goals. Someone says "I want to get back in shape" or "I need to finish the proposal," everyone nods, and a month later nobody remembers exactly what was promised. Including the person who said it.
+
+When the goal was never written down, the check-in turns into a negotiation. Did "get in shape" mean three workouts a week or one? Was the proposal due this month or "soon"? The group can't hold you to it because nobody can say what "it" was.
+
+A written, measurable commitment fixes that. It gives the group something specific to ask about, and it gives you a clear line between done and not done.
+
+That's why Accountability Guild has every member write their commitment down at the start of each cycle, where the whole group can see it.
+
+How does your group keep track of what each person committed to?
+
 
 ## Scheduled / posted
 
