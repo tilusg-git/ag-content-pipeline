@@ -50,9 +50,9 @@ const SWAP = [{ key: 'p410a', src: G('gktj7xgktj7xgktj'), d: { node: '117:6228',
   { key: 'p410c', src: G('fzdo2nfzdo2nfzdo'), d: { node: '117:6232', w: 286, h: 180, crop: [820, 690, 874, 550] }, m: { node: '117:6233', w: 260, h: 150, crop: [780, 690, 953, 550] } }];
 // Batch 4 (2026-11-06): v2.4 frame 135:412. The photos were cloned in from v2.3.3 inside Figma (hero tag now "Family · This year /
 // Plan our family trip, two hours a month."). This places the 4.6 product UI (specs pillar-types-of-goals-shapes-v2.4*.json: faith daily
-// marks, a run tally with no target, family trip tracked at the cycle report). 2026-11-07: desktop crop now takes the whole panel (1960x1018, rendered with --today 2026-11-06); the old 1790 crop cut off Friday, the Mark button and the right arrow. Usage: node place-p7-photos.js 4 → place-p7-batch4.js.
-const B4 = { d: { node: '135:837', file: '../product-views/out/pillar-types-of-goals-shapes-v2.4-2000x1200-bare.png', w: 900, crop: [0, 0, 1960, 1018] },
-  m: { node: '135:1321', file: '../product-views/out/pillar-types-of-goals-shapes-v2.4-mobile-mobile-bare.png', w: 335, crop: [0, 30, 1170, 1320] } };
+// marks, a run tally with no target, family trip tracked at the cycle report). 2026-11-07: desktop crop now takes the whole panel (1960x1018, rendered with --today 2026-11-06); the old 1790 crop cut off Friday, the Mark button and the right arrow. 2026-11-12 (Brandon, 2026-11-09): the run tally with no target is gone (the app has no target-free count mode); two rows, so the crops are 1960x840 and 1170x1030. The open goal is an editorial tally in the page instead. Usage: node place-p7-photos.js 4 → place-p7-batch4.js.
+const B4 = { d: { node: '135:837', file: '../product-views/out/pillar-types-of-goals-shapes-v2.4-2000x1200-bare.png', w: 900, crop: [0, 0, 1960, 840] },
+  m: { node: '135:1321', file: '../product-views/out/pillar-types-of-goals-shapes-v2.4-mobile-mobile-bare.png', w: 335, crop: [0, 30, 1170, 1030] } };
 if (process.argv[2] === '4') (async () => {
   let js = header;
   for (const k of ['d', 'm']) { const s = B4[k]; const h = Math.round(s.w * s.crop[3] / s.crop[2]);

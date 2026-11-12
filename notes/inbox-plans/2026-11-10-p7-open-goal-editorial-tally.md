@@ -72,3 +72,12 @@ data, renders or Figma has been changed yet.
 
 About one focused session: spec + render, data and config edits, a small new element in two
 builders, regenerate, one Figma build, reply draft.
+
+## Done 2026-11-12
+
+Grant forwarded Brandon's email to act on. Answers to the open questions:
+1. Reversal: applied (Brandon's direction).
+2. Wording: Brandon's example verbatim, "3 runs recorded this week" / "See how far you get." It's a snapshot inside the table's "this month" example.
+3. Tracking modes, from the code: `daily`, `count` (a weekly target from 1 to 999 is required: `goal-form.ts`, `goals-service.ts`, `dashboard-reporting.ts`), and `percentage` (tracked at the cycle report). The product line now reads "daily marks, a weekly count toward a target, or nothing until the cycle report."
+
+Steps 1 to 5 and 7 are done. The tally is in `export-html.js` and `export-handoff-p7.js` only. Step 6 (Figma) isn't done, because `build-v2.3.js` has no tally element yet. Review PNGs: `docs/marketing/pillars/types-of-personal-goals/review/p7-4.6-open-goal-{desktop,mobile}.png`. Step 8: a Gmail reply draft (not sent).

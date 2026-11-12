@@ -51,6 +51,7 @@ const el = (e, m) => {
   if (e.t === 'checklist') L.push('*Checklist (ember ticks):*', ...e.items.map(x => `- ${link(x)}`));
   if (e.t === 'imageCards') L.push('*Image card grid, 3 across (mobile: swipe row with the next card peeking):*', ...e.items.map((x, i) => { const [t, r] = split(x); return `- **${t}.** ${link(r)}\n  ${media(m.id + 'abc'[i]).replace('> ', '')}`; }));
   if (m.cap) L.push(`*Caption: ${m.cap}*`);
+  if (m.tally) L.push('', `*Editorial tally beneath the table (a bordered panel with an ember left rule: mono label, serif value, italic line). It is page copy, not a product view: no “Illustrative” caption, and it must not look like an app screen.*`, `- Label: ${m.tally.label}`, `- Value: ${m.tally.value}`, `- Line: ${m.tally.line}`);
   return L;
 };
 for (const m of D.mods) {

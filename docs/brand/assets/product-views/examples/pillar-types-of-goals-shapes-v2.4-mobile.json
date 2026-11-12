@@ -28,12 +28,6 @@
         ]
       },
       {
-        "pillar": "fitness",
-        "title": "Record every run and see how far I get",
-        "mode": "count",
-        "value": 3
-      },
-      {
         "pillar": "family",
         "title": "Plan our family trip, two hours a month",
         "mode": "report"

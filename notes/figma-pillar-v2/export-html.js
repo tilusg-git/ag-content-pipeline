@@ -44,7 +44,7 @@ function module(m) {
   const id = slug(m.toc);
   let el = '';
   if (m.el) {
-    const inner = EL[m.el.t](m.el, m) + (m.cap ? `<p class="cap">${esc(m.cap)}</p>` : '');
+    const inner = EL[m.el.t](m.el, m) + (m.cap ? `<p class="cap">${esc(m.cap)}</p>` : '') + (m.tally ? `<aside class="tally" aria-label="${esc(m.tally.label)}"><p class="ty-l">${esc(m.tally.label)}</p><p class="ty-v">${esc(m.tally.value)}</p><p class="ty-n">${esc(m.tally.line)}</p></aside>` : '');
     if (m.media && !m.media.below) el = `<div class="split ${m.media.side === 'left' ? 'left' : ''}"><div class="sp-el">${inner}</div>${pic(m.id, 'ph-side')}</div>`;
     else if (m.media && m.media.below) { const u = cfg.MEDIA[m.id]; el = `${inner}<figure class="ui"><picture><source media="(max-width:760px)" srcset="${IMG}${u.files[1]}"><img src="${IMG}${u.files[0]}" width="${u.d[0]}" height="${u.d[1]}" alt="${esc(u.alt)}" loading="lazy"></picture><figcaption>${esc(cfg.UI_CAPTION)}</figcaption></figure>`; }
     else el = inner;
@@ -135,6 +135,7 @@ main{flex:0 1 900px;min-width:0;display:flex;flex-direction:column;gap:72px}
 .rw p{font-family:var(--serif);font-size:19px;line-height:1.35}
 .tbl{width:100%;border-collapse:collapse}.tbl th{font-family:var(--mono);font-weight:500;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:0 16px 10px 0;border-bottom:1px solid var(--ink)}
 .tbl td{padding:14px 16px 14px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.5;vertical-align:top}.tbl td.k{font-family:var(--serif);font-size:18px;line-height:1.35}.tbl td.s{color:var(--ink-soft)}
+.tally{border:1px solid var(--line);border-left:3px solid var(--ember);background:var(--panel);padding:18px 22px;max-width:520px;display:flex;flex-direction:column;gap:4px}.tally .ty-l{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}.tally .ty-v{font-family:var(--serif);font-size:24px;line-height:1.25;color:var(--ink)}.tally .ty-n{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-soft)}
 .ui{display:flex;flex-direction:column;gap:12px}.ui img{border:1px solid var(--line)}.ui figcaption{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink-soft)}
 .stack{display:flex;flex-direction:column;gap:10px}.bar{display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--panel);border:1px solid var(--line)}
 .bar .mono{flex:0 0 110px}.bar p{font-family:var(--serif);font-size:18px;line-height:1.3}
