@@ -39,6 +39,7 @@ Quotes already used in published content. **Do not reuse or re-import** — this
 | "Discipline yourself, and others won't need to." | John Wooden | Facebook, Instagram | 2026-10-06 | Top shelf |
 | "We must all suffer from one of two pains: the pain of discipline or the pain of regret." | Jim Rohn | Reddit (r/accountability_guild) | 2026-10-09 | Top shelf + Pillar 4 |
 | "Accountability breeds response-ability." | Stephen R. Covey, *The 7 Habits* | Facebook, Instagram | 2026-10-12 | Top shelf |
+| "The fixed mindset makes you concerned with how you'll be judged; the growth mindset makes you concerned with improving." | Carol S. Dweck, *Mindset* | Facebook, Instagram | 2026-11-17 | Top shelf |
 
 ---
 
@@ -55,7 +56,6 @@ The 20 strongest quotes for AG's positioning, each with a suggested tie-in.
 | "Without accountability, there can be no trust, and without trust, there can be no meaningful collaboration." | Patrick Lencioni | Peer-mode positioning. |
 | "If there is no struggle, there is no progress." | Frederick Douglass (1857) | — |
 | "Becoming is better than being." | Carol S. Dweck, *Mindset* | Misses aren't verdicts; the report is information. |
-| "The fixed mindset makes you concerned with how you'll be judged; the growth mindset makes you concerned with improving." | Carol S. Dweck, *Mindset* | Why AG shows activity signals, not shame. |
 | "Without effort, your talent is nothing more than your unmet potential." | Angela Duckworth, *Grit* | — |
 | "Only the disciplined ones in life are free. If you are undisciplined, then you are a slave to your moods and your passions." | Eliud Kipchoge | — |
 
