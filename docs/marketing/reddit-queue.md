@@ -33,6 +33,20 @@ That's why Accountability Guild has every member write their commitment down at 
 How does your group keep track of what each person committed to?
 
 
+### 2026-11-17 · A group that treats a miss as a verdict gets less honest reports
+**Source:** https://www.facebook.com/122115418407370101/posts/122123931723370101 · **Flair:** Discussion · **Format:** image + https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/facebook/backgrounds/out/dweck-judged-vs-improving.png
+**Check before scheduling:** Download the card PNG from the URL and attach it. (The Dweck quote was already retired from quote-bank.md on 2026-11-17; don't retire it again.)
+
+Carol Dweck put it this way in *Mindset*: "The fixed mindset makes you concerned with how you'll be judged; the growth mindset makes you concerned with improving."
+
+The same thing happens inside accountability groups. When a missed commitment is treated as a verdict on the person, members start managing how they look instead of reporting what they did. Misses get rounded up, explained away, or quietly left out. The record gets less honest, and next month's plan starts from a guess.
+
+When a miss is recorded plainly, as information, the group can actually help: was the commitment too big, was the timing wrong, does it need a different check-in rhythm?
+
+Accountability Guild is built around that second approach. The group sees what each member logged, and the record is there to improve the next cycle, not to judge the last one.
+
+How does your group handle it when someone reports a miss?
+
 ## Scheduled / posted
 
 - 2026-10-09 · P2 · It takes a median of 59 to 66 days to form a habit, not 21 (posted)
