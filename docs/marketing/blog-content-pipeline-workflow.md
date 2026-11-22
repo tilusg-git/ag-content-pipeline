@@ -8,6 +8,22 @@ Blog is a **two-phase** pipeline — a brief gets reviewed and approved before a
 
 **Structure/AEO:** the `blog-article-structure` skill's anatomy (Quick Summary block, 5-8 answer-first H2s, FAQ section, related-links block, imagery beats) is the authoritative shape for every article and is already aligned with 2026 answer-engine-optimization practice (answer-first formatting, FAQs, schema, credible/current sourcing). Don't re-derive structure per article — follow that skill, layer the brief template's AEO formatting rules on top, and satisfy the §3.5 linking requirements for the "credible sourcing" factor.
 
+**Hero image (added 2026-11-21):** every article ships with one persona photo as its hero, which is also its share image. It follows the website imagery guidelines (`docs/brand/website-imagery-guidelines.md`, brand standards §16): candid, no identifiable faces, no logos or app screens, and no text baked in. Blog heroes carry no goal tag. Work is split three ways:
+1. **Content Writing (Claude):** writes a `HERO IMAGE` block, adds it to the card notes just above the article marker (or the in-task draft) and to the Doc's production notes, and adds `HERO: prompt ready; save as Website Images/Blog heroes/<slug>.jpg` to the card's field block. The block holds:
+   - **Scene:** one or two sentences tied to the article's main point, showing a moment from guideline §4 (doing the work, recording it, or being seen) with an object that carries the story.
+   - **Gemini prompt:** the scene, plus the composition line and the style line below, ready to paste.
+   - **Alt text:** a draft describing what the image will show, not the topic.
+   - **Fallback:** a version with a blank note or an unreadable screen, if the scene needs handwriting.
+2. **Draft review (Grant):** paste the prompt into Gemini, generate 3 or 4 variations, pick one and save it as `<slug>.jpg` in Drive **Website Images/Blog heroes** (synced at `G:\My Drive\Website Images\Blog heroes\`). Change the card's line to `HERO: saved`. To ask for a different scene, comment on the card and drag it to Changes requested like any other draft change; the rework routine rewrites the block. Dragging to Approved means both the draft and the saved hero are approved.
+3. **Published (Claude):** checks the photo (no in-focus faces, no garbled text, logos or AI artifacts), crops it with `node docs/brand/assets/site-imagery/crop-blog-hero.js "<Drive path>" <slug> [focusX focusY]` into 16:9, 4:3, 1:1 and OG 1200×630 in `docs/brand/assets/site-imagery/out/`, logs it in that folder's `manifest.md`, and commits the crops with the markdown copy. If the photo is missing or fails the check, the article is still archived; the card comment and the run summary say "hero missing" or name the problem, and the card's `HERO:` line says the same.
+
+Paste-ready lines that close every prompt:
+> **Composition:** Landscape 16:9 at the highest resolution available. The main subject sits near the center with generous space on every side, so the image still works cropped to a square. No text, captions or watermarks.
+>
+> **Style:** Photorealistic candid documentary photo, natural daylight, warm-neutral colors with slightly muted saturation, shallow depth of field, ordinary real-life setting. No visible faces: people are seen from behind, cropped at the shoulders, or as hands only. No logos, brand names, app screens, celebration poses, or posed stock-photo smiles.
+
+Pick scenes from the article, not the brand: a check-in text being typed for a weekly-reporting article, a tracker on a fridge for a habit article. Avoid the stock clichés in guideline §9, and don't repeat a scene already used on a live pillar or article (check `manifest.md`).
+
 ## Stage-by-stage
 
 ### 0. Carding trigger (Backlog)
@@ -56,16 +72,17 @@ Claude writes the full article against the approved brief. Rules added 2026-09-1
 - Citations/quotes, if named specifically, only from ✓-flagged entries in `docs/research/behavior-science-knowledge-base.md` / `docs/research/quote-bank.md` — naming one is optional editorial judgment, not required.
 - Linking per the brief's §3.5 candidates: fixed minimum of internal links (the parent Topical Pillar once live, at least one Core Product Pillar, and 2-3 other blog articles, all as inline hyperlinks) and 1-3 external links to trusted sources (KB citations and/or Claude's own topic research), with `rel="nofollow"` on any competitor link in a comparison piece. The article's one CTA is the fixed site UI element, not an authored link.
 - Quick Summary + schema + imagery per `specs/blog-content-guide-authorship-schema-imagery-seo-2026-07-16.md`.
+- **Hero image prompt (2026-11-21):** write the `HERO IMAGE` block and the `HERO:` field line per "Hero image" above. Inline imagery beats stay described only; nothing is generated for them.
 - Self-checked against the `content-grader` skill before moving on.
 - Creates the Google Doc with the full draft, adds the link to the task's `ASSETS:` line. **If the Drive/Docs connector isn't reachable, the article goes directly into the task's own `notes` instead**, under a `--- FULL ARTICLE DRAFT (fallback — no Docs connector available, drafted <date>) ---` header, with `ASSETS: In-task draft (no Docs connector available — see full article below)`. This is a deliberate fallback, not an error state — the review/revision loop works identically either way, and downstream steps (Changes requested rework, the Published terminal step) both know to check for and use this in-task block when there's no real Doc link. Never leave a card stalled with a finished article and no deliverable attached.
 
 Sets `STAGE: draft review`, moves the card back to Needs review.
 
 ### 4. Needs review / Changes requested — draft pass
-Same reused column, now reviewing the full draft. Same mechanics as step 2, but `STAGE: draft revision` ↔ `STAGE: draft review`, and the "approval" drag target this time is **Approved**, not Content Writing.
+Same reused column, now reviewing the full draft. Same mechanics as step 2, but `STAGE: draft revision` ↔ `STAGE: draft review`, and the "approval" drag target this time is **Approved**, not Content Writing. This is also when Grant makes the hero in Gemini and saves it to Drive (see "Hero image").
 
 ### 5. Approved
-Grant sets the due date to the target publish date (unchanged convention).
+Grant sets the due date to the target publish date (unchanged convention). The hero should be saved in Drive by now.
 
 ### 6. Scheduled
 Date set, waiting for the slot (unchanged).
@@ -73,13 +90,14 @@ Date set, waiting for the slot (unchanged).
 ### 7. Published — blog terminal step
 On the day the article goes live, Claude:
 1. Converts the finished Doc to markdown and commits it to `content/field-notes/<slug>.md` in this repo (slug matching what it'll get in `repo/src/lib/marketing-content.ts`).
-2. Posts the commit link + Doc link as a comment on the task.
+1b. Crops, checks and logs the hero image from Drive, and commits the crops with the markdown copy (see "Hero image"). The markdown file's header lists the four crop paths and the alt text, so the implementing agent wires them up as the article's `heroImage`, Article schema `image` array and OG image.
+2. Posts the commit link + Doc link as a comment on the task, plus the hero status (crop paths, or "hero missing").
 3. Moves the card to Published.
 4. Creates the companion `[Field notes] <title>` social promo card directly in **Drafting** (changed from Ideas/Backlog on 2026-09-30, so the weekday 6am `ag-content-drafting` run picks it up with no manual drag), using the existing `▶ TEMPLATE · Social post` pattern with `ROTATION SLOT: fieldnotes-promo` — matching how the 13 existing promo cards for already-live articles work.
 5. If the article used a quote-bank quote, retires it in the same task per `docs/research/quote-bank.md` rule 7.
 6. If the article's parent Topical Pillar is live, appends a **Pillar link to add** note to the end of `content/field-notes/<slug>.md` and to the publish comment: pillar URL, the section the link belongs in, the anchor text, and "also add to the pillar's closing cluster index and bump its Updated date." The live site repo is off-limits to this automation, so the implementing agent applies it when the article is copied in. Added 2026-09-30 per `docs/marketing/pillar-page-playbook.md` §5 and §7.3.
 
-No auto-PR to the live accountabilityguild.com repo (`repo/`) — that repo stays off-limits to this workflow; Grant copies the final text in himself.
+No auto-PR to the live accountabilityguild.com repo (`repo/`) — that repo stays off-limits to this workflow; Grant copies the final text and the hero crops in himself.
 
 ## `STAGE:` field reference
 Added to the task-description convention for blog cards only (social cards omit it):
