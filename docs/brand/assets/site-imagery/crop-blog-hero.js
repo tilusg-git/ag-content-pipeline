@@ -3,7 +3,10 @@
 //   out/blog-<slug>-16x9.jpg  1600×900   Article schema image, article hero
 //   out/blog-<slug>-4x3.jpg   1200×900   Article schema image
 //   out/blog-<slug>-1x1.jpg   1080×1080  Article schema image
-//   out/blog-<slug>-og.jpg    1200×630   og:image / Twitter card
+//   out/blog-<slug>-og.jpg    1200×630   og:image / Twitter card, with the monogram badge bottom-right
+// Only the share (og) crop carries the mark: it's the one image seen away from the site. The on-page
+// hero crops stay clean (imagery guideline §7: no marks baked into website photos). The badge is the
+// ratified dark monogram (bone italic A, ember tally, ink square), drawn by us, never by the image model.
 // It also copies the original into source/ so the manifest can point at it.
 //
 // Usage: node docs/brand/assets/site-imagery/crop-blog-hero.js <source image> <slug> [focusX focusY]
@@ -28,6 +31,9 @@ const SIZES = [
   ['1x1', 1080, 1080],
   ['og', 1200, 630],
 ];
+// Badge on the og crop: 72 px square (the tally bar stays visible above 32 px, brand standards §3/§12),
+// inset 40 px from the bottom and right edges (about the 6% chrome margin of the social cards).
+const BADGE = { size: 72, inset: 40, file: path.join(__dirname, '..', 'monogram', 'monogram-dark.svg') };
 
 (async () => {
   const dir = __dirname;
@@ -46,7 +52,12 @@ const SIZES = [
     const cx = Math.min(Math.max(focus[0] * W - cw / 2, 0), W - cw);
     const cy = Math.min(Math.max(focus[1] * H - ch / 2, 0), H - ch);
     const canvas = createCanvas(w, h);
-    canvas.getContext('2d').drawImage(img, cx, cy, cw, ch, 0, 0, w, h);
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, cx, cy, cw, ch, 0, 0, w, h);
+    if (name === 'og') {
+      const badge = await loadImage(fs.readFileSync(BADGE.file));
+      ctx.drawImage(badge, w - BADGE.inset - BADGE.size, h - BADGE.inset - BADGE.size, BADGE.size, BADGE.size);
+    }
     const buf = await canvas.encode('jpeg', 85);
     const out = path.join(dir, 'out', `blog-${slug}-${name}.jpg`);
     fs.writeFileSync(out, buf);
