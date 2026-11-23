@@ -40,6 +40,7 @@ Quotes already used in published content. **Do not reuse or re-import** — this
 | "We must all suffer from one of two pains: the pain of discipline or the pain of regret." | Jim Rohn | Reddit (r/accountability_guild) | 2026-10-09 | Top shelf + Pillar 4 |
 | "Accountability breeds response-ability." | Stephen R. Covey, *The 7 Habits* | Facebook, Instagram | 2026-10-12 | Top shelf |
 | "The fixed mindset makes you concerned with how you'll be judged; the growth mindset makes you concerned with improving." | Carol S. Dweck, *Mindset* | Facebook, Instagram | 2026-11-17 | Top shelf |
+| "The more disciplined your environment, the less disciplined you need to be." | James Clear | Facebook, Instagram | 2026-11-23 | Top shelf |
 
 ---
 
@@ -50,7 +51,6 @@ The 20 strongest quotes for AG's positioning, each with a suggested tie-in.
 | Quote | Author | AG tie-in |
 |---|---|---|
 | "Your outcomes are a lagging measure of your habits." | James Clear, *Atomic Habits* | Cycle reports measure the inputs, not just the outcome. |
-| "The more disciplined your environment, the less disciplined you need to be." | James Clear | An AG group *is* environment design — pair with Hofmann 2012 (avoidance beats resistance). |
 | "The price of greatness is responsibility." | Winston Churchill (Harvard, 1943) | — |
 | "Character — the willingness to accept responsibility for one's own life — is the source from which self-respect springs." | Joan Didion, "On Self-Respect" | Elevated, non-hustle voice — good for Field notes. |
 | "Without accountability, there can be no trust, and without trust, there can be no meaningful collaboration." | Patrick Lencioni | Peer-mode positioning. |
