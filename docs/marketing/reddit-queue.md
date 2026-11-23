@@ -47,6 +47,20 @@ Accountability Guild is built around that second approach. The group sees what e
 
 How does your group handle it when someone reports a miss?
 
+### 2026-11-23 · Set up your surroundings so the hard choice comes up less often
+**Source:** https://www.facebook.com/122115418407370101/posts/122124642333370101 · **Flair:** Discussion · **Format:** image + https://raw.githubusercontent.com/tilusg-git/ag-content-pipeline/main/docs/brand/assets/facebook/backgrounds/out/clear-disciplined-environment.png
+**Check before scheduling:** Image post: download the card PNG from the URL and attach it. The Clear quote was already retired from quote-bank.md on 2026-11-23 (Facebook, Instagram); don't retire it again. P4 in the 2026-10-09 batch covers the same Hofmann study, so space this at least a few weeks from it.
+
+James Clear put it this way: "The more disciplined your environment, the less disciplined you need to be."
+
+[A 2012 study of everyday temptations](https://doi.org/10.1037/a0026545) points the same way. The people with the strongest self-control were not the best at resisting in the moment. They had arranged their lives so they ran into temptation less often to begin with.
+
+Other people are part of your environment too. When a few people already know what you said you would do this month, the decision is made before the hard day arrives, and you are not relying on willpower to make it again.
+
+Accountability Guild is built on that idea: members write their commitments at the start of each cycle, and the group sees the report at the close.
+
+What is one change to your surroundings that did more for you than willpower ever did?
+
 ## Scheduled / posted
 
 - 2026-10-09 · P2 · It takes a median of 59 to 66 days to form a habit, not 21 (posted)
