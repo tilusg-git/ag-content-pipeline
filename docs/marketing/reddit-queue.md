@@ -61,6 +61,24 @@ Accountability Guild is built on that idea: members write their commitments at t
 
 What is one change to your surroundings that did more for you than willpower ever did?
 
+### 2026-11-23 · Holding yourself accountable takes a few checks, not more willpower
+**Source:** content/field-notes/how-to-hold-yourself-accountable.md · **Flair:** Field notes · **Format:** text
+**Check before scheduling:** The article isn't on accountabilityguild.com until someone copies it into the site repo. Open the /blog/how-to-hold-yourself-accountable link first, and schedule the post only once it loads. The 2026-11-23 Clear quote post above also cites the Hofmann self-control study, so space the two apart.
+
+A promise to your boss comes with a meeting where someone asks how it went. A promise to yourself comes with nothing, which is why it is usually the first one to slip. The fix is not more willpower. It is a few simple checks that do the asking for you:
+
+1. **Write a promise you can check.** Someone should be able to read it on Friday and say yes or no. "Get in shape" fails. "Walk 30 minutes on Monday, Wednesday, and Friday" passes.
+2. **Record it the same day.** One place, one tick or number, ten seconds. Memory at the end of the week is generous; [a large review of 138 experiments](https://doi.org/10.1037/bul0000025) found people who tracked their progress reached their goals more often.
+3. **Review it on a fixed day.** Fifteen minutes, same four questions: what did I promise, what did I do, what got in the way, what will I change.
+4. **Agree on a small cost before a miss.** Set before, it is a rule. Set after, it is a mood.
+5. **Reset honestly.** State the miss, name the cause, change one thing. No penance.
+
+If you run that for a month and still drift, the missing piece is usually one person who expects an answer.
+
+The full guide, with examples and the research behind each step: https://accountabilityguild.com/blog/how-to-hold-yourself-accountable?utm_source=reddit&utm_medium=organic&utm_campaign=r_accountability_guild&utm_content=how-to-hold-yourself-accountable
+
+Which promise to yourself slips first for you, and what has actually helped it stick?
+
 ## Scheduled / posted
 
 - 2026-10-09 · P2 · It takes a median of 59 to 66 days to form a habit, not 21 (posted)
