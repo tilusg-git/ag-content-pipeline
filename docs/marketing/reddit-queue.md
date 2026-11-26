@@ -79,6 +79,21 @@ The full guide, with examples and the research behind each step: https://account
 
 Which promise to yourself slips first for you, and what has actually helped it stick?
 
+### 2026-11-25 · A monthly accountability group works on a busy schedule with two habits
+**Source:** content/field-notes/running-a-monthly-accountability-group-busy-schedule.md · **Flair:** Field notes · **Format:** text
+**Check before scheduling:** The article isn't on accountabilityguild.com until someone copies it into the site repo. Open the /blog/running-a-monthly-accountability-group-busy-schedule link first, and schedule the post only once it loads. P2 (posted 2026-10-09) used the same 59 to 66 day habit study, which is fine at this distance.
+
+A lot of people assume an accountability group has to meet weekly to work. A monthly group can hold up on a full calendar, but only if it builds in a few habits a weekly group gets for free:
+
+1. **Pick monthly for the right kind of commitment.** In [a large review of 20 studies](https://doi.org/10.3390/healthcare12232488), habits took about two months to become automatic (59 to 66 days). A weekly group meets eight or nine times in that stretch; a monthly group meets twice. Monthly fits maintenance and month-sized goals better than a brand-new habit.
+2. **Record progress as it happens, not the night before the meeting.** A note, a photo, or a tally the same day. Reconstructing four weeks from memory is where monthly groups fall apart.
+3. **Agree on what counts as an excuse before anyone needs one.** Name the real conflicts (travel, illness, family emergencies), allow only a few a year, and settle it at the start.
+4. **Treat the first two months as a trial.** If progress keeps getting reconstructed at the end, agree on a shorter rhythm for the next stretch.
+
+The full guide, with tables for what to record and how one month runs start to finish: https://accountabilityguild.com/blog/running-a-monthly-accountability-group-busy-schedule?utm_source=reddit&utm_medium=organic&utm_campaign=r_accountability_guild&utm_content=running-a-monthly-accountability-group-busy-schedule
+
+If your group meets monthly, what keeps people from leaving everything until the last few days?
+
 ## Scheduled / posted
 
 - 2026-10-09 · P2 · It takes a median of 59 to 66 days to form a habit, not 21 (posted)
